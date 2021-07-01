@@ -1,0 +1,25 @@
+---
+title: "Exploring MVB data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_mvb}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<img src='https://www.lifewatch.be/code/images/lwde_mvb.png' class='rightimg'/>
+
+Hydrometeo data collected at stations along the Belgian coast and off-shore along the Flemish Banks.
+- Partners : MDK,VLIZ
+- Period : since 2001-09-01
+- Citation: VA MDK - afdeling Kust - Meetnet Vlaamse Banken
+- Registration and login required for most parameters.
+
+[[IMIS metadata record]](https://www.vliz.be/en/imis?module=dataset&dasid=59)

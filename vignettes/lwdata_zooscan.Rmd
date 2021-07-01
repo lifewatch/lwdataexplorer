@@ -1,0 +1,35 @@
+---
+title: "Exploring zooplankton data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_zooscan}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<img src='http://www.lifewatch.be/code/images/lwde_zoo.png' class='rightimg'  />
+
+## Introduction
+The LifeWatch data explorer is an online application to browse, query, visualize and download data collected during the LifeWatch monthly sampling campaigns.
+
+On this interface, biodiversity data on zooplankton groups are provided.
+
+Zooplankton is sampled by vertical WP2 net tows, samples scanned with ZooScanner and identification with plankton analyser software, followed by manual validation.
+
+A fixed dataset is available via: *“Flanders Marine Institute (VLIZ), Belgium (2019): LifeWatch observatory data: zooplankton observations in the Belgian Part of the North Sea. [https://doi.org/10.14284/394</a>](https://doi.org/10.14284/394</a>)."*
+
+## How to cite this data
+Users of this dataset agree to acknowledge LifeWatch.
+
+The following acknowledgements is suggested: *“Zooplankton data were provided as part of the Flemish contribution to the LifeWatch ESFRI by Flanders Marine Institute (VLIZ).”*
+
+## Supporting information
+Mortelmans, J.; Goossens, J.; Amadei Martínez, L.; Deneudt, K.; Cattrijsse, A.; Hernandez, F. (2019).
+LifeWatch observatory date: zooplankton observations in the Belgian part of the North Sea. Geoscience Data Journal: 1-9. [https://hdl.handle.net/10.1002/gdj3.68](https://hdl.handle.net/10.1002/gdj3.68)

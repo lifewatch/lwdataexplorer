@@ -1,0 +1,36 @@
+---
+title: "Exploring microplankton data - FlowCam"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_flowcam}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<img src="http://images.vliz.be/thumbs/119577_flowcam-results.jpg?w=700" class="rightimg"  />
+
+## Introduction
+The LifeWatch data explorer is an online application to browse, query, visualize and download data collected during the LifeWatch monthly sampling campaigns.
+
+On this interface, biodiversity data on microplankton groups are provided. A substantial part of the microplankton community consists of photosynthetic plankton or *phytoplankton*.
+
+These organisms are the basis of the marine ecosystem, providing resources to the higher throphic levels. They also play an important role in many nutrient cycles and have a large impact on the atmosphere of our earth.
+
+Microplankton is collected from the surface water and filtered through an apstein net with mesh size 50 &microm. Back in the lab these samples are processed with the FlowCam and identified with plankton image analysis software, followed by manual validation.
+
+[More info](https://lifewatch.be/en/flowcam)
+
+Detailed information is also described in a Data Paper: [LifeWatch observatory data: phytoplankton observations in the Belgian Part of the North Sea](https://bdj.pensoft.net/article/57236/)
+
+## How to cite this data
+
+A fixed dataset is available via: *“Flanders Marine Institute (VLIZ), Belgium (2019): LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea. [https://doi.org/10.14284/330](https://doi.org/10.14284/330)*
+
+Users of this dataset agree to acknowledge LifeWatch. The following acknowledgements is suggested: *“Microplankton data were provided as part of the Flemish contribution to the LifeWatch ESFRI by Flanders Marine Institute (VLIZ).”*

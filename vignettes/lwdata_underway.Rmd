@@ -1,0 +1,22 @@
+---
+title: "Exploring underway data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_underway}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<img src='https://www.lifewatch.be/code/images/lwde_uw.png' class='rightimg'  />
+
+Data collected by the MIDAS underway continuous sampling system on the RV Zeeleeuw and RV Simon Stevin:
+- Partners : VLIZ
+- Period : since 2001-01-01, 150 cruises per year
+- [https://www.vliz.be/en/imis?module=dataset&dasid=57](https://www.vliz.be/en/imis?module=dataset&dasid=57)

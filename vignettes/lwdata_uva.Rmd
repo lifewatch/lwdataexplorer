@@ -1,0 +1,26 @@
+---
+title: "Exploring bird GPS tracking data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_uva}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<img src='http://www.lifewatch.be/code/images/lwde_birds.png' class='rightimg'  />
+
+Data from the Lifewatch bird tracking project collected by stations in Ostend, Zeebrugge and Vlissingen.
+- Partners : INBO, UGent, UAntwerpen, VLIZ, UvA
+- Period : from 2013-05-01 on
+- Some project data is under moratorium, login to get full access
+- Use query options to restrict data to several birds or species (HG,LBB,MH)
+- Data points are grouped according to selected sample period
+
+[IMIS metadata record](http://www.vliz.be/en/imis?module=dataset&dasid=5249)

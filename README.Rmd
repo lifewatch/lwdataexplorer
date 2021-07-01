@@ -1,0 +1,132 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# lwdataexplorer
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Access to [LifeWatch Belgium](lifewatch.be/) data hosted by the [Flanders Marine Institute (VLIZ)](https://www.vliz.be/) in [R](https://www.r-project.org/).
+
+## Installation
+
+You can install the development version of deleteme from [GitHub](https://github.com/lifewatch/lwdataexplorer) using [devtools](https://github.com/r-lib/devtools):
+
+```{r installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("lifewatch/lwdataexplorer")
+```
+
+## Usage
+
+The package `lwdataexplorer` retrieves biodiversity, environmental or genetic data from the projects supported by LifeWatch Belgium. These data is also available to explore and download through the LifeWatch Data Explorer: an R Shiny application that allows you to check and download data from your browser.
+
+You can find more information about these projects and the LifeWatch Data Explorer in this link:
+- https://www.lifewatch.be/en/lifewatch-data-explorer
+
+There is a function for each specific data type. For instance, to retrieve data from the moonitoring buoy on the Belgian Part of the North Sea:
+
+```{r etn1, warning = FALSE}
+library(lwdataexplorer)
+library(tibble) # only for visualizing
+
+df <- getBuoyData("2021-03-19", "2021-04-21", "All")
+
+as_tibble(df)
+```
+
+Note that the functions naming includes always the `get` word, followed by the data type. 
+
+```{r functions}
+# Functions available in the package
+ls("package:lwdataexplorer")
+```
+
+
+### Query parameters
+
+To find more information about the query parameters you have to supply you can check the help page of each function which include some basic examples. For example, to see the help page of the function to retrieve data from the European Tracking Network (ETN):
+
+```{r help, eval = FALSE}
+# Open the help page and go over the examples
+?getEtnData()
+```
+
+
+### Data under moratorium
+
+Some data types are temporarily under embargo due to the project requirements. To help you to know if the query you are applying was restricted, the query parameters are always printed in the console. If the query parameters you requested were **restricted on the server side**, a warning will be raised and both your query parameters and those applied in the server will be printed in the console.
+
+The example below tries to request some data from the Meetnet Vlaams Banken (MVB). However, without an account some restrictions are applied: (1) parameter is 'Tide TAW', (2) Time grouping is day or hour and (3) dates are only between the last 30 days.
+
+```{r moratorium, warning = TRUE}
+# This will raise a warning
+mvb <- getMvbData("2020-01-01", "2020-12-31", parameters = 'All', 
+                  stations = "All", by = "10min", calc = "none", 
+                  params = TRUE)
+```
+
+
+### Get data and query parameters in a list
+The example above used set the argument `params = TRUE`. Through this argument, the get functions will return a list with both the data and another list with the query parameters applied in the server
+
+```{r params}
+# Check object type
+class(mvb)
+
+# What are the elements of the list?
+names(mvb)
+
+# Get query parameters as a list
+mvb$par
+```
+
+
+### Wrapper functions
+
+Besides the functions that start with `get`, you can use the `lwdata` function. This is a wrapper for all the other `get` functions. You have to provide the data type as an argument and all the other query parameters for the specific data type. Find more info with `?lwdata()`
+
+For instance, You can request the list of ETN projects with its specific function `listETNprojects()` or using `lwdata()`:
+
+```{r wrapper}
+etn <- lwdata('listETNprojects')
+
+as_tibble(etn)
+```
+
+
+## More information
+
+### Issues
+If you find any problems please (raise a new issue)[https://github.com/lifewatch/lwdataexplorer/issues] or contact the package maintainer:
+
+```{r maintainer, eval = FALSE}
+# Run once the package is installed
+maintainer("lwdataexplorer")
+```
+
+### Citation
+Please cite this software as:
+
+```{r citation, warning = FALSE}
+citation("lwdataexplorer")
+```
+
+### License
+See the license file.
+
+```{r license, warning = FALSE}
+packageDescription("lwdataexplorer", fields="License")
+```

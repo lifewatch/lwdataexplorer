@@ -1,0 +1,37 @@
+---
+title: "Exploring buoy data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_buoy}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<img src='https://www.lifewatch.be/code/images/lwde_buoy.png' class='rightimg'/>
+
+Thornton measuring buoy
+- Data collected by 2 buoys in Spuikom and C-power windfarm.
+- Partners : VLIZ , with support from C-power
+- Period : since 2015-09-01
+
+**Under development , patchy non-validated data**
+
+The Flanders Marine Institute (VLIZ) has installed a measuring buoy near the artificial reefs in the C-power wind farm, at the Thornthon Bank in the Belgian part of the North Sea. In conjunction with the research vessel RV Simon Stevin, the Thornthon measuring buoy is part of the oceanographic component of ICOS Belgium.
+
+The Thornton buoy carries sensors for both LifeWatch and ICOS (The Integrated Carbon Observation System). Management is organized as part of ICOS. ICOS is a European monitoring network consisting of a large number of observation systems for measuring greenhouse gasses. The observation systems are spread across Europe and consist of three major components:
+
+1. An atmospheric component with high measurement towers
+2. An ecosystem component with measurement towers that observe fluxes
+3. An oceanographic component with observation systems on ships and buoys
+
+
+[[IMIS metadata record]]()
+
+      

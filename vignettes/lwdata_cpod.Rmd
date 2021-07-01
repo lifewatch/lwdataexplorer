@@ -1,0 +1,25 @@
+---
+title: "Exploring marine mammals data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_cpod}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+- Data from several passive acoustic projects on the Belgian continental shelf.
+- Gear used are CPOD receivers.
+- Habour porpoises (Phocoena phocoena) produce typical narrow-band high frequency sounds (NBHF) and are identified as such.
+- Developed and managed by: VLIZ
+- Partners: VLIZ, RBINS <br>Period : from 2016-01-01 onwards
+
+Data points are grouped according to selected sample period
+
+[[IMIS metadata record]](https://www.vliz.be/en/imis?module=dataset&dasid=5531)

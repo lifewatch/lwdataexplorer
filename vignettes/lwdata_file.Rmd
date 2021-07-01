@@ -1,0 +1,24 @@
+---
+title: "Exploring combined data from different Lifewatch data types"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_file}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+- In other modules, select the data of interest and download on to your download folder.
+- Two files can then be uploaded and will merged based on the time field.
+- The files can also include data from other origin, but fieldnames must match.
+- The system will accept comma or tab seperated ascii files.
+- The first row should be the header with column names.
+- Strings in double quotes.
+
+[[IMIS metadata record]]()

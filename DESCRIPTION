@@ -1,0 +1,40 @@
+Package: lwdataexplorer
+Type: Package
+Title: Access to data from the LifeWatch Data Explorer
+Version: 0.0.0.9000
+Date: 2021-07-01
+Authors@R: c(
+  person(given = "Francisco",
+         family = "Hernandez",
+         role = c("aut"),
+         email = "tjess@vliz.be"
+         ),
+  person(given = "Nick",
+         family = "Dillen",
+         role = c("ctb", "aut"),
+         email = "nick.dillen@vliz.be"
+         ),
+  person(given = "Salvador",
+         family = "Fernández-Bejarano",
+         role = c("ctb", "cre", "aut"),
+         email = "salvador.fernandez@vliz.be",
+         comment = c(ORCID = "0000-0003-0535-7677"))
+  )
+Author: Francisco Hernandez, Nick Dillen, Salvador Fernandez
+Maintainer: Salvador Fernandez <salvador.fernandez@vliz.be>
+Description: Function for easy access to the LifeWatch data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+Imports: 
+    jsonlite,
+    httr
+Suggests: 
+    testthat (>= 2.1.0),
+    knitr,
+	markdown,
+    rmarkdown
+VignetteBuilder: knitr, rmarkdown
+URL: https://www.lifewatch.be/en/lifewatch-data-explorer
+BugReports: https://github.com/lifewatch/lwdataexplorer/issues

@@ -1,0 +1,24 @@
+---
+title: "Exploring station data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_station}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+# <img src='41597_2019_32_Fig1_HTML.png' width='40%' height='40%' align='right' />
+```
+
+## Introduction
+The LifeWatch data explorer is an online application to browse, query, visualize and download data collected during the VLIZ monthly sampling campaigns since 2001. On this interface, data on pigments, nutrients, turbidity, suspended matter and CTD profiles are provided.
+
+A fixed dataset is available via: “Flanders Marine Institute (VLIZ), Belgium (2019): LifeWatch observatory data: nutrient, pigment, suspended matter and secchi measurements in the Belgian Part of the North Sea. [https://doi.org/10.14284/393](https://doi.org/10.14284/393)“
+
+### Supporting information
+Mortelmans, J.; Deneudt, K.; Cattrijsse, A.; et al. (2019). Nutrient, pigment, suspended matter and turbidity measurements in the Belgian part of the North Sea. Scientific Data 6(1): 22. [https://hdl.handle.net/10.1038/s41597-019-0032-7](https://hdl.handle.net/10.1038/s41597-019-0032-7)
