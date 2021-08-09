@@ -47,3 +47,7 @@ vignettes/*.pdf
 inst/doc
 doc
 Meta
+
+# Pkgdown local files. These are ignored so they dont interfere
+# with the automatic deployment of the package website
+docs/*
