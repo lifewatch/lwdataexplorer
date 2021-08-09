@@ -1,0 +1,20 @@
+pandoc: 2.7.3
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  lwdata_bats: lwdata_bats.html
+  lwdata_buoy: lwdata_buoy.html
+  lwdata_cpod: lwdata_cpod.html
+  lwdata_ctd: lwdata_ctd.html
+  lwdata_etn: lwdata_etn.html
+  lwdata_file: lwdata_file.html
+  lwdata_flowcam: lwdata_flowcam.html
+  lwdata_genetic: lwdata_genetic.html
+  lwdata_mvb: lwdata_mvb.html
+  lwdata_sample: lwdata_sample.html
+  lwdata_station: lwdata_station.html
+  lwdata_underway: lwdata_underway.html
+  lwdata_uva: lwdata_uva.html
+  lwdata_zooscan: lwdata_zooscan.html
+last_built: 2021-08-09T15:06Z
+
