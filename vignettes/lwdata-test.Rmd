@@ -1,0 +1,47 @@
+---
+title: "Exploring <DATATYPE> data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_bats}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<!--- Insert image  -->
+<img src='' class='rightimg'/>
+
+<!--- Describe dataset in one or two sentences. -->
+
+- Partners:
+- Period:
+- Moratorium: 
+
+## How to interpret this dataset
+
+### Available columns
+* Column 1: 
+* Column 2: 
+
+### Filter options
+* Filter 1
+* Filter 2
+
+## How to cite these data
+Citation: 
+
+License:
+
+[[IMIS metadata record]]()
+
+## Methodology
+<!--- Describe in one or two paragraphs how the data are collected in detail. 
+Describe what are the target species.
+Describe the migration from the raw data to the database query shown in the app.
+-->
