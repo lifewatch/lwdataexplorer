@@ -11,6 +11,8 @@ Access to [LifeWatch Belgium](lifewatch.be/) data hosted by the
 [Flanders Marine Institute (VLIZ)](https://www.vliz.be/) in
 [R](https://www.r-project.org/).
 
+See the package website: https://lifewatch.github.io/lwdataexplorer/
+
 ## Installation
 
 You can install the development version of deleteme from
