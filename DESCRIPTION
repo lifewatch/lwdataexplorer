@@ -36,5 +36,5 @@ Suggests:
 	markdown,
     rmarkdown
 VignetteBuilder: knitr, rmarkdown
-URL: https://www.lifewatch.be/en/lifewatch-data-explorer
+URL: https://lifewatch.github.io/lwdataexplorer/
 BugReports: https://github.com/lifewatch/lwdataexplorer/issues
