@@ -12,13 +12,122 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-# <img src='41597_2019_32_Fig1_HTML.png' width='40%' height='40%' align='right' />
+
 ```
 
-## Introduction
-The LifeWatch data explorer is an online application to browse, query, visualize and download data collected during the VLIZ monthly sampling campaigns since 2001. On this interface, data on pigments, nutrients, turbidity, suspended matter and CTD profiles are provided.
+<!-- Insert image -->
+<img src='https://rshiny.lifewatch.be/station-data/41597_2019_32_Fig1_HTML.png' class='rightimg'/>
 
-A fixed dataset is available via: “Flanders Marine Institute (VLIZ), Belgium (2019): LifeWatch observatory data: nutrient, pigment, suspended matter and secchi measurements in the Belgian Part of the North Sea. [https://doi.org/10.14284/393](https://doi.org/10.14284/393)“
+<!--- Describe datatype in one or two sentences. -->
+Data on nutrients, pigments, suspended matter and secchi measurements from fixed stations on the Belgian Part of the North Sea.
 
-### Supporting information
+- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36)
+- Period: since April 2001
+- Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
+- Taxonomic coverage: Abiotic data only
+- Moratorium: None
+- Data quality: Unknown
+ 
+## How to interpret this dataset
+ 
+### Query options
+* **Timeframe**: Starting and stopping date for the query.
+* **Parameter categories**: Type of parameters to request. Available: SPM, CTD, Nutrients, Secchi, Pigments.
+ 
+### Available columns
+* **Station**: Name or code of sampling station or receiver code.
+* **Time**: Time in UTC, beginning of sample timeperiod.
+* **Latitude**: Center latitude in decimal degrees, WGS84.
+* **Longitude**: Center longitude in decimal degrees, WGS84.
+
+<details>
+  <summary>Click to see all the columns available: </summary>
+  
+* **X19But_Fucoxanthin.µg.l.**: .
+* **X19Hex_Fucoxanthin.µg.l.**: .
+* **Alloxanthin.µg.l.**: .
+* **Ammonium_NH4.µmol.N_NH4.L.**: Concentration of ammonium in the water body, expressed in µmol N_NH4/L.
+* **Antheraxanthin.µg.l.**: .
+* **Anthoxanthin.µg.l.**: .
+* **Astaxanthine.µg.l.**: .
+* **Beta_Carotene.µg.l.**: .
+* **Chlorophyll_a.µg.l.**: .
+* **Chlorophyll_b.µg.l.**: .
+* **Chlorophyll_c2c1.µg.l.**: .
+* **Chlorophyll_c2.µg.l.**: .
+* **Chlorophyll_c3.µg.l.**: .
+* **Chlorophyllide_a.µg.l.**: .
+* **Conductivity.µS.cm.**: .
+* **CPAR**: Corrected Photosynthetic Active Radiation of the water body.
+* **Density(kg/m3)**: The density of the water body, expressed in kg/m³.
+* **Diadinoxanthin.µg.l.**: .
+* **Diatoxanthin.µg.l.**: .
+* **Echinenone.µg.l.**: .
+* **Fluorescence(mg/m³)**: Fluorescence of the water body, expressed in mg/m³.
+* **Fucoxanthin.µg.l.**: .
+* **Lutein.µg.l.**: .
+* **Neoxanthin.µg.l.**: .
+* **Nitrate_Nitrite(µmolN_NO3-NO2/L)**: Concentration of nitrates+ nitrites in the water body, expressed in µmol N_NO3-NO2/L.
+* **Nitrate_NO3(µmolN_NO3/L)**: Concentration of nitrate in the water body, expressed in µmol N_NO3/L.
+* **Nitrite_NO2(µmolN_NO2/L)**: Concentration of nitrites in the water body, expressed in µmol N_NO2/L.
+* **OBS(NTU)**: Optical backscatter as turbidity of the water body, expressed in Nephelometric Turbidity Units.
+* **PAR**: Photosynthetic Active Radiation.
+* **Peridinin.µg.l.**: 
+* **Ph**: Acidity of the water body.
+* **Pheophorbide_a.µg.l.**: .
+* **Pheophytin_a.µg.l.**: .
+* **Pheophytin_b.µg.l.**: .
+* **Phosphate_PO4(µmolP_PO4/L)**: Concentration of phosphate in the water body, expressed in µmol P_P04/L.
+* **Prasinoxanthin.µg.l.**: .
+* **Pressure(db)**: Pressure of the water body, expressed in decibel.
+* **Salinity(PSU)**: Salinity of the water body, expressed in Practical Salinity Units.
+* **Secchi_Depth(cm)**: Visibility in the water body by Secchi disk, expressed cm.
+* **Silicate_SiO4(µmolSi_SiO4/L)**: Concentration of silicate in the water body, expressed in µmol Si_SiO4/L.
+* **SoundVelocity(m/s)**: The velocity of sound through the water body, expressed in m/s.
+* **SPAR**: Surface photosynthetically Active Radiation.
+* **SPM(mg/l)**: Concentration of Suspended Particulate Matter in the water body, expressed in mg/L.
+* **Temperature(degC)**: Temperature of the water body, expressed in degrees Celcius.
+* **Violaxanthin.µg.l.**: .
+* **Zeaxanthin.µg.l.**: .
+
+</details>
+
+## Abstract
+
+```{r abstract, results = 'asis', echo = FALSE}
+# Get the abstract and/or description from IMIS and print here
+library(jsonlite)
+
+dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=4686&show=json")
+
+abstract <- dasid[["datasetrec"]][["EngAbstract"]]
+description <- dasid[["datasetrec"]][["EngDescr"]]
+
+if (is.null(abstract) & is.null(description)){
+  
+} else if(is.null(abstract) & !is.null(description)){
+  out <- description
+} else if(!is.null(abstract) & is.null(description)){
+  out <- abstract
+} else if(!is.null(abstract) & !is.null(description)){
+  out <- paste0(abstract, "</br>", description)
+}
+
+cat(out)
+```
+
+There is a data paper available:
 Mortelmans, J.; Deneudt, K.; Cattrijsse, A.; et al. (2019). Nutrient, pigment, suspended matter and turbidity measurements in the Belgian part of the North Sea. Scientific Data 6(1): 22. [https://hdl.handle.net/10.1038/s41597-019-0032-7](https://hdl.handle.net/10.1038/s41597-019-0032-7)
+
+## How to cite these data
+
+When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=4685) of this data type.
+
+> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+
+</br>
+If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+
+> ```{r citation, results = 'asis', echo = FALSE}
+cat(citation("lwdataexplorer")$textVersion)
+```

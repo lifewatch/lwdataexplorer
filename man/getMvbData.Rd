@@ -39,12 +39,12 @@ getMvbData(
 Dataframe with the specified MVB data.
 }
 \description{
-Retrieves the Meetnet Vlaams Banken (MVB) data from the LifeWatch project. Without valid credentials you are only allowed to view the "Tide TAW" paramter for the last 30 days, grouped by day/hour.
+Retrieves the Meetnet Vlaams Banken (MVB) data from the LifeWatch project. Without valid credentials you are only allowed to view the "Tide TAW" parameter for the last 30 days, grouped by day/hour.
 To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 }
 \examples{
-getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW', 
+getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW',
 stations = "Nieuwpoort", by = "day", calc = "avg")
-getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW', 
+getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW',
 stations = "Blankenberge", by = "hour", calc = "max", params = TRUE)
 }

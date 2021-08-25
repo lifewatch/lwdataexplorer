@@ -14,12 +14,83 @@ knitr::opts_chunk$set(
 )
 ```
 
-- Data from several passive acoustic projects on the Belgian continental shelf.
-- Gear used are CPOD receivers.
-- Habour porpoises (Phocoena phocoena) produce typical narrow-band high frequency sounds (NBHF) and are identified as such.
-- Developed and managed by: VLIZ
-- Partners: VLIZ, RBINS <br>Period : from 2016-01-01 onwards
+<!--- Insert image
+<img src='' class='rightimg'/>
+-->
 
-Data points are grouped according to selected sample period
+<!--- Describe datatype in one or two sentences. -->
+Permanent Cetacean passive acoustic sensor network in the Belgian part of the North Sea
 
-[[IMIS metadata record]](https://www.vliz.be/en/imis?module=dataset&dasid=5531)
+- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36), [Royal Belgian Institute of Natural Sciences (RBINS)](https://www.vliz.be/en/imis?module=institute&insid=1883)
+- Period: since January 2016
+- Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
+- Taxonomic coverage: Habour porpoises (_[Phocoena phocoena](https://www.marinespecies.org/aphia.php?p=taxdetails&id=137117)_)
+- Moratorium: None
+- Data quality: Unknown
+ 
+## How to interpret this dataset
+ 
+### Query options
+* **Processing**: Type of data: one of Raw or Validated
+* **Timeframe**: Starting and stopping date for the query.
+* **Quality**:  Level of processing: default Hi+Mod.
+* **Sample period**: Counts aggregated. One of 1 week, 1 day or 60 min.
+ 
+### Available columns
+* **deployment_fk**: 
+* **Time**: Time in UTC, beginning of sample timeperiod.
+* **Species**: NBHF = Harbour porpoises (Phocoena phocoena).
+* **Milliseconds**: Duration of click trains.
+* **Number_clicks_filtered**: recognized clicks of a species.
+* **Number_clicks_total**: total number of recorded clicks.
+* **Lost_minutes**: .
+* **Recorded**: Minutes recording.
+* **Dpm**: Detection positive minutes, or a mammal was detected in that minute.
+* **Dph**: Detection positive hours, or a mammal was detected in that hour.
+* **Dpd**: Detection positive days, or a mammal was detected that day.
+* **Dpw**: Detection positive weeks, or a mammal was detected that day.
+* **Quality**: .
+* **Projectname**: .
+* **Station**: name or code of sampling station or receiver code.
+* **Latitude**: Center latitude in decimal degrees, WGS84.
+* **Longitude**: Center longitude in decimal degrees, WGS84.
+* **Mooring_type**: .
+* **Receiver**: .
+
+## Abstract
+
+```{r abstract, results = 'asis', echo = FALSE}
+# Get the abstract and/or description from IMIS and print here
+library(jsonlite)
+
+dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=5531&show=json")
+
+abstract <- dasid[["datasetrec"]][["EngAbstract"]]
+description <- dasid[["datasetrec"]][["EngDescr"]]
+
+if (is.null(abstract) & is.null(description)){
+  
+} else if(is.null(abstract) & !is.null(description)){
+  out <- description
+} else if(!is.null(abstract) & is.null(description)){
+  out <- abstract
+} else if(!is.null(abstract) & !is.null(description)){
+  out <- paste0(abstract, "</br>", description)
+}
+
+cat(out)
+```
+
+## How to cite these data
+
+When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=5531) of this data type.
+
+> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+
+</br>
+If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+
+> ```{r citation, results = 'asis', echo = FALSE}
+cat(citation("lwdataexplorer")$textVersion)
+```
+

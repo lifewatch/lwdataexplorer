@@ -41,6 +41,6 @@ Need valid authentication to access the entire data.To get an account, register 
 }
 \examples{
 getCpodData("2020-04-19", "2020-04-21", processing = "Validated", quality = "Hi+Mod", by = "1 week")
-getCpodData("2020-04-19", "2020-04-21", processing = "Raw", 
+getCpodData("2020-04-19", "2020-04-21", processing = "Raw",
 quality = c("Hi", "Lo"), by = "1 day", params = TRUE)
 }

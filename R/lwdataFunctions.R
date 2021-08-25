@@ -13,9 +13,9 @@
 #' @param stations (Buoy, MVB, Station) list of stations to be included in the query
 #' @param binSize (Bats, ETN, CPOD, MVB, UvaBird, Underway) Sample period.
 #' @param calc (MVB) Calculation to perform given time grouping, one of ('avg', 'max', 'min', 'none')
-#' @param UrlPar . 
+#' @param UrlPar .
 #' @param code .
-#' @param posres . 
+#' @param posres .
 #' @param logged (CPOD, MVB, ETN, UvaBird) Request data under moratory if you have an account
 #' @param projectlist .
 #' @param tagprojectlist .
@@ -75,7 +75,7 @@ lwdata<- function(
   input$taxranks=taxranks
   input$quality=qualities
   input$processing=processing
-  
+
   input$getPar = params
 
   USER$postgresUserName=loggedInUserPostgresUsername
@@ -114,7 +114,7 @@ lwdata2 = function(type,
 #### LIST DATATYPE SPECIFIC PARAMETER FUNCTIONS ####
 
 #' Retrieve an overview of the ETN data.
-#' 
+#'
 #' Retrieves the name of network/animals?
 #' To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 #'@param usr Username to connect to ETN database
@@ -134,7 +134,7 @@ listEtnProjects <- function(usr = NULL,
 }
 
 #' List available stations for Meetnet Vlaamse Banken (MVB)
-#' 
+#'
 #' To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
@@ -231,11 +231,11 @@ getBatsData <- function(startdate, stopdate, by, params = FALSE){
   input$type = "Bats data"
   input$getPar = params
   # print(input)
-  
+
   out = basicPostJson(
     input = input
   )
-  
+
   return(outputQC(input, out))
 }
 
@@ -251,7 +251,7 @@ getBatsData <- function(startdate, stopdate, by, params = FALSE){
 #'@examples
 #'getBuoyData("2021-03-19", "2021-04-21", "All")
 #'getBuoyData("2021-03-19", "2021-04-21", "Buoy at C-Power", TRUE)
-#'getBuoyData("2021-03-19", "2021-04-21", c("Spuikom Sluice", "Buoy in Spuikom", 
+#'getBuoyData("2021-03-19", "2021-04-21", c("Spuikom Sluice", "Buoy in Spuikom",
 #'"Ostend Research Tower"), TRUE)
 #'@export
 getBuoyData <- function(startdate, stopdate, stations,
@@ -284,9 +284,9 @@ getBuoyData <- function(startdate, stopdate, stations,
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
 #'@return Dataframe with the specified ETN data.
 #'@examples
-#'getEtnData("2020-04-19", "2020-04-21", action = "Time bins", by = "1 day", 
+#'getEtnData("2020-04-19", "2020-04-21", action = "Time bins", by = "1 day",
 #'networks = "All", projects = "All")
-#'getEtnData("2016-01-01", "2017-12-31", action = "All", by = "1 week", 
+#'getEtnData("2016-01-01", "2017-12-31", action = "All", by = "1 week",
 #'networks = "Azorean acoustic receiver network", projects = "Lifewatch", params = TRUE)
 #'@export
 getEtnData <- function(startdate, stopdate, action, by, networks, projects,
@@ -330,7 +330,7 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 #'@return Dataframe with the specified C-POD data.
 #'@examples
 #'getCpodData("2020-04-19", "2020-04-21", processing = "Validated", quality = "Hi+Mod", by = "1 week")
-#'getCpodData("2020-04-19", "2020-04-21", processing = "Raw", 
+#'getCpodData("2020-04-19", "2020-04-21", processing = "Raw",
 #'quality = c("Hi", "Lo"), by = "1 day", params = TRUE)
 #'@export
 getCpodData <- function(startdate, stopdate, processing, quality, by,
@@ -359,7 +359,7 @@ getCpodData <- function(startdate, stopdate, processing, quality, by,
 
 #'Retrieve MVB-data from the LifeWatch project
 #'
-#'Retrieves the Meetnet Vlaams Banken (MVB) data from the LifeWatch project. Without valid credentials you are only allowed to view the "Tide TAW" paramter for the last 30 days, grouped by day/hour.
+#'Retrieves the Meetnet Vlaams Banken (MVB) data from the LifeWatch project. Without valid credentials you are only allowed to view the "Tide TAW" parameter for the last 30 days, grouped by day/hour.
 #'To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 #'@param startdate Starting date for the query. Without a login, this is restricted to the last month
 #'@param stopdate Stopping date for the query. Without a login, this is restricted to the last month
@@ -372,9 +372,9 @@ getCpodData <- function(startdate, stopdate, processing, quality, by,
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
 #'@return Dataframe with the specified MVB data.
 #'@examples
-#'getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW', 
+#'getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW',
 #'stations = "Nieuwpoort", by = "day", calc = "avg")
-#'getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW', 
+#'getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW',
 #'stations = "Blankenberge", by = "hour", calc = "max", params = TRUE)
 #'@export
 getMvbData <- function(startdate, stopdate, parameters, stations = NULL, by, calc, # QCFlag=c(0,3),
@@ -455,7 +455,7 @@ getUvaBirdData <- function(startdate, stopdate, tagcodes, # p=2,
 #'@return Dataframe with the Station-data.
 #'@examples
 #'getStationData("2019-07-22", "2019-07-23", stations = "all", categories = "all")
-#'getStationData("2019-07-22", "2019-07-23", stations = c(120, 215), 
+#'getStationData("2019-07-22", "2019-07-23", stations = c(120, 215),
 #'categories = c("Nutrients", "Secchi"), params = TRUE)
 #'@export
 getStationData <- function(startdate, stopdate, stations = "all", categories = "all", params = FALSE){
@@ -508,7 +508,7 @@ getUnderwayData <- function(startdate, stopdate, by, params = FALSE){
 # Function used internally
 basicPostJson = function(input=NULL,
                          USER=NULL){
-  
+
   # Get BASE path from environment
   BASE_PATH = Sys.getenv("BASE_PATH")
   if (BASE_PATH==""){
@@ -516,15 +516,15 @@ basicPostJson = function(input=NULL,
   }
   ocpu.url = file.path(file.path(BASE_PATH, "getLWdata/"), "json")
   # print(paste("USING URL:", ocpu.url))
-  
+
   mybody = list(
     'USER'=USER,
     'input'=input,
     'client'=TRUE
     )
-  
+
   # print(mybody)
-  
+
   postreq = httr::content(
     httr::POST(url= ocpu.url,
                body = mybody,
@@ -547,7 +547,7 @@ basicPostJson = function(input=NULL,
 
 # Checks the output of the request to opencpu server and gives understandable feedback
 outputQC = function(input, out){
-  
+
   # If a list of project, stations etc is requested, accept return a data.frame
   if(input$type %in% c('listETNprojects', 'listMVBstations', 'listUVAtags')){
     return(out)
@@ -556,13 +556,13 @@ outputQC = function(input, out){
     if(length(setdiff(input, out$par)) != 0){
       printParameters(input, "Your query:")
       printParameters(out$par, "Server query:")
-      warning("The query applied on the server differ from the parameters you used. 
-Hint: You may need an account to fully access the data under moratorium. 
+      warning("The query applied on the server differ from the parameters you used.
+Hint: You may need an account to fully access the data under moratorium.
 Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
-      
+
       # Print parameters if there's no issues
     }else{printParameters(out$par)}
-    
+
     # Test dataset
     # Check if no data was returned
     if(c("No data") %in% out$mdf | c("Nodata") %in% out$mdf | c("Is null") %in% out$mdf | c("[RODBC] No results available") %in% out$mdf |
@@ -570,25 +570,25 @@ Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
       out$mdf <- data.frame()
       warning("No data returned. Try relaxing query parameters.")
     }
-    
+
     # Check if something else unexpected happened
     else if(typeof(out$mdf)=='character' | is.null(out$mdf) | class(out$mdf) != "data.frame") {
       stop(paste0("Something unexpected happened: ", out$mdf))
     }
-    
+
     # Proceed if all correct
     else{
       # Print dimensions
       message(paste0("Data dimension: (", paste0(dim(out$mdf), collapse=" x "), ")"))
-      
+
       colnames(out$mdf) <- sapply(colnames(out$mdf), FUN = toupper)
-      
+
       # Column time or ztime must arrive as UTC
       if("ZTime" %in% colnames(out$mdf)) { out$mdf$Time<-as.POSIXct(out$mdf$ZTime, tz="UTC"); out$mdf$ZTime <- NULL}
       else
         if("Time" %in% colnames(out$mdf)) out$mdf$Time<-as.POSIXct(out$mdf$Time) #out$mdf$Time<-as.POSIXct(out$mdf$Time, tz="UTC")
     }
-    
+
     # Return: if it was a list, put dataset back
     if(input$getPar == TRUE){
       out$par$getPar <- NULL
@@ -605,16 +605,16 @@ Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
 printParameters <- function(par, messg = "Query parameters"){
   # remove getPar
   par <- par[names(par) != "getPar"]
-  
+
   # Print
   message(messg)
   message("---------------------------------------------")
-  
+
   for (i in 1:length(par)){
     name <- names(par)[i]
     message(paste0(name, " : ", par[i]))
   }
-  
+
   # End
   message("---------------------------------------------")
 }

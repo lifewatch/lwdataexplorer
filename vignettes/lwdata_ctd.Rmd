@@ -15,17 +15,77 @@ knitr::opts_chunk$set(
 # <img src='41597_2019_32_Fig1_HTML.png' width='40%' height='40%' align='right' />
 ```
 
-## Introduction
-The LifeWatch data explorer is an online application to browse, query, visualize and download data collected during the VLIZ monthly sampling campaigns since 2001. On this interface, data on pigments, nutrients, turbidity, suspended matter and CTD profiles are provided.
+<!--- Insert image  -->
+<img src='https://rshiny.lifewatch.be/ctd-data/41597_2019_32_Fig1_HTML.png' class='rightimg'/>
 
-## How to cite this data
-A fixed dataset is available via: *“Flanders Marine Institute (VLIZ), Belgium (2019): LifeWatch observatory data:
-nutrient, pigment, suspended matter and secchi measurements in the Belgian Part of the North Sea. [https://doi.org/10.14284/328](https://doi.org/10.14284/328)*
+<!--- Describe datatype in one or two sentences. -->
+Data on pigments, nutrients, turbidity, suspended matter and CTD profiles from VLIZ sampling campaigns in the Belgian Part of the North Sea.
 
-Users of this dataset agree to acknowledge LifeWatch. The following acknowledgements is suggested:
-*“Nutrient, pigment and turbidity data were provided as part of the Flemish contribution to the LifeWatch ESFRI by Flanders Marine Institute (VLIZ).”*
+- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36)
+- Period: since April 2001
+- Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
+- Taxonomic coverage: Abiotic data only
+- Moratorium: None
+- Data quality: Unknown
+ 
+## How to interpret this dataset
+ 
+### Query options
+* **Timeframe**: Starting and stopping date for the query.
+* **Stations**:  Name or code of sampling station or receiver code.
+* **Bins**: .
+ 
+### Available columns
+* **Station**: Name or code of sampling station or receiver code.
+* **CastId**: .
+* **Depth**: Bottom depth to surface from echosounder 200Hz in m.
+* **Status**: .
+* **Latitude**: Center latitude in decimal degrees, WGS84.
+* **Longitude**: Center longitude in decimal degrees, WGS84.
+* **Time**: Time in UTC, beginning of sample timeperiod.
+* **Temperature**: Temperature of air or the water body, expressed in degrees Celcius.
+* **C0uS/cm**: Conducitivity of the water body, expressed in ms/cm.
+* **Salinity**: Salinity in PSU.
+* **Soundspeed**: The velocity of sound through the water body, expressed in m/s.
+* **Density**: Calculated densities of zooplankton expressed in specimens/m³, by using the count, fraction, volumeM or volumeC.
+* **DescSpeed**: .
+* **Flag**: .
 
-Mortelmans, J.; Deneudt, K.; Cattrijsse, A.; et al. (2019). Nutrient, pigment, suspended matter and turbidity measurements in the Belgian part of the North Sea. Scientific Data 6(1): 22.
-[https://hdl.handle.net/10.1038/s41597-019-0032-7](https://hdl.handle.net/10.1038/s41597-019-0032-7)
 
-[[IMIS metadata record]]()
+## Abstract
+
+```{r abstract, results = 'asis', echo = FALSE}
+# Get the abstract and/or description from IMIS and print here
+library(jsonlite)
+
+dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=4686&show=json")
+
+abstract <- dasid[["datasetrec"]][["EngAbstract"]]
+description <- dasid[["datasetrec"]][["EngDescr"]]
+
+if (is.null(abstract) & is.null(description)){
+
+} else if(is.null(abstract) & !is.null(description)){
+  out <- description
+} else if(!is.null(abstract) & is.null(description)){
+  out <- abstract
+} else if(!is.null(abstract) & !is.null(description)){
+  out <- paste0(abstract, "</br>", description)
+}
+
+cat(out)
+```
+
+
+## How to cite these data
+
+When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=4686) of this data type.
+
+> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+
+</br>
+If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+
+> ```{r citation, results = 'asis', echo = FALSE}
+cat(citation("lwdataexplorer")$textVersion)
+```

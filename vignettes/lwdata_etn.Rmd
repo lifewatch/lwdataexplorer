@@ -13,18 +13,75 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-
+<!--- Insert image -->
 <img src='https://www.lifewatch.be/code/images/lwde_fish.png' class='rightimg'/>
 
-- Data from several INBO and Lifewatch acoustic fish telemetry projects on Belgian coast, Schelde, Maas and other rivers.
-- Partners : INBO, Ugent, VLIZ, <br>Period : from 2011-01-01 on 
-- Some project data is under moratorium, login to get full access
-- Use query options to restrict data to several projects, tagging projects and tag codes.
-- Data points are grouped according to selected sample period
 
-#### Possible calculations
-- *Time bins*: groups detections by tag (code) , receiver (station) and sampling frequency.
-- *Residencies*: groups detections by period spent at each receiver and sampling frequency.
-- *Active network*: list of active deployments, in which case time = start of deployment.
+<!--- Describe datatype in one or two sentences. -->
+Aquatic animal tracking data from the [European Tracking Network](https://lifewatch.be/etn/).
 
-[[IMIS metadata record]](http://www.vliz.be/en/imis?module=dataset&dasid=5250)
+- Partners: ETN members
+- Period: since January 2003
+- Geographical coverage: Europe
+- Taxonomic coverage: _[Solea senegalensis](http://www.marinespecies.org/aphia.php?p=taxdetails&id=127159)_, _[Anguilla anguilla](http://www.marinespecies.org/aphia.php?p=taxdetails&id=126281)_, _[Diplodus sargus](http://www.marinespecies.org/aphia.php?p=taxdetails&id=127053)_, _[Palinurus elephas](http://www.marinespecies.org/aphia.php?p=taxdetails&id=107703)_, _[Sepia officinalis](http://www.marinespecies.org/aphia.php?p=taxdetails&id=141444)_, _[Gadus morhua](http://www.marinespecies.org/aphia.php?p=taxdetails&id=126436)_, _[Sarpa salpa](http://www.marinespecies.org/aphia.php?p=taxdetails&id=127064)_, _[Lampetra fluviatilis](http://www.marinespecies.org/aphia.php?p=taxdetails&id=101172)_, _[Salmo trutta](http://www.marinespecies.org/aphia.php?p=taxdetails&id=127187)_, _[Salvelinus alpinus](http://www.marinespecies.org/aphia.php?p=taxdetails&id=127188)_, _[Salmo salar](http://www.marinespecies.org/aphia.php?p=taxdetails&id=127186)_, _[Rutilus rutilus](http://www.marinespecies.org/aphia.php?p=taxdetails&id=154333)_, _[Petromyzon marinus](http://www.marinespecies.org/aphia.php?p=taxdetails&id=101174)_, _[Homarus gammarus](http://www.marinespecies.org/aphia.php?p=taxdetails&id=107253)_, _[Silurus glanis](http://www.marinespecies.org/aphia.php?p=taxdetails&id=154677)_, _[Squalius cephalus](http://www.marinespecies.org/aphia.php?p=taxdetails&id=282855)_, _[Labrus bergylta](http://www.marinespecies.org/aphia.php?p=taxdetails&id=126965)_, _[Platichthys flesus](http://www.marinespecies.org/aphia.php?p=taxdetails&id=127141)_ and _[Cyprinus carpio](http://www.marinespecies.org/aphia.php?p=taxdetails&id=154582)_
+- Moratorium: Some project data is under moratorium. Login or [register](https://rshiny.lifewatch.be/account?p=register) to get full access
+- Data quality: Unknown
+ 
+## How to interpret this dataset
+ 
+### Query options
+* **Data Source**: One of: **Time bins**: groups detections by tag (code), receiver (station) and sampling frequency; **Residencies**: groups detections by period spent at each receiver and sampling frequency; or **Active network**: list of active deployments, in which case time = start of deployment.
+* **Network**: The network of receiver or antenna deployments.
+* **Project**: Project in charge of receiver deployments
+* **Sample period**: Counts aggregated. One of 1 week, 1 day, 60 min, 10 min or 1 min.
+* **Timeframe**: Starting and stopping date for the query.
+
+### Available columns
+* **Counts** : Total GPS fixes or detections
+* **Scientific_name**: The latin name of the species
+* **Project** : Project in charge of receiver deployments
+* **Network** : The network of receiver or antenna deployments.
+* **Time**: Time in UTC, beginning of sample timeperiod!
+* **Longitude**: Center longitude in decimal degrees, WGS84
+* **Latitude**: Center latitude in decimal degrees, WGS84
+* **Station**: Name or code of sampling station or receiver code
+* **Receiver**: 
+* **Code**: Code of device on / in individual
+* **Moratorium**: Some data fields are masked, pending official data publication. eg Species name 
+
+## Abstract
+
+```{r abstract, results = 'asis', echo = FALSE}
+# Get the abstract and/or description from IMIS and print here
+library(jsonlite)
+
+dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=5250&show=json")
+
+abstract <- dasid[["datasetrec"]][["EngAbstract"]]
+description <- dasid[["datasetrec"]][["EngDescr"]]
+
+if (is.null(abstract) & is.null(description)){
+  
+} else if(is.null(abstract) & !is.null(description)){
+  out <- description
+} else if(!is.null(abstract) & is.null(description)){
+  out <- abstract
+} else if(!is.null(abstract) & !is.null(description)){
+  out <- paste0(abstract, "</br>", description)
+}
+
+cat(out)
+```
+
+## How to cite these data
+
+When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=5531) of this data type.
+
+> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+
+</br>
+If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+
+> ```{r citation, results = 'asis', echo = FALSE}
+cat(citation("lwdataexplorer")$textVersion)
+ 

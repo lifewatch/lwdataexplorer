@@ -24,6 +24,6 @@ Retrieves the aggregated buoy data from the LifeWatch project.
 \examples{
 getBuoyData("2021-03-19", "2021-04-21", "All")
 getBuoyData("2021-03-19", "2021-04-21", "Buoy at C-Power", TRUE)
-getBuoyData("2021-03-19", "2021-04-21", c("Spuikom Sluice", "Buoy in Spuikom", 
+getBuoyData("2021-03-19", "2021-04-21", c("Spuikom Sluice", "Buoy in Spuikom",
 "Ostend Research Tower"), TRUE)
 }

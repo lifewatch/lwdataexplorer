@@ -14,22 +14,72 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- Insert image -->
 <img src='http://www.lifewatch.be/code/images/lwde_zoo.png' class='rightimg'  />
 
-## Introduction
-The LifeWatch data explorer is an online application to browse, query, visualize and download data collected during the LifeWatch monthly sampling campaigns.
+<!-- Describe datatype in one or two sentences. -->
+Biodiversity data on zooplankton in the Belgian part of the North Sea.
 
-On this interface, biodiversity data on zooplankton groups are provided.
+- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36).
+- Period: since July 2012.
+- Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293).
+- Taxonomic coverage: Zooplankton.
+- Moratorium: None.
+- Data quality: Unknown.
+ 
+## How to interpret this dataset
+ 
+### Query options
+* **Timeframe**: Starting and stopping date for the query.
+ 
+### Available columns
+* **Tripaction**: .
+* **Fraction**: Indicates the fraction of a scanned sample.
+* **Time**: Time in UTC, beginning of sample timeperiod.
+* **Station**: Name or code of sampling station or receiver code.
+* **ActionType**: The type of sampling equipment.
+* **Longitude**: Center longitude in decimal degrees, WGS84.
+* **Latitude**: Center latitude in decimal degrees, WGS84.
+* **Taxon**: Taxonomic group of organisms or group of artefacts.
+* **Count**: The exact number of specimens counted.
+* **VolumeC**: A proxy to calculate densities of zooplankton; VolumeC is an exact depth at that sampling point, as measured by the UnderWaySystem of the research vessel.
+* **VolumeE**: .
+* **VolumeM**: A proxy to calculate densities of zooplankton.
+* **Density**: Calculated densities of zooplankton expressed in specimens/m<sup>3</sup>, by using the count, fraction, volumeM or volumeC.
 
-Zooplankton is sampled by vertical WP2 net tows, samples scanned with ZooScanner and identification with plankton analyser software, followed by manual validation.
+## Abstract
 
-A fixed dataset is available via: *“Flanders Marine Institute (VLIZ), Belgium (2019): LifeWatch observatory data: zooplankton observations in the Belgian Part of the North Sea. [https://doi.org/10.14284/394</a>](https://doi.org/10.14284/394</a>)."*
+```{r abstract, results = 'asis', echo = FALSE}
+# Get the abstract and/or description from IMIS and print here
+library(jsonlite)
 
-## How to cite this data
-Users of this dataset agree to acknowledge LifeWatch.
+dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=4687&show=json")
 
-The following acknowledgements is suggested: *“Zooplankton data were provided as part of the Flemish contribution to the LifeWatch ESFRI by Flanders Marine Institute (VLIZ).”*
+abstract <- dasid[["datasetrec"]][["EngAbstract"]]
+description <- dasid[["datasetrec"]][["EngDescr"]]
 
-## Supporting information
-Mortelmans, J.; Goossens, J.; Amadei Martínez, L.; Deneudt, K.; Cattrijsse, A.; Hernandez, F. (2019).
-LifeWatch observatory date: zooplankton observations in the Belgian part of the North Sea. Geoscience Data Journal: 1-9. [https://hdl.handle.net/10.1002/gdj3.68](https://hdl.handle.net/10.1002/gdj3.68)
+if (is.null(abstract) & is.null(description)){
+  
+} else if(is.null(abstract) & !is.null(description)){
+  out <- description
+} else if(!is.null(abstract) & is.null(description)){
+  out <- abstract
+} else if(!is.null(abstract) & !is.null(description)){
+  out <- paste0(abstract, "</br>", description)
+}
+
+cat(out)
+```
+
+## How to cite these data
+
+When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=4687) of this data type.
+
+> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+
+</br>
+If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+
+> ```{r citation, results = 'asis', echo = FALSE}
+cat(citation("lwdataexplorer")$textVersion)
+```

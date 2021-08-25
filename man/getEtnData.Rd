@@ -43,8 +43,8 @@ Retrieves the European Tracking Network (ETN) data from the LifeWatch project.
 Need valid authentication to access the entire data. To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 }
 \examples{
-getEtnData("2020-04-19", "2020-04-21", action = "Time bins", by = "1 day", 
+getEtnData("2020-04-19", "2020-04-21", action = "Time bins", by = "1 day",
 networks = "All", projects = "All")
-getEtnData("2016-01-01", "2017-12-31", action = "All", by = "1 week", 
+getEtnData("2016-01-01", "2017-12-31", action = "All", by = "1 week",
 networks = "Azorean acoustic receiver network", projects = "Lifewatch", params = TRUE)
 }

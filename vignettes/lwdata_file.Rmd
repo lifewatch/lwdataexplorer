@@ -14,11 +14,33 @@ knitr::opts_chunk$set(
 )
 ```
 
-- In other modules, select the data of interest and download on to your download folder.
-- Two files can then be uploaded and will merged based on the time field.
-- The files can also include data from other origin, but fieldnames must match.
-- The system will accept comma or tab seperated ascii files.
-- The first row should be the header with column names.
-- Strings in double quotes.
+<!--- Insert image
+<img src='' class='rightimg'/>
+-->
 
-[[IMIS metadata record]]()
+<!--- Describe datatype in one or two sentences. -->
+Combine data from all data types of the [LifeWatch Data Explorer](https://lifewatch.be/en/lifewatch-data-explorer)
+
+In other modules, select the data of interest and download on to your download folder. Two files can then be uploaded and will merged based on the time field.
+
+The files can also include data from other origin, but the field names must match.
+
+File requirements:
+
+- This system will accept comma or tab separated ASCII files (.csv or .txt).
+- The first row should be the header with column names.
+- Strings must in double quotes.
+
+## How to cite these data
+
+When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses.
+
+> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+
+</br>
+If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+
+> ```{r citation, results = 'asis', echo = FALSE}
+cat(citation("lwdataexplorer")$textVersion)
+ 
+

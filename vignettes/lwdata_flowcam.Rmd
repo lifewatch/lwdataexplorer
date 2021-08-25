@@ -14,23 +14,77 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- Insert image -->
 <img src="http://images.vliz.be/thumbs/119577_flowcam-results.jpg?w=700" class="rightimg"  />
 
-## Introduction
-The LifeWatch data explorer is an online application to browse, query, visualize and download data collected during the LifeWatch monthly sampling campaigns.
+<!-- Describe datatype in one or two sentences. -->
+Biodiversity data on microplankton in the Belgian part of the North Sea
 
-On this interface, biodiversity data on microplankton groups are provided. A substantial part of the microplankton community consists of photosynthetic plankton or *phytoplankton*.
+- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36)
+- Period: since May 2017
+- Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
+- Taxonomic coverage: Microplankton, being a substantial part of phytoplankton. Detritus. Fibers.
+- Moratorium: None
+- Data quality: Unknown
+ 
+## How to interpret this dataset
+ 
+### Query options
+* **Timeframe**: Starting and stopping date for the query.
+ 
+### Available columns
+* **Tripaction**:
+* **Time**: Time in UTC, beginning of sample timeperiod.
+* **Station**: Name or code of sampling station or receiver code.
+* **Longitude**: Center longitude in decimal degrees, WGS84.
+* **Latitude**: Center latitude in decimal degrees, WGS84.
+* **Fluid Volume Imaged (ml)**: Total volume of water checked throguh the Zooscan in mililitres.
+* **Sample Volume (ml)**: Total volume of water collected in the sample in mililitres.
+* **Volume Filtered (l)**: Total volume of water filtered in mililitres.
+* **Sample Dilution Factor**: .
+* **Taxon**: Taxonomic group of organisms or group of artefacts.
+* **Count**: The exact number of specimens counted.
+* **Total Count**: The exact number of specimens counted in the sample.
+* **Density (cell/l)**: Number of specimens per litre.
+* **ActionType**: The type of sampling equipment.
+* **Project**: Project in charge of receiver deployments.
 
-These organisms are the basis of the marine ecosystem, providing resources to the higher throphic levels. They also play an important role in many nutrient cycles and have a large impact on the atmosphere of our earth.
 
-Microplankton is collected from the surface water and filtered through an apstein net with mesh size 50 &microm. Back in the lab these samples are processed with the FlowCam and identified with plankton image analysis software, followed by manual validation.
+## Abstract
 
-[More info](https://lifewatch.be/en/flowcam)
+```{r abstract, results = 'asis', echo = FALSE}
+# Get the abstract and/or description from IMIS and print here
+library(jsonlite)
 
-Detailed information is also described in a Data Paper: [LifeWatch observatory data: phytoplankton observations in the Belgian Part of the North Sea](https://bdj.pensoft.net/article/57236/)
+dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=4688&show=json")
 
-## How to cite this data
+abstract <- dasid[["datasetrec"]][["EngAbstract"]]
+description <- dasid[["datasetrec"]][["EngDescr"]]
 
-A fixed dataset is available via: *“Flanders Marine Institute (VLIZ), Belgium (2019): LifeWatch observatory data: phytoplankton observations by imaging flow cytometry (FlowCam) in the Belgian Part of the North Sea. [https://doi.org/10.14284/330](https://doi.org/10.14284/330)*
+if (is.null(abstract) & is.null(description)){
+  
+} else if(is.null(abstract) & !is.null(description)){
+  out <- description
+} else if(!is.null(abstract) & is.null(description)){
+  out <- abstract
+} else if(!is.null(abstract) & !is.null(description)){
+  out <- paste0(abstract, "</br>", description)
+}
 
-Users of this dataset agree to acknowledge LifeWatch. The following acknowledgements is suggested: *“Microplankton data were provided as part of the Flemish contribution to the LifeWatch ESFRI by Flanders Marine Institute (VLIZ).”*
+cat(out)
+```
+
+Further information can be found in [this link](https://lifewatch.be/en/flowcam) or in a Data Paper: [LifeWatch observatory data: phytoplankton observations in the Belgian Part of the North Sea](https://bdj.pensoft.net/article/57236/)
+
+## How to cite these data
+
+When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://doi.org/10.14284/330) of this data type.
+
+> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+
+</br>
+If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+
+> ```{r citation, results = 'asis', echo = FALSE}
+cat(citation("lwdataexplorer")$textVersion)
+```

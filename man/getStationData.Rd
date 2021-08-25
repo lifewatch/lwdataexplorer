@@ -31,6 +31,6 @@ Retrieves the station data from the LifeWatch project.
 }
 \examples{
 getStationData("2019-07-22", "2019-07-23", stations = "all", categories = "all")
-getStationData("2019-07-22", "2019-07-23", stations = c(120, 215), 
+getStationData("2019-07-22", "2019-07-23", stations = c(120, 215),
 categories = c("Nutrients", "Secchi"), params = TRUE)
 }
