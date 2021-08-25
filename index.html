@@ -139,7 +139,7 @@
 <p>You can find more information about these projects and the LifeWatch Data Explorer in this link: - <a href="https://www.lifewatch.be/en/lifewatch-data-explorer" class="uri">https://www.lifewatch.be/en/lifewatch-data-explorer</a></p>
 <p>There is a function for each specific data type. For instance, to retrieve data from the moonitoring buoy on the Belgian Part of the North Sea:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.lifewatch.be/en/lifewatch-data-explorer">lwdataexplorer</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lifewatch.github.io/lwdataexplorer/">lwdataexplorer</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span> <span class="co"># only for visualizing</span>
 
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/getBuoyData.html">getBuoyData</a></span><span class="op">(</span><span class="st">"2021-03-19"</span>, <span class="st">"2021-04-21"</span>, <span class="st">"All"</span><span class="op">)</span>
@@ -153,26 +153,27 @@
 <span class="co">#&gt; Data dimension: (2384 x 23)</span>
 
 <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 2,384 x 23</span>
-<span class="co">#&gt;    STATION TIME  LATITUDE LONGITUDE `AIR TEMPERATUR~ `ATMPRESS (MBAR~</span>
-<span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Buoy i~ 2021~     51.2      2.95             6.35            1022.</span>
-<span class="co">#&gt;  2 Ostend~ 2021~     51.2      2.92             6.10              NA </span>
-<span class="co">#&gt;  3 Spuiko~ 2021~     51.2      2.94            NA                 NA </span>
-<span class="co">#&gt;  4 Spuiko~ 2021~     51.2      2.94            NA                 NA </span>
-<span class="co">#&gt;  5 Buoy i~ 2021~     51.2      2.95             5.66            1023.</span>
-<span class="co">#&gt;  6 Ostend~ 2021~     51.2      2.92             5.56              NA </span>
-<span class="co">#&gt;  7 Buoy i~ 2021~     51.2      2.95             5.40            1024.</span>
-<span class="co">#&gt;  8 Ostend~ 2021~     51.2      2.92             5.25              NA </span>
-<span class="co">#&gt;  9 Spuiko~ 2021~     51.2      2.94            NA                 NA </span>
-<span class="co">#&gt; 10 Spuiko~ 2021~     51.2      2.94            NA                 NA </span>
-<span class="co">#&gt; # ... with 2,374 more rows, and 17 more variables: `AVG WIND DIRECTION</span>
-<span class="co">#&gt; #   (DEG)` &lt;dbl&gt;, `AVG WIND SPEED (M/S)` &lt;dbl&gt;, `RELHUMIDITY (%)` &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   `SOLARENERGY (W/M²)` &lt;dbl&gt;, `VOLTAGE (V)` &lt;dbl&gt;, `ATMPRESS(MBAR)` &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   `RELHUMIDITY(%)` &lt;dbl&gt;, `LEVEL HARBOUR (MTAW) 1MIN` &lt;dbl&gt;, `LEVEL HARBOUR</span>
-<span class="co">#&gt; #   (MTAW)` &lt;dbl&gt;, `LEVEL SPUIKOM (MTAW)` &lt;dbl&gt;, `RAIN15 (MM)` &lt;dbl&gt;, `NO3</span>
-<span class="co">#&gt; #   (PPB)` &lt;dbl&gt;, `SIO2 (PPB)` &lt;dbl&gt;, `RAIN (MM)` &lt;dbl&gt;, `DO (MG/L)` &lt;int&gt;,</span>
-<span class="co">#&gt; #   `SALINITY (PSU)` &lt;int&gt;, `WATER TEMPERATURE (°C)` &lt;int&gt;</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 2,384 × 23</span>
+<span class="co">#&gt;    STATION      TIME       LATITUDE LONGITUDE `AIR TEMPERATURE… `ATMPRESS (MBAR…</span>
+<span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt;            &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 Buoy in Spu… 2021-03-1…     51.2      2.95              6.35            1022.</span>
+<span class="co">#&gt;  2 Ostend Rese… 2021-03-1…     51.2      2.92              6.10              NA </span>
+<span class="co">#&gt;  3 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA </span>
+<span class="co">#&gt;  4 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA </span>
+<span class="co">#&gt;  5 Buoy in Spu… 2021-03-1…     51.2      2.95              5.66            1023.</span>
+<span class="co">#&gt;  6 Ostend Rese… 2021-03-1…     51.2      2.92              5.56              NA </span>
+<span class="co">#&gt;  7 Buoy in Spu… 2021-03-1…     51.2      2.95              5.40            1024.</span>
+<span class="co">#&gt;  8 Ostend Rese… 2021-03-1…     51.2      2.92              5.25              NA </span>
+<span class="co">#&gt;  9 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA </span>
+<span class="co">#&gt; 10 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA </span>
+<span class="co">#&gt; # … with 2,374 more rows, and 17 more variables:</span>
+<span class="co">#&gt; #   AVG WIND DIRECTION (DEG) &lt;dbl&gt;, AVG WIND SPEED (M/S) &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   RELHUMIDITY (%) &lt;dbl&gt;, SOLARENERGY (W/M²) &lt;dbl&gt;, VOLTAGE (V) &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   ATMPRESS(MBAR) &lt;dbl&gt;, RELHUMIDITY(%) &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   LEVEL HARBOUR (MTAW) 1MIN &lt;dbl&gt;, LEVEL HARBOUR (MTAW) &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   LEVEL SPUIKOM (MTAW) &lt;dbl&gt;, RAIN15 (MM) &lt;dbl&gt;, NO3 (PPB) &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   SIO2 (PPB) &lt;dbl&gt;, RAIN (MM) &lt;dbl&gt;, DO (MG/L) &lt;int&gt;, SALINITY (PSU) &lt;int&gt;,</span>
+<span class="co">#&gt; #   WATER TEMPERATURE (°C) &lt;int&gt;</span></code></pre></div>
 <p>Note that the functions naming includes always the <code>get</code> word, followed by the data type.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Functions available in the package</span>
@@ -184,7 +185,7 @@
 <div id="query-parameters" class="section level3">
 <h3 class="hasAnchor">
 <a href="#query-parameters" class="anchor"></a>Query parameters</h3>
-<p>To find more information about the query parameters you have to supply you can check the help page of each function which include some basic examples. For example, to see the help page of the function to retrieve data from the European Tracking Network (ETN):</p>
+<p>To find more information about the query parameters you can check the help page of each function which include some basic examples. For example, to see the help page of the function that retrieves data from the European Tracking Network (ETN):</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Open the help page and go over the examples</span>
 <span class="op">?</span><span class="fu"><a href="reference/getEtnData.html">getEtnData</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
@@ -212,7 +213,7 @@
 <span class="co">#&gt; ---------------------------------------------</span>
 <span class="co">#&gt; Server query:</span>
 <span class="co">#&gt; ---------------------------------------------</span>
-<span class="co">#&gt; daterange : c("2021-06-01", "2020-12-31")</span>
+<span class="co">#&gt; daterange : c("2021-07-26", "2020-12-31")</span>
 <span class="co">#&gt; type : MVB data</span>
 <span class="co">#&gt; stations : All</span>
 <span class="co">#&gt; calc : none</span>
@@ -241,7 +242,7 @@
 <span class="co"># Get query parameters as a list</span>
 <span class="va">mvb</span><span class="op">$</span><span class="va">par</span>
 <span class="co">#&gt; $daterange</span>
-<span class="co">#&gt; [1] "2021-06-01" "2020-12-31"</span>
+<span class="co">#&gt; [1] "2021-07-26" "2020-12-31"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $type</span>
 <span class="co">#&gt; [1] "MVB data"</span>
@@ -268,20 +269,20 @@
 <span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span>
 
 <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">etn</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 159 x 2</span>
+<span class="co">#&gt; # A tibble: 169 × 2</span>
 <span class="co">#&gt;    name                     type   </span>
 <span class="co">#&gt;    &lt;chr&gt;                    &lt;chr&gt;  </span>
 <span class="co">#&gt;  1 2004_Gudena              network</span>
 <span class="co">#&gt;  2 2011_Loire               network</span>
 <span class="co">#&gt;  3 2011_Warnow              network</span>
 <span class="co">#&gt;  4 2013_Foyle               network</span>
-<span class="co">#&gt;  5 2014_Nene                network</span>
-<span class="co">#&gt;  6 2015_PhD_Gutmann_Roberts network</span>
-<span class="co">#&gt;  7 2016_Diaccia_Botrona     network</span>
-<span class="co">#&gt;  8 2017_Fremur              network</span>
-<span class="co">#&gt;  9 2019_Grotenete           network</span>
-<span class="co">#&gt; 10 2020_PhD_Winter          network</span>
-<span class="co">#&gt; # ... with 149 more rows</span></code></pre></div>
+<span class="co">#&gt;  5 2013_Maas                network</span>
+<span class="co">#&gt;  6 2014_Nene                network</span>
+<span class="co">#&gt;  7 2015_PhD_Gutmann_Roberts network</span>
+<span class="co">#&gt;  8 2016_Diaccia_Botrona     network</span>
+<span class="co">#&gt;  9 2017_Fremur              network</span>
+<span class="co">#&gt; 10 2019_Grotenete           network</span>
+<span class="co">#&gt; # … with 159 more rows</span></code></pre></div>
 </div>
 </div>
 <div id="more-information" class="section level2">
