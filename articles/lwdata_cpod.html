@@ -128,20 +128,110 @@
 
     
     
+<!--- Insert image
+<img src='' class='rightimg'/>
+-->
+<!--- Describe datatype in one or two sentences. -->
+<p>Permanent Cetacean passive acoustic sensor network in the Belgian part of the North Sea</p>
 <ul>
-<li>Data from several passive acoustic projects on the Belgian continental shelf.</li>
-<li>Gear used are CPOD receivers.</li>
-<li>Habour porpoises (Phocoena phocoena) produce typical narrow-band high frequency sounds (NBHF) and are identified as such.</li>
-<li>Developed and managed by: VLIZ</li>
-<li>Partners: VLIZ, RBINS <br>Period : from 2016-01-01 onwards</li>
+<li>Partners: <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=36">Flanders Marine Institute (VLIZ)</a>, <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=1883">Royal Belgian Institute of Natural Sciences (RBINS)</a>
+</li>
+<li>Period: since January 2016</li>
+<li>Geographical coverage: <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=3293">Belgian Exclusive Economic Zone</a>
+</li>
+<li>Taxonomic coverage: Habour porpoises (<em><a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137117">Phocoena phocoena</a></em>)</li>
+<li>Moratorium: None</li>
+<li>Data quality: Unknown</li>
 </ul>
-<p>Data points are grouped according to selected sample period</p>
-<p><a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5531">[IMIS metadata record]</a></p>
+<div id="how-to-interpret-this-dataset" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-interpret-this-dataset" class="anchor"></a>How to interpret this dataset</h2>
+<div id="query-options" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-options" class="anchor"></a>Query options</h3>
+<ul>
+<li>
+<strong>Processing</strong>: Type of data: one of Raw or Validated</li>
+<li>
+<strong>Timeframe</strong>: Starting and stopping date for the query.</li>
+<li>
+<strong>Quality</strong>: Level of processing: default Hi+Mod.</li>
+<li>
+<strong>Sample period</strong>: Counts aggregated. One of 1 week, 1 day or 60 min.</li>
+</ul>
+</div>
+<div id="available-columns" class="section level3">
+<h3 class="hasAnchor">
+<a href="#available-columns" class="anchor"></a>Available columns</h3>
+<ul>
+<li>
+<strong>deployment_fk</strong>:</li>
+<li>
+<strong>Time</strong>: Time in UTC, beginning of sample timeperiod.</li>
+<li>
+<strong>Species</strong>: NBHF = Harbour porpoises (Phocoena phocoena).</li>
+<li>
+<strong>Milliseconds</strong>: Duration of click trains.</li>
+<li>
+<strong>Number_clicks_filtered</strong>: recognized clicks of a species.</li>
+<li>
+<strong>Number_clicks_total</strong>: total number of recorded clicks.</li>
+<li>
+<strong>Lost_minutes</strong>: .</li>
+<li>
+<strong>Recorded</strong>: Minutes recording.</li>
+<li>
+<strong>Dpm</strong>: Detection positive minutes, or a mammal was detected in that minute.</li>
+<li>
+<strong>Dph</strong>: Detection positive hours, or a mammal was detected in that hour.</li>
+<li>
+<strong>Dpd</strong>: Detection positive days, or a mammal was detected that day.</li>
+<li>
+<strong>Dpw</strong>: Detection positive weeks, or a mammal was detected that day.</li>
+<li>
+<strong>Quality</strong>: .</li>
+<li>
+<strong>Projectname</strong>: .</li>
+<li>
+<strong>Station</strong>: name or code of sampling station or receiver code.</li>
+<li>
+<strong>Latitude</strong>: Center latitude in decimal degrees, WGS84.</li>
+<li>
+<strong>Longitude</strong>: Center longitude in decimal degrees, WGS84.</li>
+<li>
+<strong>Mooring_type</strong>: .</li>
+<li>
+<strong>Receiver</strong>: .</li>
+</ul>
+</div>
+</div>
+<div id="abstract" class="section level2">
+<h2 class="hasAnchor">
+<a href="#abstract" class="anchor"></a>Abstract</h2>
+As part of the Belgian LifeWatch observatory, a permanent Cetacean passive acoustic network is established in the Belgian Part of the North Sea. The sensor network uses C-PODs (Chelonia Limited) to register the presence of harbour porpoise (<i>Phocoena phocoena</i>) in the neighbourhood. Click trains of harbour porpoises are detected and classified using the CPOD software and high and moderate quality click trains are selected.
+<p>
+The dataset is published yearly in the highest time resolution, per minute.
+</p>
+</div>
+<div id="how-to-cite-these-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-cite-these-data" class="anchor"></a>How to cite these data</h2>
+<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5531">IMIS metadata record</a> of this data type.</p>
+<blockquote>
+<p><em>This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</em></p>
+</blockquote>
+<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
+<blockquote>
+<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://www.lifewatch.be/en/lifewatch-data-explorer" class="uri">https://www.lifewatch.be/en/lifewatch-data-explorer</a></p>
+</blockquote>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

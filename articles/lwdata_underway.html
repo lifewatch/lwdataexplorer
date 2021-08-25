@@ -128,13 +128,109 @@
 
     
     
+<!-- Insert image -->
 <p><img src="https://www.lifewatch.be/code/images/lwde_uw.png" class="rightimg"></p>
-<p>Data collected by the MIDAS underway continuous sampling system on the RV Zeeleeuw and RV Simon Stevin: - Partners : VLIZ - Period : since 2001-01-01, 150 cruises per year - <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=57">https://www.vliz.be/en/imis?module=dataset&amp;dasid=57</a></p>
+<!--- Describe datatype in one or two sentences. -->
+<p>Data collected by the MIDAS underway continuous sampling system on the RV Zeeleeuw and <a href="http://www.vliz.be/en/rv-simon-stevin">RV Simon Stevin</a>:</p>
+<ul>
+<li>Partners: <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=36">Flanders Marine Institute (VLIZ)</a>
+</li>
+<li>Period: since January 2001</li>
+<li>Geographical coverage: <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=3293">Belgian Exclusive Economic Zone (EEZ)</a>, <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=5696">United Kingdom EEZ</a>, <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=5677">French EEZ</a> and <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=5668">Dutch EEZ</a>
+</li>
+<li>Taxonomic coverage: Abiotic data only</li>
+<li>Moratorium: None</li>
+<li>Data quality: Unknown</li>
+</ul>
+<div id="how-to-interpret-this-dataset" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-interpret-this-dataset" class="anchor"></a>How to interpret this dataset</h2>
+<div id="query-options" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-options" class="anchor"></a>Query options</h3>
+<ul>
+<li>
+<strong>Timeframe</strong>: Starting and stopping date for the query.</li>
+<li>
+<strong>Sample period</strong>: Counts aggregated. One of 1 day, 60 min, 10 min or 1 min.</li>
+</ul>
+</div>
+<div id="available-columns" class="section level3">
+<h3 class="hasAnchor">
+<a href="#available-columns" class="anchor"></a>Available columns</h3>
+<ul>
+<li>
+<strong>Time</strong>: .Time in UTC, beginning of sample timeperiod.</li>
+<li>
+<strong>Latitude</strong>: Center latitude in decimal degrees, WGS84.</li>
+<li>
+<strong>Longitude</strong>: Center longitude in decimal degrees, WGS84.</li>
+<li>
+<strong>Temperature</strong>: Temperature of the water body, expressed in degrees Celcius.</li>
+<li>
+<strong>Salinity</strong>: Salinity in PSU.</li>
+<li>
+<strong>Conductivity</strong>: Conducitivity of the water body, expressed in ms/cm.</li>
+<li>
+<strong>Depth</strong>: Bottom depth to surface from echosounder 200Hz in m.</li>
+<li>
+<strong>ChlorophylA</strong>: Based on fluoresence in µg/L.</li>
+<li>
+<strong>SpeedMadeGood</strong>: .</li>
+<li>
+<strong>Speedlog</strong>: .</li>
+<li>
+<strong>TrueWindDir</strong>: Direction of the wind in deg.</li>
+<li>
+<strong>TrueWindSpeed</strong>: Speed of the wind in m/s.</li>
+<li>
+<strong>CourseMadeGood</strong>: .</li>
+<li>
+<strong>Gyro</strong>: .</li>
+<li>
+<strong>AirTemperature</strong>: Temperature of air, expressed in degrees Celcius.</li>
+<li>
+<strong>AirPressure</strong>: Atmospheric pressure in mBar.</li>
+<li>
+<strong>AirHumidity</strong>: Relative humidity in %.</li>
+</ul>
+</div>
+</div>
+<div id="abstract" class="section level2">
+<h2 class="hasAnchor">
+<a href="#abstract" class="anchor"></a>Abstract</h2>
+MIDAS stands for Marine Information and Data Acquisition System. This suite of programs was developed at Flanders Marine Institute (VLIZ) to plan the cruises of the RV Zeeleeuw, to register the research activities during these cruises and to capture navigational, metereological and oceanographic parameters while underway.VLIZ supports scientists and administrations by collecting, checking, integrating and re-distributing operational data. Data measurements can take place with VLIZ equipment or equipment from third parties. In the easiest case, instruments are used with the software that has been supplied by the deliverer. In other cases, applications will be developed to automate the whole. Besides this, databases and web applications will be developed to compile and to re-distribute the data. If relevant, the data will also be delivered to international organisations.
+<ul>
+<li>
+<u>Underway data Zeeleeuw</u>: these are data that are generated through the continuous measure system on board of the Zeeleeuw. A total of 15 parameters come from 6 different instruments.
+</li>
+<li>
+<u>Cruise data Zeeleeuw</u>: these are the data that are imported during a cruise and come from scientists and Zeeleeuw crew.
+</li>
+<li>
+<u>Casts and deployments</u>: data that are collected with the CTD’s, LISST and ADCP. These instruments are used for depth profiles (casts) or to last into the water for a longer period.
+</li>
+</ul>
+</div>
+<div id="how-to-cite-these-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-cite-these-data" class="anchor"></a>How to cite these data</h2>
+<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=57">IMIS metadata record</a> of this data type.</p>
+<blockquote>
+<p><em>This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</em></p>
+</blockquote>
+<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
+<blockquote>
+<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://www.lifewatch.be/en/lifewatch-data-explorer" class="uri">https://www.lifewatch.be/en/lifewatch-data-explorer</a></p>
+</blockquote>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

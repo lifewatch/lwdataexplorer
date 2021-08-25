@@ -128,14 +128,87 @@
 
     
     
+<!-- Insert image -->
 <p><img src="http://www.lifewatch.be/code/images/lwde_birds.png" class="rightimg"></p>
-<p>Data from the Lifewatch bird tracking project collected by stations in Ostend, Zeebrugge and Vlissingen. - Partners : INBO, UGent, UAntwerpen, VLIZ, UvA - Period : from 2013-05-01 on - Some project data is under moratorium, login to get full access - Use query options to restrict data to several birds or species (HG,LBB,MH) - Data points are grouped according to selected sample period</p>
-<p><a href="http://www.vliz.be/en/imis?module=dataset&amp;dasid=5249">IMIS metadata record</a></p>
+<!--- Describe datatype in one or two sentences. -->
+<p>Data from the Lifewatch bird tracking project collected by stations in Ostend, Zeebrugge and Vlissingen.</p>
+<ul>
+<li>Partners: <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=5443">Research Institute for Nature and Forest (INBO)</a>, <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=1453">University of Ghent (UGent)</a>, <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=4538">University of Antwerpen</a>, <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=36">Flanders Marine Institute (VLIZ)</a> and <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=5647">University of Amsterdam (UvA)</a>
+</li>
+<li>Period: since May 2013</li>
+<li>Geographical coverage: <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=1912">North Atlantic Ocean</a> including <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=3293">Belgian Exclusive Economic Zone</a> and <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=4279">Mediterranean Sea - Western Basin</a>.</li>
+<li>Taxonomic coverage: Herring Gull (HG; <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137138"><em>Larus argentatus</em></a>), Lesser Black Backed Gull (LLB; <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137142"><em>Larus fuscus</em></a>) and Marshal Harrier (MH; <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=558541"><em>Circus aeruginosus</em></a>).</li>
+<li>Moratorium: Marshal Harrier data is only available upon registration. Login or <a href="https://rshiny.lifewatch.be/account?p=register">register</a> to get full access</li>
+<li>Data quality: Unknown</li>
+</ul>
+<div id="how-to-interpret-this-dataset" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-interpret-this-dataset" class="anchor"></a>How to interpret this dataset</h2>
+<div id="query-options" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-options" class="anchor"></a>Query options</h3>
+<ul>
+<li>
+<strong>Birds or Tag Codes</strong>: Tag number that identifies the birds. You can select specific birds or all together with <code>All HG</code> (Herring Gull), <code>All LLB</code> (Lesser Black Backed Gull) or <code>All MH</code> (Marshal Harrier).</li>
+<li>
+<strong>Sample period</strong>: Counts aggregated. One of 1 week, 1 day, 60 min, 10 min or 1 min.</li>
+<li>
+<strong>Timeframe</strong>: Starting and stopping date for the query.</li>
+</ul>
+</div>
+<div id="available-columns" class="section level3">
+<h3 class="hasAnchor">
+<a href="#available-columns" class="anchor"></a>Available columns</h3>
+<ul>
+<li>
+<strong>Code </strong>: Code of device on / in individual.</li>
+<li>
+<strong>Time </strong>: Time in UTC, beginning of sample timeperiod.</li>
+<li>
+<strong>Species </strong>: HG = Herring Gull , LBB = Lesser Black Backed Gull, MH = Marshal Harrier.</li>
+<li>
+<strong>Longitude </strong>: Center longitude in decimal degrees, WGS84.</li>
+<li>
+<strong>Latitude </strong>: Center latitude in decimal degrees, WGS84.</li>
+<li>
+<strong>Tracklength </strong>: Length of the track in meters.</li>
+<li>
+<strong>Maxdist </strong>: Maximum distance from nest.</li>
+<li>
+<strong>Tracktime </strong>: Length of the track in hours.</li>
+<li>
+<strong>Counts </strong>: Total GPS fixes or detections.</li>
+<li>
+<strong>Logcounts </strong>: Natural logarithm of the counts.</li>
+</ul>
+</div>
+</div>
+<div id="abstract" class="section level2">
+<h2 class="hasAnchor">
+<a href="#abstract" class="anchor"></a>Abstract</h2>
+<p>In the framework of the Flemish contributions to the LifeWatch infrastructure, a high-tech sensor network was installed to better monitor the habitat use and migration patterns of large birds, such as the European Herring Gull (<i>Larus argentatus</i> Pontoppidan, 1736), the Lesser Black-backed Gull (<i>Larus fuscus</i> Linnaeus, 1758) and the Western Marsh Harrier (<i>Circus aeruginosus</i> (Linnaeus, 1758)).</p>
+<p>The research is led by INBO, in collaboration with the Terrestrial Ecology Unit (TEREC) at the University of Ghent, and the University of Amsterdam (UvA, LifeWatch coordinator in the Netherlands). The Flanders Marine Institute (VLIZ) is responsible for the installation, maintenance and data flows of the sensor network.</p>
+<p>All equipment is developed by the Institute for Biodiversity and Ecosystem Dynamics (IBED) at the University of Amsterdam: the Bird Tracking System (UvA-BiTS).</p>
+</div>
+<div id="how-to-cite-these-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-cite-these-data" class="anchor"></a>How to cite these data</h2>
+<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5249">IMIS metadata record</a> of this data type.</p>
+<blockquote>
+<p><em>This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</em></p>
+</blockquote>
+<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
+<blockquote>
+<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://www.lifewatch.be/en/lifewatch-data-explorer" class="uri">https://www.lifewatch.be/en/lifewatch-data-explorer</a></p>
+</blockquote>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

@@ -128,14 +128,113 @@
 
     
     
+<!-- Insert image -->
 <p><img src="https://www.lifewatch.be/code/images/lwde_mvb.png" class="rightimg"></p>
-<p>Hydrometeo data collected at stations along the Belgian coast and off-shore along the Flemish Banks. - Partners : MDK,VLIZ - Period : since 2001-09-01 - Citation: VA MDK - afdeling Kust - Meetnet Vlaamse Banken - Registration and login required for most parameters.</p>
-<p><a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=59">[IMIS metadata record]</a></p>
+<!-- Describe datatype in one or two sentences. -->
+<p>Hydrometeo data collected at stations along the Belgian coast and off-shore along the Flemish Banks.</p>
+<ul>
+<li>Partners: <a href="http://www.vliz.be/en/imis?module=institute&amp;insid=7831">Vlaamse Hydrografie (MOW)</a>, <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=36">Flanders Marine Institute (VLIZ)</a>
+</li>
+<li>Period: since September 2001</li>
+<li>Geographical coverage: <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=3293">Belgian Exclusive Economic Zone</a>
+</li>
+<li>Taxonomic coverage: Abiotic data only</li>
+<li>Moratorium: Without valid credentials you are only allowed to view the “Tide TAW” parameter for the last 30 days, grouped by day/hour. Login or <a href="https://rshiny.lifewatch.be/account?p=register">register</a> to get full access.</li>
+<li>Data quality: Unknown</li>
+</ul>
+<div id="how-to-interpret-this-dataset" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-interpret-this-dataset" class="anchor"></a>How to interpret this dataset</h2>
+<div id="query-options" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-options" class="anchor"></a>Query options</h3>
+<ul>
+<li>
+<strong>Parameters</strong>: List available parameters for Meetnet Vlaamse Banken (MVB).</li>
+<li>
+<strong>Timeframe</strong>: Starting and stopping date for the query.</li>
+<li>
+<strong>Stations</strong>: Name or code of sampling station or receiver code.</li>
+<li>
+<strong>Calculate</strong>: Calculation to perform given time grouping, one of (‘avg’, ‘max’, ‘min’, ‘none’).</li>
+<li>
+<strong>by</strong>: Time grouping for calculation, one of (‘day’,‘hour’, ‘10min’ ,‘none’).</li>
+</ul>
+</div>
+<div id="available-columns" class="section level3">
+<h3 class="hasAnchor">
+<a href="#available-columns" class="anchor"></a>Available columns</h3>
+<ul>
+<li>
+<strong>Time</strong>: Time in UTC, beginning of sample timeperiod.</li>
+<li>
+<strong>Station</strong>: Name or code of sampling station or receiver code.</li>
+<li>
+<strong>Longitude</strong>: Center longitude in decimal degrees, WGS84.</li>
+<li>
+<strong>Latitude</strong>: Center latitude in decimal degrees, WGS84.</li>
+<li>
+<strong>Tide TAW</strong>: Waterlevel in m, level TAW <sup>1</sup> measured in Ostend at the time</li>
+</ul>
+<details><p><summary>Columns available after log in</summary></p>
+<ul>
+<li><strong>1% wave height</strong></li>
+<li><strong>10 % wave height</strong></li>
+<li><strong>10% highest waves</strong></li>
+<li><strong>Air pressure</strong></li>
+<li><strong>Air temperature</strong></li>
+<li><strong>Average current direction</strong></li>
+<li><strong>Average current velocity</strong></li>
+<li><strong>Average wave period</strong></li>
+<li><strong>Average wind direction</strong></li>
+<li><strong>Average wind speed (at sensor height)</strong></li>
+<li><strong>Average wind speed at 10 m</strong></li>
+<li><strong>Average Windspeed</strong></li>
+<li><strong>Ground temperature</strong></li>
+<li><strong>Height waves with period &gt; 10 s</strong></li>
+<li><strong>High frequent wave direction</strong></li>
+<li><strong>Low frequent wave direction</strong></li>
+<li><strong>Max 1 sec gust of wind at 10 m</strong></li>
+<li><strong>Max 3 sec gust of wind (at sensor height).</strong></li>
+<li><strong>Max 3 sec wind speed at 10 m</strong></li>
+<li><strong>Max 3 sec Windgust</strong></li>
+<li><strong>Max. windspeed at 10m</strong></li>
+<li><strong>Precipitation</strong></li>
+<li><strong>Relative humidity</strong></li>
+<li><strong>Sea water temperature</strong></li>
+<li><strong>Significant wave height</strong></li>
+<li><strong>Significant wave height - bouys</strong></li>
+<li><strong>Solar radiation</strong></li>
+<li><strong>Wave height</strong></li>
+<li><strong>Wet bulb Temperature</strong></li>
+</ul></details>
+</div>
+</div>
+<div id="abstract" class="section level2">
+<h2 class="hasAnchor">
+<a href="#abstract" class="anchor"></a>Abstract</h2>
+<p>The Monitoring Network Flemish Banks (Meetnet Vlaamse Banken) was set up for the acquisition of real-time oceanographic and meteorological data along the Belgian coast and on the Belgian continental shelf. It is a sensor network measuring waves, tidal height, current and water temperature; meteorological parameters are wind, air pressure, air temperature and rainfall. Data for use in academic research can be obtainded after registering to the MVB system . Data for commercial use or other should be requested <a href="mailto:kust@vlaanderen.be" class="email">kust@vlaanderen.be</a>.</p>
+</div>
+<div id="how-to-cite-these-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-cite-these-data" class="anchor"></a>How to cite these data</h2>
+<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=59">IMIS metadata record</a> of this data type.</p>
+<blockquote>
+<p><em>This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</em></p>
+</blockquote>
+<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
+<blockquote>
+<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://www.lifewatch.be/en/lifewatch-data-explorer" class="uri">https://www.lifewatch.be/en/lifewatch-data-explorer</a></p>
+</blockquote>
+<p> <small><sup>1</sup> TAW (from Dutch: <em>Tweede Algemeene Waterpassing</em>) is a term used only in Belgium; it is a horizontal water level reference level. Source: <a href="https://www.proz.com/kudoz/dutch-to-english/ships-sailing-maritime/2504584-tweede-algemeene-waterpassing.html">proz.com</a></small></p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
