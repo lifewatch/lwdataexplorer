@@ -11,7 +11,7 @@ Access to [LifeWatch Belgium](lifewatch.be/) data hosted by the
 [Flanders Marine Institute (VLIZ)](https://www.vliz.be/) in
 [R](https://www.r-project.org/).
 
-See the package website: https://lifewatch.github.io/lwdataexplorer/
+See the package website: <https://lifewatch.github.io/lwdataexplorer/>
 
 ## Installation
 
@@ -55,26 +55,27 @@ df <- getBuoyData("2021-03-19", "2021-04-21", "All")
 #> Data dimension: (2384 x 23)
 
 as_tibble(df)
-#> # A tibble: 2,384 x 23
-#>    STATION TIME  LATITUDE LONGITUDE `AIR TEMPERATUR~ `ATMPRESS (MBAR~
-#>    <chr>   <chr>    <dbl>     <dbl>            <dbl>            <dbl>
-#>  1 Buoy i~ 2021~     51.2      2.95             6.35            1022.
-#>  2 Ostend~ 2021~     51.2      2.92             6.10              NA 
-#>  3 Spuiko~ 2021~     51.2      2.94            NA                 NA 
-#>  4 Spuiko~ 2021~     51.2      2.94            NA                 NA 
-#>  5 Buoy i~ 2021~     51.2      2.95             5.66            1023.
-#>  6 Ostend~ 2021~     51.2      2.92             5.56              NA 
-#>  7 Buoy i~ 2021~     51.2      2.95             5.40            1024.
-#>  8 Ostend~ 2021~     51.2      2.92             5.25              NA 
-#>  9 Spuiko~ 2021~     51.2      2.94            NA                 NA 
-#> 10 Spuiko~ 2021~     51.2      2.94            NA                 NA 
-#> # ... with 2,374 more rows, and 17 more variables: `AVG WIND DIRECTION
-#> #   (DEG)` <dbl>, `AVG WIND SPEED (M/S)` <dbl>, `RELHUMIDITY (%)` <dbl>,
-#> #   `SOLARENERGY (W/M²)` <dbl>, `VOLTAGE (V)` <dbl>, `ATMPRESS(MBAR)` <dbl>,
-#> #   `RELHUMIDITY(%)` <dbl>, `LEVEL HARBOUR (MTAW) 1MIN` <dbl>, `LEVEL HARBOUR
-#> #   (MTAW)` <dbl>, `LEVEL SPUIKOM (MTAW)` <dbl>, `RAIN15 (MM)` <dbl>, `NO3
-#> #   (PPB)` <dbl>, `SIO2 (PPB)` <dbl>, `RAIN (MM)` <dbl>, `DO (MG/L)` <int>,
-#> #   `SALINITY (PSU)` <int>, `WATER TEMPERATURE (°C)` <int>
+#> # A tibble: 2,384 × 23
+#>    STATION      TIME       LATITUDE LONGITUDE `AIR TEMPERATURE… `ATMPRESS (MBAR…
+#>    <chr>        <chr>         <dbl>     <dbl>             <dbl>            <dbl>
+#>  1 Buoy in Spu… 2021-03-1…     51.2      2.95              6.35            1022.
+#>  2 Ostend Rese… 2021-03-1…     51.2      2.92              6.10              NA 
+#>  3 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA 
+#>  4 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA 
+#>  5 Buoy in Spu… 2021-03-1…     51.2      2.95              5.66            1023.
+#>  6 Ostend Rese… 2021-03-1…     51.2      2.92              5.56              NA 
+#>  7 Buoy in Spu… 2021-03-1…     51.2      2.95              5.40            1024.
+#>  8 Ostend Rese… 2021-03-1…     51.2      2.92              5.25              NA 
+#>  9 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA 
+#> 10 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA 
+#> # … with 2,374 more rows, and 17 more variables:
+#> #   AVG WIND DIRECTION (DEG) <dbl>, AVG WIND SPEED (M/S) <dbl>,
+#> #   RELHUMIDITY (%) <dbl>, SOLARENERGY (W/M²) <dbl>, VOLTAGE (V) <dbl>,
+#> #   ATMPRESS(MBAR) <dbl>, RELHUMIDITY(%) <dbl>,
+#> #   LEVEL HARBOUR (MTAW) 1MIN <dbl>, LEVEL HARBOUR (MTAW) <dbl>,
+#> #   LEVEL SPUIKOM (MTAW) <dbl>, RAIN15 (MM) <dbl>, NO3 (PPB) <dbl>,
+#> #   SIO2 (PPB) <dbl>, RAIN (MM) <dbl>, DO (MG/L) <int>, SALINITY (PSU) <int>,
+#> #   WATER TEMPERATURE (°C) <int>
 ```
 
 Note that the functions naming includes always the `get` word, followed
@@ -91,10 +92,10 @@ ls("package:lwdataexplorer")
 
 ### Query parameters
 
-To find more information about the query parameters you have to supply
-you can check the help page of each function which include some basic
-examples. For example, to see the help page of the function to retrieve
-data from the European Tracking Network (ETN):
+To find more information about the query parameters you can check the
+help page of each function which include some basic examples. For
+example, to see the help page of the function that retrieves data from
+the European Tracking Network (ETN):
 
 ``` r
 # Open the help page and go over the examples
@@ -132,7 +133,7 @@ mvb <- getMvbData("2020-01-01", "2020-12-31", parameters = 'All',
 #> ---------------------------------------------
 #> Server query:
 #> ---------------------------------------------
-#> daterange : c("2021-06-01", "2020-12-31")
+#> daterange : c("2021-07-26", "2020-12-31")
 #> type : MVB data
 #> stations : All
 #> calc : none
@@ -164,7 +165,7 @@ names(mvb)
 # Get query parameters as a list
 mvb$par
 #> $daterange
-#> [1] "2021-06-01" "2020-12-31"
+#> [1] "2021-07-26" "2020-12-31"
 #> 
 #> $type
 #> [1] "MVB data"
@@ -197,20 +198,20 @@ etn <- lwdata('listETNprojects')
 #> No encoding supplied: defaulting to UTF-8.
 
 as_tibble(etn)
-#> # A tibble: 159 x 2
+#> # A tibble: 169 × 2
 #>    name                     type   
 #>    <chr>                    <chr>  
 #>  1 2004_Gudena              network
 #>  2 2011_Loire               network
 #>  3 2011_Warnow              network
 #>  4 2013_Foyle               network
-#>  5 2014_Nene                network
-#>  6 2015_PhD_Gutmann_Roberts network
-#>  7 2016_Diaccia_Botrona     network
-#>  8 2017_Fremur              network
-#>  9 2019_Grotenete           network
-#> 10 2020_PhD_Winter          network
-#> # ... with 149 more rows
+#>  5 2013_Maas                network
+#>  6 2014_Nene                network
+#>  7 2015_PhD_Gutmann_Roberts network
+#>  8 2016_Diaccia_Botrona     network
+#>  9 2017_Fremur              network
+#> 10 2019_Grotenete           network
+#> # … with 159 more rows
 ```
 
 ## More information

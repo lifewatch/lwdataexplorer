@@ -59,7 +59,7 @@ ls("package:lwdataexplorer")
 
 ### Query parameters
 
-To find more information about the query parameters you have to supply you can check the help page of each function which include some basic examples. For example, to see the help page of the function to retrieve data from the European Tracking Network (ETN):
+To find more information about the query parameters you can check the help page of each function which include some basic examples. For example, to see the help page of the function that retrieves data from the European Tracking Network (ETN):
 
 ```{r help, eval = FALSE}
 # Open the help page and go over the examples
