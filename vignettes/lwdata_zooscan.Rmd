@@ -10,7 +10,9 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
@@ -22,10 +24,10 @@ Biodiversity data on zooplankton in the Belgian part of the North Sea.
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36).
 - Period: since July 2012.
-- Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293).
+- Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293), [Southern Bight of the North Sea](https://marineregions.org/gazetteer.php?p=details&id=2399), [English Channel](https://marineregions.org/gazetteer.php?p=details&id=2389) and [Dutch Exclusive Economic Zone](https://marineregions.org/gazetteer.php?p=details&id=5668).
 - Taxonomic coverage: Zooplankton.
 - Moratorium: None.
-- Data quality: Unknown.
+- Data quality: Research-grade.
  
 ## How to interpret this dataset
  
@@ -42,40 +44,28 @@ Biodiversity data on zooplankton in the Belgian part of the North Sea.
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Taxon**: Taxonomic group of organisms or group of artefacts.
 * **Count**: The exact number of specimens counted.
-* **VolumeC**: A proxy to calculate densities of zooplankton; VolumeC is an exact depth at that sampling point, as measured by the UnderWaySystem of the research vessel.
-* **VolumeE**: .
-* **VolumeM**: A proxy to calculate densities of zooplankton.
+* **VolumeC**: A proxy to calculate densities of zooplankton; VolumeC is an exact depth in meters at that sampling point, as measured by the Underway system of the research vessel.
+* **VolumeE**: Standard depth in meters of the station being sampled.
+* **VolumeM**: A proxy to calculate densities of zooplankton. Units are m<sup>3</sup>. 
 * **Density**: Calculated densities of zooplankton expressed in specimens/m<sup>3</sup>, by using the count, fraction, volumeM or volumeC.
 
 ## Abstract
 
-```{r abstract, results = 'asis', echo = FALSE}
-# Get the abstract and/or description from IMIS and print here
-library(jsonlite)
+In the framework of the LifeWatch marine  observatory a number of fixed stations on the Belgian Part of the North  Sea (BPNS) are visited on a monthly or seasonal basis using the RV Simon Stevin. A grid of nine stations covers the coastal zone and are sampled monthly. Eight additional stations, located further at sea, are sampled on a seasonal basis. In addition, samples collected during the  Jerico-LifeWatch spring campaigns from the Southern Bight of the North Sea are made available via the explorer. 
 
-dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=4687&show=json")
+This dataset contains  zooplankton observations in the Belgian Part of the North Sea (BPNS)  since 2012, and from the Southern Bight since 2018.  
 
-abstract <- dasid[["datasetrec"]][["EngAbstract"]]
-description <- dasid[["datasetrec"]][["EngDescr"]]
+Zooplankton is  sampled by vertical WP2 net tows, samples scanned with ZooScanner and  identification with plankton analyzer software, followed by manual validation.
 
-if (is.null(abstract) & is.null(description)){
-  
-} else if(is.null(abstract) & !is.null(description)){
-  out <- description
-} else if(!is.null(abstract) & is.null(description)){
-  out <- abstract
-} else if(!is.null(abstract) & !is.null(description)){
-  out <- paste0(abstract, "</br>", description)
-}
-
-cat(out)
-```
+The full methodology is described in a datapaper:  Mortelmans, J.; Goossens, J.; Amadei Martínez, L.; Deneudt, K.;  Cattrijsse, A.; Hernandez, F. (2019). LifeWatch observatory date:  zooplankton observations in the Belgian part of the North Sea.  Geoscience Data Journal: 1-9. [https://hdl.handle.net/10.1002/gdj3.68](https://hdl.handle.net/10.1002/gdj3.68).
 
 ## How to cite these data
 
 When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=4687) of this data type.
 
 > _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+
+In addition, a fixed dataset is available via: “Flanders Marine Institute (VLIZ), Belgium (2021): LifeWatch observatory data: zooplankton observations in the Belgian Part of the North Sea. [https://doi.org/10.14284/445](https://doi.org/10.14284/445)
 
 </br>
 If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 

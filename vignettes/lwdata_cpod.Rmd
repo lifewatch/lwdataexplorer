@@ -10,7 +10,9 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
@@ -24,9 +26,9 @@ Permanent Cetacean passive acoustic sensor network in the Belgian part of the No
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36), [Royal Belgian Institute of Natural Sciences (RBINS)](https://www.vliz.be/en/imis?module=institute&insid=1883)
 - Period: since January 2016
 - Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
-- Taxonomic coverage: Habour porpoises (_[Phocoena phocoena](https://www.marinespecies.org/aphia.php?p=taxdetails&id=137117)_)
+- Taxonomic coverage: Habour porpoises (_[Phocoena phocoena](https://www.marinespecies.org/aphia.php?p=taxdetails&id=137117)_), other cetaceans, abiotic (ships sonar)
 - Moratorium: None
-- Data quality: Unknown
+- Data quality: Research-grade
  
 ## How to interpret this dataset
  
@@ -34,28 +36,28 @@ Permanent Cetacean passive acoustic sensor network in the Belgian part of the No
 * **Processing**: Type of data: one of Raw or Validated
 * **Timeframe**: Starting and stopping date for the query.
 * **Quality**:  Level of processing: default Hi+Mod.
-* **Sample period**: Counts aggregated. One of 1 week, 1 day or 60 min.
+* **Sample period**: Counts aggregated. One of 1 week, 1 day or 60 min. Also per minute when choosing Processing = Raw.
  
 ### Available columns
-* **deployment_fk**: 
-* **Time**: Time in UTC, beginning of sample timeperiod.
-* **Species**: NBHF = Harbour porpoises (Phocoena phocoena).
-* **Milliseconds**: Duration of click trains.
+* **deployment_fk**: Link to the deployment metadata in the European Tracking Network database
+* **Time**: Time in UTC, beginning of sample time bin.
+* **Species**: NBHF = Harbour porpoises (Phocoena phocoena); other cet = other cetaceans; Sonar = sonar 
+* **Milliseconds**: Duration of click trains in the specified time bin.
 * **Number_clicks_filtered**: recognized clicks of a species.
 * **Number_clicks_total**: total number of recorded clicks.
-* **Lost_minutes**: .
+* **Lost_minutes**: Minutes in which the number of clicks was larger than 4096.
 * **Recorded**: Minutes recording.
-* **Dpm**: Detection positive minutes, or a mammal was detected in that minute.
-* **Dph**: Detection positive hours, or a mammal was detected in that hour.
-* **Dpd**: Detection positive days, or a mammal was detected that day.
-* **Dpw**: Detection positive weeks, or a mammal was detected that day.
-* **Quality**: .
-* **Projectname**: .
+* **Dpm**: Detection positive minutes, or a mammal was detected in that minute. A click train of the selected species was recorded in that minute.
+* **Dph**: Detection positive hours, or a mammal was detected in that hour. A click train of the selected species was recorded in that hour.
+* **Dpd**: Detection positive days, or a mammal was detected that day. A click train of the selected species was recorded in that day.
+* **Dpw**: Detection positive weeks, or a mammal was detected that day. A click train of the selected species was recorded in that week.
+* **Quality**: RAW: 3=high; 2= mod; 1=low; Hi+mod=3; Hi+mod+low =3; Validated = hi+mod = 4.
+* **Projectname**: Name of the project.
 * **Station**: name or code of sampling station or receiver code.
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Longitude**: Center longitude in decimal degrees, WGS84.
-* **Mooring_type**: .
-* **Receiver**: .
+* **Mooring_type**: Surface-buoy or bottom-mooring.
+* **Receiver**: Receiver: serial number of C-POD.
 
 ## Abstract
 
