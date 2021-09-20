@@ -35,7 +35,7 @@ Biodiversity data on zooplankton in the Belgian part of the North Sea.
 * **Timeframe**: Starting and stopping date for the query.
  
 ### Available columns
-* **Tripaction**: .
+* **Tripaction**: Unique identifier to recognize actions taken aboard the RV Simon Stevin.
 * **Fraction**: Indicates the fraction of a scanned sample.
 * **Time**: Time in UTC, beginning of sample timeperiod.
 * **Station**: Name or code of sampling station or receiver code.
@@ -44,9 +44,9 @@ Biodiversity data on zooplankton in the Belgian part of the North Sea.
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Taxon**: Taxonomic group of organisms or group of artefacts.
 * **Count**: The exact number of specimens counted.
-* **VolumeC**: A proxy to calculate densities of zooplankton; VolumeC is an exact depth in meters at that sampling point, as measured by the Underway system of the research vessel.
-* **VolumeE**: Standard depth in meters of the station being sampled.
-* **VolumeM**: A proxy to calculate densities of zooplankton. Units are m<sup>3</sup>. 
+* **VolumeC**: A proxy to calculate densities of zooplankton; VolumeC is an exact depth at that sampling point, as measured by the UnderWaySystem of the research vessel (expressed in meter). This value is used to calculate the volume of water sampled.
+* **VolumeE**: Standard depth of the station being sampled (expressed in meter). This value is used to calculate the volume of water sampled.
+* **VolumeM**: A proxy to calculate densities of zooplankton; VolumeM is an exact measurement of the amount of filtered water (no unit), as measured by a Flowmeter attached to the sampling equipment. This value is used to calculate the volume of water sampled.
 * **Density**: Calculated densities of zooplankton expressed in specimens/m<sup>3</sup>, by using the count, fraction, volumeM or volumeC.
 
 ## Abstract
