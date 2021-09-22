@@ -37,17 +37,71 @@ Aquatic animal tracking data from the [European Tracking Network](https://lifewa
 * **Timeframe**: Starting and stopping date for the query.
 
 ### Available columns
-* **Counts** : Total GPS fixes or detections
+* **Counts**: Total GPS fixes or detections
 * **Scientific_name**: The latin name of the species
-* **Project** : Project in charge of receiver deployments
-* **Network** : The network of receiver or antenna deployments.
-* **Time**: Time in UTC, beginning of sample timeperiod!
+* **Project**: Project in charge of receiver deployments
+* **Network**: The network of receiver or antenna deployments.
+* **Time**: Time in UTC, beginning of sample timeperiod.
 * **Longitude**: Center longitude in decimal degrees, WGS84
 * **Latitude**: Center latitude in decimal degrees, WGS84
 * **Station**: Name or code of sampling station or receiver code
 * **Receiver**: 
 * **Code**: Code of device on / in individual
 * **Moratorium**: Some data fields are masked, pending official data publication. eg Species name 
+* **Duration**:  
+* **Remaining**:  
+* **Expiry_date**:   
+* **Location_name**: 
+* **Residency**:      
+* **Absence**:        
+* **Species**:   
+* **Endperiod**:     
+
+<details>
+  <summary>Click to see all the columns of "Detections" </summary>
+  
+* **Transmitter**:               
+* **Transmitter_name**:          
+* **Transmitter_serial**:       
+* **Sensor_value**:              
+* **Sensor_unit**:              
+* **Sensor2_value**:             
+* **Sensor2_unit**:              
+* **Station_name**:              
+* **Datetime**:                  
+* **Id_pk**:                     
+* **Qc_flag**:                  
+* **File**:                      
+* **Deployment_fk**:             
+* **Scientific_name**:           
+* **Location_name**:            
+* **Deployment_station_name**:   
+* **Deploy_date_time**:          
+* **Deployment_type**:           
+* **Animal_project_name**:       
+* **Animal_project_code**:       
+* **Animal_moratorium**:        
+* **Network_project_name**:      
+* **Network_project_code**:      
+* **Network_moratorium**:        
+* **Signal_to_noise_ratio**:     
+* **Detection_file_id**:         
+* **Tag_sensor_type**:          
+* **Tag_intercept**:             
+* **Tag_slope**:                 
+* **Sensor_value_depth_meters**: 
+* **Tag_owner_organization**:    
+* **Animal_id_pk**:              
+* **Animal_common_name**:       
+* **Animal_sex**:                
+* **Deployment_lat**:            
+* **Deployment_long**:           
+* **Sensor_value_acceleration**: 
+* **Sensor_value_temperature**:  
+* **Tag_fk**:                   
+* **Animal_id**:
+
+</details>
 
 ## Abstract
 
