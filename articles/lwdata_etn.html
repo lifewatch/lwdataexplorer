@@ -136,7 +136,7 @@
 <li>Partners: ETN members</li>
 <li>Period: since January 2003</li>
 <li>Geographical coverage: Europe</li>
-<li>Taxonomic coverage: <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=127159">Solea senegalensis</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=126281">Anguilla anguilla</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=127053">Diplodus sargus</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=107703">Palinurus elephas</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=141444">Sepia officinalis</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=126436">Gadus morhua</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=127064">Sarpa salpa</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=101172">Lampetra fluviatilis</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=127187">Salmo trutta</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=127188">Salvelinus alpinus</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=127186">Salmo salar</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=154333">Rutilus rutilus</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=101174">Petromyzon marinus</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=107253">Homarus gammarus</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=154677">Silurus glanis</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=282855">Squalius cephalus</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=126965">Labrus bergylta</a></em>, <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=127141">Platichthys flesus</a></em> and <em><a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=154582">Cyprinus carpio</a></em>
+<li>Taxonomic coverage: <a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=11676">Pisces</a>
 </li>
 <li>Moratorium: Some project data is under moratorium. Login or <a href="https://rshiny.lifewatch.be/account?p=register">register</a> to get full access</li>
 <li>Data quality: Unknown</li>
@@ -153,7 +153,7 @@
 <li>
 <strong>Network</strong>: The network of receiver or antenna deployments.</li>
 <li>
-<strong>Project</strong>: Project in charge of receiver deployments</li>
+<strong>Project</strong>: Animal project linked to the tag deployments.</li>
 <li>
 <strong>Sample period</strong>: Counts aggregated. One of 1 week, 1 day, 60 min, 10 min or 1 min.</li>
 <li>
@@ -181,7 +181,7 @@
 <li>
 <strong>Station</strong>: Name or code of sampling station or receiver code</li>
 <li>
-<strong>Receiver</strong>:</li>
+<strong>Receiver</strong>: Receiver name, composed of ‘Model number’-‘Serial number’.</li>
 <li>
 <strong>Code</strong>: Code of device on / in individual</li>
 <li>
@@ -221,10 +221,10 @@
 <strong>Transmitter_serial</strong>:<br>
 </li>
 <li>
-<strong>Sensor_value</strong>:<br>
+<strong>Sensor_value</strong>: Value recorded by the tag sensor.<br>
 </li>
 <li>
-<strong>Sensor_unit</strong>:<br>
+<strong>Sensor_unit</strong>: Unit of measured sensor value.<br>
 </li>
 <li>
 <strong>Sensor2_value</strong>:<br>
@@ -233,58 +233,58 @@
 <strong>Sensor2_unit</strong>:<br>
 </li>
 <li>
-<strong>Station_name</strong>:<br>
+<strong>Station_name</strong>: Name of the station where the deployment of the receiver takes place. Related to a specific latitude and longitude.<br>
 </li>
 <li>
-<strong>Datetime</strong>:<br>
+<strong>Datetime</strong>: Date and time at which the tagged animal was detected at the receiver. Information from detection file.<br>
 </li>
 <li>
-<strong>Id_pk</strong>:<br>
+<strong>Id_pk</strong>: Technical identifier of the detection record in the database.<br>
 </li>
 <li>
-<strong>Qc_flag</strong>:<br>
+<strong>Qc_flag</strong>: Identifies whether there are quality check issues for the given detection.<br>
 </li>
 <li>
-<strong>File</strong>:<br>
+<strong>File</strong>: Name of the detection file.<br>
 </li>
 <li>
-<strong>Deployment_fk</strong>:<br>
+<strong>Deployment_fk</strong>: Foreign key linked to the deployment information.<br>
 </li>
 <li>
-<strong>Scientific_name</strong>:<br>
+<strong>Scientific_name</strong>: Scientific name of the animal that carries the tag.<br>
 </li>
 <li>
-<strong>Location_name</strong>:<br>
+<strong>Location_name</strong>: Name of detection location.<br>
 </li>
 <li>
 <strong>Deployment_station_name</strong>:<br>
 </li>
 <li>
-<strong>Deploy_date_time</strong>:<br>
+<strong>Deploy_date_time</strong>: Date and time that the equipment was deployed, in 24-hour UTC. Corresponds to the time of the captured waypoint. Datetime fields should follow the ISO-8601 format (e.g. 2017-01-01T12:07:23Z)<br>
 </li>
 <li>
 <strong>Deployment_type</strong>:<br>
 </li>
 <li>
-<strong>Animal_project_name</strong>:<br>
+<strong>Animal_project_name</strong>: Name of the animal project linked to this detection.<br>
 </li>
 <li>
-<strong>Animal_project_code</strong>:<br>
+<strong>Animal_project_code</strong>: Code of the animal project linked to this detection.<br>
 </li>
 <li>
 <strong>Animal_moratorium</strong>:<br>
 </li>
 <li>
-<strong>Network_project_name</strong>:<br>
+<strong>Network_project_name</strong>: Name of the network project linked to this detection.<br>
 </li>
 <li>
-<strong>Network_project_code</strong>:<br>
+<strong>Network_project_code</strong>: Code of the network project linked to this detection.<br>
 </li>
 <li>
 <strong>Network_moratorium</strong>:<br>
 </li>
 <li>
-<strong>Signal_to_noise_ratio</strong>:<br>
+<strong>Signal_to_noise_ratio</strong>: Signal-to-noise ratio. This is the difference between the background noise level and the signal level. Info comes from detection file.<br>
 </li>
 <li>
 <strong>Detection_file_id</strong>:<br>
@@ -304,7 +304,7 @@
 <strong>Tag_owner_organization</strong>:<br>
 </li>
 <li>
-<strong>Animal_id_pk</strong>:<br>
+<strong>Animal_id_pk</strong>: Technical identifier of the animal record in the database.<br>
 </li>
 <li>
 <strong>Animal_common_name</strong>:<br>
@@ -319,27 +319,26 @@
 <strong>Deployment_long</strong>:<br>
 </li>
 <li>
-<strong>Sensor_value_acceleration</strong>:</li>
+<strong>Sensor_value_acceleration</strong>: Value recorded by the acceleration sensor.</li>
 <li>
-<strong>Sensor_value_temperature</strong>:<br>
+<strong>Sensor_value_temperature</strong>: Value recorded by the temperature sensor.</li>
+<li>
+<strong>Tag_fk</strong>: Foreign key linked to the tag.<br>
 </li>
 <li>
-<strong>Tag_fk</strong>:<br>
-</li>
-<li>
-<strong>Animal_id</strong>:</li>
+<strong>Animal_id</strong>: Foreign Key linked to the Animal_ID.</li>
 </ul></details>
 </div>
 </div>
 <div id="abstract" class="section level2">
 <h2 class="hasAnchor">
 <a href="#abstract" class="anchor"></a>Abstract</h2>
-<p>As part of the Belgian LifeWatch observatory, a permanent acoustic receiver network for fish tracking is established in the Belgian Part of the North Sea and the Western Scheldt. Using acoustic telemetry distribution, movements and habitat use of tagged migratory fish can be tracked. Tags or transmitters are surgically implanted in the belly of individual fish. When swimming in the vicinity of an acoustic receiver (Vemco), the information of the unique ID-code of the transmitter is stored on the receiver together with an exact timing of the event. When signals are simultaneously received by multiple receivers, an exact positioning of the tagged individuals can be derived from the raw data. In total 40 transmitters are implanted and 51 acoustic receivers are installed on buoys and other platforms.In the framework of LifeWatch the permanent acoustic receiver network will be maintained as a research infrastructure that allows studies on migration patterns of several migratory fish species. For marine, coastal and estuarine systems, Atlantic cod (<i>Gadus morhua</i> Linnaeus, 1758), will be the model species, while in Belgian rivers European eel (<i>Anguilla anguilla</i> (Linnaeus, 1758)) is representative for catadromous downstream migration. In a later phase, other species, such as European sea bass (<i>Dicentrarchus labrax </i>(Linnaeus, 1758)), twaite shad (<i>Alosa fallax </i>(Lacepède, 1803)), river lamprey (<i>Lampetra fluviatilis</i> (Linnaeus, 1758)) and sea trout (<i>Salmo trutta</i> Linnaeus, 1758) can be investigated.</p>
+<p>The etn data explorer provides a set of functions to access the aquatic animal tracking data and metadata linked to the European Tracking Network (ETN). As the access to data is linked to specific user profiles, keep in mind that the results can be different for other users and login is needed to access data under moratorium.</p>
 </div>
 <div id="how-to-cite-these-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-cite-these-data" class="anchor"></a>How to cite these data</h2>
-<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5531">IMIS metadata record</a> of this data type.</p>
+<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5912">IMIS metadata record</a> of this data type.</p>
 <blockquote>
 <p><em>This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</em></p>
 </blockquote>
