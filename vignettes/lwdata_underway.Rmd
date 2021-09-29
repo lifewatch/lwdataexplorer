@@ -10,7 +10,9 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
@@ -38,20 +40,19 @@ Data collected by the MIDAS underway continuous sampling system on the RV Zeelee
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Longitude**: Center longitude in decimal degrees, WGS84.
 * **Temperature**: Temperature of the water body, expressed in degrees Celcius.
-* **Salinity**: Salinity in PSU.
+* **Salinity**: Salinity of the water body, expressed in PSU.
 * **Conductivity**: Conducitivity of the water body, expressed in ms/cm.
 * **Depth**: Bottom depth to surface from echosounder 200Hz in m.
-* **ChlorophylA**: Based on fluoresence in µg/L.
-* **SpeedMadeGood**: .
-* **Speedlog**: .
+* **ChlorophylA**: Concentration of Chlorophyll A, based on fluoresence, expressed in µg/L.
+* **SpeedMadeGood**: Corrected speed of the research vessel, measured in knots.
+* **Speedlog**: Speed of the research vessel, measured in knots.
 * **TrueWindDir**: Direction of the wind in deg.
 * **TrueWindSpeed**: Speed of the wind in m/s.
-* **CourseMadeGood**: .
+* **CourseMadeGood**: Corrected course of the research vessel, measured in degree.
 * **Gyro**: .
 * **AirTemperature**: Temperature of air, expressed in degrees Celcius.
 * **AirPressure**: Atmospheric pressure in mBar.
-* **AirHumidity**: Relative humidity in %.
-
+* **AirHumidity**: Relative humidity of the air, expressed in %.
 
 ## Abstract
 
@@ -76,7 +77,6 @@ if (is.null(abstract) & is.null(description)){
 
 cat(out)
 ```
-
 
 
 ## How to cite these data

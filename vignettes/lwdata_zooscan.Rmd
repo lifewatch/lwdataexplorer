@@ -65,7 +65,10 @@ When using this tool, please acknowledge the LifeWatch Data Explorer in your wor
 
 > _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
 
-In addition, a fixed dataset is available via: “Flanders Marine Institute (VLIZ), Belgium (2021): LifeWatch observatory data: zooplankton observations in the Belgian Part of the North Sea. [https://doi.org/10.14284/445](https://doi.org/10.14284/445)
+</br>
+In addition, a fixed dataset is available via: 
+
+> Flanders Marine Institute (VLIZ), Belgium (2021): LifeWatch observatory data: zooplankton observations in the Belgian Part of the North Sea. [https://doi.org/10.14284/445](https://doi.org/10.14284/445)
 
 </br>
 If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
