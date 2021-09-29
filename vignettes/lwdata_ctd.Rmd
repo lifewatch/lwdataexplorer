@@ -10,7 +10,9 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
 # <img src='41597_2019_32_Fig1_HTML.png' width='40%' height='40%' align='right' />
 ```
@@ -19,37 +21,45 @@ knitr::opts_chunk$set(
 <img src='https://rshiny.lifewatch.be/ctd-data/41597_2019_32_Fig1_HTML.png' class='rightimg'/>
 
 <!--- Describe datatype in one or two sentences. -->
-Data on pigments, nutrients, turbidity, suspended matter and CTD profiles from VLIZ sampling campaigns in the Belgian Part of the North Sea.
+Data on CTD-profile data from LifeWatch sampling campaigns in the Belgian part of the North Sea.
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36)
 - Period: since April 2001
 - Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
 - Taxonomic coverage: Abiotic data only
 - Moratorium: None
-- Data quality: Unknown
+- Data quality: Proof-of-concept
  
 ## How to interpret this dataset
  
 ### Query options
 * **Timeframe**: Starting and stopping date for the query.
 * **Stations**:  Name or code of sampling station or receiver code.
-* **Bins**: .
+* **Bins**: Number of measurements in a certain depth bin.
  
 ### Available columns
 * **Station**: Name or code of sampling station or receiver code.
-* **CastId**: .
+* **CastId**: Unique identifier to specify a single CTD-cast.
 * **Depth**: Bottom depth to surface from echosounder 200Hz in m.
-* **Status**: .
+* **Status**: An identifier to specify whether a specific measurement was taken in the up-cast, the down-cast, near the bottom, or during the calibration-phase at the surface.
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Longitude**: Center longitude in decimal degrees, WGS84.
 * **Time**: Time in UTC, beginning of sample timeperiod.
+* **Obs3+**: .
+* **AltM**: .
+* **Par**: .
+* **FIECO-AFL**: .
+* **Oxigenvoltage**: .
+* **Sbeox0Mg/L**: .
+* **Sbeox0PS**: .
+* **PrdM**: .
 * **Temperature**: Temperature of air or the water body, expressed in degrees Celcius.
 * **C0uS/cm**: Conducitivity of the water body, expressed in ms/cm.
-* **Salinity**: Salinity in PSU.
+* **Salinity**: Salinity of the water body, expressed in PSU.
 * **Soundspeed**: The velocity of sound through the water body, expressed in m/s.
 * **Density**: Calculated densities of zooplankton expressed in specimens/m³, by using the count, fraction, volumeM or volumeC.
-* **DescSpeed**: .
-* **Flag**: .
+* **DescSpeed**: The speed by which the CTD-carroussel was winched through the water column, expressed in m/s.
+* **Flag**: A quality flag associated with a certain measurement.
 
 
 ## Abstract
