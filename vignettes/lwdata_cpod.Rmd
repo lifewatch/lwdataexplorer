@@ -92,7 +92,7 @@ When using this tool, please acknowledge the LifeWatch Data Explorer in your wor
 </br>
 If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
 
-> ```{r citation, results = 'asis', echo = FALSE}
+```{r citation, results = 'asis', echo = FALSE}
 try(cat(citation("lwdataexplorer")$textVersion), TRUE)
 ```
 
