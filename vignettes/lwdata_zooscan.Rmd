@@ -73,6 +73,6 @@ In addition, a fixed dataset is available via:
 </br>
 If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
 
-> ```{r citation, results = 'asis', echo = FALSE}
-cat(citation("lwdataexplorer")$textVersion)
+```{r citation, results = 'asis', echo = FALSE}
+cat(paste0("> ", citation("lwdataexplorer")$textVersion))
 ```
