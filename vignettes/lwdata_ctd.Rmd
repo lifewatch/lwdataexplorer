@@ -45,14 +45,14 @@ Data on CTD-profile data from LifeWatch sampling campaigns in the Belgian part o
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Longitude**: Center longitude in decimal degrees, WGS84.
 * **Time**: Time in UTC, beginning of sample timeperiod.
-* **Obs3+**: .
-* **AltM**: .
-* **Par**: .
-* **FIECO-AFL**: .
-* **Oxigenvoltage**: .
-* **Sbeox0Mg/L**: .
-* **Sbeox0PS**: .
-* **PrdM**: .
+* **Obs3+**: Turbidity measured by the CTD (expressed in NTU)
+* **AltM**: Altimetry measured by the CTD (expressed in m).
+* **Par**: Photosynthetic Active Radiation.
+* **FIECO-AFL**: Fluorescence measured by the CTD (expressed in mg/m<sup>3</sup>).
+* **Oxigenvoltage**: Oxygen measured by the CTD (expressed in V).
+* **Sbeox0Mg/L**: Oxygen measured by CTD (expressed in mg/L).
+* **Sbeox0PS**: Oxygen percentage measured by CTD.
+* **PrdM**: Pressure measured by the CTD (expressed in db).
 * **Temperature**: Temperature of air or the water body, expressed in degrees Celcius.
 * **C0uS/cm**: Conducitivity of the water body, expressed in ms/cm.
 * **Salinity**: Salinity of the water body, expressed in PSU.
