@@ -34,7 +34,7 @@ Marine Biobank library data from the Belgian part of the North Sea.
 * **Time**: Time in UTC, beginning of sample timeperiod.
 * **Group**: Taxonomic group of organisms or group of artefacts.
 * **Id**: .
-* **TripActionId**: .
+* **TripActionId**: Unique identifier to recognize actions taken aboard the RV Simon Stevin..
 * **Station**: Name or code of sampling station or receiver code.
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Longitude**: Center longitude in decimal degrees, WGS84.

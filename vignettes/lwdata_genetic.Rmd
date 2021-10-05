@@ -36,7 +36,7 @@ Genomic observations in the Belgian Part of the North Sea.
 
 * **Project**: Project in charge of receiver deployments.
 * **Station**: Name or code of sampling station or receiver code.
-* **TripAction**:	.
+* **TripAction**:	Unique identifier to recognize actions taken aboard the RV Simon Stevin.
 * **ActionType**: The type of sampling equipment.
 * **OTUId**: .
 * **Sequences**: .
