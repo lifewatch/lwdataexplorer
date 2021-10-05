@@ -10,7 +10,9 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
@@ -23,9 +25,9 @@ Biodiversity data on microplankton in the Belgian part of the North Sea
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36)
 - Period: since May 2017
 - Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
-- Taxonomic coverage: Microplankton, being a substantial part of phytoplankton. Detritus. Fibers.
+- Taxonomic coverage: Microplankton, being a substantial part of phytoplankton. Find the complete list in [this sheet](https://lifewatch.be/sites/lifewatch.be/files/public/metadata_taxonomy.pdf)
 - Moratorium: None
-- Data quality: Unknown
+- Data quality: Calibrated/Validated
  
 ## How to interpret this dataset
  
@@ -33,19 +35,19 @@ Biodiversity data on microplankton in the Belgian part of the North Sea
 * **Timeframe**: Starting and stopping date for the query.
  
 ### Available columns
-* **Tripaction**:
+* **Tripaction**: Unique identifier to recognize actions taken aboard the RV Simon Stevin.
 * **Time**: Time in UTC, beginning of sample timeperiod.
 * **Station**: Name or code of sampling station or receiver code.
 * **Longitude**: Center longitude in decimal degrees, WGS84.
 * **Latitude**: Center latitude in decimal degrees, WGS84.
-* **Fluid Volume Imaged (ml)**: Total volume of water checked throguh the Zooscan in mililitres.
-* **Sample Volume (ml)**: Total volume of water collected in the sample in mililitres.
-* **Volume Filtered (l)**: Total volume of water filtered in mililitres.
-* **Sample Dilution Factor**: .
+* **Fluid Volume Imaged (ml)**: Total volume of subsample processed with the FlowCAM in mililitres.
+* **Sample Volume (ml)**: Total volume of the water sample in mililitres.
+* **Volume Filtered (l)**: Total volume of water filtered through the Apstein net in mililitres.
+* **Sample Dilution Factor**: Dilution factor of the processed sample to obtain Particles Per Used Image (PPUI). Values between 1.10 to 1.20. 
 * **Taxon**: Taxonomic group of organisms or group of artefacts.
 * **Count**: The exact number of specimens counted.
 * **Total Count**: The exact number of specimens counted in the sample.
-* **Density (cell/l)**: Number of specimens per litre.
+* **Density (cell/l)**: Number of specimens per litre<sup>1</sup>.
 * **ActionType**: The type of sampling equipment.
 * **Project**: Project in charge of receiver deployments.
 
@@ -74,7 +76,12 @@ if (is.null(abstract) & is.null(description)){
 cat(out)
 ```
 
-Further information can be found in [this link](https://lifewatch.be/en/flowcam) or in a Data Paper: [LifeWatch observatory data: phytoplankton observations in the Belgian Part of the North Sea](https://bdj.pensoft.net/article/57236/)
+Further information can be found in [this link](https://lifewatch.be/en/flowcam) or in a Data Paper: [LifeWatch observatory data: phytoplankton observations in the Belgian Part of the North Sea](https://bdj.pensoft.net/article/57236/).
+
+At the moment, corrections are being made to the FlowCAM dataset and pipeline. Most up-to-date information on sampling or processing protocols and taxonomic information of the classes used during validations can be found in the following links:
+* [Sampling and processing protocols](https://lifewatch.be/sites/lifewatch.be/files/public/metadata_sampling_processing.pdf)
+* [Taxonomic information](https://lifewatch.be/sites/lifewatch.be/files/public/metadata_taxonomy.pdf)
+
 
 ## How to cite these data
 
@@ -88,3 +95,11 @@ If you retrieved these data using the [LifeWatch Data Explorer R package](https:
 ```{r citation, results = 'asis', echo = FALSE}
 cat(paste0("> ", citation("lwdataexplorer")$textVersion))
 ```
+
+
+</br>
+<small><sup>1</sup> The formula linked in the [datapaper](https://bdj.pensoft.net/article/57236/) that describes these data is not used anymore. The corrected formula used during the aggregations is:</small></br>
+
+$$Density = \frac{ConcentrationSample * SampleVolume(L)}{VolumeFiltered(L)}$$
+$$Density = \frac{Count * SampleVolume(L)}{FluidVolumeImaged(L)*VolumeFiltered(L)*SampleDilutionFactor}$$
+
