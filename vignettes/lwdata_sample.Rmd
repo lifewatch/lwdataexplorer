@@ -14,9 +14,8 @@ knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE
 )
+# <img src=''class='rightimg'/>
 ```
-
-<img src=''class='rightimg'/>
 
 Query a sample library containing sediment, zooplankton, phytoplankton, eDNA and prokaryotic DNA samples.
 
