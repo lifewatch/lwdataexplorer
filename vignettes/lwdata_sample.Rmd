@@ -24,7 +24,7 @@ Query a sample library containing sediment, zooplankton, phytoplankton, eDNA and
 - Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293), [Southern bight of the North Sea](https://marineregions.org/gazetteer.php?p=details&id=2399)
 - Taxonomic coverage: Macrobenthos, Zooplankton, Phytoplankton, Unknown Environmental DNA
 - Moratorium: None
-- Data quality: Unknown
+- Data quality: Research-grade.
  
 ## How to interpret this dataset
  

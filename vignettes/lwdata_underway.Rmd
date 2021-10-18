@@ -36,22 +36,22 @@ Data collected by the MIDAS underway continuous sampling system on the RV Zeelee
 * **Sample period**: Counts aggregated. One of 1 day, 60 min, 10 min or 1 min.
  
 ### Available columns
-* **Time**: .Time in UTC, beginning of sample timeperiod.
+* **Time**: .Time in UTC, beginning of sample time period.
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Longitude**: Center longitude in decimal degrees, WGS84.
 * **Temperature**: Temperature of the water body, expressed in degrees Celcius.
 * **Salinity**: Salinity of the water body, expressed in PSU.
-* **Conductivity**: Conducitivity of the water body, expressed in ms/cm.
-* **Depth**: Bottom depth to surface from echosounder 200Hz in m.
-* **ChlorophylA**: Concentration of Chlorophyll A, based on fluoresence, expressed in µg/L.
-* **SpeedMadeGood**: Corrected speed of the research vessel, measured in knots.
-* **Speedlog**: Speed of the research vessel, measured in knots.
+* **Conductivity**: Conductivity of the water body, expressed in ms/cm.
+* **Depth**: Depth between the echosounder and the bottom, measured by echosounder 200 kHz, expressed in m.
+* **ChlorophylA**: Concentration of Chlorophyll A, based on fluoresence, measured by SBE21, expressed in µg/L.
+* **SpeedMadeGood**: Average speed of the research vessel between a time interval of 5 seconds, expressed in knots.
+* **Speedlog**: Speed of water, relative to the hull of the RV Simon Stevin, expressed in knots.
 * **TrueWindDir**: Direction of the wind in deg.
 * **TrueWindSpeed**: Speed of the wind in m/s.
-* **CourseMadeGood**: Corrected course of the research vessel, measured in degree.
-* **Gyro**: .
+* **CourseMadeGood**: Average heading of the research vessel between a time interval of 5 seconds, expressed in degrees.
+* **Gyro**: Exact heading of the research vessel, measured by Gyro, expressed in degrees.
 * **AirTemperature**: Temperature of air, expressed in degrees Celcius.
-* **AirPressure**: Atmospheric pressure in mBar.
+* **AirPressure**: Atmospheric pressure of the air, expressed in mBar.
 * **AirHumidity**: Relative humidity of the air, expressed in %.
 
 ## Abstract

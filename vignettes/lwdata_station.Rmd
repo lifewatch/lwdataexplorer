@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 <!--- Describe datatype in one or two sentences. -->
 Data on nutrients, pigments, suspended matter and secchi measurements from fixed stations on the Belgian Part of the North Sea.
 
-- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36),[Laboratory of Protistology and Aquatic Ecology (PAE)](https://www.vliz.be/en/imis?module=institute&insid=732) and [Flemish Environment Agency (VMM)](https://www.vliz.be/en/imis?module=institute&insid=2204). Former partners: Directorate Natural Environment (OD Natuur), [Royal Netherlands Institute for Sea Research (NIOZ)](https://www.vliz.be/en/imis?module=institute&insid=397), NOCS, [Marine Biology Research Group (MARBIOL)](https://www.vliz.be/en/imis?module=institute&insid=13)
+- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36),[Laboratory of Protistology and Aquatic Ecology (PAE)](https://www.vliz.be/en/imis?module=institute&insid=732) and [Flemish Environment Agency (VMM)](https://www.vliz.be/en/imis?module=institute&insid=2204). Former partners: Directorate Natural Environment (OD Natuur), [Royal Netherlands Institute for Sea Research (NIOZ)](https://www.vliz.be/en/imis?module=institute&insid=397), [National Oceanography Centre Southampton (NOCS)](https://www.vliz.be/en/imis?module=institute&insid=2045), [Marine Biology Research Group (MARBIOL)](https://www.vliz.be/en/imis?module=institute&insid=13)
 - Period: since April 2001
 - Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
 - Taxonomic coverage: Abiotic data only
@@ -58,7 +58,7 @@ Data on nutrients, pigments, suspended matter and secchi measurements from fixed
 * **Chlorophyll_c2(µg/L)**: Concentration of chlorophyll-c1+c2 per unit volume of the water body [particulate >GF/F phase] by filtration, acetone extraction and high performance liquid chromatography (HPLC); [C1C2HPP1](https://vocab.nerc.ac.uk/collection/P01/current/C1C2HPP1/).
 * **Chlorophyll_c3(µg/L)**: Concentration of chlorophyll-c3 {chl-c3} per unit volume of the water body [particulate >GF/F phase] by filtration, acetone extraction and high performance liquid chromatography (HPLC); [CLC3HPP1](https://vocab.nerc.ac.uk/collection/P01/current/CLC3HPP1/).
 * **Chlorophyllide_a(µg/L)**: Concentration of chlorophyllide-a {CAS 14897-06-4} per unit volume of the water body [particulate >GF/F phase] by filtration, acetone extraction and high performance liquid chromatography (HPLC); [CIDAHPP1](https://vocab.nerc.ac.uk/collection/P01/current/CIDAHPP1/).
-* **Conductivity(µS/cm)**: .
+* **Conductivity(µS/cm)**: Electrical conductivity standard deviation of the water body by CTD, expressed in degrees µS/cm.
 * **CPAR**: Corrected Photosynthetic Active Radiation of the water body.
 * **Density(kg/m3)**: The density of the water body, expressed in kg/m³.
 * **Diadinoxanthin(µg/L)**: Concentration of diadinoxanthin {CAS 18457-54-0} per unit volume of the water body [particulate >GF/F phase] by filtration, acetone extraction and high performance liquid chromatography (HPLC); [DIADHPP1](https://vocab.nerc.ac.uk/collection/P01/current/DIADHPP1/).
