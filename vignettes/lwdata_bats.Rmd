@@ -26,7 +26,7 @@ Occurrence bats data from a passive acoustic monitoring network in the Belgian c
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36) and [Research Institute for Nature and Forest (INBO)](https://www.vliz.be/en/imis?module=institute&insid=5443).
 - Period: since August 2015.
-- Geographical coverage: [Oostende Harbour](https://www.marineregions.org/gazetteer.php?p=details&id=5476), [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293).
+- Geographical coverage: [Belgian coast](https://marineregions.org/gazetteer.php?p=details&id=2550).
 - Taxonomic coverage: [Chiroptera](https://www.marinespecies.org/aphia.php?p=taxdetails&id=1037271).
 - Moratorium: None.
 - Data quality: Unknown.
@@ -54,9 +54,10 @@ Occurrence bats data from a passive acoustic monitoring network in the Belgian c
 
 ## Abstract
 <!--- Normally the abstract is pulled from the IMIS record, but there was an issue when reading this connection. We had to let it go and just copy&paste manually. -->
-Along the Belgian coast, a passive acoustic monitoring network was developed to record the echolocation calls of bats. At the moment, batcorders (Ecoobs) are installed at the lighthouse in Nieuwpoort, the Marine Station Ostend (MSO), the bird hide in nature reserve ZWIN. The batcorders continuously listen to the environmental sound and and can detect bat calls above 16 kHz and above -36 dB. When a call is detected, the batcorder records the sound itself for a minimum of 400 ms (raw format). If another bat call is produced within these 400ms, it is recorded in the same file. Data transfer is done automatically and on a daily basis. 
+Along the Belgian coast, a passive acoustic monitoring network was developed to record the echolocation calls of bats. At the moment, batcorders (Ecoobs) are installed at the lighthouse in Nieuwpoort, the Marine Station Ostend (MSO) and at zwin nature reserve.he bird hide in the nature reserve Zwin. The batcorders listen to the environmental sound every night and can detect bat calls above 16 kHz and above -36 dB. When a call is detected, the batcorder records the sound itself for a minimum of 400 ms (raw format). If another bat call is produced within these 400ms, it is recorded in the same file. Data transfer is done automatically and on a daily basis for the station located in Zwin. The other locations are manually retrieved and uploaded to the database twice a year.
 
-To ensure qualitative recordings, the microphones are replaced every six months before the migration season (March and August).These full spectrum recordings are analyzed using software algorithms (batident) that classify the calls according to the bat species, genus or higher taxonomic group that produced the calls. Afterwards, all calls are validated. Some bat species produce very similar calls and are therefore grouped, e.g. parti-coloured bat, common noctule, Serotine bat and Leisler’s bat are group into the “Nyctaloid”. All myotis species (Brandt’s ,….) are grouped in family of Myotis. The more abundant pipistrelloid family produce more distinct calls and can therefore be identified up to species level (common pipistrelle, Nathusius’ pipistrelle and Soprano pipistrelle).
+To ensure qualitative recordings, the microphones are replaced every six months before the migration season (March and August). These full spectrum recordings are analyzed using software algorithms (batident) that classify the calls according to the bat species, genus or higher taxonomic group that produced the calls. Afterwards, all calls are validated. Some bat species produce very similar calls and are therefore grouped, e.g. parti-coloured bat, common noctule, Serotine bat and Leisler’s bat are group into the “Nyctaloid”. All myotis species (Brandt’s ,…) are grouped in family of Myotis. The more abundant pipistrelloid family produce more distinct calls and can therefore be identified up to species level (common pipistrelle, Nathusius’ pipistrelle and Soprano pipistrelle).
+
 
 ## How to cite these data
 
