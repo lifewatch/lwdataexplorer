@@ -19,7 +19,7 @@ if (!require("lwdataexplorer", character.only = TRUE)) {
 }
 ```
 <!-- Insert image  -->
-<img src='http://www.lifewatch.be/code/images/lwde_zoo.png' class='rightimg'/>
+<img src='lwde_zoo.png' class='rightimg'/>
 
 <!-- Describe datatype in one or two sentences. -->
 Occurrence bats data from a passive acoustic monitoring network in the Belgian coast.

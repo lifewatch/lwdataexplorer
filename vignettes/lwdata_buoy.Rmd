@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 <!--- Insert image  -->
-<img src='https://www.lifewatch.be/code/images/lwde_buoy.png' class='rightimg'/>
+<img src='lwde_buoy.png' class='rightimg'/>
 
 <!--- Describe datatype in one or two sentences. -->
 Data from buoys installed in the Belgian Part of the North Sea.
