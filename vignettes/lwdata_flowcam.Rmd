@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 <!-- Insert image -->
-<img src="http://images.vliz.be/thumbs/119577_flowcam-results.jpg?w=700" class="rightimg"  />
+<img src="119577_flowcam-results.jpg" class="rightimg"  />
 
 <!-- Describe datatype in one or two sentences. -->
 Biodiversity data on microplankton in the Belgian part of the North Sea
@@ -79,6 +79,7 @@ cat(out)
 Further information can be found in [this link](https://lifewatch.be/en/flowcam) or in a Data Paper: [LifeWatch observatory data: phytoplankton observations in the Belgian Part of the North Sea](https://bdj.pensoft.net/article/57236/).
 
 At the moment, corrections are being made to the FlowCAM dataset and pipeline. Most up-to-date information on sampling or processing protocols and taxonomic information of the classes used during validations can be found in the following links:
+
 * [Sampling and processing protocols](https://lifewatch.be/sites/lifewatch.be/files/public/metadata_sampling_processing.pdf)
 * [Taxonomic information](https://lifewatch.be/sites/lifewatch.be/files/public/metadata_taxonomy.pdf)
 

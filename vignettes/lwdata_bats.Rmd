@@ -10,16 +10,13 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
-
-# check if package is installed
-if (!require("lwdataexplorer", character.only = TRUE)) {
-      devtools::install_github("lifewatch/lwdataexplorer", upgrade = FALSE)
-}
 ```
 <!-- Insert image  -->
-<img src='http://www.lifewatch.be/code/images/lwde_zoo.png' class='rightimg'/>
+<img src='lwde_zoo.png' class='rightimg'/>
 
 <!-- Describe datatype in one or two sentences. -->
 Occurrence bats data from a passive acoustic monitoring network in the Belgian coast.

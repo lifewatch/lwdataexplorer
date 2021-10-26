@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 <!-- Insert image -->
-<img src='http://www.lifewatch.be/code/images/lwde_zoo.png' class='rightimg'  />
+<img src='lwde_zoo.png' class='rightimg'  />
 
 <!-- Describe datatype in one or two sentences. -->
 Biodiversity data on zooplankton in the Belgian part of the North Sea.
