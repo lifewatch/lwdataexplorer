@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 <!-- Insert image -->
-<img src="119577_flowcam-results.jpg" class="rightimg"  />
+<img src="plate_3.png" class="rightimg"  />
 
 <!-- Describe datatype in one or two sentences. -->
 Biodiversity data on microplankton in the Belgian part of the North Sea
