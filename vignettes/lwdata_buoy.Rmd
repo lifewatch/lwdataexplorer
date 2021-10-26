@@ -35,26 +35,50 @@ Data from buoys installed in the Belgian Part of the North Sea.
 * **Stations**:  List of stations to be included in the query.
  
 ### Available columns
-* **Station**: Name or code of sampling station or receiver code.
-* **Time**: Time in UTC, beginning of sample timeperiod.
-* **Latitude**: Center latitude in decimal degrees, WGS84.
-* **Longitude**: Center longitude in decimal degrees, WGS84 .
-* **Air Temperature (°C)**: Air temperature in °C.
-* **AtmPress (mBar)**: Atmospheric pressure in mBar.
+* **ZTime**:                    
+* **Station**:Name or code of sampling station or receiver code.               
+* **Time**: Time in UTC, beginning of sample timeperiod.                  
+* **Latitude**: Center latitude in decimal degrees, WGS84.               
+* **Longitude**: Center longitude in decimal degrees, WGS84 .               
+* **Air temperature (°C)**: Air temperature in °C.   
+* **AtmPress (mBar)**: Atmospheric pressure in mBar.        
+* **AtmPress(mBar)**:        
 * **Avg Wind direction (deg)**: Direction of the wind in deg.
-* **Avg wind speed (m/s)**: Speed of the wind in m/s.
-* **RelHumidity (%)**: Relative humidity in %.
-* **SolarEnergy (W/m²)**: Solar energy in W/m².
-* **Voltage (V)**: Battery power, voltage in V.
-* **Level Harbour (mTaw)**: Waterlevel in mTAW measured in Ostend at the time.
-* **Level Spuikom (mTaw)**: Waterlevel in mTAW measured in the Spuikom at the time.
-* **Rain15 (mm)**: Accumulation of rain (15) measured in mm.
-* **NO3 (PPB)**: Concentration of nitrate in the water body, expressed in ppb.
-* **SIO2 (PPB)**: Concentration of silicate in the water body, expressed in ppb.
-* **Rain (mm)**: Accumulation of rain measured in mm.
-* **DO (mg/L)**: Oxygen dissolved in the water body in mg/l.
-* **Salimity (PSU)**: Salinity of the water body, expressed in Practical Salinity Units.
-* **Water Temperature (°C)**: Temperature of the water body, expressed in degrees Celcius.
+* **Avg Wind speed (m/s)**: Speed of the wind in m/s.    
+* **Chlorophyll (µg/L)**:    
+* **Conductivity (mS/cm)**:     
+* **Dissolved oxygen (µM)**:    
+* **DO (mg/l)**: Oxygen dissolved in the water body in mg/l.               
+* **Level Harbour (mTAW) 1min**:
+* **Level Harbour (mTAW)**: Waterlevel in mTAW measured in Ostend at the time.    
+* **Level Spuikom (mTAW)**: Waterlevel in mTAW measured in the Spuikom at the time.    
+* **NH3 (ppb)**:                
+* **NO3 (ppb)**: Concentration of nitrate in the water body, expressed in ppb.                
+* **Oxygen sat. (%)**:          
+* **pCO2 air (ppm)**:           
+* **pH (raw)**:                 
+* **PO4 (ppb)**:                
+* **Rain (mm)**: Accumulation of rain measured in mm.               
+* **Rain15 (mm)**: Accumulation of rain (15) measured in mm.             
+* **RelHumidity (%)**: Relative humidity in %.            
+* **RelHumidity(%)**:        
+* **Salinity (PSU)**: Salinity of the water body, expressed in Practical Salinity Units.          
+* **SiO2 (ppb)**: Concentration of silicate in the water body, expressed in ppb.         
+* **SolarEnergy (W/m²)**: Solar energy in W/m².      
+* **Tilt X (deg)**:             
+* **Tilt Y (deg)**:             
+* **Turbidity (NTU)**:          
+* **Turbidity(FBU)**:           
+* **Voltage (V)**: Battery power, voltage in V.             
+* **Water pressure (dBar)**:    
+* **Water temperature (°C)**: Temperature of the water body, expressed in degrees Celcius.  
+* **Watercurrent (cm/s)**:      
+* **Watercurrent (deg)**:       
+* **xCO2 air (ppm)**:           
+* **xCO2 Air**:                 
+* **xCO2 sea (ppm)**:  
+
+
 
 ## Abstract
 ```{r abstract, results = 'asis', echo = FALSE}
