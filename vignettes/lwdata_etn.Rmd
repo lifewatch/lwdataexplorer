@@ -10,12 +10,13 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
 ```
 <!--- Insert image -->
-<img src='https://www.lifewatch.be/code/images/lwde_fish.png' class='rightimg'/>
-
+<img src='lwde_fish.png' class='rightimg'/>
 
 <!--- Describe datatype in one or two sentences. -->
 Aquatic animal tracking data from the [European Tracking Network](https://lifewatch.be/etn/).

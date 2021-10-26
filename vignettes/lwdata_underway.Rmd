@@ -15,9 +15,8 @@ knitr::opts_chunk$set(
   message = FALSE
 )
 ```
-
 <!-- Insert image -->
-<img src='https://www.lifewatch.be/code/images/lwde_uw.png' class='rightimg'  />
+<img src='lwde_uw.png' class='rightimg'  />
 
 <!--- Describe datatype in one or two sentences. -->
 Data collected by the MIDAS underway continuous sampling system on the RV Zeeleeuw and [RV Simon Stevin](http://www.vliz.be/en/rv-simon-stevin):

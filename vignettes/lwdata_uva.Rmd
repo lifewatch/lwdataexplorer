@@ -10,12 +10,14 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
 <!-- Insert image -->
-<img src='http://www.lifewatch.be/code/images/lwde_birds.png' class='rightimg'  />
+<img src='lwde_birds.png' class='rightimg'  />
 
 <!--- Describe datatype in one or two sentences. -->
 Data from the Lifewatch bird tracking project collected by stations in Ostend, Zeebrugge and Vlissingen.
