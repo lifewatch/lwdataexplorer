@@ -174,7 +174,7 @@ Need valid authentication to access the entire data.To get an account, register 
   <span class='va'>startdate</span>,
   <span class='va'>stopdate</span>,
   <span class='va'>processing</span>,
-  <span class='va'>quality</span>,
+  quality <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Hi"</span>, <span class='st'>"Mod"</span>, <span class='st'>"Lo"</span><span class='op'>)</span>,
   <span class='va'>by</span>,
   usr <span class='op'>=</span> <span class='cn'>NULL</span>,
   pwd <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -194,11 +194,11 @@ Need valid authentication to access the entire data.To get an account, register 
     </tr>
     <tr>
       <th>processing</th>
-      <td><p>One of ('Validated','Raw')</p></td>
+      <td><p>One of ('Validated','Raw'). If "Validated", the quality parameter is ignored.</p></td>
     </tr>
     <tr>
       <th>quality</th>
-      <td><p>One of ("Hi","Mod", "Lo", "Hi+Mod") .....</p></td>
+      <td><p>One or more of ("Hi","Mod", "Lo"). This parameter is ignored if processing = "Validated"</p></td>
     </tr>
     <tr>
       <th>by</th>
@@ -223,8 +223,8 @@ Need valid authentication to access the entire data.To get an account, register 
     <p>Dataframe with the specified C-POD data.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>getCpodData</span><span class='op'>(</span><span class='st'>"2020-04-19"</span>, <span class='st'>"2020-04-21"</span>, processing <span class='op'>=</span> <span class='st'>"Validated"</span>, quality <span class='op'>=</span> <span class='st'>"Hi+Mod"</span>, by <span class='op'>=</span> <span class='st'>"1 week"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='message'>Query parameters</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>daterange : c("2020-04-19", "2020-04-21")</span></div><div class='output co'>#&gt; <span class='message'>type : CPOD data</span></div><div class='output co'>#&gt; <span class='message'>binSize : 1 week</span></div><div class='output co'>#&gt; <span class='message'>processing : Validated</span></div><div class='output co'>#&gt; <span class='message'>quality : Hi+Mod</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>Data dimension: (16 x 19)</span></div><div class='output co'>#&gt;    DEPLOYMENT_FK       TIME SPECIES MILLISECONDS NUMBER_CLICKS_FILTERED
+    <pre class="examples"><div class='input'><span class='fu'>getCpodData</span><span class='op'>(</span><span class='st'>"2020-04-19"</span>, <span class='st'>"2020-04-21"</span>, processing <span class='op'>=</span> <span class='st'>"Validated"</span>, by <span class='op'>=</span> <span class='st'>"1 week"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='message'>Query parameters</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>daterange : c("2020-04-19", "2020-04-21")</span></div><div class='output co'>#&gt; <span class='message'>type : CPOD data</span></div><div class='output co'>#&gt; <span class='message'>binSize : 1 week</span></div><div class='output co'>#&gt; <span class='message'>processing : Validated</span></div><div class='output co'>#&gt; <span class='message'>quality : c("Hi", "Mod", "Lo")</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>Data dimension: (16 x 19)</span></div><div class='output co'>#&gt;    DEPLOYMENT_FK       TIME SPECIES MILLISECONDS NUMBER_CLICKS_FILTERED
 #&gt; 1           6168 2020-04-13    NBHF        24970                   1064
 #&gt; 2           6168 2020-04-13   sonar         7841                     77
 #&gt; 3           6170 2020-04-13    NBHF         5035                    166
