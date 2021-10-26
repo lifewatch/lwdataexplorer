@@ -8,7 +8,7 @@ getCpodData(
   startdate,
   stopdate,
   processing,
-  quality,
+  quality = c("Hi", "Mod", "Lo"),
   by,
   usr = NULL,
   pwd = NULL,
@@ -20,9 +20,9 @@ getCpodData(
 
 \item{stopdate}{Stopping date for the query}
 
-\item{processing}{One of ('Validated','Raw')}
+\item{processing}{One of ('Validated','Raw'). If "Validated", the quality parameter is ignored.}
 
-\item{quality}{One of ("Hi","Mod", "Lo", "Hi+Mod") .....}
+\item{quality}{One or more of ("Hi","Mod", "Lo"). This parameter is ignored if processing = "Validated"}
 
 \item{by}{Sample period, one of ("1 day", "1 week", "60 min","10 min", "1 min")}
 
@@ -40,7 +40,7 @@ Retrieves the C-POD (Cetacean Acoustic Hydrophone Network) data from the LifeWat
 Need valid authentication to access the entire data.To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 }
 \examples{
-getCpodData("2020-04-19", "2020-04-21", processing = "Validated", quality = "Hi+Mod", by = "1 week")
+getCpodData("2020-04-19", "2020-04-21", processing = "Validated", by = "1 week")
 getCpodData("2020-04-19", "2020-04-21", processing = "Raw",
 quality = c("Hi", "Lo"), by = "1 day", params = TRUE)
 }
