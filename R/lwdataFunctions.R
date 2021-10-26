@@ -321,19 +321,19 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 #' Need valid authentication to access the entire data.To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
-#'@param processing One of ('Validated','Raw')
-#'@param quality One of ("Hi","Mod", "Lo", "Hi+Mod") .....
+#'@param processing One of ('Validated','Raw'). If "Validated", the quality parameter is ignored.
+#'@param quality One or more of ("Hi","Mod", "Lo"). This parameter is ignored if processing = "Validated"
 #'@param by Sample period, one of ("1 day", "1 week", "60 min","10 min", "1 min")
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
 #'@return Dataframe with the specified C-POD data.
 #'@examples
-#'getCpodData("2020-04-19", "2020-04-21", processing = "Validated", quality = "Hi+Mod", by = "1 week")
+#'getCpodData("2020-04-19", "2020-04-21", processing = "Validated", by = "1 week")
 #'getCpodData("2020-04-19", "2020-04-21", processing = "Raw",
 #'quality = c("Hi", "Lo"), by = "1 day", params = TRUE)
 #'@export
-getCpodData <- function(startdate, stopdate, processing, quality, by,
+getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod", "Lo"), by,
                         usr = NULL, pwd = NULL, params = FALSE){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
