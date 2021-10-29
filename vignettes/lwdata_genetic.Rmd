@@ -36,13 +36,13 @@ Genomic observations in the Belgian Part of the North Sea.
 
 ### Available columns
 
-* **Project**: Project in charge of receiver deployments.
-* **Station**: Name or code of sampling station or receiver code.
+* **Project**: Project in charge of sampling.
+* **Station**: Name or code of sampling station.
 * **TripAction**:	Unique identifier to recognize actions taken aboard the RV Simon Stevin.
 * **ActionType**: The type of sampling equipment.
-* **OTUId**: .
-* **Sequences**: .
-* **MarkerGene**: .
+* **OTUId**: Unique identifier for each Operational Taxonomic Unit (OTU)
+* **Sequences**: Amount of sequences assigned to Operational Taxonomic Unit (OTU).
+* **MarkerGene**: Marker gene that was used for barcoding.
 * **Time**: Time in UTC, beginning of sample timeperiod.
 * **Longitude**: Center longitude in decimal degrees, WGS84.
 * **Latitude**: Center latitude in decimal degrees, WGS84.
