@@ -24,15 +24,15 @@ Data from the Lifewatch bird tracking project collected by stations in Ostend, Z
 
 - Partners: [Research Institute for Nature and Forest (INBO)](https://www.vliz.be/en/imis?module=institute&insid=5443), [University of Ghent (UGent)](https://www.vliz.be/en/imis?module=institute&insid=1453), [University of Antwerpen](https://www.vliz.be/en/imis?module=institute&insid=4538), [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36) and [University of Amsterdam (UvA)](https://www.vliz.be/en/imis?module=institute&insid=5647) 
 - Period: since May 2013
-- Geographical coverage: [North Atlantic Ocean](https://www.marineregions.org/gazetteer.php?p=details&id=1912) including [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293) and [Mediterranean Sea - Western Basin](https://www.marineregions.org/gazetteer.php?p=details&id=4279). 
+- Geographical coverage: [Europe](https://marineregions.org/gazetteer.php?p=details&id=1920) and [Africa](https://marineregions.org/gazetteer.php?p=details&id=1923).
 - Taxonomic coverage: Herring Gull (HG; [_Larus argentatus_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=137138)), Lesser Black Backed Gull (LLB; [_Larus fuscus_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=137142)) and Marshal Harrier (MH; [_Circus aeruginosus_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=558541)).
 - Moratorium: Marshal Harrier data is only available upon registration. Login or [register](https://rshiny.lifewatch.be/account?p=register) to get full access
-- Data quality: Unknown
+- Data quality: Research-grade
  
 ## How to interpret this dataset
  
 ### Query options
-* **Birds or Tag Codes**: Tag number that identifies the birds. You can select specific birds or all together with `All HG` (Herring Gull), `All LLB` (Lesser Black Backed Gull) or `All MH` (Marshal Harrier).
+* **Birds or Tag Codes**: Tag number that identifies the birds. You can select specific birds or all together with `All HG` (Herring Gull), `All LBB` (Lesser Black Backed Gull)<sup>1</sup> or `All MH` (Marshal Harrier).
 * **Sample period**: Counts aggregated. One of 1 week, 1 day, 60 min, 10 min or 1 min.
 * **Timeframe**: Starting and stopping date for the query.
  
@@ -85,3 +85,5 @@ If you retrieved these data using the [LifeWatch Data Explorer R package](https:
 ```{r citation, results = 'asis', echo = FALSE}
 cat(paste0("> ", citation("lwdataexplorer")$textVersion))
 ```
+
+<sup>1</sup><small> The correct abbreviation for the Lesser Black-Backed Gull is LBBG. We first used LBB and we keep this for reproducibility.</small>

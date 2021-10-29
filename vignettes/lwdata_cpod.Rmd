@@ -1,5 +1,5 @@
 ---
-title: "Exploring marine mammals data"
+title: "Exploring cetaceans and sonar high frequency data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{lwdata_cpod}
@@ -16,9 +16,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!--- Insert image
-<img src='' class='rightimg'/>
--->
+<!--- Insert image -->
+<img src='lwdata_cpod.png' class='rightimg'/>
 
 <!--- Describe datatype in one or two sentences. -->
 Permanent Cetacean passive acoustic sensor network in the Belgian part of the North Sea
@@ -60,28 +59,7 @@ Permanent Cetacean passive acoustic sensor network in the Belgian part of the No
 * **Receiver**: Receiver: serial number of C-POD.
 
 ## Abstract
-
-```{r abstract, results = 'asis', echo = FALSE}
-# Get the abstract and/or description from IMIS and print here
-library(jsonlite)
-
-dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=5531&show=json")
-
-abstract <- dasid[["datasetrec"]][["EngAbstract"]]
-description <- dasid[["datasetrec"]][["EngDescr"]]
-
-if (is.null(abstract) & is.null(description)){
-  
-} else if(is.null(abstract) & !is.null(description)){
-  out <- description
-} else if(!is.null(abstract) & is.null(description)){
-  out <- abstract
-} else if(!is.null(abstract) & !is.null(description)){
-  out <- paste0(abstract, "</br>", description)
-}
-
-cat(out)
-```
+Data are presented from several passive acoustic projects in the Southern North Sea. The click detector (C-POD, Chelonia ctd.) records sequences of echolocation clicks of cetaceans and sonar clicks. Both are included in this database and can be selected as 'Species'. Click trains are classified by the KERNO classifier and harbour porpoises, sonar and other cetaceans (dolphins) can be identified, at the moment Other cetaceans are not yet included in this database. The data is offered as 'raw' or 'validated', the latter includes high and moderate quality click trains and is aggregated per hour. Only hours with a maximum of two minutes with lost data is incorporated. 
 
 ## How to cite these data
 
