@@ -180,11 +180,16 @@ getZooscanData <- function(startdate, stopdate, params = FALSE){
   input$type = "ZooScan data"
   input$getPar = params
 
-  out = basicPostJson(
-    input = input
-  )
+  if(lw_rstudio_check_connection()){
+    require(lwdataserver, quietly = TRUE)
+    capture.output(out <- getLWdata(input, USER = NULL, client = TRUE))
+  }else{
+    out = basicPostJson(input = input)
+  }
+
   return(outputQC(input, out))
 }
+
 
 #'Retrieve flowcam-data from the LifeWatch project
 #'
@@ -568,7 +573,7 @@ Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
     if(c("No data") %in% out$mdf | c("Nodata") %in% out$mdf | c("Is null") %in% out$mdf | c("[RODBC] No results available") %in% out$mdf |
        class(out$mdf) == 'list' & length(out$mdf) == 0){
       out$mdf <- data.frame()
-      warning("No data returned. Try relaxing query parameters.")
+      warning("No data returned.")
     }
 
     # Check if something else unexpected happened
@@ -579,7 +584,7 @@ Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
     # Proceed if all correct
     else{
       # Print dimensions
-      message(paste0("Data dimension: (", paste0(dim(out$mdf), collapse=" x "), ")"))
+      message(paste0("- Data dimension: (", paste0(dim(out$mdf), collapse=" x "), ")"))
 
       colnames(out$mdf) <- sapply(colnames(out$mdf), FUN = toupper)
 
@@ -602,20 +607,34 @@ Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
 
 
 # Print the parameters used in the query
-printParameters <- function(par, messg = "Query parameters"){
+printParameters <- function(par, messg = "- Query parameters: "){
   # remove getPar
   par <- par[names(par) != "getPar"]
 
   # Print
   message(messg)
-  message("---------------------------------------------")
+  # message("---------------------------------------------")
 
   for (i in 1:length(par)){
     name <- names(par)[i]
-    message(paste0(name, " : ", par[i]))
+    message(paste0("   - ", name, ": ", par[i]))
   }
 
   # End
-  message("---------------------------------------------")
+  # message("---------------------------------------------")
 }
 
+# Checks if the user is working in the RStudio server of lifewatch
+lw_rstudio_check_connection <- function(){
+  lw_rstudio_server <- c("https://rstudio.lifewatch.be/", "https://rstudio.vsc.lifewatch.be")
+  workenv <- Sys.getenv("RSTUDIO_HTTP_REFERER")
+  is_lw_rstudio <- workenv %in% lw_rstudio_server
+
+  if(is_lw_rstudio){
+    message("- Query mode: Database connection")
+  }else{
+    message("- Query mode: Post request to OpenCPU server")
+  }
+
+  return(is_lw_rstudio)
+}
