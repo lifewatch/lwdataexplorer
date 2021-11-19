@@ -196,216 +196,234 @@
     <p>Dataframe with the specified data.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>getUnderwayData</span><span class='op'>(</span><span class='st'>"2021-03-15"</span>, <span class='st'>"2021-04-13"</span>, <span class='st'>"1 day"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='message'>Query parameters</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>daterange : c("2021-03-15", "2021-04-13")</span></div><div class='output co'>#&gt; <span class='message'>type : Underway data</span></div><div class='output co'>#&gt; <span class='message'>binSize : 1 day</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>Data dimension: (11 x 9)</span></div><div class='output co'>#&gt;                   TIME LATITUDE LONGITUDE TEMPERATURE SALINITY CONDUCTIVITY
-#&gt; 1  2021-03-16 08:15:47  51.2477    2.9069      7.5439   33.170        3.454
-#&gt; 2  2021-03-18 08:04:17  51.2482    2.9095      7.4017   32.646        3.392
-#&gt; 3  2021-03-22 08:13:11  51.2469    2.9065      6.9261   28.767        2.989
-#&gt; 4  2021-03-23 08:44:59  51.2495    2.9090      6.9147   29.902        3.094
-#&gt; 5  2021-03-25 06:47:53  51.2488    2.9020      7.1568   28.757        3.005
-#&gt; 6  2021-03-26 07:58:41  51.2407    2.9022      7.4505   28.501        3.004
-#&gt; 7  2021-03-29 08:41:59  51.2411    2.9040      8.3740   31.896        3.405
-#&gt; 8  2021-03-30 06:47:53  51.2500    2.9076      8.5989   32.475        3.481
-#&gt; 9  2021-03-31 06:58:34  51.2503    2.9072      8.9196   32.209        3.483
-#&gt; 10 2021-04-08 05:07:40  51.2422    2.9050      6.9902   29.350        3.048
-#&gt; 11 2021-04-12 06:43:52  51.2476    2.9002      7.2157   30.251        3.149
-#&gt;    DEPTH CHLOROPHYLA SPEEDMADEGOOD
-#&gt; 1   7.77        8.67          11.3
-#&gt; 2   9.79        8.49          10.6
-#&gt; 3  10.50        4.04          10.9
-#&gt; 4  12.41        3.82          10.7
-#&gt; 5   8.21        4.52          11.2
-#&gt; 6   9.27        4.74          11.0
-#&gt; 7   7.81        8.98          11.4
-#&gt; 8   8.79       10.90          11.3
-#&gt; 9   9.27        9.47          11.4
-#&gt; 10  7.96        3.25          12.0
-#&gt; 11  6.17        4.12          11.1</div><div class='input'><span class='fu'>getUnderwayData</span><span class='op'>(</span><span class='st'>"2021-03-15"</span>, <span class='st'>"2021-04-13"</span>, <span class='st'>"60 min"</span>, params <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='message'>Query parameters</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>daterange : c("2021-03-15", "2021-04-13")</span></div><div class='output co'>#&gt; <span class='message'>type : Underway data</span></div><div class='output co'>#&gt; <span class='message'>binSize : 60 min</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>Data dimension: (85 x 9)</span></div><div class='output co'>#&gt; $mdf
-#&gt;                   TIME LATITUDE LONGITUDE TEMPERATURE SALINITY CONDUCTIVITY
-#&gt; 1  2021-03-16 08:15:47  51.2477    2.9069      7.5439   33.170        3.454
-#&gt; 2  2021-03-16 09:00:05  51.3018    2.7028      7.5816   33.702        3.493
-#&gt; 3  2021-03-16 10:00:05  51.2919    2.5865      7.7176   33.909        3.523
-#&gt; 4  2021-03-16 11:00:05  51.2920    2.5865      7.7032   33.895        3.521
-#&gt; 5  2021-03-16 12:00:05  51.2907    2.5890      7.6947   33.997        3.530
-#&gt; 6  2021-03-16 13:00:05  51.2498    2.8793      7.5255   33.685        3.486
-#&gt; 7  2021-03-18 08:04:17  51.2482    2.9095      7.4017   32.646        3.392
-#&gt; 8  2021-03-18 09:00:05  51.2703    2.9037      7.0741   32.051        3.296
-#&gt; 9  2021-03-18 10:00:05  51.2898    2.8915      7.0345   31.971        3.285
-#&gt; 10 2021-03-18 11:00:05  51.3560    3.1133      6.5067   30.148        3.072
-#&gt; 11 2021-03-18 12:00:05  51.3695    3.2100      6.4703   28.387        2.906
-#&gt; 12 2021-03-18 13:00:05  51.3312    2.9650      6.7167   29.900        3.065
-#&gt; 13 2021-03-22 08:13:11  51.2469    2.9065      6.9261   28.767        2.989
-#&gt; 14 2021-03-22 09:00:05  51.3211    2.7120      7.0845   32.181        3.305
-#&gt; 15 2021-03-22 10:00:05  51.4161    2.4905      7.4433   33.900        3.497
-#&gt; 16 2021-03-22 11:00:05  51.4471    2.3682      7.8553   34.386        3.581
-#&gt; 17 2021-03-22 12:00:05  51.4181    2.4387      7.6197   34.107        3.533
-#&gt; 18 2021-03-22 13:00:05  51.3876    2.5023      7.4990   33.753        3.487
-#&gt; 19 2021-03-22 14:00:05  51.3374    2.5127      7.4405   33.477        3.459
-#&gt; 20 2021-03-22 15:00:05  51.2986    2.6449      7.6171   32.242        3.344
-#&gt; 21 2021-03-23 08:44:59  51.2495    2.9090      6.9147   29.902        3.094
-#&gt; 22 2021-03-23 09:00:05  51.2725    2.9075      6.9369   29.866        3.078
-#&gt; 23 2021-03-23 10:00:05  51.3178    2.8974      6.7933   30.814        3.158
-#&gt; 24 2021-03-23 11:00:04  51.3735    3.1845      6.5800   29.985        3.067
-#&gt; 25 2021-03-23 11:00:04  51.3735    3.1845      6.5800   29.985        3.067
-#&gt; 26 2021-03-23 12:00:05  51.4414    3.1396      6.6821   31.275        3.188
-#&gt; 27 2021-03-23 13:00:05  51.4716    3.0576      6.8064   31.978        3.266
-#&gt; 28 2021-03-23 14:00:04  51.4332    2.8064      7.3279   32.842        3.383
-#&gt; 29 2021-03-23 15:00:04  51.3574    2.5863      7.5108   33.438        3.463
-#&gt; 30 2021-03-23 16:00:05  51.2904    2.5941      7.5055   32.866        3.409
-#&gt; 31 2021-03-23 17:00:05  51.1886    2.6840      7.3519   31.360        3.252
-#&gt; 32 2021-03-23 18:00:05  51.2257    2.8572      7.0806   30.013        3.105
-#&gt; 33 2021-03-25 06:47:53  51.2488    2.9020      7.1568   28.757        3.005
-#&gt; 34 2021-03-25 07:00:05  51.2685    2.8493      7.1522   29.002        3.018
-#&gt; 35 2021-03-25 08:00:05  51.3518    2.5873      7.5633   33.597        3.481
-#&gt; 36 2021-03-25 09:00:05  51.3970    2.4699      7.7023   33.916        3.523
-#&gt; 37 2021-03-25 10:00:05  51.4031    2.4780      7.7660   34.013        3.539
-#&gt; 38 2021-03-25 11:00:05  51.4304    2.5145      7.7863   33.951        3.533
-#&gt; 39 2021-03-25 12:00:05  51.4025    2.4802      7.8712   34.070        3.549
-#&gt; 40 2021-03-25 13:00:05  51.4221    2.5063      7.8734   34.100        3.557
-#&gt; 41 2021-03-25 14:00:05  51.3780    2.6288      7.7463   33.684        3.508
-#&gt; 42 2021-03-25 15:00:05  51.2664    2.8623      7.7003   30.889        3.223
-#&gt; 43 2021-03-26 07:58:41  51.2407    2.9022      7.4505   28.501        3.004
-#&gt; 44 2021-03-26 08:00:05  51.2389    2.8961      7.4233   28.076        2.956
-#&gt; 45 2021-03-26 09:00:05  51.1712    2.6422      8.1447   32.413        3.419
-#&gt; 46 2021-03-26 10:00:05  51.2173    2.5806      8.1334   32.941        3.471
-#&gt; 47 2021-03-26 11:00:05  51.2754    2.5377      8.0258   32.926        3.461
-#&gt; 48 2021-03-26 12:00:05  51.4021    2.6912      7.7752   32.500        3.397
-#&gt; 49 2021-03-26 13:00:05  51.4634    2.8111      7.5728   32.845        3.412
-#&gt; 50 2021-03-26 14:00:05  51.3652    2.9573      7.3800   30.467        3.175
-#&gt; 51 2021-03-29 08:41:59  51.2411    2.9040      8.3740   31.896        3.405
-#&gt; 52 2021-03-29 09:00:05  51.2246    2.8522      8.4629   31.858        3.395
-#&gt; 53 2021-03-29 10:00:05  51.2164    2.8370      8.4879   31.996        3.412
-#&gt; 54 2021-03-30 06:47:53  51.2500    2.9076      8.5989   32.475        3.481
-#&gt; 55 2021-03-30 07:00:05  51.2827    2.8760      8.5657   32.526        3.470
-#&gt; 56 2021-03-30 08:00:05  51.4641    2.8217      7.9562   31.730        3.341
-#&gt; 57 2021-03-30 09:00:05  51.6325    2.7691      8.0788   34.146        3.579
-#&gt; 58 2021-03-30 10:00:05  51.6161    2.7718      8.0016   34.099        3.568
-#&gt; 59 2021-03-30 11:00:05  51.4900    2.8153      7.9689   33.777        3.536
-#&gt; 60 2021-03-30 12:00:05  51.3587    2.8548      7.8923   31.497        3.316
-#&gt; 61 2021-03-31 06:58:34  51.2503    2.9072      8.9196   32.209        3.483
-#&gt; 62 2021-03-31 07:00:04  51.2542    2.9027      8.9144   32.174        3.473
-#&gt; 63 2021-03-31 08:00:04  51.4337    2.8968      8.0892   31.969        3.376
-#&gt; 64 2021-03-31 09:00:04  51.5493    2.9216      7.9996   33.037        3.468
-#&gt; 65 2021-03-31 10:00:04  51.5523    2.9218      7.9374   33.366        3.495
-#&gt; 66 2021-03-31 11:00:04  51.5493    2.9266      8.0066   33.274        3.491
-#&gt; 67 2021-03-31 12:00:04  51.5493    2.9266      8.0112   33.167        3.481
-#&gt; 68 2021-03-31 13:00:04  51.4534    2.9132      7.8995   31.925        3.356
-#&gt; 69 2021-03-31 14:00:04  51.2999    2.8954      8.5172   30.893        3.306
-#&gt; 70 2021-04-08 05:07:40  51.2422    2.9050      6.9902   29.350        3.048
-#&gt; 71 2021-04-08 06:00:04  51.1834    2.6968      7.1324   30.029        3.111
-#&gt; 72 2021-04-08 07:00:04  51.1860    2.7128      7.1050   30.215        3.125
-#&gt; 73 2021-04-08 08:00:04  51.2767    2.6150      7.2097   31.737        3.275
-#&gt; 74 2021-04-08 09:00:04  51.2937    2.6057      7.2704   32.046        3.311
-#&gt; 75 2021-04-08 10:00:04  51.3292    2.4997      7.5918   32.491        3.380
-#&gt; 76 2021-04-08 11:00:04  51.3673    2.6079      7.5476   32.316        3.359
-#&gt; 77 2021-04-08 12:00:04  51.4373    2.8158      7.5043   32.481        3.371
-#&gt; 78 2021-04-08 13:00:04  51.3952    2.8281      7.4366   32.369        3.358
-#&gt; 79 2021-04-08 14:00:04  51.3015    2.8358      7.4379   31.261        3.249
-#&gt; 80 2021-04-08 15:00:04  51.2467    2.9115      7.2002   30.034        3.122
-#&gt; 81 2021-04-12 06:43:52  51.2476    2.9002      7.2157   30.251        3.149
-#&gt; 82 2021-04-12 07:00:04  51.2408    2.8157      7.2421   30.027        3.120
-#&gt; 83 2021-04-12 08:00:04  51.1841    2.6322      7.4645   29.784        3.114
-#&gt; 84 2021-04-12 09:00:04  51.1612    2.6665      7.3837   29.689        3.098
-#&gt; 85 2021-04-12 10:00:04  51.2005    2.7880      7.3486   29.909        3.115
-#&gt;    DEPTH CHLOROPHYLA SPEEDMADEGOOD
-#&gt; 1   7.77        8.67          11.3
-#&gt; 2  21.61        8.10          11.0
-#&gt; 3  11.55        0.00           0.5
-#&gt; 4  12.34        0.00           0.3
-#&gt; 5  11.03        0.00           7.3
-#&gt; 6  11.70        0.00          12.4
-#&gt; 7   9.79        8.49          10.6
-#&gt; 8   9.34        0.00           2.5
-#&gt; 9   7.10        8.37           8.1
-#&gt; 10  7.83        6.77          10.0
-#&gt; 11 12.33        5.27          11.7
-#&gt; 12 10.36        6.75           8.5
-#&gt; 13 10.50        4.04          10.9
-#&gt; 14 23.53        7.57          11.0
-#&gt; 15 31.21        4.92          11.2
-#&gt; 16 33.02        2.77           3.3
-#&gt; 17 33.11        2.42           3.5
-#&gt; 18 31.66        3.60           3.9
-#&gt; 19 13.33        5.65           2.6
-#&gt; 20 26.21        6.32          11.2
-#&gt; 21 12.41        3.82          10.7
-#&gt; 22 11.83        3.37           1.0
-#&gt; 23 11.54        7.76          11.7
-#&gt; 24 15.14        4.89          11.0
-#&gt; 25 15.14        4.92          11.0
-#&gt; 26  8.03        4.89           7.3
-#&gt; 27 20.78        5.45           1.8
-#&gt; 28 22.60        5.47           0.2
-#&gt; 29 31.59        6.25          11.9
-#&gt; 30 11.69        9.07          11.3
-#&gt; 31 13.05        9.43          11.3
-#&gt; 32 11.38        5.63          11.5
-#&gt; 33  8.21        4.52          11.2
-#&gt; 34 11.23        7.60          11.1
-#&gt; 35 31.37        0.00          11.1
-#&gt; 36 34.47        2.81           1.2
-#&gt; 37 34.98        3.22           4.2
-#&gt; 38 34.33        0.00           9.6
-#&gt; 39 33.99        4.43           1.8
-#&gt; 40 32.41        3.69           4.4
-#&gt; 41 28.86        4.75          11.3
-#&gt; 42 11.45        7.94          10.7
-#&gt; 43  9.27        4.74          11.0
-#&gt; 44  9.23        4.77          11.1
-#&gt; 45 16.85       10.24           9.8
-#&gt; 46 18.78        5.77           9.5
-#&gt; 47 27.88        5.51          13.6
-#&gt; 48 25.41        6.11          12.0
-#&gt; 49 29.81        9.42          12.1
-#&gt; 50 15.46       13.43          10.3
-#&gt; 51  7.81        8.98          11.4
-#&gt; 52  9.66       11.07           0.7
-#&gt; 53 10.55       10.78           9.5
-#&gt; 54  8.79       10.90          11.3
-#&gt; 55  6.75       11.88          11.1
-#&gt; 56 25.16        7.57          11.1
-#&gt; 57 32.42        5.83          10.2
-#&gt; 58 26.01        6.32           7.1
-#&gt; 59 25.51        4.60           7.6
-#&gt; 60 25.07        8.12           7.4
-#&gt; 61  9.27        9.47          11.4
-#&gt; 62  9.21        9.26          11.4
-#&gt; 63 26.53        9.28          11.1
-#&gt; 64 22.57        5.51           0.2
-#&gt; 65 20.63        7.40           0.4
-#&gt; 66 23.23        7.12           0.1
-#&gt; 67 23.91        5.10           0.2
-#&gt; 68 30.78        4.85           9.8
-#&gt; 69 12.34       11.75           8.8
-#&gt; 70  7.96        3.25          12.0
-#&gt; 71 10.88        2.72           0.7
-#&gt; 72 11.97        0.00           2.9
-#&gt; 73 27.16        2.93           0.6
-#&gt; 74 17.55        8.41          10.6
-#&gt; 75 14.59        6.34           2.9
-#&gt; 76 32.45        7.49          11.9
-#&gt; 77 24.84        8.54           2.3
-#&gt; 78 23.01       10.34          11.3
-#&gt; 79 13.34        6.26           3.2
-#&gt; 80 10.29        4.96          11.3
-#&gt; 81  6.17        4.12          11.1
-#&gt; 82  9.09        5.51          12.5
-#&gt; 83  6.55        7.27           1.3
-#&gt; 84  7.71        6.57           8.8
-#&gt; 85 11.80        6.16          10.3
-#&gt; 
-#&gt; $par
-#&gt; $par$daterange
-#&gt; [1] "2021-03-15" "2021-04-13"
-#&gt; 
-#&gt; $par$type
-#&gt; [1] "Underway data"
-#&gt; 
-#&gt; $par$binSize
-#&gt; [1] "60 min"
-#&gt; 
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>getUnderwayData</span><span class='op'>(</span><span class='st'>"2021-03-15"</span>, <span class='st'>"2021-04-13"</span>, <span class='st'>"1 day"</span><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Query parameters</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> daterange : c("2021-03-15", "2021-04-13")</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> type : Underway data</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> binSize : 1 day</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Data dimension: (11 x 9)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                   TIME LATITUDE LONGITUDE TEMPERATURE SALINITY CONDUCTIVITY</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  2021-03-16 08:15:47  51.2477    2.9069      7.5439   33.170        3.454</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  2021-03-18 08:04:17  51.2482    2.9095      7.4017   32.646        3.392</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  2021-03-22 08:13:11  51.2469    2.9065      6.9261   28.767        2.989</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  2021-03-23 08:44:59  51.2495    2.9090      6.9147   29.902        3.094</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  2021-03-25 06:47:53  51.2488    2.9020      7.1568   28.757        3.005</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  2021-03-26 07:58:41  51.2407    2.9022      7.4505   28.501        3.004</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7  2021-03-29 08:41:59  51.2411    2.9040      8.3740   31.896        3.405</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  2021-03-30 06:47:53  51.2500    2.9076      8.5989   32.475        3.481</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  2021-03-31 06:58:34  51.2503    2.9072      8.9196   32.209        3.483</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 2021-04-08 05:07:40  51.2422    2.9050      6.9902   29.350        3.048</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11 2021-04-12 06:43:52  51.2476    2.9002      7.2157   30.251        3.149</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    DEPTH CHLOROPHYLA SPEEDMADEGOOD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1   7.77        8.67          11.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2   9.79        8.49          10.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  10.50        4.04          10.9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  12.41        3.82          10.7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5   8.21        4.52          11.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6   9.27        4.74          11.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7   7.81        8.98          11.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8   8.79       10.90          11.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9   9.27        9.47          11.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10  7.96        3.25          12.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11  6.17        4.12          11.1</span>
+<span class='r-in'><span class='fu'>getUnderwayData</span><span class='op'>(</span><span class='st'>"2021-03-15"</span>, <span class='st'>"2021-04-13"</span>, <span class='st'>"60 min"</span>, params <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Query parameters</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> daterange : c("2021-03-15", "2021-04-13")</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> type : Underway data</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> binSize : 60 min</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Data dimension: (85 x 9)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $mdf</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                   TIME LATITUDE LONGITUDE TEMPERATURE SALINITY CONDUCTIVITY</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  2021-03-16 08:15:47  51.2477    2.9069      7.5439   33.170        3.454</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  2021-03-16 09:00:05  51.3018    2.7028      7.5816   33.702        3.493</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  2021-03-16 10:00:05  51.2919    2.5865      7.7176   33.909        3.523</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  2021-03-16 11:00:05  51.2920    2.5865      7.7032   33.895        3.521</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  2021-03-16 12:00:05  51.2907    2.5890      7.6947   33.997        3.530</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  2021-03-16 13:00:05  51.2498    2.8793      7.5255   33.685        3.486</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7  2021-03-18 08:04:17  51.2482    2.9095      7.4017   32.646        3.392</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  2021-03-18 09:00:05  51.2703    2.9037      7.0741   32.051        3.296</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  2021-03-18 10:00:05  51.2898    2.8915      7.0345   31.971        3.285</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 2021-03-18 11:00:05  51.3560    3.1133      6.5067   30.148        3.072</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11 2021-03-18 12:00:05  51.3695    3.2100      6.4703   28.387        2.906</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12 2021-03-18 13:00:05  51.3312    2.9650      6.7167   29.900        3.065</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13 2021-03-22 08:13:11  51.2469    2.9065      6.9261   28.767        2.989</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14 2021-03-22 09:00:05  51.3211    2.7120      7.0845   32.181        3.305</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15 2021-03-22 10:00:05  51.4161    2.4905      7.4433   33.900        3.497</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16 2021-03-22 11:00:05  51.4471    2.3682      7.8553   34.386        3.581</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17 2021-03-22 12:00:05  51.4181    2.4387      7.6197   34.107        3.533</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18 2021-03-22 13:00:05  51.3876    2.5023      7.4990   33.753        3.487</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19 2021-03-22 14:00:05  51.3374    2.5127      7.4405   33.477        3.459</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20 2021-03-22 15:00:05  51.2986    2.6449      7.6171   32.242        3.344</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21 2021-03-23 08:44:59  51.2495    2.9090      6.9147   29.902        3.094</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22 2021-03-23 09:00:05  51.2725    2.9075      6.9369   29.866        3.078</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23 2021-03-23 10:00:05  51.3178    2.8974      6.7933   30.814        3.158</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24 2021-03-23 11:00:04  51.3735    3.1845      6.5800   29.985        3.067</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25 2021-03-23 11:00:04  51.3735    3.1845      6.5800   29.985        3.067</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26 2021-03-23 12:00:05  51.4414    3.1396      6.6821   31.275        3.188</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27 2021-03-23 13:00:05  51.4716    3.0576      6.8064   31.978        3.266</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 28 2021-03-23 14:00:04  51.4332    2.8064      7.3279   32.842        3.383</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 29 2021-03-23 15:00:04  51.3574    2.5863      7.5108   33.438        3.463</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 30 2021-03-23 16:00:05  51.2904    2.5941      7.5055   32.866        3.409</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 31 2021-03-23 17:00:05  51.1886    2.6840      7.3519   31.360        3.252</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 32 2021-03-23 18:00:05  51.2257    2.8572      7.0806   30.013        3.105</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 33 2021-03-25 06:47:53  51.2488    2.9020      7.1568   28.757        3.005</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 34 2021-03-25 07:00:05  51.2685    2.8493      7.1522   29.002        3.018</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 35 2021-03-25 08:00:05  51.3518    2.5873      7.5633   33.597        3.481</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 36 2021-03-25 09:00:05  51.3970    2.4699      7.7023   33.916        3.523</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 37 2021-03-25 10:00:05  51.4031    2.4780      7.7660   34.013        3.539</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 38 2021-03-25 11:00:05  51.4304    2.5145      7.7863   33.951        3.533</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 39 2021-03-25 12:00:05  51.4025    2.4802      7.8712   34.070        3.549</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 40 2021-03-25 13:00:05  51.4221    2.5063      7.8734   34.100        3.557</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 41 2021-03-25 14:00:05  51.3780    2.6288      7.7463   33.684        3.508</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 42 2021-03-25 15:00:05  51.2664    2.8623      7.7003   30.889        3.223</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 43 2021-03-26 07:58:41  51.2407    2.9022      7.4505   28.501        3.004</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 44 2021-03-26 08:00:05  51.2389    2.8961      7.4233   28.076        2.956</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 45 2021-03-26 09:00:05  51.1712    2.6422      8.1447   32.413        3.419</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 46 2021-03-26 10:00:05  51.2173    2.5806      8.1334   32.941        3.471</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 47 2021-03-26 11:00:05  51.2754    2.5377      8.0258   32.926        3.461</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 48 2021-03-26 12:00:05  51.4021    2.6912      7.7752   32.500        3.397</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 49 2021-03-26 13:00:05  51.4634    2.8111      7.5728   32.845        3.412</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 50 2021-03-26 14:00:05  51.3652    2.9573      7.3800   30.467        3.175</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 51 2021-03-29 08:41:59  51.2411    2.9040      8.3740   31.896        3.405</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 52 2021-03-29 09:00:05  51.2246    2.8522      8.4629   31.858        3.395</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 53 2021-03-29 10:00:05  51.2164    2.8370      8.4879   31.996        3.412</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 54 2021-03-30 06:47:53  51.2500    2.9076      8.5989   32.475        3.481</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 55 2021-03-30 07:00:05  51.2827    2.8760      8.5657   32.526        3.470</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 56 2021-03-30 08:00:05  51.4641    2.8217      7.9562   31.730        3.341</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 57 2021-03-30 09:00:05  51.6325    2.7691      8.0788   34.146        3.579</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 58 2021-03-30 10:00:05  51.6161    2.7718      8.0016   34.099        3.568</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 59 2021-03-30 11:00:05  51.4900    2.8153      7.9689   33.777        3.536</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 60 2021-03-30 12:00:05  51.3587    2.8548      7.8923   31.497        3.316</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 61 2021-03-31 06:58:34  51.2503    2.9072      8.9196   32.209        3.483</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 62 2021-03-31 07:00:04  51.2542    2.9027      8.9144   32.174        3.473</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 63 2021-03-31 08:00:04  51.4337    2.8968      8.0892   31.969        3.376</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 64 2021-03-31 09:00:04  51.5493    2.9216      7.9996   33.037        3.468</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 65 2021-03-31 10:00:04  51.5523    2.9218      7.9374   33.366        3.495</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 66 2021-03-31 11:00:04  51.5493    2.9266      8.0066   33.274        3.491</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 67 2021-03-31 12:00:04  51.5493    2.9266      8.0112   33.167        3.481</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 68 2021-03-31 13:00:04  51.4534    2.9132      7.8995   31.925        3.356</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 69 2021-03-31 14:00:04  51.2999    2.8954      8.5172   30.893        3.306</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 70 2021-04-08 05:07:40  51.2422    2.9050      6.9902   29.350        3.048</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 71 2021-04-08 06:00:04  51.1834    2.6968      7.1324   30.029        3.111</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 72 2021-04-08 07:00:04  51.1860    2.7128      7.1050   30.215        3.125</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 73 2021-04-08 08:00:04  51.2767    2.6150      7.2097   31.737        3.275</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 74 2021-04-08 09:00:04  51.2937    2.6057      7.2704   32.046        3.311</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 75 2021-04-08 10:00:04  51.3292    2.4997      7.5918   32.491        3.380</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 76 2021-04-08 11:00:04  51.3673    2.6079      7.5476   32.316        3.359</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 77 2021-04-08 12:00:04  51.4373    2.8158      7.5043   32.481        3.371</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 78 2021-04-08 13:00:04  51.3952    2.8281      7.4366   32.369        3.358</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 79 2021-04-08 14:00:04  51.3015    2.8358      7.4379   31.261        3.249</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 80 2021-04-08 15:00:04  51.2467    2.9115      7.2002   30.034        3.122</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 81 2021-04-12 06:43:52  51.2476    2.9002      7.2157   30.251        3.149</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 82 2021-04-12 07:00:04  51.2408    2.8157      7.2421   30.027        3.120</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 83 2021-04-12 08:00:04  51.1841    2.6322      7.4645   29.784        3.114</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 84 2021-04-12 09:00:04  51.1612    2.6665      7.3837   29.689        3.098</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 85 2021-04-12 10:00:04  51.2005    2.7880      7.3486   29.909        3.115</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    DEPTH CHLOROPHYLA SPEEDMADEGOOD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1   7.77        8.67          11.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  21.61        8.10          11.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  11.55        0.00           0.5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  12.34        0.00           0.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  11.03        0.00           7.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  11.70        0.00          12.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7   9.79        8.49          10.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8   9.34        0.00           2.5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9   7.10        8.37           8.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10  7.83        6.77          10.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11 12.33        5.27          11.7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12 10.36        6.75           8.5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13 10.50        4.04          10.9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14 23.53        7.57          11.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15 31.21        4.92          11.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16 33.02        2.77           3.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17 33.11        2.42           3.5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18 31.66        3.60           3.9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19 13.33        5.65           2.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20 26.21        6.32          11.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21 12.41        3.82          10.7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22 11.83        3.37           1.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23 11.54        7.76          11.7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24 15.14        4.89          11.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25 15.14        4.92          11.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26  8.03        4.89           7.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27 20.78        5.45           1.8</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 28 22.60        5.47           0.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 29 31.59        6.25          11.9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 30 11.69        9.07          11.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 31 13.05        9.43          11.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 32 11.38        5.63          11.5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 33  8.21        4.52          11.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 34 11.23        7.60          11.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 35 31.37        0.00          11.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 36 34.47        2.81           1.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 37 34.98        3.22           4.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 38 34.33        0.00           9.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 39 33.99        4.43           1.8</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 40 32.41        3.69           4.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 41 28.86        4.75          11.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 42 11.45        7.94          10.7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 43  9.27        4.74          11.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 44  9.23        4.77          11.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 45 16.85       10.24           9.8</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 46 18.78        5.77           9.5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 47 27.88        5.51          13.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 48 25.41        6.11          12.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 49 29.81        9.42          12.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 50 15.46       13.43          10.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 51  7.81        8.98          11.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 52  9.66       11.07           0.7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 53 10.55       10.78           9.5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 54  8.79       10.90          11.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 55  6.75       11.88          11.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 56 25.16        7.57          11.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 57 32.42        5.83          10.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 58 26.01        6.32           7.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 59 25.51        4.60           7.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 60 25.07        8.12           7.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 61  9.27        9.47          11.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 62  9.21        9.26          11.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 63 26.53        9.28          11.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 64 22.57        5.51           0.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 65 20.63        7.40           0.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 66 23.23        7.12           0.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 67 23.91        5.10           0.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 68 30.78        4.85           9.8</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 69 12.34       11.75           8.8</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 70  7.96        3.25          12.0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 71 10.88        2.72           0.7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 72 11.97        0.00           2.9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 73 27.16        2.93           0.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 74 17.55        8.41          10.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 75 14.59        6.34           2.9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 76 32.45        7.49          11.9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 77 24.84        8.54           2.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 78 23.01       10.34          11.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 79 13.34        6.26           3.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 80 10.29        4.96          11.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 81  6.17        4.12          11.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 82  9.09        5.51          12.5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 83  6.55        7.27           1.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 84  7.71        6.57           8.8</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 85 11.80        6.16          10.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$daterange</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "2021-03-15" "2021-04-13"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Underway data"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$binSize</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "60 min"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

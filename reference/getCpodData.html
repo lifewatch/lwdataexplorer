@@ -223,162 +223,184 @@ Need valid authentication to access the entire data.To get an account, register 
     <p>Dataframe with the specified C-POD data.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>getCpodData</span><span class='op'>(</span><span class='st'>"2020-04-19"</span>, <span class='st'>"2020-04-21"</span>, processing <span class='op'>=</span> <span class='st'>"Validated"</span>, by <span class='op'>=</span> <span class='st'>"1 week"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='message'>Query parameters</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>daterange : c("2020-04-19", "2020-04-21")</span></div><div class='output co'>#&gt; <span class='message'>type : CPOD data</span></div><div class='output co'>#&gt; <span class='message'>binSize : 1 week</span></div><div class='output co'>#&gt; <span class='message'>processing : Validated</span></div><div class='output co'>#&gt; <span class='message'>quality : c("Hi", "Mod", "Lo")</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>Data dimension: (16 x 19)</span></div><div class='output co'>#&gt;    DEPLOYMENT_FK       TIME SPECIES MILLISECONDS NUMBER_CLICKS_FILTERED
-#&gt; 1           6168 2020-04-13    NBHF        24970                   1064
-#&gt; 2           6168 2020-04-13   sonar         7841                     77
-#&gt; 3           6170 2020-04-13    NBHF         5035                    166
-#&gt; 4           6170 2020-04-13   sonar         3752                     53
-#&gt; 5           6171 2020-04-13    NBHF         2686                    411
-#&gt; 6           6171 2020-04-13   sonar        22027                    281
-#&gt; 7           9100 2020-04-13    NBHF        76376                   3323
-#&gt; 8           9100 2020-04-13   sonar        17761                     69
-#&gt; 9           9103 2020-04-13    NBHF        99311                   4818
-#&gt; 10          6170 2020-04-20    NBHF         6450                    359
-#&gt; 11          6170 2020-04-20   sonar       423814                   2070
-#&gt; 12          6171 2020-04-20    NBHF        21977                    923
-#&gt; 13          6171 2020-04-20   sonar       210067                   1091
-#&gt; 14          9100 2020-04-20    NBHF        57559                   2137
-#&gt; 15          9100 2020-04-20   sonar         9000                     95
-#&gt; 16          9103 2020-04-20    NBHF       340232                  21053
-#&gt;    NUMBER_CLICKS_TOTAL LOST_MINUTES RECORDED DPM DPH DPD DPW QUALITY
-#&gt; 1               134240            0      900  26   9   1   1       4
-#&gt; 2               134240            0      900   2   1   1   1       4
-#&gt; 3                 6768            0     1440   7   3   1   1       4
-#&gt; 4                 6768            0     1440   2   1   1   1       4
-#&gt; 5                42406            0     1440   7   3   1   1       4
-#&gt; 6                42406            0     1440   2   1   1   1       4
-#&gt; 7                59464            0     1440 121  14   1   1       4
-#&gt; 8                59464            0     1440   3   3   1   1       4
-#&gt; 9               173744            0     1380 140  21   1   1       4
-#&gt; 10               21838            0     1500  10   5   1   1       4
-#&gt; 11               21838            0     1500  22   5   1   1       4
-#&gt; 12               37954            0     1500  32  10   2   1       4
-#&gt; 13               37954            0     1500  24   3   1   1       4
-#&gt; 14               34882            0     1500  79  18   2   1       4
-#&gt; 15               34882            0     1500   3   1   1   1       4
-#&gt; 16              340646            0     1320 293  20   2   1       4
-#&gt;    PROJECTNAME          STATION LATITUDE LONGITUDE   MOORING_TYPE RECEIVER
-#&gt; 1    Lifewatch bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416
-#&gt; 2    Lifewatch bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416
-#&gt; 3    Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 4    Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 5    Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 6    Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 7    Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 8    Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 9    Lifewatch   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219
-#&gt; 10   Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 11   Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 12   Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 13   Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 14   Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 15   Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 16   Lifewatch   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</div><div class='input'><span class='fu'>getCpodData</span><span class='op'>(</span><span class='st'>"2020-04-19"</span>, <span class='st'>"2020-04-21"</span>, processing <span class='op'>=</span> <span class='st'>"Raw"</span>,
-quality <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Hi"</span>, <span class='st'>"Lo"</span><span class='op'>)</span>, by <span class='op'>=</span> <span class='st'>"1 day"</span>, params <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='message'>Query parameters</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>daterange : c("2020-04-19", "2020-04-21")</span></div><div class='output co'>#&gt; <span class='message'>type : CPOD data</span></div><div class='output co'>#&gt; <span class='message'>binSize : 1 day</span></div><div class='output co'>#&gt; <span class='message'>processing : Raw</span></div><div class='output co'>#&gt; <span class='message'>quality : c("Hi", "Lo")</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>Data dimension: (27 x 18)</span></div><div class='output co'>#&gt; $mdf
-#&gt;    DEPLOYMENT_FK       TIME SPECIES MILLISECONDS NUMBER_CLICKS_FILTERED
-#&gt; 1           6168 2020-04-19    NBHF        52050                   1487
-#&gt; 2           6168 2020-04-19   sonar         7841                     77
-#&gt; 3           6170 2020-04-19    NBHF         8231                    201
-#&gt; 4           6170 2020-04-19   sonar         3752                     53
-#&gt; 5           6171 2020-04-19    NBHF         6101                    514
-#&gt; 6           6171 2020-04-19   sonar        22027                    281
-#&gt; 7           9100 2020-04-19    NBHF       136226                   4700
-#&gt; 8           9100 2020-04-19   sonar        17761                     69
-#&gt; 9           9103 2020-04-19    NBHF       333027                   9287
-#&gt; 10          6168 2020-04-20    NBHF          164                     16
-#&gt; 11          6168 2020-04-20   sonar            0                      0
-#&gt; 12          6170 2020-04-20    NBHF        15134                    480
-#&gt; 13          6170 2020-04-20   sonar       423814                   2070
-#&gt; 14          6171 2020-04-20    NBHF        30300                   1012
-#&gt; 15          6171 2020-04-20   sonar       210067                   1091
-#&gt; 16          9100 2020-04-20    NBHF        91828                   3016
-#&gt; 17          9100 2020-04-20   sonar         9000                     95
-#&gt; 18          9103 2020-04-20    NBHF       743165                  27716
-#&gt; 19          6168 2020-04-21    NBHF            0                      0
-#&gt; 20          6168 2020-04-21   sonar            0                      0
-#&gt; 21          6170 2020-04-21    NBHF            0                      0
-#&gt; 22          6170 2020-04-21   sonar            0                      0
-#&gt; 23          6171 2020-04-21    NBHF         6268                    197
-#&gt; 24          6171 2020-04-21   sonar            0                      0
-#&gt; 25          9100 2020-04-21    NBHF            0                      0
-#&gt; 26          9100 2020-04-21   sonar            0                      0
-#&gt; 27          9103 2020-04-21    NBHF            0                      0
-#&gt;    NUMBER_CLICKS_TOTAL LOST_MINUTES RECORDED DPM DPH DPD QUALITY PROJECTNAME
-#&gt; 1              1630852          214     1440  38  12   1       3   Lifewatch
-#&gt; 2              1630852          214     1440   2   1   1       3   Lifewatch
-#&gt; 3                 3384            0     1440   8   3   1       3   Lifewatch
-#&gt; 4                 3384            0     1440   2   1   1       3   Lifewatch
-#&gt; 5                21203            0     1440   9   3   1       3   Lifewatch
-#&gt; 6                21203            0     1440   2   1   1       3   Lifewatch
-#&gt; 7                29732            0     1440 164  15   1       3   Lifewatch
-#&gt; 8                29732            0     1440   3   3   1       3   Lifewatch
-#&gt; 9               109383            3     1440 261  22   1       3   Lifewatch
-#&gt; 10             5394317         1175     1440   3   3   1       3   Lifewatch
-#&gt; 11             5394317         1175     1440   0   0   0       3   Lifewatch
-#&gt; 12               10858            0     1440  14   5   1       3   Lifewatch
-#&gt; 13               10858            0     1440  22   5   1       3   Lifewatch
-#&gt; 14               17983            0     1440  36   9   1       3   Lifewatch
-#&gt; 15               17983            0     1440  24   3   1       3   Lifewatch
-#&gt; 16               16731            0     1440 113  17   1       3   Lifewatch
-#&gt; 17               16731            0     1440   3   1   1       3   Lifewatch
-#&gt; 18              329189           18     1440 410  21   1       3   Lifewatch
-#&gt; 19               40950           10       10   0   0   0       3   Lifewatch
-#&gt; 20               40950           10       10   0   0   0       3   Lifewatch
-#&gt; 21                  22            0       10   0   0   0       3   Lifewatch
-#&gt; 22                  22            0       10   0   0   0       3   Lifewatch
-#&gt; 23                 572            0       10   2   1   1       3   Lifewatch
-#&gt; 24                 572            0       10   0   0   0       3   Lifewatch
-#&gt; 25                  56            0       10   0   0   0       3   Lifewatch
-#&gt; 26                  56            0       10   0   0   0       3   Lifewatch
-#&gt; 27                 218            0       10   0   0   0       3   Lifewatch
-#&gt;             STATION LATITUDE LONGITUDE   MOORING_TYPE RECEIVER
-#&gt; 1  bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416
-#&gt; 2  bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416
-#&gt; 3  bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 4  bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 5  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 6  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 7      bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 8      bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 9    bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219
-#&gt; 10 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416
-#&gt; 11 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416
-#&gt; 12 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 13 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 14 bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 15 bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 16     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 17     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 18   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219
-#&gt; 19 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416
-#&gt; 20 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416
-#&gt; 21 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 22 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401
-#&gt; 23 bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 24 bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977
-#&gt; 25     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 26     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331
-#&gt; 27   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219
-#&gt; 
-#&gt; $par
-#&gt; $par$daterange
-#&gt; [1] "2020-04-19" "2020-04-21"
-#&gt; 
-#&gt; $par$type
-#&gt; [1] "CPOD data"
-#&gt; 
-#&gt; $par$binSize
-#&gt; [1] "1 day"
-#&gt; 
-#&gt; $par$processing
-#&gt; [1] "Raw"
-#&gt; 
-#&gt; $par$quality
-#&gt; [1] "Hi" "Lo"
-#&gt; 
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>getCpodData</span><span class='op'>(</span><span class='st'>"2020-04-19"</span>, <span class='st'>"2020-04-21"</span>, processing <span class='op'>=</span> <span class='st'>"Validated"</span>, by <span class='op'>=</span> <span class='st'>"1 week"</span><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Query parameters</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> daterange : c("2020-04-19", "2020-04-21")</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> type : CPOD data</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> binSize : 1 week</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> processing : Validated</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> quality : c("Hi", "Mod", "Lo")</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Data dimension: (16 x 19)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    DEPLOYMENT_FK       TIME SPECIES MILLISECONDS NUMBER_CLICKS_FILTERED</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1           6168 2020-04-13    NBHF        24970                   1064</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2           6168 2020-04-13   sonar         7841                     77</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3           6170 2020-04-13    NBHF         5035                    166</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4           6170 2020-04-13   sonar         3752                     53</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5           6171 2020-04-13    NBHF         2686                    411</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6           6171 2020-04-13   sonar        22027                    281</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7           9100 2020-04-13    NBHF        76376                   3323</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8           9100 2020-04-13   sonar        17761                     69</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9           9103 2020-04-13    NBHF        99311                   4818</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10          6170 2020-04-20    NBHF         6450                    359</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11          6170 2020-04-20   sonar       423814                   2070</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12          6171 2020-04-20    NBHF        21977                    923</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13          6171 2020-04-20   sonar       210067                   1091</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14          9100 2020-04-20    NBHF        57559                   2137</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15          9100 2020-04-20   sonar         9000                     95</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16          9103 2020-04-20    NBHF       340232                  21053</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    NUMBER_CLICKS_TOTAL LOST_MINUTES RECORDED DPM DPH DPD DPW QUALITY</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1               134240            0      900  26   9   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2               134240            0      900   2   1   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                 6768            0     1440   7   3   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                 6768            0     1440   2   1   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5                42406            0     1440   7   3   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6                42406            0     1440   2   1   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7                59464            0     1440 121  14   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8                59464            0     1440   3   3   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9               173744            0     1380 140  21   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10               21838            0     1500  10   5   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11               21838            0     1500  22   5   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12               37954            0     1500  32  10   2   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13               37954            0     1500  24   3   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14               34882            0     1500  79  18   2   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15               34882            0     1500   3   1   1   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16              340646            0     1320 293  20   2   1       4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    PROJECTNAME          STATION LATITUDE LONGITUDE   MOORING_TYPE RECEIVER</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1    Lifewatch bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2    Lifewatch bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3    Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4    Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5    Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6    Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7    Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8    Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9    Lifewatch   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10   Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11   Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12   Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13   Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14   Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15   Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16   Lifewatch   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
+<span class='r-in'><span class='fu'>getCpodData</span><span class='op'>(</span><span class='st'>"2020-04-19"</span>, <span class='st'>"2020-04-21"</span>, processing <span class='op'>=</span> <span class='st'>"Raw"</span>,</span>
+<span class='r-in'>quality <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Hi"</span>, <span class='st'>"Lo"</span><span class='op'>)</span>, by <span class='op'>=</span> <span class='st'>"1 day"</span>, params <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Query parameters</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> daterange : c("2020-04-19", "2020-04-21")</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> type : CPOD data</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> binSize : 1 day</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> processing : Raw</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> quality : c("Hi", "Lo")</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Data dimension: (27 x 18)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $mdf</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    DEPLOYMENT_FK       TIME SPECIES MILLISECONDS NUMBER_CLICKS_FILTERED</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1           6168 2020-04-19    NBHF        52050                   1487</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2           6168 2020-04-19   sonar         7841                     77</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3           6170 2020-04-19    NBHF         8231                    201</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4           6170 2020-04-19   sonar         3752                     53</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5           6171 2020-04-19    NBHF         6101                    514</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6           6171 2020-04-19   sonar        22027                    281</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7           9100 2020-04-19    NBHF       136226                   4700</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8           9100 2020-04-19   sonar        17761                     69</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9           9103 2020-04-19    NBHF       333027                   9287</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10          6168 2020-04-20    NBHF          164                     16</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11          6168 2020-04-20   sonar            0                      0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12          6170 2020-04-20    NBHF        15134                    480</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13          6170 2020-04-20   sonar       423814                   2070</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14          6171 2020-04-20    NBHF        30300                   1012</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15          6171 2020-04-20   sonar       210067                   1091</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16          9100 2020-04-20    NBHF        91828                   3016</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17          9100 2020-04-20   sonar         9000                     95</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18          9103 2020-04-20    NBHF       743165                  27716</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19          6168 2020-04-21    NBHF            0                      0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20          6168 2020-04-21   sonar            0                      0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21          6170 2020-04-21    NBHF            0                      0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22          6170 2020-04-21   sonar            0                      0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23          6171 2020-04-21    NBHF         6268                    197</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24          6171 2020-04-21   sonar            0                      0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25          9100 2020-04-21    NBHF            0                      0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26          9100 2020-04-21   sonar            0                      0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27          9103 2020-04-21    NBHF            0                      0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    NUMBER_CLICKS_TOTAL LOST_MINUTES RECORDED DPM DPH DPD QUALITY PROJECTNAME</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1              1630852          214     1440  38  12   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2              1630852          214     1440   2   1   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                 3384            0     1440   8   3   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                 3384            0     1440   2   1   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5                21203            0     1440   9   3   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6                21203            0     1440   2   1   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7                29732            0     1440 164  15   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8                29732            0     1440   3   3   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9               109383            3     1440 261  22   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10             5394317         1175     1440   3   3   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11             5394317         1175     1440   0   0   0       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12               10858            0     1440  14   5   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13               10858            0     1440  22   5   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14               17983            0     1440  36   9   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15               17983            0     1440  24   3   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16               16731            0     1440 113  17   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17               16731            0     1440   3   1   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18              329189           18     1440 410  21   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19               40950           10       10   0   0   0       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20               40950           10       10   0   0   0       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21                  22            0       10   0   0   0       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22                  22            0       10   0   0   0       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23                 572            0       10   2   1   1       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24                 572            0       10   0   0   0       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25                  56            0       10   0   0   0       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26                  56            0       10   0   0   0       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27                 218            0       10   0   0   0       3   Lifewatch</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>             STATION LATITUDE LONGITUDE   MOORING_TYPE RECEIVER</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7      bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8      bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9    bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14 bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15 bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23 bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24 bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$daterange</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "2020-04-19" "2020-04-21"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "CPOD data"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$binSize</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "1 day"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$processing</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Raw"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$quality</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Hi" "Lo"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -206,82 +206,102 @@
     <p>Dataframe with the Station-data.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>getStationData</span><span class='op'>(</span><span class='st'>"2019-07-22"</span>, <span class='st'>"2019-07-23"</span>, stations <span class='op'>=</span> <span class='st'>"all"</span>, categories <span class='op'>=</span> <span class='st'>"all"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='message'>Query parameters</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>daterange : c("2019-07-22", "2019-07-23")</span></div><div class='output co'>#&gt; <span class='message'>type : Station data</span></div><div class='output co'>#&gt; <span class='message'>stationlist : all</span></div><div class='output co'>#&gt; <span class='message'>categories : all</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>Data dimension: (6 x 21)</span></div><div class='output co'>#&gt;   STATION                TIME LATITUDE LONGITUDE CONDUCTIVITY(ΜS/CM)
-#&gt; 1     120 2019-07-22 08:00:00  51.1850    2.7012            46848.00
-#&gt; 2     120 2019-07-22 08:10:00  51.1850    2.7012                  NA
-#&gt; 3     215 2019-07-22 09:30:00  51.2767    2.6133            46386.44
-#&gt; 4     230 2019-07-22 13:30:00  51.3083    2.8500            45144.67
-#&gt; 5     230 2019-07-22 13:40:00  51.3083    2.8500                  NA
-#&gt; 6    ZG02 2019-07-22 10:30:00  51.3333    2.5000            46404.67
-#&gt;   DENSITY(KG/M3) FLUORESCENCE(MG/M³) OBS(NTU)      PAR PRESSURE(DB)
-#&gt; 1       1024.351              4.0080   1.7831  44.6977       3.5850
-#&gt; 2             NA                  NA       NA       NA           NA
-#&gt; 3       1024.445              1.9142   0.5820 324.6139       3.5041
-#&gt; 4       1022.787              4.6617   2.9460 327.8300       3.5094
-#&gt; 5             NA                  NA       NA       NA           NA
-#&gt; 6       1024.704              2.0402   0.9092 548.1995       3.4002
-#&gt;   SALINITY(PSU) SECCHI_DEPTH(CM) SOUND VELOCITY(M/S) TEMPERATURE(DEGC)
-#&gt; 1       34.3466              200            1520.043           19.7264
-#&gt; 2            NA               NA                  NA                NA
-#&gt; 3       34.3236               NA            1518.792           19.2911
-#&gt; 4       32.4957               NA            1519.603           20.3122
-#&gt; 5            NA              120                  NA                NA
-#&gt; 6       34.5694              401            1518.279           19.0132
-#&gt;   AMMONIUM_NH4(ΜMOL N_NH4/L) NITRATE_NITRITE(ΜMOL N_NO3-NO2/L)
-#&gt; 1                         NA                                NA
-#&gt; 2                       0.88                              1.41
-#&gt; 3                       0.40                              0.16
-#&gt; 4                       4.81                              2.80
-#&gt; 5                         NA                                NA
-#&gt; 6                       0.29                              0.08
-#&gt;   NITRATE_NO3(ΜMOL N_NO3/L) NITRITE_NO2(ΜMOL N_NO2/L)
-#&gt; 1                        NA                        NA
-#&gt; 2                      1.36                      0.05
-#&gt; 3                      0.14                      0.02
-#&gt; 4                      2.38                      0.42
-#&gt; 5                        NA                        NA
-#&gt; 6                      0.07                      0.01
-#&gt;   PHOSPHATE_PO4(ΜMOL P_PO4/L) SILICATE_SIO4(ΜMOL SI_SIO4/L) SPM(MG/L)
-#&gt; 1                          NA                            NA        NA
-#&gt; 2                        0.17                          1.95       5.2
-#&gt; 3                        0.08                          0.97        NA
-#&gt; 4                        0.65                         10.29       8.7
-#&gt; 5                          NA                            NA        NA
-#&gt; 6                        0.07                          0.22       3.6</div><div class='input'><span class='fu'>getStationData</span><span class='op'>(</span><span class='st'>"2019-07-22"</span>, <span class='st'>"2019-07-23"</span>, stations <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>120</span>, <span class='fl'>215</span><span class='op'>)</span>,
-categories <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Nutrients"</span>, <span class='st'>"Secchi"</span><span class='op'>)</span>, params <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='message'>Query parameters</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>daterange : c("2019-07-22", "2019-07-23")</span></div><div class='output co'>#&gt; <span class='message'>type : Station data</span></div><div class='output co'>#&gt; <span class='message'>stationlist : c(120, 215)</span></div><div class='output co'>#&gt; <span class='message'>categories : c("Nutrients", "Secchi")</span></div><div class='output co'>#&gt; <span class='message'>---------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>Data dimension: (3 x 11)</span></div><div class='output co'>#&gt; $mdf
-#&gt;   STATION                TIME LATITUDE LONGITUDE SECCHI_DEPTH(CM)
-#&gt; 1     120 2019-07-22 08:00:00  51.1850    2.7012              200
-#&gt; 2     120 2019-07-22 08:10:00  51.1850    2.7012               NA
-#&gt; 3     215 2019-07-22 09:30:00  51.2767    2.6133               NA
-#&gt;   AMMONIUM_NH4(ΜMOL N_NH4/L) NITRATE_NITRITE(ΜMOL N_NO3-NO2/L)
-#&gt; 1                         NA                                NA
-#&gt; 2                       0.88                              1.41
-#&gt; 3                       0.40                              0.16
-#&gt;   NITRATE_NO3(ΜMOL N_NO3/L) NITRITE_NO2(ΜMOL N_NO2/L)
-#&gt; 1                        NA                        NA
-#&gt; 2                      1.36                      0.05
-#&gt; 3                      0.14                      0.02
-#&gt;   PHOSPHATE_PO4(ΜMOL P_PO4/L) SILICATE_SIO4(ΜMOL SI_SIO4/L)
-#&gt; 1                          NA                            NA
-#&gt; 2                        0.17                          1.95
-#&gt; 3                        0.08                          0.97
-#&gt; 
-#&gt; $par
-#&gt; $par$daterange
-#&gt; [1] "2019-07-22" "2019-07-23"
-#&gt; 
-#&gt; $par$type
-#&gt; [1] "Station data"
-#&gt; 
-#&gt; $par$stationlist
-#&gt; [1] 120 215
-#&gt; 
-#&gt; $par$categories
-#&gt; [1] "Nutrients" "Secchi"   
-#&gt; 
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>getStationData</span><span class='op'>(</span><span class='st'>"2019-07-22"</span>, <span class='st'>"2019-07-23"</span>, stations <span class='op'>=</span> <span class='st'>"all"</span>, categories <span class='op'>=</span> <span class='st'>"all"</span><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Query parameters</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> daterange : c("2019-07-22", "2019-07-23")</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> type : Station data</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> stationlist : all</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> categories : all</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Data dimension: (6 x 21)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   STATION                TIME LATITUDE LONGITUDE CONDUCTIVITY(ΜS/CM)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1     120 2019-07-22 08:00:00  51.1850    2.7012            46848.00</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2     120 2019-07-22 08:10:00  51.1850    2.7012                  NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3     215 2019-07-22 09:30:00  51.2767    2.6133            46386.44</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4     230 2019-07-22 13:30:00  51.3083    2.8500            45144.67</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5     230 2019-07-22 13:40:00  51.3083    2.8500                  NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6    ZG02 2019-07-22 10:30:00  51.3333    2.5000            46404.67</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DENSITY(KG/M3) FLUORESCENCE(MG/M³) OBS(NTU)      PAR PRESSURE(DB)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1       1024.351              4.0080   1.7831  44.6977       3.5850</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2             NA                  NA       NA       NA           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3       1024.445              1.9142   0.5820 324.6139       3.5041</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4       1022.787              4.6617   2.9460 327.8300       3.5094</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5             NA                  NA       NA       NA           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6       1024.704              2.0402   0.9092 548.1995       3.4002</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   SALINITY(PSU) SECCHI_DEPTH(CM) SOUND VELOCITY(M/S) TEMPERATURE(DEGC)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1       34.3466              200            1520.043           19.7264</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2            NA               NA                  NA                NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3       34.3236               NA            1518.792           19.2911</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4       32.4957               NA            1519.603           20.3122</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5            NA              120                  NA                NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6       34.5694              401            1518.279           19.0132</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   AMMONIUM_NH4(ΜMOL N_NH4/L) NITRATE_NITRITE(ΜMOL N_NO3-NO2/L)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                         NA                                NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                       0.88                              1.41</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                       0.40                              0.16</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                       4.81                              2.80</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5                         NA                                NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6                       0.29                              0.08</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   NITRATE_NO3(ΜMOL N_NO3/L) NITRITE_NO2(ΜMOL N_NO2/L)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                        NA                        NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                      1.36                      0.05</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                      0.14                      0.02</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                      2.38                      0.42</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5                        NA                        NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6                      0.07                      0.01</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   PHOSPHATE_PO4(ΜMOL P_PO4/L) SILICATE_SIO4(ΜMOL SI_SIO4/L) SPM(MG/L)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                          NA                            NA        NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                        0.17                          1.95       5.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                        0.08                          0.97        NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                        0.65                         10.29       8.7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5                          NA                            NA        NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6                        0.07                          0.22       3.6</span>
+<span class='r-in'><span class='fu'>getStationData</span><span class='op'>(</span><span class='st'>"2019-07-22"</span>, <span class='st'>"2019-07-23"</span>, stations <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>120</span>, <span class='fl'>215</span><span class='op'>)</span>,</span>
+<span class='r-in'>categories <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Nutrients"</span>, <span class='st'>"Secchi"</span><span class='op'>)</span>, params <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Query parameters</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> daterange : c("2019-07-22", "2019-07-23")</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> type : Station data</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> stationlist : c(120, 215)</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> categories : c("Nutrients", "Secchi")</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> ---------------------------------------------</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Data dimension: (3 x 11)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $mdf</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   STATION                TIME LATITUDE LONGITUDE SECCHI_DEPTH(CM)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1     120 2019-07-22 08:00:00  51.1850    2.7012              200</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2     120 2019-07-22 08:10:00  51.1850    2.7012               NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3     215 2019-07-22 09:30:00  51.2767    2.6133               NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   AMMONIUM_NH4(ΜMOL N_NH4/L) NITRATE_NITRITE(ΜMOL N_NO3-NO2/L)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                         NA                                NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                       0.88                              1.41</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                       0.40                              0.16</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   NITRATE_NO3(ΜMOL N_NO3/L) NITRITE_NO2(ΜMOL N_NO2/L)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                        NA                        NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                      1.36                      0.05</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                      0.14                      0.02</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   PHOSPHATE_PO4(ΜMOL P_PO4/L) SILICATE_SIO4(ΜMOL SI_SIO4/L)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                          NA                            NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                        0.17                          1.95</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                        0.08                          0.97</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$daterange</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "2019-07-22" "2019-07-23"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Station data"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$stationlist</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] 120 215</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $par$categories</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Nutrients" "Secchi"   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
