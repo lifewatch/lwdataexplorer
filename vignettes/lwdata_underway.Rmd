@@ -26,7 +26,7 @@ Data collected by the MIDAS underway continuous sampling system on the RV Zeelee
 - Geographical coverage: [Belgian Exclusive Economic Zone (EEZ)](https://www.marineregions.org/gazetteer.php?p=details&id=3293), [United Kingdom EEZ](https://www.marineregions.org/gazetteer.php?p=details&id=5696), [French EEZ](https://www.marineregions.org/gazetteer.php?p=details&id=5677) and [Dutch EEZ](https://www.marineregions.org/gazetteer.php?p=details&id=5668)
 - Taxonomic coverage: Abiotic data only
 - Moratorium: None
-- Data quality: Unknown
+- Data quality: research-grade
  
 ## How to interpret this dataset
  
