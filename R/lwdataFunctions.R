@@ -174,15 +174,15 @@ listUvaTags <- function(usr = NULL,
 #'getZooscanData("2011-01-01", "2021-04-14") # Only data
 #'getZooscanData("2011-01-01", "2021-04-14", TRUE) # Data + query parameters
 #' @export
-getZooscanData <- function(startdate, stopdate, params = FALSE){
+getZooscanData <- function(startdate, stopdate, params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "ZooScan data"
   input$getPar = params
 
-  if(lw_rstudio_check_connection()){
-    require(lwdataserver, quietly = TRUE)
-    capture.output(out <- getLWdata(input, USER = NULL, client = TRUE))
+  if(lw_check_lwdataserver(...)){
+    suppressWarnings(require(lwdataserver, quietly = TRUE))
+    capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
   }
@@ -624,17 +624,22 @@ printParameters <- function(par, messg = "- Query parameters: "){
   # message("---------------------------------------------")
 }
 
-# Checks if the user is working in the RStudio server of lifewatch
-lw_rstudio_check_connection <- function(){
-  lw_rstudio_server <- c("https://rstudio.lifewatch.be/", "https://rstudio.vsc.lifewatch.be")
-  workenv <- Sys.getenv("RSTUDIO_HTTP_REFERER")
-  is_lw_rstudio <- workenv %in% lw_rstudio_server
+# Checks if the user has access to lwdataserver
+lw_check_lwdataserver <- function(force_opencpu = FALSE){
+  # Checks if lwdataserver is installed
+  use_lwdataserver <- "lwdataserver" %in% utils::installed.packages()[, 1]
 
-  if(is_lw_rstudio){
-    message("- Query mode: Database connection")
-  }else{
+  if(!use_lwdataserver | force_opencpu){
     message("- Query mode: Post request to OpenCPU server")
+
+    if(use_lwdataserver & force_opencpu){
+      use_lwdataserver <- FALSE
+      warning("Data accessed through OpenCPU server but a direct connection to the database is available. Consider setting force_opencpu = FALSE to improve performance.")
+    }
+
+  }else if(use_lwdataserver & !force_opencpu){
+    message("- Query mode: Database connection")
   }
 
-  return(is_lw_rstudio)
+  return(use_lwdataserver)
 }
