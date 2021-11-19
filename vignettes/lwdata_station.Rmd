@@ -27,8 +27,8 @@ Data on nutrients, pigments, suspended matter and secchi measurements from fixed
 - Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
 - Taxonomic coverage: Abiotic data only
 - Moratorium: None
-- Data quality: Research-grade
- 
+- Data quality: Research-grade. Pigment, nutrients and spm are subjected to an automated QC while the CTD data is not.
+
 ## How to interpret this dataset
  
 ### Query options
