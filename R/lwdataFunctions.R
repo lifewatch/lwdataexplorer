@@ -169,6 +169,7 @@ listUvaTags <- function(usr = NULL,
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Used for debugging. These are params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the aggregated zooscan-data within the specified daterange.
 #'@examples
 #'getZooscanData("2011-01-01", "2021-04-14") # Only data
@@ -181,8 +182,7 @@ getZooscanData <- function(startdate, stopdate, params = FALSE, ...){
   input$getPar = params
 
   if(lw_check_lwdataserver(...)){
-    suppressWarnings(require(lwdataserver, quietly = TRUE))
-    capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
   }
@@ -627,7 +627,7 @@ printParameters <- function(par, messg = "- Query parameters: "){
 # Checks if the user has access to lwdataserver
 lw_check_lwdataserver <- function(force_opencpu = FALSE){
   # Checks if lwdataserver is installed
-  use_lwdataserver <- "lwdataserver" %in% utils::installed.packages()[, 1]
+  suppressWarnings(use_lwdataserver <- isTRUE(requireNamespace("lwdataserver", quietly = TRUE)))
 
   if(!use_lwdataserver | force_opencpu){
     message("- Query mode: Post request to OpenCPU server")
