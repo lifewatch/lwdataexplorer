@@ -139,7 +139,7 @@
 <li>Taxonomic coverage: <a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=11676">Pisces</a>
 </li>
 <li>Moratorium: Some project data is under moratorium. Login or <a href="https://rshiny.lifewatch.be/account?p=register">register</a> to get full access</li>
-<li>Data quality: Unknown</li>
+<li>Data quality: Research-grade</li>
 </ul>
 <div id="how-to-interpret-this-dataset" class="section level2">
 <h2 class="hasAnchor">
@@ -165,13 +165,13 @@
 <a href="#available-columns" class="anchor"></a>Available columns</h3>
 <ul>
 <li>
-<strong>Counts</strong>: Total GPS fixes or detections</li>
+<strong>Counts</strong>: Total GPS fixes or detections.</li>
 <li>
-<strong>Scientific_name</strong>: The latin name of the species</li>
+<strong>Scientific_name</strong>: The latin name of the species.</li>
 <li>
-<strong>Project</strong>: Project in charge of receiver deployments</li>
+<strong>Project</strong>: Project in charge of receiver deployments.</li>
 <li>
-<strong>Network</strong>: The network of receiver or antenna deployments</li>
+<strong>Network</strong>: The network of receiver or antenna deployments.</li>
 <li>
 <strong>Time</strong>: Time in UTC, beginning of sample timeperiod.</li>
 <li>
@@ -179,55 +179,46 @@
 <li>
 <strong>Latitude</strong>: Center latitude in decimal degrees, WGS84</li>
 <li>
-<strong>Station</strong>: Name or code of sampling station or receiver code</li>
+<strong>Station</strong>: Name or code of sampling station or receiver code.</li>
 <li>
-<strong>Receiver</strong>: Receiver name, composed of ‘Model number’-‘Serial number’</li>
+<strong>Receiver</strong>: Receiver name, composed of ‘Model number’-‘Serial number’.</li>
 <li>
-<strong>Code</strong>: Code of device on / in individual</li>
+<strong>Code</strong>: Code of device on / in individual.</li>
 <li>
-<strong>Moratorium</strong>: Some data fields are masked, pending official data publication. eg Species name</li>
+<strong>Moratorium</strong>: Some data fields are masked, pending official data publication. eg Species name.</li>
 <li>
-<strong>Duration</strong>: Total time since receiver deployment (in hours)</li>
+<strong>Duration</strong>: Total time since receiver deployment (in hours).</li>
 <li>
-<strong>Remaining</strong>: Battery life remaining in the receiver (in hours)</li>
+<strong>Remaining</strong>: Battery life remaining in the receiver (in hours).</li>
 <li>
-<strong>Expiry_date</strong>: As in ‘BATTERY_ESTIMATED_END_DATE’ is the estimated date at which receiver will stop recording. This date is calculated automatically from (Deployments/Battery install date) and (Receivers/Expected battery life)</li>
+<strong>Expiry_date</strong>: As in ‘BATTERY_ESTIMATED_END_DATE’ is the estimated date at which receiver will stop recording. This date is calculated automatically from (Deployments/Battery install date) and (Receivers/Expected battery life).</li>
 <li>
-<strong>Location_name</strong>: Name of receiver location. Please refer to a specific nearby point of land, town, island, or body of water that uniquely identifies this receiver location</li>
+<strong>Location_name</strong>: Name of receiver location. Please refer to a specific nearby point of land, town, island, or body of water that uniquely identifies this receiver location.</li>
 <li>
 <strong>Residency</strong>: Time in hours that an animal was present at a station.<br>
 </li>
 <li>
-<strong>Absence</strong>: Time in hours that an animal was not detected at a station (calculated between end of previous residence and start of current residence period)<br>
+<strong>Absence</strong>: Time in hours that an animal was not detected at a station (calculated between end of previous residence and start of current residence period).<br>
 </li>
 <li>
 <strong>Species</strong>: Scientific name of the animal, as in Gadus morhua.<br>
 </li>
 <li>
-<strong>Endperiod</strong>:</li>
+<strong>Endperiod</strong>: Last time that the animal was present at a station during the current residency period.</li>
 </ul>
 <details><p><summary>Click to see all the columns of “Detections” </summary></p>
 <ul>
 <li>
-<strong>Transmitter</strong>:<br>
+<strong>Transmitter</strong>: Transmitter full-id (including both protocol and transmitter ID)<br>
 </li>
 <li>
-<strong>Transmitter_name</strong>:<br>
-</li>
-<li>
-<strong>Transmitter_serial</strong>:<br>
+<strong>Transmitter_serial</strong>: Serial number of the transmitter.<br>
 </li>
 <li>
 <strong>Sensor_value</strong>: Value recorded by the tag sensor.<br>
 </li>
 <li>
 <strong>Sensor_unit</strong>: Unit of measured sensor value.<br>
-</li>
-<li>
-<strong>Sensor2_value</strong>:<br>
-</li>
-<li>
-<strong>Sensor2_unit</strong>:<br>
 </li>
 <li>
 <strong>Station_name</strong>: Name of the station where the deployment of the receiver takes place. Related to a specific latitude and longitude.<br>
@@ -254,13 +245,13 @@
 <strong>Location_name</strong>: Name of detection location.<br>
 </li>
 <li>
-<strong>Deployment_station_name</strong>:<br>
+<strong>Deployment_station_name</strong>: Name of the station where the deployment of the receiver takes place. Related to a specific latitude and longitude.<br>
 </li>
 <li>
 <strong>Deploy_date_time</strong>: Date and time that the equipment was deployed, in 24-hour UTC. Corresponds to the time of the captured waypoint. Datetime fields should follow the ISO-8601 format (e.g. 2017-01-01T12:07:23Z)<br>
 </li>
 <li>
-<strong>Deployment_type</strong>:<br>
+<strong>Deployment_type</strong>: Refers to the context. Which technology type is used.<br>
 </li>
 <li>
 <strong>Animal_project_name</strong>: Name of the animal project linked to this detection.<br>
@@ -269,7 +260,7 @@
 <strong>Animal_project_code</strong>: Code of the animal project linked to this detection.<br>
 </li>
 <li>
-<strong>Animal_moratorium</strong>:<br>
+<strong>Animal_moratorium</strong>: Specifies whether data from the animal project is under moratorium.<br>
 </li>
 <li>
 <strong>Network_project_name</strong>: Name of the network project linked to this detection.<br>
@@ -278,42 +269,36 @@
 <strong>Network_project_code</strong>: Code of the network project linked to this detection.<br>
 </li>
 <li>
-<strong>Network_moratorium</strong>:<br>
+<strong>Network_moratorium</strong>: Specifies whether data from the network project is under moratorium.<br>
 </li>
 <li>
 <strong>Signal_to_noise_ratio</strong>: Signal-to-noise ratio. This is the difference between the background noise level and the signal level. Info comes from detection file.<br>
 </li>
 <li>
-<strong>Detection_file_id</strong>:<br>
+<strong>Detection_file_id</strong>: ID from the detection file.<br>
 </li>
 <li>
-<strong>Tag_sensor_type</strong>:<br>
-</li>
+<strong>Tag_sensor_type</strong>: What type of sensor (pressure, acceleration)</li>
 <li>
-<strong>Tag_intercept</strong>:<br>
-</li>
+<strong>Tag_intercept</strong>: Intercept needed to calculate the sensor value of the tag from the raw value.</li>
 <li>
-<strong>Tag_slope</strong>:<br>
-</li>
+<strong>Tag_slope</strong>: Slope needed to calculate the sensor value of the tag from the raw value.</li>
 <li>
-<strong>Sensor_value_depth_meters</strong>:</li>
+<strong>Sensor_value_depth_meters</strong>: Calculated depth of the sensor in meters (based on raw value slope and intercept).</li>
 <li>
-<strong>Tag_owner_organization</strong>:<br>
+<strong>Tag_owner_organization</strong>: Institution that owns the tag.<br>
 </li>
 <li>
 <strong>Animal_id_pk</strong>: Technical identifier of the animal record in the database.<br>
 </li>
 <li>
-<strong>Animal_common_name</strong>:<br>
-</li>
+<strong>Animal_common_name</strong>: Animal species common name (not scientific name).</li>
 <li>
-<strong>Animal_sex</strong>:<br>
-</li>
+<strong>Animal_sex</strong>: Sex of the animal.</li>
 <li>
-<strong>Deployment_lat</strong>:<br>
-</li>
+<strong>Deployment_lat</strong>: Latitude of the deployment in decimal degrees, WGS84. Note: in the southern hemisphere all latitudes must be negative. Format: ddd.ddddd; as in: 2.59020.</li>
 <li>
-<strong>Deployment_long</strong>:<br>
+<strong>Deployment_long</strong>: Longitude of the deployment in decimal degrees, WGS84. Note: in the western hemisphere all longitudes must be negative. Format: dd.ddddd; as in: 51.36324.<br>
 </li>
 <li>
 <strong>Sensor_value_acceleration</strong>: Value recorded by the acceleration sensor.</li>
