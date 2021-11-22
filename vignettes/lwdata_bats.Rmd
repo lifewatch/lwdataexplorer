@@ -58,13 +58,20 @@ To ensure qualitative recordings, the microphones are replaced every six months 
 
 ## How to cite these data
 
-When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=5251) of this data type.
-
-> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
-
-</br>
-If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+These data are licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 ```{r citation, results = 'asis', echo = FALSE}
-cat(paste0("> ", citation("lwdataexplorer")$textVersion))
+library(jsonlite)
+
+url <- "https://www.vliz.be/en/imis?module=dataset&dasid=5251"
+dasid <- fromJSON(paste0(url, "&show=json"))
+
+citation <- dasid[["datasetrec"]][["Citation"]]
+citation <- paste0("> ", citation, " ", url)
+
+cat(citation)
 ```
+
+Please acknowledge the LifeWatch Data Explorer in your work as: _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+
+These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/)
