@@ -26,7 +26,7 @@ Aquatic animal tracking data from the [European Tracking Network](https://lifewa
 - Geographical coverage: Europe
 - Taxonomic coverage: [Pisces](http://www.marinespecies.org/aphia.php?p=taxdetails&id=11676)
 - Moratorium: Some project data is under moratorium. Login or [register](https://rshiny.lifewatch.be/account?p=register) to get full access
-- Data quality: Unknown
+- Data quality: Research-grade
  
 ## How to interpret this dataset
  
@@ -38,36 +38,33 @@ Aquatic animal tracking data from the [European Tracking Network](https://lifewa
 * **Timeframe**: Starting and stopping date for the query.
 
 ### Available columns
-* **Counts**: Total GPS fixes or detections
-* **Scientific_name**: The latin name of the species
-* **Project**: Project in charge of receiver deployments
-* **Network**: The network of receiver or antenna deployments
+* **Counts**: Total GPS fixes or detections.
+* **Scientific_name**: The latin name of the species.
+* **Project**: Project in charge of receiver deployments.
+* **Network**: The network of receiver or antenna deployments.
 * **Time**: Time in UTC, beginning of sample timeperiod.
 * **Longitude**: Center longitude in decimal degrees, WGS84
 * **Latitude**: Center latitude in decimal degrees, WGS84
-* **Station**: Name or code of sampling station or receiver code
-* **Receiver**: Receiver name, composed of 'Model number'-'Serial number'
-* **Code**: Code of device on / in individual
-* **Moratorium**: Some data fields are masked, pending official data publication. eg Species name 
-* **Duration**: Total time since receiver deployment (in hours)
-* **Remaining**: Battery life remaining in the receiver (in hours) 
-* **Expiry_date**: As in 'BATTERY_ESTIMATED_END_DATE' is the estimated date at which receiver will stop recording. This date is calculated automatically from (Deployments/Battery install date) and (Receivers/Expected battery life)
-* **Location_name**: Name of receiver location. Please refer to a specific nearby point of land, town, island, or body of water that uniquely identifies this receiver location
+* **Station**: Name or code of sampling station or receiver code.
+* **Receiver**: Receiver name, composed of 'Model number'-'Serial number'.
+* **Code**: Code of device on / in individual.
+* **Moratorium**: Some data fields are masked, pending official data publication. eg Species name.
+* **Duration**: Total time since receiver deployment (in hours).
+* **Remaining**: Battery life remaining in the receiver (in hours). 
+* **Expiry_date**: As in 'BATTERY_ESTIMATED_END_DATE' is the estimated date at which receiver will stop recording. This date is calculated automatically from (Deployments/Battery install date) and (Receivers/Expected battery life).
+* **Location_name**: Name of receiver location. Please refer to a specific nearby point of land, town, island, or body of water that uniquely identifies this receiver location.
 * **Residency**: Time in hours that an animal was present at a station.     
-* **Absence**: Time in hours that an animal was not detected at a station (calculated between end of previous residence and start of current residence period)       
+* **Absence**: Time in hours that an animal was not detected at a station (calculated between end of previous residence and start of current residence period).       
 * **Species**: Scientific name of the animal, as in Gadus morhua.  
-* **Endperiod**:     
+* **Endperiod**:  Last time that the animal was present at a station during the current residency period.    
 
 <details>
   <summary>Click to see all the columns of "Detections" </summary>
   
-* **Transmitter**:               
-* **Transmitter_name**:          
-* **Transmitter_serial**:       
+* **Transmitter**: Transmitter full-id (including both protocol and transmitter ID)              
+* **Transmitter_serial**: Serial number of the transmitter.      
 * **Sensor_value**:  Value recorded by the tag sensor.             
 * **Sensor_unit**: Unit of measured sensor value.             
-* **Sensor2_value**:             
-* **Sensor2_unit**:              
 * **Station_name**: Name of the station where the deployment of the receiver takes place. Related to a specific latitude and longitude.         
 * **Datetime**: Date and time at which the tagged animal was detected at the receiver. Information from detection file.                 
 * **Id_pk**: Technical identifier of the detection record in the database.                    
@@ -76,27 +73,27 @@ Aquatic animal tracking data from the [European Tracking Network](https://lifewa
 * **Deployment_fk**: Foreign key linked to the deployment information.    
 * **Scientific_name**: Scientific name of the animal that carries the tag.          
 * **Location_name**: Name of detection location.           
-* **Deployment_station_name**:   
-* **Deploy_date_time**: Date and time that the equipment was deployed, in 24-hour UTC. Corresponds to the time of the captured waypoint. Datetime fields should follow the ISO-8601 format (e.g. 2017-01-01T12:07:23Z)         
-* **Deployment_type**:           
+* **Deployment_station_name**: Name of the station where the deployment of the receiver takes place. Related to a specific latitude and longitude.  
+* **Deploy_date_time**: Date and time that the equipment was deployed, in 24-hour UTC. Corresponds to the time of the captured waypoint. Datetime fields should follow the ISO-8601 format (e.g. 2017-01-01T12:07:23Z)      
+* **Deployment_type**: Refers to the context. Which technology type is used.          
 * **Animal_project_name**: Name of the animal project linked to this detection.      
 * **Animal_project_code**: Code of the animal project linked to this detection.      
-* **Animal_moratorium**:        
+* **Animal_moratorium**: Specifies whether data from the animal project is under moratorium.       
 * **Network_project_name**: Name of the network project linked to this detection.     
 * **Network_project_code**: Code of the network project linked to this detection.     
-* **Network_moratorium**:        
+* **Network_moratorium**: Specifies whether data from the network project is under moratorium.       
 * **Signal_to_noise_ratio**: Signal-to-noise ratio. This is the difference between the background noise level and the signal level. Info comes from detection file.    
-* **Detection_file_id**:         
-* **Tag_sensor_type**:          
-* **Tag_intercept**:             
-* **Tag_slope**:                 
-* **Sensor_value_depth_meters**: 
-* **Tag_owner_organization**:    
+* **Detection_file_id**: ID from the detection file.         
+* **Tag_sensor_type**: What type of sensor (pressure, acceleration)
+* **Tag_intercept**: Intercept needed to calculate the sensor value of the tag from the raw value.
+* **Tag_slope**: Slope needed to calculate the sensor value of the tag from the raw value.
+* **Sensor_value_depth_meters**: Calculated depth of the sensor in meters (based on raw value slope and intercept).
+* **Tag_owner_organization**: Institution that owns the tag.  
 * **Animal_id_pk**: Technical identifier of the animal record in the database.            
-* **Animal_common_name**:       
-* **Animal_sex**:                
-* **Deployment_lat**:            
-* **Deployment_long**:           
+* **Animal_common_name**: Animal species common name (not scientific name).
+* **Animal_sex**: Sex of the animal.
+* **Deployment_lat**: Latitude of the deployment in decimal degrees, WGS84. Note: in the southern hemisphere all latitudes must be negative. Format: ddd.ddddd; as in: 2.59020.
+* **Deployment_long**: Longitude of the deployment in decimal degrees, WGS84. Note: in the western hemisphere all longitudes must be negative. Format: dd.ddddd; as in: 51.36324.         
 * **Sensor_value_acceleration**: Value recorded by the acceleration sensor. 
 * **Sensor_value_temperature**: Value recorded by the temperature sensor. 
 * **Tag_fk**: Foreign key linked to the tag.                  
