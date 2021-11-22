@@ -149,7 +149,7 @@
 <a href="#query-options" class="anchor"></a>Query options</h3>
 <ul>
 <li>
-<strong>Data Source</strong>: One of: <strong>Time bins</strong>: groups detections by tag (code), receiver (station) and sampling frequency; <strong>Residencies</strong>: groups detections by period spent at each receiver and sampling frequency; or <strong>Active network</strong>: list of active deployments, in which case time = start of deployment.</li>
+<strong>Data Source</strong>: One of: <strong>Time bins</strong>: Number of detections per tag and per station based on the selected sample period; <strong>Residencies</strong>: groups detections by period spent at each receiver and sampling frequency; or <strong>Active network</strong>: list of active deployments, in which case time = start of deployment.</li>
 <li>
 <strong>Network</strong>: The network of receiver or antenna deployments.</li>
 <li>
@@ -171,7 +171,7 @@
 <li>
 <strong>Project</strong>: Project in charge of receiver deployments</li>
 <li>
-<strong>Network</strong>: The network of receiver or antenna deployments.</li>
+<strong>Network</strong>: The network of receiver or antenna deployments</li>
 <li>
 <strong>Time</strong>: Time in UTC, beginning of sample timeperiod.</li>
 <li>
@@ -181,30 +181,27 @@
 <li>
 <strong>Station</strong>: Name or code of sampling station or receiver code</li>
 <li>
-<strong>Receiver</strong>: Receiver name, composed of ‘Model number’-‘Serial number’.</li>
+<strong>Receiver</strong>: Receiver name, composed of ‘Model number’-‘Serial number’</li>
 <li>
 <strong>Code</strong>: Code of device on / in individual</li>
 <li>
 <strong>Moratorium</strong>: Some data fields are masked, pending official data publication. eg Species name</li>
 <li>
-<strong>Duration</strong>:<br>
+<strong>Duration</strong>: Total time since receiver deployment (in hours)</li>
+<li>
+<strong>Remaining</strong>: Battery life remaining in the receiver (in hours)</li>
+<li>
+<strong>Expiry_date</strong>: As in ‘BATTERY_ESTIMATED_END_DATE’ is the estimated date at which receiver will stop recording. This date is calculated automatically from (Deployments/Battery install date) and (Receivers/Expected battery life)</li>
+<li>
+<strong>Location_name</strong>: Name of receiver location. Please refer to a specific nearby point of land, town, island, or body of water that uniquely identifies this receiver location</li>
+<li>
+<strong>Residency</strong>: Time in hours that an animal was present at a station.<br>
 </li>
 <li>
-<strong>Remaining</strong>:<br>
+<strong>Absence</strong>: Time in hours that an animal was not detected at a station (calculated between end of previous residence and start of current residence period)<br>
 </li>
 <li>
-<strong>Expiry_date</strong>:<br>
-</li>
-<li>
-<strong>Location_name</strong>:</li>
-<li>
-<strong>Residency</strong>:<br>
-</li>
-<li>
-<strong>Absence</strong>:<br>
-</li>
-<li>
-<strong>Species</strong>:<br>
+<strong>Species</strong>: Scientific name of the animal, as in Gadus morhua.<br>
 </li>
 <li>
 <strong>Endperiod</strong>:</li>
