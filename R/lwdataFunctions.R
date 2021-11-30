@@ -654,8 +654,7 @@ lw_output_qc = function(input, out){
 
   # If mdf is a character string
   if(is.character(mdf)){
-    lw_compare_parameters(input, par)
-    lw_mdf_is_string(mdf)
+    lw_mdf_is_string(mdf, input, par)
     return(NULL)
   }
   ## END QC
@@ -664,7 +663,7 @@ lw_output_qc = function(input, out){
 
 
 # What to do if output is a string
-lw_mdf_is_string <- function(mdf){
+lw_mdf_is_string <- function(mdf, input = NULL, par = NULL){
 
   stopifnot(length(mdf) == 1)
 
@@ -680,6 +679,7 @@ lw_mdf_is_string <- function(mdf){
            grepl("results", mdf, ignore.case = TRUE)
            ){
     lw_warning_empty()
+    lw_compare_parameters(input, par)
     return(NULL)
 
   # Any other case, raise an error
