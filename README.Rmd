@@ -82,17 +82,20 @@ mvb <- getMvbData("2020-01-01", "2020-12-31", parameters = 'All',
 
 
 ### Get data and query parameters in a list
-The example above used set the argument `params = TRUE`. Through this argument, the get functions will return a list with both the data and another list with the query parameters applied in the server
+You can request to get the parameters applied in the server by setting the argument `params = TRUE`. The get functions will return a list with both the data and another list with the query parameters applied in the server
 
 ```{r params}
+# Request data but with parameters this time
+data_with_params <- getBuoyData("2021-03-19", "2021-04-21", "All", params = TRUE)
+
 # Check object type
-class(mvb)
+class(data_with_params)
 
 # What are the elements of the list?
-names(mvb)
+names(data_with_params)
 
 # Get query parameters as a list
-mvb$par
+data_with_params$par
 ```
 
 
@@ -108,11 +111,15 @@ etn <- lwdata('listETNprojects')
 as_tibble(etn)
 ```
 
+### Boost performance
+
+If you are working in one of the LifeWatch Belgium RStudio server, for example https://rstudio.lifewatch.be/ or https://rstudio.vsc.lifewatch.be, you can make your queries run faster. For more information please contact the package maintainer to discuss permissions and configuration.
+
 
 ## More information
 
 ### Issues
-If you find any problems please (raise a new issue)[https://github.com/lifewatch/lwdataexplorer/issues] or contact the package maintainer:
+If you find any problems please [raise a new issue](https://github.com/lifewatch/lwdataexplorer/issues) or contact the package maintainer:
 
 ```{r maintainer, eval = FALSE}
 # Run once the package is installed
@@ -122,8 +129,8 @@ maintainer("lwdataexplorer")
 ### Citation
 Please cite this software as:
 
-```{r citation, warning = FALSE}
-citation("lwdataexplorer")
+```{r citation, warning = FALSE, results = 'asis', echo = FALSE}
+cat(paste0("> ", citation("lwdataexplorer")$textVersion))
 ```
 
 ### License

@@ -206,6 +206,7 @@ getZooscanData <- function(startdate, stopdate, params = FALSE, ...){
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the aggregated flowcam-data within the specified daterange.
 #'@examples
 #'getFlowcamData("2020-04-19", "2020-04-21") # Only data
@@ -624,13 +625,12 @@ lw_output_qc = function(input, out){
   # If mdf is not empty, print log messages and return successfully
   if(is.data.frame(mdf)){
 
+    lw_compare_parameters(input, par)
+
     if(nrow(mdf) == 0){
-      return(lw_warning_empty())
+      lw_warning_empty()
     }
 
-    # Check if data type was list of projects
-
-    lw_compare_parameters(input, par)
 
     # END
     # Check if parameters were requested or not
@@ -654,8 +654,9 @@ lw_output_qc = function(input, out){
 
   # If mdf is a character string
   if(is.character(mdf)){
-    mdf <- lw_mdf_is_string(mdf)
-    return(mdf)
+    lw_compare_parameters(input, par)
+    lw_mdf_is_string(mdf)
+    return(NULL)
   }
   ## END QC
 

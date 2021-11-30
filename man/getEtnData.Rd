@@ -13,7 +13,8 @@ getEtnData(
   projects,
   usr = NULL,
   pwd = NULL,
-  params = FALSE
+  params = FALSE,
+  ...
 )
 }
 \arguments{
@@ -34,6 +35,8 @@ getEtnData(
 \item{pwd}{Password to connect to ETN database}
 
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
+
+\item{...}{Params to be passed to lw_check_lwdataserver().}
 }
 \value{
 Dataframe with the specified ETN data.

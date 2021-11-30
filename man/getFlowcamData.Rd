@@ -4,7 +4,7 @@
 \alias{getFlowcamData}
 \title{Retrieve flowcam-data from the LifeWatch project}
 \usage{
-getFlowcamData(startdate, stopdate, params = FALSE)
+getFlowcamData(startdate, stopdate, params = FALSE, ...)
 }
 \arguments{
 \item{startdate}{Starting date for the query}
@@ -12,6 +12,8 @@ getFlowcamData(startdate, stopdate, params = FALSE)
 \item{stopdate}{Stopping date for the query}
 
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
+
+\item{...}{Params to be passed to lw_check_lwdataserver().}
 }
 \value{
 Dataframe with the aggregated flowcam-data within the specified daterange.

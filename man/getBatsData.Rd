@@ -4,7 +4,7 @@
 \alias{getBatsData}
 \title{Retrieve batcorder-data from the LifeWatch project}
 \usage{
-getBatsData(startdate, stopdate, by, params = FALSE)
+getBatsData(startdate, stopdate, by, params = FALSE, ...)
 }
 \arguments{
 \item{startdate}{Starting date for the query}
@@ -14,6 +14,8 @@ getBatsData(startdate, stopdate, by, params = FALSE)
 \item{by}{Sample period, one of "1 min", "60 min" or "1 day"}
 
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
+
+\item{...}{Params to be passed to lw_check_lwdataserver().}
 }
 \value{
 Dataframe with the aggregated batcorder-data within the specified daterange.
