@@ -24,10 +24,10 @@ Genomic observations in the Belgian Part of the North Sea.
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36)
 - Period: since June 2012
-- Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
-- Taxonomic coverage: Several Bacteria and Eukaryota phylums.
+- Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293) and [Southern Bight of the North Sea](https://marineregions.org/gazetteer.php?p=details&id=2399)
+- Taxonomic coverage: Several Bacteria and Eukaryota phylums
 - Moratorium: None
-- Data quality: Unknown
+- Data quality: Validated
  
 ## How to interpret this dataset
  

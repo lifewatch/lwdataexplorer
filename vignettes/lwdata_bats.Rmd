@@ -21,12 +21,12 @@ knitr::opts_chunk$set(
 <!-- Describe datatype in one or two sentences. -->
 Occurrence bats data from a passive acoustic monitoring network in the Belgian coast.
 
-- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36) and [Research Institute for Nature and Forest (INBO)](https://www.vliz.be/en/imis?module=institute&insid=5443).
-- Period: since August 2015.
-- Geographical coverage: [Belgian coast](https://marineregions.org/gazetteer.php?p=details&id=2550).
-- Taxonomic coverage: [Chiroptera](https://www.marinespecies.org/aphia.php?p=taxdetails&id=1037271).
-- Moratorium: None.
-- Data quality: Unknown.
+- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36) and [Research Institute for Nature and Forest (INBO)](https://www.vliz.be/en/imis?module=institute&insid=5443)
+- Period: since August 2015
+- Geographical coverage: [Belgian coast](https://marineregions.org/gazetteer.php?p=details&id=2550)
+- Taxonomic coverage: [Chiroptera](https://www.marinespecies.org/aphia.php?p=taxdetails&id=1037271)
+- Moratorium: None
+- Data quality: Proof-of-concept
 
 ## How to interpret this dataset
 
