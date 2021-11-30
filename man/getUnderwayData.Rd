@@ -4,7 +4,7 @@
 \alias{getUnderwayData}
 \title{Retrieve Underway-data from the LifeWatch project}
 \usage{
-getUnderwayData(startdate, stopdate, by, params = FALSE)
+getUnderwayData(startdate, stopdate, by, params = FALSE, ...)
 }
 \arguments{
 \item{startdate}{Starting date for the query}
@@ -14,6 +14,8 @@ getUnderwayData(startdate, stopdate, by, params = FALSE)
 \item{by}{Time grouping for data aggregation, one of ("1 day","60 min","10 min","1 min")}
 
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
+
+\item{...}{Params to be passed to lw_check_lwdataserver().}
 }
 \value{
 Dataframe with the specified data.

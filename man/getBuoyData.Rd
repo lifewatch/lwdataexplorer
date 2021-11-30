@@ -4,7 +4,7 @@
 \alias{getBuoyData}
 \title{Retrieve Buoy-data from the LifeWatch project}
 \usage{
-getBuoyData(startdate, stopdate, stations, params = FALSE)
+getBuoyData(startdate, stopdate, stations, params = FALSE, ...)
 }
 \arguments{
 \item{startdate}{Starting date for the query}
@@ -14,6 +14,8 @@ getBuoyData(startdate, stopdate, stations, params = FALSE)
 \item{stations}{list of stations to be included in the query, currently list c("Buoy at C-Power","Spuikom Sluice","Buoy in Spuikom", "Ostend Research Tower"). Use \code{stations = "All"} to get all stations .}
 
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
+
+\item{...}{Params to be passed to lw_check_lwdataserver().}
 }
 \value{
 Dataframe with the buoy-data within the specified daterange and location.

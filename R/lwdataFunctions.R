@@ -82,8 +82,12 @@ lwdata<- function(
   USER$postgresPwd=loggedInUserPostgresPwd
 
   # Function call
-  out = basicPostJson(input, USER)
-  return(outputQC(input, out))
+  if(lw_check_lwdataserver()){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+  }else{
+    out = basicPostJson(input = input)
+  }
+  return(lw_output_qc(input, out))
 }
 
 # Function to use in LWDE
@@ -91,6 +95,7 @@ lwdata<- function(
 #'@param type Datatype as defined in LWDE
 #'@param input LWDE input element, as a list. Can be obtained by using shiny::reactiveValuesToList()
 #'@param USER LWDE USER element, as a list. Can be obtained by using shiny::reactiveValuesToList()
+#'@param ... Params to be passed to lw_check_lwdataserver()
 #'@return Returns dataframe of the requested datatype
 #'@examples
 #'lwdata2("listETNprojects")
@@ -101,10 +106,14 @@ lwdata<- function(
 #'@export
 lwdata2 = function(type,
                    input=NULL,
-                   USER=NULL){
+                   USER=NULL, ...){
   # Use when input and USER vector
   input$type = type
-  out = basicPostJson(input, USER )
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+  }else{
+    out = basicPostJson(input = input)
+  }
   return(out)
 }
 
@@ -169,22 +178,27 @@ listUvaTags <- function(usr = NULL,
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the aggregated zooscan-data within the specified daterange.
 #'@examples
 #'getZooscanData("2011-01-01", "2021-04-14") # Only data
 #'getZooscanData("2011-01-01", "2021-04-14", TRUE) # Data + query parameters
 #' @export
-getZooscanData <- function(startdate, stopdate, params = FALSE){
+getZooscanData <- function(startdate, stopdate, params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "ZooScan data"
   input$getPar = params
 
-  out = basicPostJson(
-    input = input
-  )
-  return(outputQC(input, out))
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+  }else{
+    out = basicPostJson(input = input)
+  }
+
+  return(lw_output_qc(input, out))
 }
+
 
 #'Retrieve flowcam-data from the LifeWatch project
 #'
@@ -192,22 +206,26 @@ getZooscanData <- function(startdate, stopdate, params = FALSE){
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the aggregated flowcam-data within the specified daterange.
 #'@examples
 #'getFlowcamData("2020-04-19", "2020-04-21") # Only data
 #'getFlowcamData("2020-04-19", "2020-04-21", TRUE) # Data + query parameters
 #' @export
-getFlowcamData <- function(startdate, stopdate, params = FALSE){
+getFlowcamData <- function(startdate, stopdate, params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "FlowCam data"
   # print(input)
   input$getPar = params
 
-  out = basicPostJson(
-    input = input
-  )
-  return(outputQC(input, out))
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+  }else{
+    out = basicPostJson(input = input)
+  }
+
+  return(lw_output_qc(input, out))
 }
 
 
@@ -218,13 +236,14 @@ getFlowcamData <- function(startdate, stopdate, params = FALSE){
 #'@param stopdate Stopping date for the query
 #'@param by Sample period, one of "1 min", "60 min" or "1 day"
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the aggregated batcorder-data within the specified daterange.
 #'@examples
 #'getBatsData("2014-08-01", "2014-09-01", "1 min")
 #'getBatsData("2014-08-01", "2014-09-01", "60 min", TRUE)
 #'getBatsData("2014-08-01", "2014-09-01", "1 day", TRUE)
 #'@export
-getBatsData <- function(startdate, stopdate, by, params = FALSE){
+getBatsData <- function(startdate, stopdate, by, params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$binSize=by
@@ -232,11 +251,13 @@ getBatsData <- function(startdate, stopdate, by, params = FALSE){
   input$getPar = params
   # print(input)
 
-  out = basicPostJson(
-    input = input
-  )
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+  }else{
+    out = basicPostJson(input = input)
+  }
 
-  return(outputQC(input, out))
+  return(lw_output_qc(input, out))
 }
 
 
@@ -247,6 +268,7 @@ getBatsData <- function(startdate, stopdate, by, params = FALSE){
 #'@param stopdate Stopping date for the query
 #'@param stations list of stations to be included in the query, currently list c("Buoy at C-Power","Spuikom Sluice","Buoy in Spuikom", "Ostend Research Tower"). Use \code{stations = "All"} to get all stations .
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the buoy-data within the specified daterange and location.
 #'@examples
 #'getBuoyData("2021-03-19", "2021-04-21", "All")
@@ -255,17 +277,20 @@ getBatsData <- function(startdate, stopdate, by, params = FALSE){
 #'"Ostend Research Tower"), TRUE)
 #'@export
 getBuoyData <- function(startdate, stopdate, stations,
-                        params = FALSE){
+                        params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$stationlist=stations
   input$type = "Buoy data"
   input$getPar = params
 
-  out = basicPostJson(
-    input = input
-  )
-  return(outputQC(input, out))
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+  }else{
+    out = basicPostJson(input = input)
+  }
+
+  return(lw_output_qc(input, out))
 }
 
 
@@ -282,6 +307,7 @@ getBuoyData <- function(startdate, stopdate, stations,
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the specified ETN data.
 #'@examples
 #'getEtnData("2020-04-19", "2020-04-21", action = "Time bins", by = "1 day",
@@ -290,7 +316,7 @@ getBuoyData <- function(startdate, stopdate, stations,
 #'networks = "Azorean acoustic receiver network", projects = "Lifewatch", params = TRUE)
 #'@export
 getEtnData <- function(startdate, stopdate, action, by, networks, projects,
-                       usr = NULL, pwd = NULL, params = FALSE){
+                       usr = NULL, pwd = NULL, params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "ETN data"
@@ -305,13 +331,14 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 
   USER$username=usr
   USER$password=pwd
-  # print(input)
-  # print(USER)
-  out = basicPostJson(
-    input = input,
-    USER=USER
-  )
-  return(outputQC(input, out))
+
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
+  }else{
+    out = basicPostJson(input = input, USER = USER)
+  }
+
+  return(lw_output_qc(input, out))
 }
 
 
@@ -327,6 +354,7 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the specified C-POD data.
 #'@examples
 #'getCpodData("2020-04-19", "2020-04-21", processing = "Validated", by = "1 week")
@@ -334,7 +362,7 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 #'quality = c("Hi", "Lo"), by = "1 day", params = TRUE)
 #'@export
 getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod", "Lo"), by,
-                        usr = NULL, pwd = NULL, params = FALSE){
+                        usr = NULL, pwd = NULL, params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "CPOD data"
@@ -349,11 +377,13 @@ getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod"
   USER$username=usr
   USER$password=pwd
 
-  out = basicPostJson(
-    input = input,
-    USER=USER
-  )
-  return(outputQC(input, out))
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
+  }else{
+    out = basicPostJson(input = input, USER = USER)
+  }
+
+  return(lw_output_qc(input, out))
 }
 
 
@@ -370,6 +400,7 @@ getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod"
 #'@param usr Username to connect to database
 #'@param pwd Password to connect to database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the specified MVB data.
 #'@examples
 #'getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW',
@@ -378,7 +409,7 @@ getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod"
 #'stations = "Blankenberge", by = "hour", calc = "max", params = TRUE)
 #'@export
 getMvbData <- function(startdate, stopdate, parameters, stations = NULL, by, calc, # QCFlag=c(0,3),
-                       usr = NULL, pwd = NULL, params = FALSE){
+                       usr = NULL, pwd = NULL, params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "MVB data"
@@ -393,15 +424,14 @@ getMvbData <- function(startdate, stopdate, parameters, stations = NULL, by, cal
   USER = list()
   USER$username=usr
   USER$password=pwd
-  # print(input)
-  # print(USER)
-  out = basicPostJson(
-    input = input,
-    USER=USER
-  )
-  return(outputQC(input, out))
 
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
+  }else{
+    out = basicPostJson(input = input, USER = USER)
+  }
 
+  return(lw_output_qc(input, out))
 }
 
 #'Retrieve UVA-bird-data from the LifeWatch project
@@ -416,13 +446,14 @@ getMvbData <- function(startdate, stopdate, parameters, stations = NULL, by, cal
 #'@param usr Username to connect to database
 #'@param pwd Password to connect to database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the specified bird tracking data.
 #'@examples
 #'getUvaBirdData("2013-06-10", "2013-06-14", tagcodes = c("719","6013","610"), by = "1 day")
 #'getUvaBirdData("2013-06-10", "2013-06-14", tagcodes = "All HG", by = "1 week", params = TRUE)
 #'@export
 getUvaBirdData <- function(startdate, stopdate, tagcodes, # p=2,
-                           by, usr = NULL, pwd = NULL, params = FALSE){
+                           by, usr = NULL, pwd = NULL, params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "UVA bird data"
@@ -435,11 +466,13 @@ getUvaBirdData <- function(startdate, stopdate, tagcodes, # p=2,
   USER$username = usr
   USER$password = pwd
 
-  out = basicPostJson(
-    input = input,
-    USER=USER
-  )
-  return(outputQC(input, out))
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
+  }else{
+    out = basicPostJson(input = input, USER = USER)
+  }
+
+  return(lw_output_qc(input, out))
 
 }
 
@@ -452,13 +485,14 @@ getUvaBirdData <- function(startdate, stopdate, tagcodes, # p=2,
 #'@param stations list of stations to be included in the query. Use \code{stations="All"} to get all stations.
 #'@param categories List of categories to return in query, one of  ("SPM", "CTD", "Nutrients", "Secchi", "Pigments"). Use \code{categories="All"} to get all categories
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@return Dataframe with the Station-data.
 #'@examples
 #'getStationData("2019-07-22", "2019-07-23", stations = "all", categories = "all")
 #'getStationData("2019-07-22", "2019-07-23", stations = c(120, 215),
 #'categories = c("Nutrients", "Secchi"), params = TRUE)
 #'@export
-getStationData <- function(startdate, stopdate, stations = "all", categories = "all", params = FALSE){
+getStationData <- function(startdate, stopdate, stations = "all", categories = "all", params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "Station data"
@@ -466,10 +500,13 @@ getStationData <- function(startdate, stopdate, stations = "all", categories = "
   input$categories=categories
   input$getPar = params
 
-  out = basicPostJson(
-    input = input
-    )
-  return(outputQC(input, out))
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+  }else{
+    out = basicPostJson(input = input)
+  }
+
+  return(lw_output_qc(input, out))
 }
 
 
@@ -481,22 +518,25 @@ getStationData <- function(startdate, stopdate, stations = "all", categories = "
 #'@param by Time grouping for data aggregation, one of ("1 day","60 min","10 min","1 min")
 #'@return Dataframe with the specified data.
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#'@param ... Params to be passed to lw_check_lwdataserver().
 #'@examples
 #'getUnderwayData("2021-03-15", "2021-04-13", "1 day")
 #'getUnderwayData("2021-03-15", "2021-04-13", "60 min", params = TRUE)
 #'@export
-getUnderwayData <- function(startdate, stopdate, by, params = FALSE){
+getUnderwayData <- function(startdate, stopdate, by, params = FALSE, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "Underway data"
   input$binSize = by
   input$getPar = params
 
-  out = basicPostJson(
-    input = input
-  )
+  if(lw_check_lwdataserver(...)){
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+  }else{
+    out = basicPostJson(input = input)
+  }
 
-  tab = outputQC(input, out)
+  tab = lw_output_qc(input, out)
   return(tab)
 }
 
@@ -515,15 +555,12 @@ basicPostJson = function(input=NULL,
     BASE_PATH="https://opencpu.lifewatch.be"
   }
   ocpu.url = file.path(file.path(BASE_PATH, "getLWdata/"), "json")
-  # print(paste("USING URL:", ocpu.url))
 
   mybody = list(
     'USER'=USER,
     'input'=input,
     'client'=TRUE
     )
-
-  # print(mybody)
 
   postreq = httr::content(
     httr::POST(url= ocpu.url,
@@ -546,76 +583,176 @@ basicPostJson = function(input=NULL,
 
 
 # Checks the output of the request to opencpu server and gives understandable feedback
-outputQC = function(input, out){
+lw_output_qc = function(input, out){
 
-  # If a list of project, stations etc is requested, accept return a data.frame
-  if(input$type %in% c('listETNprojects', 'listMVBstations', 'listUVAtags')){
-    return(out)
+  # Assertions
+  stopifnot(is.list(input))
+  stopifnot(is.list(out) | is.character(out))
+
+  # par and mdf splitted
+
+  # If out is a string, it is an error. Pass to mdf and down
+  if(is.character(out)){
+    mdf <- out
   }else{
-    # Test parameters
-    if(length(setdiff(input, out$par)) != 0){
-      printParameters(input, "Your query:")
-      printParameters(out$par, "Server query:")
-      warning("The query applied on the server differ from the parameters you used.
-Hint: You may need an account to fully access the data under moratorium.
-Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
+    mdf <- out$mdf
+    par <- out$par
+  }
 
-      # Print parameters if there's no issues
-    }else{printParameters(out$par)}
 
-    # Test dataset
-    # Check if no data was returned
-    if(c("No data") %in% out$mdf | c("Nodata") %in% out$mdf | c("Is null") %in% out$mdf | c("[RODBC] No results available") %in% out$mdf |
-       class(out$mdf) == 'list' & length(out$mdf) == 0){
-      out$mdf <- data.frame()
-      warning("No data returned. Try relaxing query parameters.")
+  ## START QC
+
+  # Check data type, different logic if list
+
+  if(input$type %in% c('listETNprojects', 'listMVBstations', 'listUVAtags')){
+
+    # If mdf is a character string
+    if(is.character(mdf)){
+      mdf <- lw_mdf_is_string(mdf)
+      return(mdf)
     }
 
-    # Check if something else unexpected happened
-    else if(typeof(out$mdf)=='character' | is.null(out$mdf) | class(out$mdf) != "data.frame") {
-      stop(paste0("Something unexpected happened: ", out$mdf))
+    return(out)
+  }
+
+
+  # If mdf is a tibble, turn into a base data frame
+  if(tibble::is_tibble(mdf)){
+    mdf <- as.data.frame(mdf, stringAsFactors = FALSE)
+  }
+
+  # If mdf is a data frame, check if it is empty and return a warning
+  # If mdf is not empty, print log messages and return successfully
+  if(is.data.frame(mdf)){
+
+    lw_compare_parameters(input, par)
+
+    if(nrow(mdf) == 0){
+      lw_warning_empty()
     }
 
-    # Proceed if all correct
-    else{
-      # Print dimensions
-      message(paste0("Data dimension: (", paste0(dim(out$mdf), collapse=" x "), ")"))
 
-      colnames(out$mdf) <- sapply(colnames(out$mdf), FUN = toupper)
-
-      # Column time or ztime must arrive as UTC
-      if("ZTime" %in% colnames(out$mdf)) { out$mdf$Time<-as.POSIXct(out$mdf$ZTime, tz="UTC"); out$mdf$ZTime <- NULL}
-      else
-        if("Time" %in% colnames(out$mdf)) out$mdf$Time<-as.POSIXct(out$mdf$Time) #out$mdf$Time<-as.POSIXct(out$mdf$Time, tz="UTC")
-    }
-
-    # Return: if it was a list, put dataset back
-    if(input$getPar == TRUE){
+    # END
+    # Check if parameters were requested or not
+    if(isTRUE(input$getPar)){
       out$par$getPar <- NULL
       return(out)
     }else{
-      return(out$mdf)
+      return(mdf)
     }
+
   }
+
+  # If mdf is list and empty, return a warning
+  if(is.list(mdf)){
+
+    if(length(mdf) == 0){
+      return(lw_warning_empty())
+    }else{stop()}
+
+  }
+
+  # If mdf is a character string
+  if(is.character(mdf)){
+    lw_compare_parameters(input, par)
+    lw_mdf_is_string(mdf)
+    return(NULL)
+  }
+  ## END QC
+
 }
 
 
+# What to do if output is a string
+lw_mdf_is_string <- function(mdf){
 
-# Print the parameters used in the query
-printParameters <- function(par, messg = "Query parameters"){
+  stopifnot(length(mdf) == 1)
+
+  # Check if there is an error message
+  if(grepl("error", mdf, ignore.case = TRUE)){
+    message(mdf)
+    warning("Something unexpected happened. Check the server logs.")
+    return(NULL)
+
+  # Check if the server returns a no data string
+  }else if(grepl("data", mdf, ignore.case = TRUE) |
+           grepl("null", mdf, ignore.case = TRUE) |
+           grepl("results", mdf, ignore.case = TRUE)
+           ){
+    lw_warning_empty()
+    return(NULL)
+
+  # Any other case, raise an error
+  }else{
+    stop(mdf)
+  }
+
+}
+
+
+# What to do in case of an empty response
+lw_warning_empty <- function(){
+  warning("No data returned")
+  return(NULL)
+}
+
+
+# Compares two sets of parameters and raises a warning if they are different
+lw_compare_parameters <- function(par_user, par_server){
+
+  stopifnot(is.list(par_user))
+  stopifnot(is.list(par_server))
+
+  if(length(setdiff(par_user, par_server)) != 0){
+
+    lw_print_parameters(par_user, "- Your query:")
+    lw_print_parameters(par_server, "- Server query:")
+
+    warning("The query applied on the server differ from the parameters you used.
+Hint: You may need an account to fully access the data under moratorium.
+Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
+
+    # Print parameters if there're no issues
+  }else{
+    lw_print_parameters(par_server)
+  }
+
+}
+
+
+# Prints parameters in the console
+lw_print_parameters <- function(par, messg = "- Query parameters: "){
   # remove getPar
   par <- par[names(par) != "getPar"]
 
   # Print
   message(messg)
-  message("---------------------------------------------")
 
   for (i in 1:length(par)){
     name <- names(par)[i]
-    message(paste0(name, " : ", par[i]))
+    message(paste0("   - ", name, ": ", par[i]))
   }
 
   # End
-  message("---------------------------------------------")
 }
 
+
+# Checks if the user has access to lwdataserver
+lw_check_lwdataserver <- function(force_opencpu = FALSE){
+  # Checks if lwdataserver is installed
+  suppressWarnings(use_lwdataserver <- isTRUE(requireNamespace("lwdataserver", quietly = TRUE)))
+
+  if(!use_lwdataserver | force_opencpu){
+    message("- Query mode: Post request to OpenCPU server")
+
+    if(use_lwdataserver & force_opencpu){
+      use_lwdataserver <- FALSE
+      warning("Data accessed through OpenCPU server but a direct connection to the database is available. Consider setting force_opencpu = FALSE to improve performance.")
+    }
+
+  }else if(use_lwdataserver & !force_opencpu){
+    message("- Query mode: Database connection")
+  }
+
+  return(use_lwdataserver)
+}
