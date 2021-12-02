@@ -27,7 +27,7 @@ Hydrometeo data collected at stations along the Belgian coast and off-shore alon
 - Geographical coverage: [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
 - Taxonomic coverage: Abiotic data only
 - Moratorium: Without valid credentials you are only allowed to view the "Tide TAW" parameter for the last 30 days, grouped by day/hour. Login or [register](https://rshiny.lifewatch.be/account?p=register) to get full access.
-- Data quality: Unknown
+- Data quality: Research-grade
  
 ## How to interpret this dataset
  
