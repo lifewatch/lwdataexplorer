@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">lwdataexplorer</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -100,7 +96,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/lifewatch/lwdataexplorer/">
+  <a href="https://github.com/lifewatch/lwdataexplorer/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -121,7 +117,7 @@
       <h1 data-toc-skip>Exploring fish telemetry data</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/lifewatch/lwdataexplorer/blob/master/vignettes/lwdata_etn.Rmd"><code>vignettes/lwdata_etn.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/lifewatch/lwdataexplorer/blob/HEAD/vignettes/lwdata_etn.Rmd" class="external-link"><code>vignettes/lwdata_etn.Rmd</code></a></small>
       <div class="hidden name"><code>lwdata_etn.Rmd</code></div>
 
     </div>
@@ -131,22 +127,22 @@
 <!--- Insert image -->
 <p><img src="lwde_fish.png" class="rightimg"></p>
 <!--- Describe datatype in one or two sentences. -->
-<p>Aquatic animal tracking data from the <a href="https://lifewatch.be/etn/">European Tracking Network</a>.</p>
+<p>Aquatic animal tracking data from the <a href="https://lifewatch.be/etn/" class="external-link">European Tracking Network</a>.</p>
 <ul>
 <li>Partners: ETN members</li>
 <li>Period: since January 2003</li>
 <li>Geographical coverage: Europe</li>
-<li>Taxonomic coverage: <a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=11676">Pisces</a>
+<li>Taxonomic coverage: <a href="http://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=11676" class="external-link">Pisces</a>
 </li>
-<li>Moratorium: Some project data is under moratorium. Login or <a href="https://rshiny.lifewatch.be/account?p=register">register</a> to get full access</li>
+<li>Moratorium: Some project data is under moratorium. Login or <a href="https://rshiny.lifewatch.be/account?p=register" class="external-link">register</a> to get full access</li>
 <li>Data quality: Research-grade</li>
 </ul>
-<div id="how-to-interpret-this-dataset" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-interpret-this-dataset" class="anchor"></a>How to interpret this dataset</h2>
-<div id="query-options" class="section level3">
-<h3 class="hasAnchor">
-<a href="#query-options" class="anchor"></a>Query options</h3>
+<div class="section level2">
+<h2 id="how-to-interpret-this-dataset">How to interpret this dataset<a class="anchor" aria-label="anchor" href="#how-to-interpret-this-dataset"></a>
+</h2>
+<div class="section level3">
+<h3 id="query-options">Query options<a class="anchor" aria-label="anchor" href="#query-options"></a>
+</h3>
 <ul>
 <li>
 <strong>Data Source</strong>: One of: <strong>Time bins</strong>: Number of detections per tag and per station based on the selected sample period; <strong>Residencies</strong>: groups detections by period spent at each receiver and sampling frequency; or <strong>Active network</strong>: list of active deployments, in which case time = start of deployment.</li>
@@ -160,9 +156,9 @@
 <strong>Timeframe</strong>: Starting and stopping date for the query.</li>
 </ul>
 </div>
-<div id="available-columns" class="section level3">
-<h3 class="hasAnchor">
-<a href="#available-columns" class="anchor"></a>Available columns</h3>
+<div class="section level3">
+<h3 id="available-columns">Available columns<a class="anchor" aria-label="anchor" href="#available-columns"></a>
+</h3>
 <ul>
 <li>
 <strong>Counts</strong>: Total GPS fixes or detections.</li>
@@ -312,21 +308,21 @@
 </ul></details>
 </div>
 </div>
-<div id="abstract" class="section level2">
-<h2 class="hasAnchor">
-<a href="#abstract" class="anchor"></a>Abstract</h2>
+<div class="section level2">
+<h2 id="abstract">Abstract<a class="anchor" aria-label="anchor" href="#abstract"></a>
+</h2>
 <p>The etn data explorer provides a set of functions to access the aquatic animal tracking data and metadata linked to the European Tracking Network (ETN). As the access to data is linked to specific user profiles, keep in mind that the results can be different for other users and login is needed to access data under moratorium.</p>
 </div>
-<div id="how-to-cite-these-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-cite-these-data" class="anchor"></a>How to cite these data</h2>
-<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5912">IMIS metadata record</a> of this data type.</p>
+<div class="section level2">
+<h2 id="how-to-cite-these-data">How to cite these data<a class="anchor" aria-label="anchor" href="#how-to-cite-these-data"></a>
+</h2>
+<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5912" class="external-link">IMIS metadata record</a> of this data type.</p>
 <blockquote>
 <p><em>This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</em></p>
 </blockquote>
-<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
+<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/" class="external-link">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
 <blockquote>
-<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://lifewatch.github.io/lwdataexplorer/" class="uri">https://lifewatch.github.io/lwdataexplorer/</a></p>
+<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://lifewatch.github.io/lwdataexplorer/" class="external-link uri">https://lifewatch.github.io/lwdataexplorer/</a></p>
 </blockquote>
 </div>
   </div>
@@ -342,11 +338,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Francisco Hernandez, Nick Dillen, Salvador Fernández-Bejarano.</p>
+  <p></p>
+<p>Developed by Francisco Hernandez, Nick Dillen, Salvador Fernández-Bejarano.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -354,6 +352,8 @@
 
   
 
+
+  
 
   </body>
 </html>

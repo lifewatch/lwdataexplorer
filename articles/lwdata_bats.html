@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">lwdataexplorer</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -100,7 +96,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/lifewatch/lwdataexplorer/">
+  <a href="https://github.com/lifewatch/lwdataexplorer/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -121,7 +117,7 @@
       <h1 data-toc-skip>Exploring Batcorder data</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/lifewatch/lwdataexplorer/blob/master/vignettes/lwdata_bats.Rmd"><code>vignettes/lwdata_bats.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/lifewatch/lwdataexplorer/blob/HEAD/vignettes/lwdata_bats.Rmd" class="external-link"><code>vignettes/lwdata_bats.Rmd</code></a></small>
       <div class="hidden name"><code>lwdata_bats.Rmd</code></div>
 
     </div>
@@ -133,22 +129,22 @@
 <!-- Describe datatype in one or two sentences. -->
 <p>Occurrence bats data from a passive acoustic monitoring network in the Belgian coast.</p>
 <ul>
-<li>Partners: <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=36">Flanders Marine Institute (VLIZ)</a> and <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=5443">Research Institute for Nature and Forest (INBO)</a>
+<li>Partners: <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=36" class="external-link">Flanders Marine Institute (VLIZ)</a> and <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=5443" class="external-link">Research Institute for Nature and Forest (INBO)</a>
 </li>
 <li>Period: since August 2015</li>
-<li>Geographical coverage: <a href="https://marineregions.org/gazetteer.php?p=details&amp;id=2550">Belgian coast</a>
+<li>Geographical coverage: <a href="https://marineregions.org/gazetteer.php?p=details&amp;id=2550" class="external-link">Belgian coast</a>
 </li>
-<li>Taxonomic coverage: <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=1037271">Chiroptera</a>
+<li>Taxonomic coverage: <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=1037271" class="external-link">Chiroptera</a>
 </li>
 <li>Moratorium: None</li>
 <li>Data quality: Proof-of-concept</li>
 </ul>
-<div id="how-to-interpret-this-dataset" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-interpret-this-dataset" class="anchor"></a>How to interpret this dataset</h2>
-<div id="query-options" class="section level3">
-<h3 class="hasAnchor">
-<a href="#query-options" class="anchor"></a>Query options</h3>
+<div class="section level2">
+<h2 id="how-to-interpret-this-dataset">How to interpret this dataset<a class="anchor" aria-label="anchor" href="#how-to-interpret-this-dataset"></a>
+</h2>
+<div class="section level3">
+<h3 id="query-options">Query options<a class="anchor" aria-label="anchor" href="#query-options"></a>
+</h3>
 <ul>
 <li>
 <strong>Timeframe</strong>: Starting and stopping date for the query.</li>
@@ -156,9 +152,9 @@
 <strong>Sample period</strong>: Counts aggregated. One of 1 min, 60 min or 1 day.</li>
 </ul>
 </div>
-<div id="available-columns" class="section level3">
-<h3 class="hasAnchor">
-<a href="#available-columns" class="anchor"></a>Available columns</h3>
+<div class="section level3">
+<h3 id="available-columns">Available columns<a class="anchor" aria-label="anchor" href="#available-columns"></a>
+</h3>
 <ul>
 <li>
 <strong>Minute</strong>: Minute at which the echolocation was detected.</li>
@@ -189,23 +185,23 @@
 </ul>
 </div>
 </div>
-<div id="abstract" class="section level2">
-<h2 class="hasAnchor">
-<a href="#abstract" class="anchor"></a>Abstract</h2>
+<div class="section level2">
+<h2 id="abstract">Abstract<a class="anchor" aria-label="anchor" href="#abstract"></a>
+</h2>
 <!--- Normally the abstract is pulled from the IMIS record, but there was an issue when reading this connection. We had to let it go and just copy&paste manually. -->
 <p>Along the Belgian coast, a passive acoustic monitoring network was developed to record the echolocation calls of bats. At the moment, batcorders (Ecoobs) are installed at the lighthouse in Nieuwpoort, the Marine Station Ostend (MSO) and at zwin nature reserve.he bird hide in the nature reserve Zwin. The batcorders listen to the environmental sound every night and can detect bat calls above 16 kHz and above -36 dB. When a call is detected, the batcorder records the sound itself for a minimum of 400 ms (raw format). If another bat call is produced within these 400ms, it is recorded in the same file. Data transfer is done automatically and on a daily basis for the station located in Zwin. The other locations are manually retrieved and uploaded to the database twice a year.</p>
 <p>To ensure qualitative recordings, the microphones are replaced every six months before the migration season (March and August). These full spectrum recordings are analyzed using software algorithms (batident) that classify the calls according to the bat species, genus or higher taxonomic group that produced the calls. Afterwards, all calls are validated. Some bat species produce very similar calls and are therefore grouped, e.g. parti-coloured bat, common noctule, Serotine bat and Leisler’s bat are group into the “Nyctaloid”. All myotis species (Brandt’s ,…) are grouped in family of Myotis. The more abundant pipistrelloid family produce more distinct calls and can therefore be identified up to species level (common pipistrelle, Nathusius’ pipistrelle and Soprano pipistrelle).</p>
 </div>
-<div id="how-to-cite-these-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-cite-these-data" class="anchor"></a>How to cite these data</h2>
-<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5251">IMIS metadata record</a> of this data type.</p>
+<div class="section level2">
+<h2 id="how-to-cite-these-data">How to cite these data<a class="anchor" aria-label="anchor" href="#how-to-cite-these-data"></a>
+</h2>
+<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5251" class="external-link">IMIS metadata record</a> of this data type.</p>
 <blockquote>
 <p><em>This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</em></p>
 </blockquote>
-<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
+<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/" class="external-link">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
 <blockquote>
-<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://lifewatch.github.io/lwdataexplorer/" class="uri">https://lifewatch.github.io/lwdataexplorer/</a></p>
+<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://lifewatch.github.io/lwdataexplorer/" class="external-link uri">https://lifewatch.github.io/lwdataexplorer/</a></p>
 </blockquote>
 </div>
   </div>
@@ -221,11 +217,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Francisco Hernandez, Nick Dillen, Salvador Fernández-Bejarano.</p>
+  <p></p>
+<p>Developed by Francisco Hernandez, Nick Dillen, Salvador Fernández-Bejarano.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -233,6 +231,8 @@
 
   
 
+
+  
 
   </body>
 </html>

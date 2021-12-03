@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">lwdataexplorer</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -100,7 +96,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/lifewatch/lwdataexplorer/">
+  <a href="https://github.com/lifewatch/lwdataexplorer/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -121,7 +117,7 @@
       <h1 data-toc-skip>Exploring buoy data</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/lifewatch/lwdataexplorer/blob/master/vignettes/lwdata_buoy.Rmd"><code>vignettes/lwdata_buoy.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/lifewatch/lwdataexplorer/blob/HEAD/vignettes/lwdata_buoy.Rmd" class="external-link"><code>vignettes/lwdata_buoy.Rmd</code></a></small>
       <div class="hidden name"><code>lwdata_buoy.Rmd</code></div>
 
     </div>
@@ -133,20 +129,20 @@
 <!--- Describe datatype in one or two sentences. -->
 <p>Data from buoys installed in the Belgian Part of the North Sea.</p>
 <ul>
-<li>Partners: <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=36">Flanders Marine Institute (VLIZ)</a>, with support from C-power</li>
+<li>Partners: <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=36" class="external-link">Flanders Marine Institute (VLIZ)</a>, with support from C-power</li>
 <li>Period: since September 2015</li>
-<li>Geographical coverage: <a href="https://marineregions.org/gazetteer.php?p=details&amp;id=2438">Thornthon Shoal</a>, <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=3293">Belgian Exclusive Economic Zone</a>
+<li>Geographical coverage: <a href="https://marineregions.org/gazetteer.php?p=details&amp;id=2438" class="external-link">Thornthon Shoal</a>, <a href="https://www.marineregions.org/gazetteer.php?p=details&amp;id=3293" class="external-link">Belgian Exclusive Economic Zone</a>
 </li>
 <li>Taxonomic coverage: Abiotic data only</li>
 <li>Moratorium: None</li>
-<li>Data quality: Unknown</li>
+<li>Data quality: Raw-Uncorrected</li>
 </ul>
-<div id="how-to-interpret-this-dataset" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-interpret-this-dataset" class="anchor"></a>How to interpret this dataset</h2>
-<div id="query-options" class="section level3">
-<h3 class="hasAnchor">
-<a href="#query-options" class="anchor"></a>Query options</h3>
+<div class="section level2">
+<h2 id="how-to-interpret-this-dataset">How to interpret this dataset<a class="anchor" aria-label="anchor" href="#how-to-interpret-this-dataset"></a>
+</h2>
+<div class="section level3">
+<h3 id="query-options">Query options<a class="anchor" aria-label="anchor" href="#query-options"></a>
+</h3>
 <ul>
 <li>
 <strong>Timeframe</strong>: Starting and stopping date for the query.</li>
@@ -154,157 +150,127 @@
 <strong>Stations</strong>: List of stations to be included in the query.</li>
 </ul>
 </div>
-<div id="available-columns" class="section level3">
-<h3 class="hasAnchor">
-<a href="#available-columns" class="anchor"></a>Available columns</h3>
+<div class="section level3">
+<h3 id="available-columns">Available columns<a class="anchor" aria-label="anchor" href="#available-columns"></a>
+</h3>
 <ul>
-<li>
-<strong>ZTime</strong>:<br>
-</li>
 <li>
 <strong>Station</strong>:Name or code of sampling station or receiver code.<br>
 </li>
 <li>
-<strong>Time</strong>: Time in UTC, beginning of sample timeperiod.<br>
+<strong>Time</strong>: Time in of observation UTC.<br>
 </li>
 <li>
-<strong>Latitude</strong>: Center latitude in decimal degrees, WGS84.<br>
+<strong>Latitude</strong>: Latitude in decimal degrees, WGS84.<br>
 </li>
 <li>
-<strong>Longitude</strong>: Center longitude in decimal degrees, WGS84 .<br>
+<strong>Longitude</strong>: Longitude in decimal degrees, WGS84 .<br>
 </li>
 <li>
 <strong>Air temperature (°C)</strong>: Air temperature in °C.<br>
 </li>
 <li>
-<strong>AtmPress (mBar)</strong>: Atmospheric pressure in mBar.<br>
-</li>
-<li>
-<strong>AtmPress(mBar)</strong>:<br>
-</li>
+<strong>AtmPress (mBar)</strong>: Atmospheric pressure in mBar.</li>
 <li>
 <strong>Avg Wind direction (deg)</strong>: Direction of the wind in deg.</li>
 <li>
 <strong>Avg Wind speed (m/s)</strong>: Speed of the wind in m/s.<br>
 </li>
 <li>
-<strong>Chlorophyll (µg/L)</strong>:<br>
+<strong>Chlorophyll (µg/L)</strong>: Concentration of Chlorophyll expressed in µg/L.<br>
 </li>
 <li>
-<strong>Conductivity (mS/cm)</strong>:<br>
-</li>
+<strong>Conductivity (mS/cm)</strong>: Electrical conductivity standard deviation of the water body by CTD, expressed in degrees mS/cm.</li>
 <li>
-<strong>Dissolved oxygen (µM)</strong>:<br>
-</li>
+<strong>Dissolved oxygen (µM)</strong>: Dissolved oxygen in the water in µmol/l.</li>
 <li>
 <strong>DO (mg/l)</strong>: Oxygen dissolved in the water body in mg/l.<br>
 </li>
 <li>
-<strong>Level Harbour (mTAW) 1min</strong>:</li>
+<strong>Level Harbour (mTAW) 1min</strong>: Water lever in mTAW measured in the Harbor side averaged every 1 min.</li>
 <li>
 <strong>Level Harbour (mTAW)</strong>: Waterlevel in mTAW measured in Ostend at the time.<br>
 </li>
 <li>
-<strong>Level Spuikom (mTAW)</strong>: Waterlevel in mTAW measured in the Spuikom at the time.<br>
+<strong>Level Spuikom (mTAW)</strong>: Waterlevel in mTAW measured in the Spuikom at the time.</li>
+<li>
+<strong>NH3 (ppb)</strong>: Concentration of NH3 in the water body expressed in ppb. Not measured anymore.<br>
 </li>
 <li>
-<strong>NH3 (ppb)</strong>:<br>
+<strong>NO3 (ppb)</strong>: Concentration of nitrate in the water body, expressed in ppb. Not measured anymore.</li>
+<li>
+<strong>Oxygen sat. (%)</strong>: Percentage of dissolved oxygen in the water relative to atmospheric concentration<br>
 </li>
 <li>
-<strong>NO3 (ppb)</strong>: Concentration of nitrate in the water body, expressed in ppb.<br>
+<strong>pCO2 air (ppm)</strong>: Partial pressure of CO2 in the air expressed in uatm.</li>
+<li>
+<strong>pH (raw)</strong>: pH of seawater not corrected for Temperature, Salinity. Not measured anymore.<br>
 </li>
 <li>
-<strong>Oxygen sat. (%)</strong>:<br>
-</li>
-<li>
-<strong>pCO2 air (ppm)</strong>:<br>
-</li>
-<li>
-<strong>pH (raw)</strong>:<br>
-</li>
-<li>
-<strong>PO4 (ppb)</strong>:<br>
-</li>
+<strong>PO4 (ppb)</strong>: Concentration of dissolved phosphate in water expressed in ppb.</li>
 <li>
 <strong>Rain (mm)</strong>: Accumulation of rain measured in mm.<br>
 </li>
 <li>
-<strong>Rain15 (mm)</strong>: Accumulation of rain (15) measured in mm.<br>
+<strong>Rain15 (mm)</strong>: Accumulation of rain measured in mm averaged every 15min.<br>
 </li>
 <li>
 <strong>RelHumidity (%)</strong>: Relative humidity in %.<br>
 </li>
 <li>
-<strong>RelHumidity(%)</strong>:<br>
-</li>
-<li>
 <strong>Salinity (PSU)</strong>: Salinity of the water body, expressed in Practical Salinity Units.<br>
 </li>
 <li>
-<strong>SiO2 (ppb)</strong>: Concentration of silicate in the water body, expressed in ppb.<br>
-</li>
+<strong>SiO2 (ppb)</strong>: Concentration of silicate in the water body, expressed in ppb. Not measured anymore.</li>
 <li>
 <strong>SolarEnergy (W/m²)</strong>: Solar energy in W/m².<br>
 </li>
 <li>
-<strong>Tilt X (deg)</strong>:<br>
-</li>
+<strong>Tilt X (deg)</strong>: Horizontal movement of the platform in degrees.</li>
 <li>
-<strong>Tilt Y (deg)</strong>:<br>
-</li>
+<strong>Tilt Y (deg)</strong>: Vertical movement of the platform in degrees.</li>
 <li>
-<strong>Turbidity (NTU)</strong>:<br>
-</li>
+<strong>Turbidity (NTU)</strong>: Optical backscatter as turbidity of the water body, expressed in Nephelometric Turbidity Units.</li>
 <li>
-<strong>Turbidity(FBU)</strong>:<br>
-</li>
+<strong>Turbidity(FBU)</strong>: Optical backscatter as turbidity of the water body, expressed in Formazin Backscatter Units.</li>
 <li>
 <strong>Voltage (V)</strong>: Battery power, voltage in V.<br>
 </li>
 <li>
-<strong>Water pressure (dBar)</strong>:<br>
+<strong>Water pressure (dBar)</strong>:Pressure of the water body, expressed in decibars.<br>
 </li>
 <li>
 <strong>Water temperature (°C)</strong>: Temperature of the water body, expressed in degrees Celcius.<br>
 </li>
 <li>
-<strong>Watercurrent (cm/s)</strong>:<br>
+<strong>Watercurrent (cm/s)</strong>: Speed of water current in cm/s<br>
 </li>
 <li>
-<strong>Watercurrent (deg)</strong>:<br>
+<strong>Watercurrent (deg)</strong>: Direction of current in deg relative to<br>
 </li>
 <li>
-<strong>xCO2 air (ppm)</strong>:<br>
+<strong>xCO2 air (ppm)</strong>: Molar fraction of CO2 in the air expressed in ppm (not corrected for H2O concentration).<br>
 </li>
 <li>
-<strong>xCO2 Air</strong>:<br>
-</li>
-<li>
-<strong>xCO2 sea (ppm)</strong>:</li>
+<strong>xCO2 sea (ppm)</strong>: Molar fraction of CO2 in the water expressed in ppm (not corrected for H2O concentration).</li>
 </ul>
 </div>
 </div>
-<div id="abstract" class="section level2">
-<h2 class="hasAnchor">
-<a href="#abstract" class="anchor"></a>Abstract</h2>
-<p>A set of buoys are maintained by the Flanders Marine Institute (VLIZ): two in the sluice dock (Ostend) and one at the C-power windfarm, on the Thornton Bank. All buoys are continuously measuring an array of environmental parameters.In conjunction with the research vessel RV Simon Stevin, the Thornthon measuring buoy is part of the oceanographic component of ICOS Belgium (The Integrated Carbon Observation System).</p>
-<p>The Thornton buoy carries sensors for both LifeWatch and ICOS. Management is organized as part of ICOS. ICOS is a European monitoring network consisting of a large number of observation systems for measuring greenhouse gasses. The observation systems are spread across Europe and consist of three major components:</p>
-<ol style="list-style-type: decimal">
-<li>An atmospheric component with high measurement towers</li>
-<li>An ecosystem component with measurement towers that observe fluxes</li>
-<li>An oceanographic component with observation systems on ships and buoys</li>
-</ol>
+<div class="section level2">
+<h2 id="abstract">Abstract<a class="anchor" aria-label="anchor" href="#abstract"></a>
+</h2>
+<p>The Flanders Marine Institute within it’s remit and scope in RIs such as ICOS and Lifewatch, is operating 4 fixed point research and monitoring stations. Three of them are in the Oostende Spuikom and harbor and one is in the Thornton Bank. The stations have capacity for robust and frequent (e.g. 1 hr sync interval) near real time (NRT) transmission of data and are equipped with in situ sensors, for physical and biogeochemical parameters (see table/list xxx). Data from these stations are available through the LWDE portal (link?), but also through the <a href="https://data.icos-cp.eu/portal/#%7B%22route%22%3A%22metadata%22%2C%22id%22%3A%22n94jijAEWH95fMNn8Mwd4I0M%22%7D" class="external-link">ICOS Carbon Portal</a> and the <a href="https://www.vliz.be/spuikom/metingen" class="external-link">Spuikom monitoring website</a></p>
 </div>
-<div id="how-to-cite-these-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-cite-these-data" class="anchor"></a>How to cite these data</h2>
-<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5252">IMIS metadata record</a> of this data type.</p>
+<div class="section level2">
+<h2 id="how-to-cite-these-data">How to cite these data<a class="anchor" aria-label="anchor" href="#how-to-cite-these-data"></a>
+</h2>
+<p>When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the <a href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5252" class="external-link">IMIS metadata record</a> of this data type.</p>
 <blockquote>
 <p><em>This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</em></p>
 </blockquote>
-<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
+<p> If you retrieved these data using the <a href="https://github.com/lifewatch/lwdataexplorer/" class="external-link">LifeWatch Data Explorer R package</a>, you should also cite it as:</p>
 <blockquote>
-<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://lifewatch.github.io/lwdataexplorer/" class="uri">https://lifewatch.github.io/lwdataexplorer/</a></p>
+<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://lifewatch.github.io/lwdataexplorer/" class="external-link uri">https://lifewatch.github.io/lwdataexplorer/</a></p>
 </blockquote>
 </div>
   </div>
@@ -320,11 +286,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Francisco Hernandez, Nick Dillen, Salvador Fernández-Bejarano.</p>
+  <p></p>
+<p>Developed by Francisco Hernandez, Nick Dillen, Salvador Fernández-Bejarano.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -332,6 +300,8 @@
 
   
 
+
+  
 
   </body>
 </html>
