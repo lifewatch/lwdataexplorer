@@ -33,14 +33,5 @@ File requirements:
 
 ## How to cite these data
 
-When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses.
-
-> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
-
-</br>
-If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
-
-```{r citation, results = 'asis', echo = FALSE}
-cat(paste0("> ", citation("lwdataexplorer")$textVersion))
-```
+Please mind the individual citations for the data used with these tool. Acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by the LifeWatch Belgium partners) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
 
