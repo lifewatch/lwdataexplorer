@@ -29,12 +29,15 @@ LazyData: true
 RoxygenNote: 7.1.1
 Imports: 
     jsonlite,
-    httr
+    httr,
+    utils,
+    tibble
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
 	markdown,
-    rmarkdown
+    rmarkdown,
+    lwdataserver
 VignetteBuilder: knitr, rmarkdown
 URL: https://lifewatch.github.io/lwdataexplorer/
 BugReports: https://github.com/lifewatch/lwdataexplorer/issues

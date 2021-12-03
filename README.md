@@ -45,37 +45,34 @@ library(lwdataexplorer)
 library(tibble) # only for visualizing
 
 df <- getBuoyData("2021-03-19", "2021-04-21", "All")
-#> No encoding supplied: defaulting to UTF-8.
-#> Query parameters
-#> ---------------------------------------------
-#> daterange : c("2021-03-19", "2021-04-21")
-#> stationlist : All
-#> type : Buoy data
-#> ---------------------------------------------
-#> Data dimension: (2384 x 23)
+#> - Query mode: Database connection
+#> Date passed as text. Trying to transform to date
+#> - Query parameters:
+#>    - daterange: c("2021-03-19", "2021-04-21")
+#>    - stationlist: All
+#>    - type: Buoy data
 
 as_tibble(df)
-#> # A tibble: 2,384 × 23
-#>    STATION      TIME       LATITUDE LONGITUDE `AIR TEMPERATURE… `ATMPRESS (MBAR…
-#>    <chr>        <chr>         <dbl>     <dbl>             <dbl>            <dbl>
-#>  1 Buoy in Spu… 2021-03-1…     51.2      2.95              6.35            1022.
-#>  2 Ostend Rese… 2021-03-1…     51.2      2.92              6.10              NA 
-#>  3 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA 
-#>  4 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA 
-#>  5 Buoy in Spu… 2021-03-1…     51.2      2.95              5.66            1023.
-#>  6 Ostend Rese… 2021-03-1…     51.2      2.92              5.56              NA 
-#>  7 Buoy in Spu… 2021-03-1…     51.2      2.95              5.40            1024.
-#>  8 Ostend Rese… 2021-03-1…     51.2      2.92              5.25              NA 
-#>  9 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA 
-#> 10 Spuikom Slu… 2021-03-1…     51.2      2.94             NA                 NA 
-#> # … with 2,374 more rows, and 17 more variables:
-#> #   AVG WIND DIRECTION (DEG) <dbl>, AVG WIND SPEED (M/S) <dbl>,
-#> #   RELHUMIDITY (%) <dbl>, SOLARENERGY (W/M²) <dbl>, VOLTAGE (V) <dbl>,
-#> #   ATMPRESS(MBAR) <dbl>, RELHUMIDITY(%) <dbl>,
-#> #   LEVEL HARBOUR (MTAW) 1MIN <dbl>, LEVEL HARBOUR (MTAW) <dbl>,
-#> #   LEVEL SPUIKOM (MTAW) <dbl>, RAIN15 (MM) <dbl>, NO3 (PPB) <dbl>,
-#> #   SIO2 (PPB) <dbl>, RAIN (MM) <dbl>, DO (MG/L) <int>, SALINITY (PSU) <int>,
-#> #   WATER TEMPERATURE (°C) <int>
+#> # A tibble: 2,384 × 39
+#>    Station               Time                Latitude Longitude `Air temperatur…
+#>    <fct>                 <dttm>                 <dbl>     <dbl>            <dbl>
+#>  1 Buoy in Spuikom       2021-03-19 00:00:00     51.2      2.95             6.35
+#>  2 Ostend Research Tower 2021-03-19 00:00:00     51.2      2.92             6.10
+#>  3 Spuikom Sluice        2021-03-19 00:00:00     51.2      2.94            NA   
+#>  4 Spuikom Sluice        2021-03-19 01:00:00     51.2      2.94            NA   
+#>  5 Buoy in Spuikom       2021-03-19 01:00:00     51.2      2.95             5.66
+#>  6 Ostend Research Tower 2021-03-19 01:00:00     51.2      2.92             5.56
+#>  7 Buoy in Spuikom       2021-03-19 02:00:00     51.2      2.95             5.40
+#>  8 Ostend Research Tower 2021-03-19 02:00:00     51.2      2.92             5.25
+#>  9 Spuikom Sluice        2021-03-19 02:00:00     51.2      2.94            NA   
+#> 10 Spuikom Sluice        2021-03-19 03:00:00     51.2      2.94            NA   
+#> # … with 2,374 more rows, and 34 more variables: AtmPress(mBar) <dbl>,
+#> #   Avg Wind direction (deg) <dbl>, Avg Wind speed (m/s) <dbl>,
+#> #   Chlorophyll (µg/L) <dbl>, Conductivity (mS/cm) <dbl>,
+#> #   Dissolved oxygen (µM) <dbl>, DO (mg/l) <dbl>, Level Harbour (mTAW) <dbl>,
+#> #   Level Spuikom (mTAW) <dbl>, NH3 (ppb) <dbl>, NO3 (ppb) <dbl>,
+#> #   Oxygen sat. (%) <dbl>, pCO2 air (ppm) <dbl>, pH (raw) <dbl>,
+#> #   PO4 (ppb) <dbl>, Rain (mm) <dbl>, Rain15 (mm) <dbl>, …
 ```
 
 Note that the functions naming includes always the `get` word, followed
@@ -121,66 +118,62 @@ dates are only between the last 30 days.
 mvb <- getMvbData("2020-01-01", "2020-12-31", parameters = 'All', 
                   stations = "All", by = "10min", calc = "none", 
                   params = TRUE)
-#> No encoding supplied: defaulting to UTF-8.
-#> Your query:
-#> ---------------------------------------------
-#> daterange : c("2020-01-01", "2020-12-31")
-#> type : MVB data
-#> stations : All
-#> calc : none
-#> binSize : 10min
-#> parameters : All
-#> ---------------------------------------------
-#> Server query:
-#> ---------------------------------------------
-#> daterange : c("2021-07-26", "2020-12-31")
-#> type : MVB data
-#> stations : All
-#> calc : none
-#> binSize : day
-#> parameters : Tide TAW
-#> ---------------------------------------------
-#> Warning in outputQC(input, out): The query applied on the server differ from the parameters you used. 
-#> Hint: You may need an account to fully access the data under moratorium. 
+#> - Query mode: Database connection
+#> - Your query:
+#>    - daterange: c("2020-01-01", "2020-12-31")
+#>    - type: MVB data
+#>    - stations: All
+#>    - calc: none
+#>    - binSize: 10min
+#>    - parameters: All
+#> - Server query:
+#>    - daterange: c("2021-10-31", "2020-12-31")
+#>    - type: MVB data
+#>    - stations: All
+#>    - calc: none
+#>    - binSize: day
+#>    - parameters: Tide TAW
+#> Warning in lw_compare_parameters(input, par): The query applied on the server differ from the parameters you used.
+#> Hint: You may need an account to fully access the data under moratorium.
 #> Hint: Request access at: https://rshiny.lifewatch.be/account?p=register
-#> Warning in outputQC(input, out): No data returned. Try relaxing query
-#> parameters.
+#> Warning in lw_warning_empty(): No data returned
 ```
 
 ### Get data and query parameters in a list
 
-The example above used set the argument `params = TRUE`. Through this
-argument, the get functions will return a list with both the data and
-another list with the query parameters applied in the server
+You can request to get the parameters applied in the server by setting
+the argument `params = TRUE`. The get functions will return a list with
+both the data and another list with the query parameters applied in the
+server
 
 ``` r
+# Request data but with parameters this time
+data_with_params <- getBuoyData("2021-03-19", "2021-04-21", "All", params = TRUE)
+#> - Query mode: Database connection
+#> Date passed as text. Trying to transform to date
+#> - Query parameters:
+#>    - daterange: c("2021-03-19", "2021-04-21")
+#>    - stationlist: All
+#>    - type: Buoy data
+
 # Check object type
-class(mvb)
+class(data_with_params)
 #> [1] "list"
 
 # What are the elements of the list?
-names(mvb)
+names(data_with_params)
 #> [1] "mdf" "par"
 
 # Get query parameters as a list
-mvb$par
+data_with_params$par
 #> $daterange
-#> [1] "2021-07-26" "2020-12-31"
+#> [1] "2021-03-19" "2021-04-21"
 #> 
-#> $type
-#> [1] "MVB data"
-#> 
-#> $stations
+#> $stationlist
 #> [1] "All"
 #> 
-#> $calc
-#> [1] "none"
-#> 
-#> $binSize
-#> [1] "day"
-#> 
-#> $parameters
-#> [1] "Tide TAW"
+#> $type
+#> [1] "Buoy data"
 ```
 
 ### Wrapper functions
@@ -195,12 +188,12 @@ function `listETNprojects()` or using `lwdata()`:
 
 ``` r
 etn <- lwdata('listETNprojects')
-#> No encoding supplied: defaulting to UTF-8.
+#> - Query mode: Database connection
 
 as_tibble(etn)
-#> # A tibble: 169 × 2
+#> # A tibble: 192 × 2
 #>    name                     type   
-#>    <chr>                    <chr>  
+#>    <fct>                    <chr>  
 #>  1 2004_Gudena              network
 #>  2 2011_Loire               network
 #>  3 2011_Warnow              network
@@ -211,16 +204,24 @@ as_tibble(etn)
 #>  8 2016_Diaccia_Botrona     network
 #>  9 2017_Fremur              network
 #> 10 2019_Grotenete           network
-#> # … with 159 more rows
+#> # … with 182 more rows
 ```
+
+### Boost performance
+
+If you are working in one of the LifeWatch Belgium RStudio server, for
+example <https://rstudio.lifewatch.be/> or
+<https://rstudio.vsc.lifewatch.be>, you can make your queries run
+faster. For more information please contact the package maintainer to
+discuss permissions and configuration.
 
 ## More information
 
 ### Issues
 
-If you find any problems please (raise a new
-issue)\[<https://github.com/lifewatch/lwdataexplorer/issues>\] or
-contact the package maintainer:
+If you find any problems please [raise a new
+issue](https://github.com/lifewatch/lwdataexplorer/issues) or contact
+the package maintainer:
 
 ``` r
 # Run once the package is installed
@@ -231,26 +232,10 @@ maintainer("lwdataexplorer")
 
 Please cite this software as:
 
-``` r
-citation("lwdataexplorer")
-#> 
-#> To cite package 'lwdataexplorer' in publications use:
-#> 
-#>   Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano
-#>   (2021). lwdataexplorer: Access to data from the LifeWatch Data
-#>   Explorer. R package version 0.0.0.9000.
-#>   https://www.lifewatch.be/en/lifewatch-data-explorer
-#> 
-#> A BibTeX entry for LaTeX users is
-#> 
-#>   @Manual{,
-#>     title = {lwdataexplorer: Access to data from the LifeWatch Data Explorer},
-#>     author = {Francisco Hernandez and Nick Dillen and Salvador Fernández-Bejarano},
-#>     year = {2021},
-#>     note = {R package version 0.0.0.9000},
-#>     url = {https://www.lifewatch.be/en/lifewatch-data-explorer},
-#>   }
-```
+> Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano
+> (2021). lwdataexplorer: Access to data from the LifeWatch Data
+> Explorer. R package version 0.0.0.9000.
+> <https://lifewatch.github.io/lwdataexplorer/>
 
 ### License
 

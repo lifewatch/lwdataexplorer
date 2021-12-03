@@ -26,7 +26,7 @@ Data from buoys installed in the Belgian Part of the North Sea.
 - Geographical coverage: [Thornthon Shoal](https://marineregions.org/gazetteer.php?p=details&id=2438), [Belgian Exclusive Economic Zone](https://www.marineregions.org/gazetteer.php?p=details&id=3293)
 - Taxonomic coverage: Abiotic data only
 - Moratorium: None
-- Data quality: Unknown
+- Data quality: Raw-Uncorrected
  
 ## How to interpret this dataset
  
@@ -35,73 +35,49 @@ Data from buoys installed in the Belgian Part of the North Sea.
 * **Stations**:  List of stations to be included in the query.
  
 ### Available columns
-* **ZTime**:                    
 * **Station**:Name or code of sampling station or receiver code.               
-* **Time**: Time in UTC, beginning of sample timeperiod.                  
-* **Latitude**: Center latitude in decimal degrees, WGS84.               
-* **Longitude**: Center longitude in decimal degrees, WGS84 .               
+* **Time**: Time in of observation UTC.               
+* **Latitude**: Latitude in decimal degrees, WGS84.               
+* **Longitude**: Longitude in decimal degrees, WGS84 .               
 * **Air temperature (°C)**: Air temperature in °C.   
-* **AtmPress (mBar)**: Atmospheric pressure in mBar.        
-* **AtmPress(mBar)**:        
+* **AtmPress (mBar)**: Atmospheric pressure in mBar.
 * **Avg Wind direction (deg)**: Direction of the wind in deg.
 * **Avg Wind speed (m/s)**: Speed of the wind in m/s.    
-* **Chlorophyll (µg/L)**:    
-* **Conductivity (mS/cm)**:     
-* **Dissolved oxygen (µM)**:    
+* **Chlorophyll (µg/L)**: Concentration of Chlorophyll expressed in µg/L.  
+* **Conductivity (mS/cm)**:  Electrical conductivity standard deviation of the water body by CTD, expressed in degrees mS/cm.
+* **Dissolved oxygen (µM)**: Dissolved oxygen in the water in µmol/l.
 * **DO (mg/l)**: Oxygen dissolved in the water body in mg/l.               
-* **Level Harbour (mTAW) 1min**:
+* **Level Harbour (mTAW) 1min**: Water lever in mTAW measured in the Harbor side averaged every 1 min.
 * **Level Harbour (mTAW)**: Waterlevel in mTAW measured in Ostend at the time.    
-* **Level Spuikom (mTAW)**: Waterlevel in mTAW measured in the Spuikom at the time.    
-* **NH3 (ppb)**:                
-* **NO3 (ppb)**: Concentration of nitrate in the water body, expressed in ppb.                
-* **Oxygen sat. (%)**:          
-* **pCO2 air (ppm)**:           
-* **pH (raw)**:                 
-* **PO4 (ppb)**:                
+* **Level Spuikom (mTAW)**: Waterlevel in mTAW measured in the Spuikom at the time.
+* **NH3 (ppb)**: Concentration of NH3 in the water body expressed in ppb. Not measured anymore.               
+* **NO3 (ppb)**: Concentration of nitrate in the water body, expressed in ppb. Not measured anymore.
+* **Oxygen sat. (%)**: Percentage of dissolved oxygen in the water relative to atmospheric concentration       
+* **pCO2 air (ppm)**: Partial pressure of CO2 in the air expressed in uatm.
+* **pH (raw)**: pH of seawater not corrected for Temperature, Salinity. Not measured anymore.                
+* **PO4 (ppb)**:  Concentration of dissolved phosphate in water expressed in ppb.
 * **Rain (mm)**: Accumulation of rain measured in mm.               
-* **Rain15 (mm)**: Accumulation of rain (15) measured in mm.             
+* **Rain15 (mm)**: Accumulation of rain measured in mm averaged every 15min.           
 * **RelHumidity (%)**: Relative humidity in %.            
-* **RelHumidity(%)**:        
 * **Salinity (PSU)**: Salinity of the water body, expressed in Practical Salinity Units.          
-* **SiO2 (ppb)**: Concentration of silicate in the water body, expressed in ppb.         
+* **SiO2 (ppb)**: Concentration of silicate in the water body, expressed in ppb. Not measured anymore.
 * **SolarEnergy (W/m²)**: Solar energy in W/m².      
-* **Tilt X (deg)**:             
-* **Tilt Y (deg)**:             
-* **Turbidity (NTU)**:          
-* **Turbidity(FBU)**:           
+* **Tilt X (deg)**: Horizontal movement of the platform in degrees.
+* **Tilt Y (deg)**: Vertical movement of the platform in degrees.
+* **Turbidity (NTU)**: Optical backscatter as turbidity of the water body, expressed in Nephelometric Turbidity Units.
+* **Turbidity(FBU)**:  Optical backscatter as turbidity of the water body, expressed in Formazin Backscatter Units.
 * **Voltage (V)**: Battery power, voltage in V.             
-* **Water pressure (dBar)**:    
+* **Water pressure (dBar)**:Pressure of the water body, expressed in decibars.  
 * **Water temperature (°C)**: Temperature of the water body, expressed in degrees Celcius.  
-* **Watercurrent (cm/s)**:      
-* **Watercurrent (deg)**:       
-* **xCO2 air (ppm)**:           
-* **xCO2 Air**:                 
-* **xCO2 sea (ppm)**:  
+* **Watercurrent (cm/s)**: Speed of water current in cm/s     
+* **Watercurrent (deg)**: Direction of current in deg relative to       
+* **xCO2 air (ppm)**: Molar fraction of CO2 in the air expressed in ppm (not corrected for H2O concentration).    
+* **xCO2 sea (ppm)**: Molar fraction of CO2 in the water expressed in ppm (not corrected for H2O concentration).
 
 
 
 ## Abstract
-```{r abstract, results = 'asis', echo = FALSE}
-# Get the abstract and/or description from IMIS and print here
-library(jsonlite)
-
-dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=5252&show=json")
-
-abstract <- dasid[["datasetrec"]][["EngAbstract"]]
-description <- dasid[["datasetrec"]][["EngDescr"]]
-
-if (is.null(abstract) & is.null(description)){
-  
-} else if(is.null(abstract) & !is.null(description)){
-  out <- description
-} else if(!is.null(abstract) & is.null(description)){
-  out <- abstract
-} else if(!is.null(abstract) & !is.null(description)){
-  out <- paste0(abstract, "</br>", description)
-}
-
-cat(out)
-```
+The Flanders Marine Institute within it’s remit and scope in RIs such as ICOS and Lifewatch, is operating 4 fixed point research and monitoring stations. Three of them are in the Oostende Spuikom and harbor and one is in the Thornton Bank. The stations have capacity for robust and frequent (e.g. 1 hr sync interval) near real time (NRT) transmission of data and are equipped with in situ sensors, for physical and biogeochemical parameters (see table/list xxx). Data from these stations are available through the LWDE portal (link?), but also through the [ICOS Carbon Portal](https://data.icos-cp.eu/portal/#%7B%22route%22%3A%22metadata%22%2C%22id%22%3A%22n94jijAEWH95fMNn8Mwd4I0M%22%7D) and the [Spuikom monitoring website](https://www.vliz.be/spuikom/metingen) 
  
 ## How to cite these data
 

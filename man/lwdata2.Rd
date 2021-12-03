@@ -4,7 +4,7 @@
 \alias{lwdata2}
 \title{For use in the LifeWatch Rshiny data-explorer (LWDE). Reads input and USER arguments}
 \usage{
-lwdata2(type, input = NULL, USER = NULL)
+lwdata2(type, input = NULL, USER = NULL, ...)
 }
 \arguments{
 \item{type}{Datatype as defined in LWDE}
@@ -12,6 +12,8 @@ lwdata2(type, input = NULL, USER = NULL)
 \item{input}{LWDE input element, as a list. Can be obtained by using shiny::reactiveValuesToList()}
 
 \item{USER}{LWDE USER element, as a list. Can be obtained by using shiny::reactiveValuesToList()}
+
+\item{...}{Params to be passed to lw_check_lwdataserver()}
 }
 \value{
 Returns dataframe of the requested datatype

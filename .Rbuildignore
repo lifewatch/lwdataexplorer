@@ -6,3 +6,4 @@
 ^README\.Rmd$
 ^\.github$
 ^docs$
+^\.Renviron\.example$
