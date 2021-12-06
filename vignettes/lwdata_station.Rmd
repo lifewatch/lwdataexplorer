@@ -124,7 +124,7 @@ The full methodology is described in a datapaper: Mortelmans, J.; Deneudt, K.; C
 library(jsonlite)
 
 # Set base url 5251 4688
-url <- "https://www.vliz.be/en/imis?module=dataset&dasid=4686"
+url <- "https://www.vliz.be/en/imis?module=dataset&dasid=4685"
 dasid <- fromJSON(paste0(url, "&show=json"))
 
 # Build citation. Get active DOI.
