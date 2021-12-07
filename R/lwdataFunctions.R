@@ -25,6 +25,7 @@
 #' @param taxranks .
 #' @param qualities .
 #' @param processing (CPOD) One of ('Validated','Raw')
+#' @param force_opencpu boolean. If true, the query will be forced to run through the OpenCPU server.
 #' @param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
 #' @examples
 #' lwdata()
@@ -37,25 +38,12 @@
 #' lwdata('etn-data')
 #' @export
 lwdata<- function(
-  datatype='Buoy data',
-  from=as.character(Sys.Date()-90),
-  to=as.character(Sys.Date()),
-  stations=c("Buoy at C-Power"),
-  binSize="60 min",
-  calc='Time bins',
-  UrlPar=NULL,
-  code=NULL,
-  posres=2,
-  logged=FALSE,
-  projectlist=NULL,
-  tagprojectlist=NULL,
-  loggedInUserPostgresUsername = NULL,
-  loggedInUserPostgresPwd = NULL,
-  phylasp='#2#51#',
-  taxranks=c(Species=220),
-  qualities=c("Hi"),
-  processing='Validated',
-  params = FALSE) {
+  datatype='Buoy data', from=as.character(Sys.Date()-90), to=as.character(Sys.Date()),
+  stations=c("Buoy at C-Power"), binSize="60 min", calc='Time bins', UrlPar=NULL,
+  code=NULL, posres=2, logged=FALSE, projectlist=NULL, tagprojectlist=NULL,
+  loggedInUserPostgresUsername = NULL, loggedInUserPostgresPwd = NULL,
+  phylasp='#2#51#', taxranks=c(Species=220), qualities=c("Hi"),
+  processing='Validated', params = FALSE, force_opencpu = FALSE) {
 
   input=list()
   USER = list()
@@ -82,7 +70,7 @@ lwdata<- function(
   USER$postgresPwd=loggedInUserPostgresPwd
 
   # Function call
-  if(lw_check_lwdataserver()){
+  if(lw_check_lwdataserver(force_opencpu = force_opencpu)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -190,7 +178,7 @@ getZooscanData <- function(startdate, stopdate, params = FALSE, ...){
   input$type = "ZooScan data"
   input$getPar = params
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -219,7 +207,7 @@ getFlowcamData <- function(startdate, stopdate, params = FALSE, ...){
   # print(input)
   input$getPar = params
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -251,7 +239,7 @@ getBatsData <- function(startdate, stopdate, by, params = FALSE, ...){
   input$getPar = params
   # print(input)
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -284,7 +272,7 @@ getBuoyData <- function(startdate, stopdate, stations,
   input$type = "Buoy data"
   input$getPar = params
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -332,7 +320,7 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
   USER$username=usr
   USER$password=pwd
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
   }else{
     out = basicPostJson(input = input, USER = USER)
@@ -377,7 +365,7 @@ getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod"
   USER$username=usr
   USER$password=pwd
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
   }else{
     out = basicPostJson(input = input, USER = USER)
@@ -425,7 +413,7 @@ getMvbData <- function(startdate, stopdate, parameters, stations = NULL, by, cal
   USER$username=usr
   USER$password=pwd
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
   }else{
     out = basicPostJson(input = input, USER = USER)
@@ -466,7 +454,7 @@ getUvaBirdData <- function(startdate, stopdate, tagcodes, # p=2,
   USER$username = usr
   USER$password = pwd
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
   }else{
     out = basicPostJson(input = input, USER = USER)
@@ -500,7 +488,7 @@ getStationData <- function(startdate, stopdate, stations = "all", categories = "
   input$categories=categories
   input$getPar = params
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -530,7 +518,7 @@ getUnderwayData <- function(startdate, stopdate, by, params = FALSE, ...){
   input$binSize = by
   input$getPar = params
 
-  if(lw_check_lwdataserver(...)){
+  if(lw_check_lwdataserver( ...)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -538,221 +526,4 @@ getUnderwayData <- function(startdate, stopdate, by, params = FALSE, ...){
 
   tab = lw_output_qc(input, out)
   return(tab)
-}
-
-
-
-##########################
-#### HELPER FUNCTIONS ####
-##########################
-# Function used internally
-basicPostJson = function(input=NULL,
-                         USER=NULL){
-
-  # Get BASE path from environment
-  BASE_PATH = Sys.getenv("BASE_PATH")
-  if (BASE_PATH==""){
-    BASE_PATH="https://opencpu.lifewatch.be"
-  }
-  ocpu.url = file.path(file.path(BASE_PATH, "getLWdata/"), "json")
-
-  mybody = list(
-    'USER'=USER,
-    'input'=input,
-    'client'=TRUE
-    )
-
-  postreq = httr::content(
-    httr::POST(url= ocpu.url,
-               body = mybody,
-               encode = 'json'),
-    as="text")
-  # if error:
-  some.error=TRUE
-  try({
-    out = jsonlite::fromJSON(postreq)
-    some.error=FALSE
-  })
-
-  if (some.error){
-    out=cat(postreq)
-  }
-  return(out)
-
-}
-
-
-# Checks the output of the request to opencpu server and gives understandable feedback
-lw_output_qc = function(input, out){
-
-  # Assertions
-  stopifnot(is.list(input))
-  stopifnot(is.list(out) | is.character(out))
-
-  # par and mdf splitted
-
-  # If out is a string, it is an error. Pass to mdf and down
-  if(is.character(out)){
-    mdf <- out
-  }else{
-    mdf <- out$mdf
-    par <- out$par
-  }
-
-
-  ## START QC
-
-  # Check data type, different logic if list
-
-  if(input$type %in% c('listETNprojects', 'listMVBstations', 'listUVAtags')){
-
-    # If mdf is a character string
-    if(is.character(mdf)){
-      mdf <- lw_mdf_is_string(mdf)
-      return(mdf)
-    }
-
-    return(out)
-  }
-
-
-  # If mdf is a tibble, turn into a base data frame
-  if(tibble::is_tibble(mdf)){
-    mdf <- as.data.frame(mdf, stringAsFactors = FALSE)
-  }
-
-  # If mdf is a data frame, check if it is empty and return a warning
-  # If mdf is not empty, print log messages and return successfully
-  if(is.data.frame(mdf)){
-
-    lw_compare_parameters(input, par)
-
-    if(nrow(mdf) == 0){
-      lw_warning_empty()
-    }
-
-
-    # END
-    # Check if parameters were requested or not
-    if(isTRUE(input$getPar)){
-      out$par$getPar <- NULL
-      return(out)
-    }else{
-      return(mdf)
-    }
-
-  }
-
-  # If mdf is list and empty, return a warning
-  if(is.list(mdf)){
-
-    if(length(mdf) == 0){
-      return(lw_warning_empty())
-    }else{stop()}
-
-  }
-
-  # If mdf is a character string
-  if(is.character(mdf)){
-    lw_mdf_is_string(mdf, input, par)
-    return(NULL)
-  }
-  ## END QC
-
-}
-
-
-# What to do if output is a string
-lw_mdf_is_string <- function(mdf, input = NULL, par = NULL){
-
-  stopifnot(length(mdf) == 1)
-
-  # Check if there is an error message
-  if(grepl("error", mdf, ignore.case = TRUE)){
-    message(mdf)
-    warning("Something unexpected happened. Check the server logs.")
-    return(NULL)
-
-  # Check if the server returns a no data string
-  }else if(grepl("data", mdf, ignore.case = TRUE) |
-           grepl("null", mdf, ignore.case = TRUE) |
-           grepl("results", mdf, ignore.case = TRUE)
-           ){
-    lw_warning_empty()
-    lw_compare_parameters(input, par)
-    return(NULL)
-
-  # Any other case, raise an error
-  }else{
-    stop(mdf)
-  }
-
-}
-
-
-# What to do in case of an empty response
-lw_warning_empty <- function(){
-  warning("No data returned")
-  return(NULL)
-}
-
-
-# Compares two sets of parameters and raises a warning if they are different
-lw_compare_parameters <- function(par_user, par_server){
-
-  stopifnot(is.list(par_user))
-  stopifnot(is.list(par_server))
-
-  if(length(setdiff(par_user, par_server)) != 0){
-
-    lw_print_parameters(par_user, "- Your query:")
-    lw_print_parameters(par_server, "- Server query:")
-
-    warning("The query applied on the server differ from the parameters you used.
-Hint: You may need an account to fully access the data under moratorium.
-Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
-
-    # Print parameters if there're no issues
-  }else{
-    lw_print_parameters(par_server)
-  }
-
-}
-
-
-# Prints parameters in the console
-lw_print_parameters <- function(par, messg = "- Query parameters: "){
-  # remove getPar
-  par <- par[names(par) != "getPar"]
-
-  # Print
-  message(messg)
-
-  for (i in 1:length(par)){
-    name <- names(par)[i]
-    message(paste0("   - ", name, ": ", par[i]))
-  }
-
-  # End
-}
-
-
-# Checks if the user has access to lwdataserver
-lw_check_lwdataserver <- function(force_opencpu = FALSE){
-  # Checks if lwdataserver is installed
-  suppressWarnings(use_lwdataserver <- isTRUE(requireNamespace("lwdataserver", quietly = TRUE)))
-
-  if(!use_lwdataserver | force_opencpu){
-    message("- Query mode: Post request to OpenCPU server")
-
-    if(use_lwdataserver & force_opencpu){
-      use_lwdataserver <- FALSE
-      warning("Data accessed through OpenCPU server but a direct connection to the database is available. Consider setting force_opencpu = FALSE to improve performance.")
-    }
-
-  }else if(use_lwdataserver & !force_opencpu){
-    message("- Query mode: Database connection")
-  }
-
-  return(use_lwdataserver)
 }

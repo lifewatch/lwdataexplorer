@@ -23,7 +23,8 @@ lwdata(
   taxranks = c(Species = 220),
   qualities = c("Hi"),
   processing = "Validated",
-  params = FALSE
+  params = FALSE,
+  force_opencpu = FALSE
 )
 }
 \arguments{
@@ -64,6 +65,8 @@ lwdata(
 \item{processing}{(CPOD) One of ('Validated','Raw')}
 
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
+
+\item{force_opencpu}{boolean. If true, the query will be forced to run through the OpenCPU server.}
 }
 \value{
 The sum of \code{x} and \code{y}
