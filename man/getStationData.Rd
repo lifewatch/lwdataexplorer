@@ -18,7 +18,7 @@ getStationData(
 
 \item{stopdate}{Stopping date for the query}
 
-\item{stations}{list of stations to be included in the query. Use \code{stations="All"} to get all stations.}
+\item{stations}{list of stations to be included in the query. Use \code{stations="all"} to get all stations.}
 
 \item{categories}{List of categories to return in query, one of  ("SPM", "CTD", "Nutrients", "Secchi", "Pigments"). Use \code{categories="All"} to get all categories}
 

@@ -482,7 +482,7 @@ getUvaBirdData <- function(startdate, stopdate, tagcodes, # p=2,
 #'Retrieves the station data from the LifeWatch project.
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
-#'@param stations list of stations to be included in the query. Use \code{stations="All"} to get all stations.
+#'@param stations list of stations to be included in the query. Use \code{stations="all"} to get all stations.
 #'@param categories List of categories to return in query, one of  ("SPM", "CTD", "Nutrients", "Secchi", "Pigments"). Use \code{categories="All"} to get all categories
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
 #'@param ... Params to be passed to lw_check_lwdataserver().
