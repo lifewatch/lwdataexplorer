@@ -118,7 +118,8 @@
   taxranks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>Species <span class="op">=</span> <span class="fl">220</span><span class="op">)</span>,
   qualities <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Hi"</span><span class="op">)</span>,
   processing <span class="op">=</span> <span class="st">"Validated"</span>,
-  params <span class="op">=</span> <span class="cn">FALSE</span>
+  params <span class="op">=</span> <span class="cn">FALSE</span>,
+  force_opencpu <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span></code></pre></div>
     </div>
 
@@ -162,6 +163,8 @@
 <dd><p>(CPOD) One of ('Validated','Raw')</p></dd>
 <dt>params</dt>
 <dd><p>If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.</p></dd>
+<dt>force_opencpu</dt>
+<dd><p>boolean. If true, the query will be forced to run through the OpenCPU server.</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -630,88 +633,90 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 108                                                                    SARTELZINGARO</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 109                                                                         Scytrack</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 110                                                                       SeaMonitor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111                                                                   Semp Lithuania</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 112                                                                 Siganid_East_Med</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 113                                                               Siganid_Gulf_Aqaba</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114              Silver Eel downstream migration in the Walloon Meuse - 2021 to 2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 115                                                                        Skye 2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 116                                                             SMOLTRACK-I-Engeland</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 117                                                            SMOLTRACK-II-Engeland</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 118         Spatial Ecology of spurdog (Squalus acanthias) in a Scottish loch system</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 119 Spawning migration of pike in MatsaluBay and RiverKasari (Baltic Sea, 2018-2020)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 120  Spawning migration of pike in Teorehe-Sauemeri floodplain (BalticSea 2017-2019)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121                                                                        SPAWNSEIS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 122                                                                S_rivulatus_Aqaba</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 123                                                S_rivulatus_Eastern_Mediterranean</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 124                                                  Sud_le_Impuls_voor_Diadrome_Vis</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 125                                                    Sud_le_Innovatieve_monitoring</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 126                                                                  SVNL-FISH-WATCH</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 127                                                                   Swimway Vechte</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 128                                                                             TeRi</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 129                                                     The Bergen Telemetry Network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 130                                                                     Thorntonbank</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 131                                                             Unlocking the Severn</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 132                                                           Vissen_voor_verbinding</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133                                                                  Westerschelde 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 134                                                                  Westerschelde 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 135                                                                  Westerschelde 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 136                                      Yellow eel movement behaviour in the Azores</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 137                                                                       Zeeschelde</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 138                                                                 2010_phd_reubens</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 139                                                            2010_phd_reubens_sync</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 140                                                                  2011 Rivierprik</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 141                                                               2012 Leopoldkanaal</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 142                                                                2013 Albertkanaal</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 143                                                                       2014 Demer</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 144                                                        2015_Albertkanaal_VPS_Ham</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 145                                                                       2015 Dijle</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 146                                                                     2015_Homarus</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147                                                            2015 PhD Verhelst_cod</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148                                                            2015 PhD Verhelst_eel</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 149                                                        2016_Albertkanaal_VPS_Ham</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 150                                                               2016 PhD Vergeynst</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 151                                                        2017_Albertkanaal_VPS_Ham</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 152                                                                       ARAISOLA02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 153                                                                       ARAISOLA03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 154                                                                              Ars</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 155                                                                         Artevigo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 156                                                        Balearic Tracking Network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 157                  Balearic Tracking Network - Spanish Deep Water Receiver Network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 158      Comparative study of marble and rainbow trout behaviour in Kanomljica River</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 159                                                                    DAbecasis PhD</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 160                                                                 Danube_Sturgeons</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 161                                                                             EMMN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 162                                                                             ESGL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 163                                                              JSATS-PalmaBay-2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 164                                                                         Limfjord</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 165                                                          Marble vs rainbow trout</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 166                                                                       MBA_Massmo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 167                                                                      MBA_Wavehub</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 168                                                                     MBA_Whitsand</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 169                                                          Middle_Danube_sturgeons</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 170                                                                      Mobula Imar</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 171                                                   North Aegean Anguilla Tracking</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 172                                                                    NTNU-Gaulosen</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 173                                                       NTNU River Nidelva Project</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 174                                                           Ocean Tracking Network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 175                                                                       Orsted Cod</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 176                                                                  OTN-Hemnfjorden</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177                                                                 OTN-Tosenfjorden</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 178                                                           OTN VR2W Loan - Norway</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 179                                                                PhD Barbara Koeck</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 180                                                                PhD Jeremy Pastor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 181                                                                     PhD_Marrocco</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 182                                                                         PhysFish</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 183                                                                       SARTELARAM</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 184                                                                         SARTELTG</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 185                                                                    SARTELZINGARO</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 186                                                                         Scytrack</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 187                                                                   Semp Lithuania</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 188                                                               Siganid_Gulf_Aqaba</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 189              Silver Eel downstream migration in the Walloon Meuse - 2021 to 2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 190         Spatial Ecology of spurdog (Squalus acanthias) in a Scottish loch system</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 191                                                S_rivulatus_Eastern_Mediterranean</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 192                                                                             TeRi</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111            SeaMonitor: Costs and Pathways of Marine Migration in Atlantic salmon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112                                                                   Semp Lithuania</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113                                                                 Siganid_East_Med</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114                                                               Siganid_Gulf_Aqaba</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115              Silver Eel downstream migration in the Walloon Meuse - 2021 to 2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116                                                                        Skye 2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117                                                             SMOLTRACK-I-Engeland</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118                                                            SMOLTRACK-II-Engeland</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119                                                      Southern Norway brown trout</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120         Spatial Ecology of spurdog (Squalus acanthias) in a Scottish loch system</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121 Spawning migration of pike in MatsaluBay and RiverKasari (Baltic Sea, 2018-2020)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122  Spawning migration of pike in Teorehe-Sauemeri floodplain (BalticSea 2017-2019)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123                                                                        SPAWNSEIS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124                                                                S_rivulatus_Aqaba</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125                                                S_rivulatus_Eastern_Mediterranean</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126                                                  Sud_le_Impuls_voor_Diadrome_Vis</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127                                                    Sud_le_Innovatieve_monitoring</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128                                                                  SVNL-FISH-WATCH</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129                                                                   Swimway Vechte</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130                                                                             TeRi</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131                                                     The Bergen Telemetry Network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132                                                                     Thorntonbank</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133                                                             Unlocking the Severn</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134                                                           Vissen_voor_verbinding</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135                                                                  Westerschelde 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136                                                                  Westerschelde 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137                                                                  Westerschelde 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138                                      Yellow eel movement behaviour in the Azores</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139                                                                       Zeeschelde</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140                                                                 2010_phd_reubens</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141                                                            2010_phd_reubens_sync</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 142                                                                  2011 Rivierprik</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 143                                                               2012 Leopoldkanaal</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 144                                                                2013 Albertkanaal</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145                                                                       2014 Demer</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146                                                        2015_Albertkanaal_VPS_Ham</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147                                                                       2015 Dijle</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148                                                                     2015_Homarus</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149                                                            2015 PhD Verhelst_cod</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150                                                            2015 PhD Verhelst_eel</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151                                                        2016_Albertkanaal_VPS_Ham</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152                                                               2016 PhD Vergeynst</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153                                                        2017_Albertkanaal_VPS_Ham</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154                                                                       ARAISOLA02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155                                                                       ARAISOLA03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156                                                                              Ars</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157                                                                         Artevigo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158                                                        Balearic Tracking Network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159                  Balearic Tracking Network - Spanish Deep Water Receiver Network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160      Comparative study of marble and rainbow trout behaviour in Kanomljica River</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161                                                                    DAbecasis PhD</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162                                                                 Danube_Sturgeons</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 163                                                                             EMMN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 164                                                                             ESGL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 165                                                              JSATS-PalmaBay-2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 166                                                                         Limfjord</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 167                                                          Marble vs rainbow trout</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 168                                                                       MBA_Massmo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 169                                                                      MBA_Wavehub</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 170                                                                     MBA_Whitsand</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 171                                                          Middle_Danube_sturgeons</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 172                                                                      Mobula Imar</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 173                                                   North Aegean Anguilla Tracking</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 174                                                                    NTNU-Gaulosen</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 175                                                       NTNU River Nidelva Project</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 176                                                           Ocean Tracking Network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 177                                                                       Orsted Cod</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178                                                                  OTN-Hemnfjorden</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 179                                                                 OTN-Tosenfjorden</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 180                                                           OTN VR2W Loan - Norway</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 181                                                                PhD Barbara Koeck</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 182                                                                PhD Jeremy Pastor</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 183                                                                     PhD_Marrocco</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 184                                                                         PhysFish</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 185                                                                       SARTELARAM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 186                                                                         SARTELTG</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 187                                                                    SARTELZINGARO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 188                                                                         Scytrack</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 189                                                                   Semp Lithuania</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 190                                                               Siganid_Gulf_Aqaba</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 191              Silver Eel downstream migration in the Walloon Meuse - 2021 to 2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 192         Spatial Ecology of spurdog (Squalus acanthias) in a Scottish loch system</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 193                                                S_rivulatus_Eastern_Mediterranean</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 194                                                                             TeRi</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        type</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   network</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2   network</span>
@@ -850,8 +855,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 135 network</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 136 network</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 137 network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 138  animal</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 139  animal</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138 network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139 network</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 140  animal</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 141  animal</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 142  animal</span>
@@ -905,6 +910,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 190  animal</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 191  animal</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 192  animal</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 193  animal</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 194  animal</span>
 <span class="r-in"><span class="fu">lwdata</span><span class="op">(</span><span class="st">'zooscan-data'</span><span class="op">)</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query mode: Post request to OpenCPU server</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
