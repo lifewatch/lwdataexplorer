@@ -89,16 +89,13 @@ url <- "https://www.vliz.be/en/imis?module=dataset&dasid=59"
 dasid <- fromJSON(paste0(url, "&show=json"))
 
 # Build citation. Get active DOI.
-doi <- dasid[["dois"]]
-doi <- subset(doi, doi$CurrentDOI == 1)$DOI
-doi <- paste0("https://doi.org/", doi)
 citation <- dasid[["datasetrec"]][["Citation"]]
-citation <- paste0("> ", citation, " ", doi, 
+citation <- paste0("> ", citation, " ", url, 
                    ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package."
                    )
 
 # Get license
-license <- dasid[["datasetrec"]][["AccConstrDisplay"]]
+license <- dasid[["datasetrec"]][["AccessConstraint"]]
 ```
 
 ```{r display citation, results = 'asis', echo = FALSE}
@@ -106,7 +103,7 @@ cat(citation)
 ```
 
 ```{r display license, results = 'asis', echo = FALSE}
-cat(paste0("<b>Availability:</b>", license))
+cat(paste0("<b>Availability: </b>", license))
 ```
 
 Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by MOW and VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.

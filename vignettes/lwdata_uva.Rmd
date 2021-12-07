@@ -82,12 +82,9 @@ library(jsonlite)
 url <- "https://www.vliz.be/en/imis?module=dataset&dasid=5249"
 dasid <- fromJSON(paste0(url, "&show=json"))
 
-# Build citation. Get active DOI.
-doi <- dasid[["dois"]]
-doi <- subset(doi, doi$CurrentDOI == 1)$DOI
-doi <- paste0("https://doi.org/", doi)
+# Build citation.
 citation <- dasid[["datasetrec"]][["Citation"]]
-citation <- paste0("> ", citation, " ", doi, 
+citation <- paste0("> ", citation, " ", url, 
                    ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package."
                    )
 

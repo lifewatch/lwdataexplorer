@@ -133,15 +133,12 @@ The ETN Data Explorer provides a set of  functions to access the aquatic animal 
 library(jsonlite)
 
 # Set base url
-url <- "https://www.vliz.be/en/imis?module=dataset&dasid=5250"
+url <- "https://www.vliz.be/en/imis?module=dataset&dasid=5912"
 dasid <- fromJSON(paste0(url, "&show=json"))
 
 # Build citation. Get active DOI.
-doi <- dasid[["dois"]]
-doi <- subset(doi, doi$CurrentDOI == 1)$DOI
-doi <- paste0("https://doi.org/", doi)
 citation <- dasid[["datasetrec"]][["Citation"]]
-citation <- paste0("> ", citation, " ", doi, 
+citation <- paste0("> ", citation, " ", url, 
                    ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package.")
 
 # Get license
