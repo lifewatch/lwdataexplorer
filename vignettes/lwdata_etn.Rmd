@@ -107,7 +107,7 @@ Aquatic animal tracking data from the [European Tracking Network](https://lifewa
 # Get the abstract and/or description from IMIS and print here
 library(jsonlite)
 
-dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=5250&show=json")
+dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=5912&show=json")
 
 abstract <- dasid[["datasetrec"]][["EngAbstract"]]
 description <- dasid[["datasetrec"]][["EngDescr"]]
