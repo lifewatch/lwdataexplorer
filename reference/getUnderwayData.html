@@ -124,47 +124,20 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">getUnderwayData</span><span class="op">(</span><span class="st">"2021-03-15"</span>, <span class="st">"2021-04-13"</span>, <span class="st">"1 day"</span><span class="op">)</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query mode: Post request to OpenCPU server</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> - Query parameters: </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>    - daterange: c("2021-03-15", "2021-04-13")</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>    - type: Underway data</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>    - binSize: 1 day</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   Time Latitude Longitude Temperature Salinity Conductivity</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2021-03-16 08:15:47  51.2477    2.9069      7.5439   33.170        3.454</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2021-03-18 08:04:17  51.2482    2.9095      7.4017   32.646        3.392</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2021-03-22 08:13:11  51.2469    2.9065      6.9261   28.767        2.989</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2021-03-23 08:44:59  51.2495    2.9090      6.9147   29.902        3.094</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2021-03-25 06:47:53  51.2488    2.9020      7.1568   28.757        3.005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2021-03-26 07:58:41  51.2407    2.9022      7.4505   28.501        3.004</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2021-03-29 08:41:59  51.2411    2.9040      8.3740   31.896        3.405</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2021-03-30 06:47:53  51.2500    2.9076      8.5989   32.475        3.481</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2021-03-31 06:58:34  51.2503    2.9072      8.9196   32.209        3.483</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2021-04-08 05:07:40  51.2422    2.9050      6.9902   29.350        3.048</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2021-04-12 06:43:52  51.2476    2.9002      7.2157   30.251        3.149</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    Depth ChlorophylA SpeedMadeGood Speedlog TrueWindDir TrueWindSpeed</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   7.77        8.67          11.3    12.56         3.0          2.48</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   9.79        8.49          10.6    12.34       327.2          5.56</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  10.50        4.04          10.9    12.36       307.8          3.24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  12.41        3.82          10.7    11.76       207.9          6.86</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   8.21        4.52          11.2    13.08       197.8          6.77</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   9.27        4.74          11.0    12.69       179.5         13.14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   7.81        8.98          11.4    11.98       212.4          7.84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   8.79       10.90          11.3    13.00       180.0          0.26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   9.27        9.47          11.4    13.08       195.4          4.30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  7.96        3.25          12.0    12.85       172.5          5.18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  6.17        4.12          11.1    13.18       244.9          6.10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    CourseMadeGood   Gyro AirTemperature AirPressure AirHumidity</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           294.3 298.72           5.67      1.0257        87.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2           326.7 330.63           5.93      1.0258        90.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3           304.1 302.04           6.43      1.0259        77.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4           323.2 320.18           6.65      1.0249        91.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5           298.1 300.32           7.86      1.0190        95.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6           245.2 243.41           8.70      1.0133        75.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7           243.0 243.28          10.31      1.0270        76.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8           324.2 328.01          10.16      1.0297        69.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9           324.0 327.51          12.18      1.0214        60.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10          245.2 244.59           3.70      1.0229        70.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11          290.3 295.49           5.22      1.0259        67.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error : lexical error: invalid char in json text.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                        &lt;!DOCTYPE HTML PUBLIC "-//IETF/</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                      (right here) ------^</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;html&gt;&lt;head&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;title&gt;502 Proxy Error&lt;/title&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/head&gt;&lt;body&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;h1&gt;Proxy Error&lt;/h1&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;p&gt;The proxy server received an invalid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> response from an upstream server.&lt;br /&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> The proxy server could not handle the request&lt;p&gt;Reason: &lt;strong&gt;Error reading from remote server&lt;/strong&gt;&lt;/p&gt;&lt;/p&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/body&gt;&lt;/html&gt;</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in lw_output_qc(input, out):</span> is.list(out) | is.character(out) is not TRUE</span>
 <span class="r-in"><span class="fu">getUnderwayData</span><span class="op">(</span><span class="st">"2021-03-15"</span>, <span class="st">"2021-04-13"</span>, <span class="st">"60 min"</span>, params <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query mode: Post request to OpenCPU server</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
