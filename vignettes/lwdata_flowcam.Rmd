@@ -120,14 +120,6 @@ These data are also available in the R language with the [lwdataxplorer package]
 
 
 </br>
-If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
-
-```{r citation, results = 'asis', echo = FALSE}
-cat(paste0("> ", citation("lwdataexplorer")$textVersion))
-```
-
-
-</br>
 <small><sup>1</sup> The formula linked in the [datapaper](https://bdj.pensoft.net/article/57236/) that describes these data is not used anymore. The corrected formula used during the aggregations is:</small></br>
 
 $$Density = \frac{ConcentrationSample * SampleVolume(L)}{VolumeFiltered(L)}$$

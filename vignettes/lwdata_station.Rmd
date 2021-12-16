@@ -116,7 +116,9 @@ if (is.null(abstract) & is.null(description)){
 cat(out)
 ```
 
-The full methodology is described in a datapaper: Mortelmans, J.; Deneudt, K.; Cattrijsse, A.; et al. (2019). Nutrient, pigment, suspended matter and turbidity measurements in the Belgian part of the North Sea. Scientific Data 6(1): 22. [https://hdl.handle.net/10.1038/s41597-019-0032-7](https://hdl.handle.net/10.1038/s41597-019-0032-7)
+The full methodology is described in a datapaper: 
+
+> Mortelmans, J.; Deneudt, K.; Cattrijsse, A.; et al. (2019). Nutrient, pigment, suspended matter and turbidity measurements in the Belgian part of the North Sea. Scientific Data 6(1): 22. [https://hdl.handle.net/10.1038/s41597-019-0032-7](https://hdl.handle.net/10.1038/s41597-019-0032-7)
 
 ## How to cite these data
 

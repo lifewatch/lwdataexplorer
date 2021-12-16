@@ -53,8 +53,11 @@ This LifeWatch explorer allows for a detailed search through the available sampl
 
 ## How to cite these data
 
-Samples are collected, processed and preserved in the framework of the LifeWatch observatory, but made available as biological resources through [EMBRC.be](http://www.embrc.be). Therefore, **for use of the samples from the marine biobank, please provide a written request to [embrc@vliz.be](mailto:embrc@vliz.be)**.
+Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by EMBRC Belgium and the LifeWatch Belgium partners) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
 
+Samples are collected, processed and preserved in the framework of the LifeWatch observatory, but made available as biological resources through [EMBRC.be](http://www.embrc.be). Therefore, for use of the samples from the marine biobank, please provide a written request to [embrc@vliz.be](mailto:embrc@vliz.be).
+
+<!-- 
 ```{r get citation and license, results = 'asis', echo = FALSE}
 library(jsonlite)
 
@@ -67,7 +70,7 @@ doi <- dasid[["dois"]]
 doi <- subset(doi, doi$CurrentDOI == 1)$DOI
 doi <- paste0("https://doi.org/", doi)
 citation <- dasid[["datasetrec"]][["Citation"]]
-citation <- paste0("> ", citation, " ", doi, 
+citation <- paste0("> ", citation, " ", doi,
                    ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package."
                    )
 
@@ -81,8 +84,7 @@ cat(citation)
 
 ```{r display license, results = 'asis', echo = FALSE}
 cat(paste0("<b>Availability:</b>", license))
-```
-
-Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by INBO and VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
+``` 
+-->
 
 These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/).
