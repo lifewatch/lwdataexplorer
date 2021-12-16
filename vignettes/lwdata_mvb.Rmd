@@ -81,6 +81,33 @@ Hydrometeo data collected at stations along the Belgian coast and off-shore alon
 </details>
 
 ## Abstract
+
+```{r abstract, results = 'asis', echo = FALSE}
+# Get the abstract and/or description from IMIS and print here
+library(jsonlite)
+
+dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=59&show=json")
+
+abstract <- dasid[["datasetrec"]][["EngAbstract"]]
+description <- dasid[["datasetrec"]][["EngDescr"]]
+
+if (is.null(abstract) & is.null(description)){
+
+} else if(is.null(abstract) & !is.null(description)){
+  out <- description
+} else if(!is.null(abstract) & is.null(description)){
+  out <- abstract
+} else if(!is.null(abstract) & !is.null(description)){
+  out <- paste0(abstract, "</br>", description)
+}
+
+cat(out)
+```
+
+You can find more information at: https://www.vliz.be/en/imis?module=dataset&dasid=59
+
+## How to cite these data 
+<!-- 
 ```{r get citation and license, results = 'asis', echo = FALSE}
 library(jsonlite)
 
@@ -105,7 +132,7 @@ cat(citation)
 ```{r display license, results = 'asis', echo = FALSE}
 cat(paste0("<b>Availability: </b>", license))
 ```
-
+-->
 Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by MOW and VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
 
 These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/).

@@ -33,5 +33,4 @@ File requirements:
 
 ## How to cite these data
 
-Please mind the individual citations for the data used with these tool. Acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by the LifeWatch Belgium partners) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
-
+Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
