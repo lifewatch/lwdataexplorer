@@ -57,22 +57,40 @@ This dataset contains  zooplankton observations in the Belgian Part of the North
 
 Zooplankton is  sampled by vertical WP2 net tows, samples scanned with ZooScanner and  identification with plankton analyzer software, followed by manual validation.
 
-The full methodology is described in a datapaper:  Mortelmans, J.; Goossens, J.; Amadei Martínez, L.; Deneudt, K.;  Cattrijsse, A.; Hernandez, F. (2019). LifeWatch observatory date:  zooplankton observations in the Belgian part of the North Sea.  Geoscience Data Journal: 1-9. [https://hdl.handle.net/10.1002/gdj3.68](https://hdl.handle.net/10.1002/gdj3.68).
+The full methodology is described in a datapaper:  
+
+> Mortelmans, J.; Goossens, J.; Amadei Martínez, L.; Deneudt, K.;  Cattrijsse, A.; Hernandez, F. (2019). LifeWatch observatory date:  zooplankton observations in the Belgian part of the North Sea.  Geoscience Data Journal: 1-9. [https://hdl.handle.net/10.1002/gdj3.68](https://hdl.handle.net/10.1002/gdj3.68).
 
 ## How to cite these data
 
-When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=4687) of this data type.
+```{r get citation and license, results = 'asis', echo = FALSE}
+library(jsonlite)
 
-> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+# Set base url 5251 4688
+url <- "https://www.vliz.be/en/imis?module=dataset&dasid=4687"
+dasid <- fromJSON(paste0(url, "&show=json"))
 
-</br>
-In addition, a fixed dataset is available via: 
+# Build citation. Get active DOI.
+doi <- dasid[["dois"]]
+doi <- subset(doi, doi$CurrentDOI == 1)$DOI
+doi <- paste0("https://doi.org/", doi)
+citation <- dasid[["datasetrec"]][["Citation"]]
+citation <- paste0("> ", citation, " ", doi, 
+                   ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package."
+                   )
 
-> Flanders Marine Institute (VLIZ), Belgium (2021): LifeWatch observatory data: zooplankton observations in the Belgian Part of the North Sea. [https://doi.org/10.14284/445](https://doi.org/10.14284/445)
-
-</br>
-If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
-
-```{r citation, results = 'asis', echo = FALSE}
-cat(paste0("> ", citation("lwdataexplorer")$textVersion))
+# Get license
+license <- dasid[["datasetrec"]][["AccConstrDisplay"]]
 ```
+
+```{r display citation, results = 'asis', echo = FALSE}
+cat(citation)
+```
+
+```{r display license, results = 'asis', echo = FALSE}
+cat(paste0("<b>Availability:</b>", license))
+```
+
+Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
+
+These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/).

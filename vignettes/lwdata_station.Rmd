@@ -120,13 +120,34 @@ The full methodology is described in a datapaper: Mortelmans, J.; Deneudt, K.; C
 
 ## How to cite these data
 
-When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statement written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=4685) of this data type.
+```{r get citation and license, results = 'asis', echo = FALSE}
+library(jsonlite)
 
-> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+# Set base url 5251 4688
+url <- "https://www.vliz.be/en/imis?module=dataset&dasid=4685"
+dasid <- fromJSON(paste0(url, "&show=json"))
 
-</br>
-If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+# Build citation. Get active DOI.
+doi <- dasid[["dois"]]
+doi <- subset(doi, doi$CurrentDOI == 1)$DOI
+doi <- paste0("https://doi.org/", doi)
+citation <- dasid[["datasetrec"]][["Citation"]]
+citation <- paste0("> ", citation, " ", doi, 
+                   ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package."
+                   )
 
-```{r citation, results = 'asis', echo = FALSE}
-cat(paste0("> ", citation("lwdataexplorer")$textVersion))
+# Get license
+license <- dasid[["datasetrec"]][["AccConstrDisplay"]]
 ```
+
+```{r display citation, results = 'asis', echo = FALSE}
+cat(citation)
+```
+
+```{r display license, results = 'asis', echo = FALSE}
+cat(paste0("<b>Availability:</b>", license))
+```
+
+Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by MARBIOL, NIOZ, NOCS, PAE, VMM and VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
+
+These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/).

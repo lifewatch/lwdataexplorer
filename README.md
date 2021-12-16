@@ -4,7 +4,6 @@
 # lwdataexplorer
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 Access to [LifeWatch Belgium](lifewatch.be/) data hosted by the
@@ -21,7 +20,7 @@ You can install the development version of deleteme from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("lifewatch/lwdataexplorer")
+devtools::install_github("lifewatch/lwdataexplorer", build_vignettes = TRUE)
 ```
 
 ## Usage
@@ -45,34 +44,33 @@ library(lwdataexplorer)
 library(tibble) # only for visualizing
 
 df <- getBuoyData("2021-03-19", "2021-04-21", "All")
-#> - Query mode: Database connection
-#> Date passed as text. Trying to transform to date
+#> - Query mode: Post request to OpenCPU server
+#> No encoding supplied: defaulting to UTF-8.
 #> - Query parameters:
 #>    - daterange: c("2021-03-19", "2021-04-21")
 #>    - stationlist: All
 #>    - type: Buoy data
 
 as_tibble(df)
-#> # A tibble: 2,384 × 39
-#>    Station               Time                Latitude Longitude `Air temperatur…
-#>    <fct>                 <dttm>                 <dbl>     <dbl>            <dbl>
-#>  1 Buoy in Spuikom       2021-03-19 00:00:00     51.2      2.95             6.35
-#>  2 Ostend Research Tower 2021-03-19 00:00:00     51.2      2.92             6.10
-#>  3 Spuikom Sluice        2021-03-19 00:00:00     51.2      2.94            NA   
-#>  4 Spuikom Sluice        2021-03-19 01:00:00     51.2      2.94            NA   
-#>  5 Buoy in Spuikom       2021-03-19 01:00:00     51.2      2.95             5.66
-#>  6 Ostend Research Tower 2021-03-19 01:00:00     51.2      2.92             5.56
-#>  7 Buoy in Spuikom       2021-03-19 02:00:00     51.2      2.95             5.40
-#>  8 Ostend Research Tower 2021-03-19 02:00:00     51.2      2.92             5.25
-#>  9 Spuikom Sluice        2021-03-19 02:00:00     51.2      2.94            NA   
-#> 10 Spuikom Sluice        2021-03-19 03:00:00     51.2      2.94            NA   
-#> # … with 2,374 more rows, and 34 more variables: AtmPress(mBar) <dbl>,
+#> # A tibble: 2,384 x 20
+#>    Station      Time       Latitude Longitude `Air temperature~ `AtmPress(mBar)`
+#>    <chr>        <chr>         <dbl>     <dbl>             <dbl>            <dbl>
+#>  1 Buoy in Spu~ 2021-03-1~     51.2      2.95              6.35            1022.
+#>  2 Ostend Rese~ 2021-03-1~     51.2      2.92              6.10            1019.
+#>  3 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA 
+#>  4 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA 
+#>  5 Buoy in Spu~ 2021-03-1~     51.2      2.95              5.66            1023.
+#>  6 Ostend Rese~ 2021-03-1~     51.2      2.92              5.56            1019.
+#>  7 Buoy in Spu~ 2021-03-1~     51.2      2.95              5.40            1024.
+#>  8 Ostend Rese~ 2021-03-1~     51.2      2.92              5.25            1019.
+#>  9 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA 
+#> 10 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA 
+#> # ... with 2,374 more rows, and 14 more variables:
 #> #   Avg Wind direction (deg) <dbl>, Avg Wind speed (m/s) <dbl>,
-#> #   Chlorophyll (µg/L) <dbl>, Conductivity (mS/cm) <dbl>,
-#> #   Dissolved oxygen (µM) <dbl>, DO (mg/l) <dbl>, Level Harbour (mTAW) <dbl>,
-#> #   Level Spuikom (mTAW) <dbl>, NH3 (ppb) <dbl>, NO3 (ppb) <dbl>,
-#> #   Oxygen sat. (%) <dbl>, pCO2 air (ppm) <dbl>, pH (raw) <dbl>,
-#> #   PO4 (ppb) <dbl>, Rain (mm) <dbl>, Rain15 (mm) <dbl>, …
+#> #   RelHumidity (%) <dbl>, SolarEnergy (W/m²) <dbl>, Voltage (V) <dbl>,
+#> #   Level Harbour (mTAW) <dbl>, Level Spuikom (mTAW) <dbl>, Rain15 (mm) <dbl>,
+#> #   NO3 (ppb) <dbl>, SiO2 (ppb) <dbl>, Rain (mm) <dbl>, DO (mg/l) <int>,
+#> #   Salinity (PSU) <int>, Water temperature (°C) <int>
 ```
 
 Note that the functions naming includes always the `get` word, followed
@@ -118,7 +116,9 @@ dates are only between the last 30 days.
 mvb <- getMvbData("2020-01-01", "2020-12-31", parameters = 'All', 
                   stations = "All", by = "10min", calc = "none", 
                   params = TRUE)
-#> - Query mode: Database connection
+#> - Query mode: Post request to OpenCPU server
+#> No encoding supplied: defaulting to UTF-8.
+#> Warning in lw_warning_empty(): No data returned
 #> - Your query:
 #>    - daterange: c("2020-01-01", "2020-12-31")
 #>    - type: MVB data
@@ -127,7 +127,7 @@ mvb <- getMvbData("2020-01-01", "2020-12-31", parameters = 'All',
 #>    - binSize: 10min
 #>    - parameters: All
 #> - Server query:
-#>    - daterange: c("2021-10-31", "2020-12-31")
+#>    - daterange: c("2021-11-03", "2020-12-31")
 #>    - type: MVB data
 #>    - stations: All
 #>    - calc: none
@@ -136,7 +136,6 @@ mvb <- getMvbData("2020-01-01", "2020-12-31", parameters = 'All',
 #> Warning in lw_compare_parameters(input, par): The query applied on the server differ from the parameters you used.
 #> Hint: You may need an account to fully access the data under moratorium.
 #> Hint: Request access at: https://rshiny.lifewatch.be/account?p=register
-#> Warning in lw_warning_empty(): No data returned
 ```
 
 ### Get data and query parameters in a list
@@ -149,8 +148,8 @@ server
 ``` r
 # Request data but with parameters this time
 data_with_params <- getBuoyData("2021-03-19", "2021-04-21", "All", params = TRUE)
-#> - Query mode: Database connection
-#> Date passed as text. Trying to transform to date
+#> - Query mode: Post request to OpenCPU server
+#> No encoding supplied: defaulting to UTF-8.
 #> - Query parameters:
 #>    - daterange: c("2021-03-19", "2021-04-21")
 #>    - stationlist: All
@@ -188,12 +187,13 @@ function `listETNprojects()` or using `lwdata()`:
 
 ``` r
 etn <- lwdata('listETNprojects')
-#> - Query mode: Database connection
+#> - Query mode: Post request to OpenCPU server
+#> No encoding supplied: defaulting to UTF-8.
 
 as_tibble(etn)
-#> # A tibble: 192 × 2
+#> # A tibble: 192 x 2
 #>    name                     type   
-#>    <fct>                    <chr>  
+#>    <chr>                    <chr>  
 #>  1 2004_Gudena              network
 #>  2 2011_Loire               network
 #>  3 2011_Warnow              network
@@ -204,7 +204,7 @@ as_tibble(etn)
 #>  8 2016_Diaccia_Botrona     network
 #>  9 2017_Fremur              network
 #> 10 2019_Grotenete           network
-#> # … with 182 more rows
+#> # ... with 182 more rows
 ```
 
 ### Boost performance
@@ -236,6 +236,11 @@ Please cite this software as:
 > (2021). lwdataexplorer: Access to data from the LifeWatch Data
 > Explorer. R package version 0.0.0.9000.
 > <https://lifewatch.github.io/lwdataexplorer/>
+
+You must also cite the datasets retrieved by the lwdataexplorer. You can
+find more information and their individual citations in the vignettes.
+The vignettes are available online at:
+<https://lifewatch.github.io/lwdataexplorer/articles/>
 
 ### License
 

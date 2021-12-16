@@ -92,7 +92,7 @@ abstract <- dasid[["datasetrec"]][["EngAbstract"]]
 description <- dasid[["datasetrec"]][["EngDescr"]]
 
 if (is.null(abstract) & is.null(description)){
-  
+
 } else if(is.null(abstract) & !is.null(description)){
   out <- description
 } else if(!is.null(abstract) & is.null(description)){
@@ -104,18 +104,38 @@ if (is.null(abstract) & is.null(description)){
 cat(out)
 ```
 
-## How to cite these data
+You can find more information at: https://www.vliz.be/en/imis?module=dataset&dasid=59
 
-When using this tool, please acknowledge the LifeWatch Data Explorer in your work with the statment written below. Please also acknowledge the individual datasets used and mind their individual licenses: Find the complete list in this link to the [IMIS metadata record](https://www.vliz.be/en/imis?module=dataset&dasid=59) of this data type.
+## How to cite these data 
+<!-- 
+```{r get citation and license, results = 'asis', echo = FALSE}
+library(jsonlite)
 
-> _This work makes use of the LifeWatch Data Explorer provided by VLIZ and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch._
+# Set base url 5251 4688
+url <- "https://www.vliz.be/en/imis?module=dataset&dasid=59"
+dasid <- fromJSON(paste0(url, "&show=json"))
 
-</br>
-If you retrieved these data using the [LifeWatch Data Explorer R package](https://github.com/lifewatch/lwdataexplorer/), you should also cite it as: 
+# Build citation. Get active DOI.
+citation <- dasid[["datasetrec"]][["Citation"]]
+citation <- paste0("> ", citation, " ", url, 
+                   ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package."
+                   )
 
-```{r citation, results = 'asis', echo = FALSE}
-cat(paste0("> ", citation("lwdataexplorer")$textVersion))
+# Get license
+license <- dasid[["datasetrec"]][["AccessConstraint"]]
 ```
+
+```{r display citation, results = 'asis', echo = FALSE}
+cat(citation)
+```
+
+```{r display license, results = 'asis', echo = FALSE}
+cat(paste0("<b>Availability: </b>", license))
+```
+-->
+Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by MOW and VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
+
+These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/).
 
 </br>
 <small><sup>1</sup> TAW (from Dutch: _Tweede Algemeene Waterpassing_) is a term used only in Belgium; it is a horizontal water level reference level. Source: [proz.com](https://www.proz.com/kudoz/dutch-to-english/ships-sailing-maritime/2504584-tweede-algemeene-waterpassing.html)</small>

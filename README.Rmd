@@ -28,7 +28,7 @@ You can install the development version of deleteme from [GitHub](https://github
 
 ```{r installation, eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("lifewatch/lwdataexplorer")
+devtools::install_github("lifewatch/lwdataexplorer", build_vignettes = TRUE)
 ```
 
 ## Usage
@@ -132,6 +132,8 @@ Please cite this software as:
 ```{r citation, warning = FALSE, results = 'asis', echo = FALSE}
 cat(paste0("> ", citation("lwdataexplorer")$textVersion))
 ```
+
+You must also cite the datasets retrieved by the lwdataexplorer. You can find more information and their individual citations in the vignettes. The vignettes are available online at: https://lifewatch.github.io/lwdataexplorer/articles/
 
 ### License
 See the license file.
