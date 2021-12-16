@@ -90,7 +90,7 @@ cat(citation)
 cat(paste0("<b>Availability:</b>", license))
 ```
 
-Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
+Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by VLIZ and RBINS) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
 
 These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/).
 

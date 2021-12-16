@@ -77,7 +77,7 @@ Data from buoys installed in the Belgian Part of the North Sea.
 
 
 ## Abstract
-The Flanders Marine Institute within it’s remit and scope in RIs such as ICOS and Lifewatch, is operating 4 fixed point research and monitoring stations. Three of them are in the Oostende Spuikom and harbor and one is in the Thornton Bank. The stations have capacity for robust and frequent (e.g. 1 hr sync interval) near real time (NRT) transmission of data and are equipped with in situ sensors, for physical and biogeochemical parameters (see table/list xxx). Data from these stations are available through the LWDE portal (link?), but also through the [ICOS Carbon Portal](https://data.icos-cp.eu/portal/#%7B%22route%22%3A%22metadata%22%2C%22id%22%3A%22n94jijAEWH95fMNn8Mwd4I0M%22%7D) and the [Spuikom monitoring website](https://www.vliz.be/spuikom/metingen) 
+The Flanders Marine Institute within it’s remit and scope in RIs such as ICOS and Lifewatch, is operating 4 fixed point research and monitoring stations. Three of them are in the Oostende Spuikom and harbor and one is in the Thornton Bank. The stations have capacity for robust and frequent (e.g. 1 hr sync interval) near real time (NRT) transmission of data and are equipped with in situ sensors, for physical and biogeochemical parameters. Data from these stations are also available through the [ICOS Carbon Portal](https://data.icos-cp.eu/portal/#%7B%22route%22%3A%22metadata%22%2C%22id%22%3A%22n94jijAEWH95fMNn8Mwd4I0M%22%7D) and the [Spuikom monitoring website](https://www.vliz.be/spuikom/metingen) 
  
 ## How to cite these data
 
