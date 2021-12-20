@@ -1,11 +1,11 @@
 ---
-title: "Exploring cetaceans and sonar high frequency data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{lwdata_cpod}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+<h1>Exploring cetaceans and sonar high frequency data</h1>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(

@@ -1,11 +1,12 @@
 ---
-title: "Exploring Sample Library"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{lwdata_sample}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+<h1>Exploring the BioBank sample library</h1>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(

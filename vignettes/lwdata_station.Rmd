@@ -1,11 +1,11 @@
 ---
-title: "Exploring station data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{lwdata_station}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+<h1>Exploring station data</h1>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(

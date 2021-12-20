@@ -1,11 +1,11 @@
 ---
-title: "Exploring Batcorder data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{lwdata_bats}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+<h1>Exploring Batcorder data</h1>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(

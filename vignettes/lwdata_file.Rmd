@@ -1,5 +1,4 @@
 ---
-title: "Exploring combined data from different Lifewatch data types"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{lwdata_file}
@@ -7,10 +6,14 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+<h1>Combine data from different Lifewatch data types</h1>
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
