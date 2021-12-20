@@ -46,38 +46,38 @@ Hydrometeo data collected at stations along the Belgian coast and off-shore alon
 * **Tide TAW**: Waterlevel in m, level TAW <sup>1</sup> measured in Ostend at the time
 
 <details>
-  <summary>Columns available after log in</summary>
-  
-* **1% wave height**
-* **10 % wave height**
-* **10% highest waves**
-* **Air pressure**
-* **Air temperature**
-* **Average current direction**
-* **Average current velocity**
-* **Average wave period**
-* **Average wind direction**
-* **Average wind speed (at sensor height)**
-* **Average wind speed at 10 m**
-* **Average Windspeed**
-* **Ground temperature**
-* **Height waves with period > 10 s**
-* **High frequent wave direction**
-* **Low frequent wave direction**
-* **Max 1 sec gust of wind at 10 m**
-* **Max 3 sec gust of wind (at sensor height).**
-* **Max 3 sec wind speed at 10 m**
-* **Max 3 sec Windgust**
-* **Max. windspeed at 10m**
-* **Precipitation**
-* **Relative humidity**
-* **Sea water temperature**
-* **Significant wave height**
-* **Significant wave height - bouys**
-* **Solar radiation**
-* **Wave height**
-* **Wet bulb Temperature**
-
+  <summary>Click to see the columns available after log in</summary>
+  <ul>
+    <li><strong>1% wave height</strong></li>
+    <li><strong>10 % wave height</strong></li>
+    <li><strong>10% highest waves</strong></li>
+    <li><strong>Air pressure</strong></li>
+    <li><strong>Air temperature</strong></li>
+    <li><strong>Average current direction</strong></li>
+    <li><strong>Average current velocity</strong></li>
+    <li><strong>Average wave period</strong></li>
+    <li><strong>Average wind direction</strong></li>
+    <li><strong>Average wind speed (at sensor height)</strong></li>
+    <li><strong>Average wind speed at 10 m</strong></li>
+    <li><strong>Average Windspeed</strong></li>
+    <li><strong>Ground temperature</strong></li>
+    <li><strong>Height waves with period > 10 s</strong></li>
+    <li><strong>High frequent wave direction</strong></li>
+    <li><strong>Low frequent wave direction</strong></li>
+    <li><strong>Max 1 sec gust of wind at 10 m</strong></li>
+    <li><strong>Max 3 sec gust of wind (at sensor height).</strong></li>
+    <li><strong>Max 3 sec wind speed at 10 m</strong></li>
+    <li><strong>Max 3 sec Windgust</strong></li>
+    <li><strong>Max. windspeed at 10m</strong></li>
+    <li><strong>Precipitation</strong></li>
+    <li><strong>Relative humidity</strong></li>
+    <li><strong>Sea water temperature</strong></li>
+    <li><strong>Significant wave height</strong></li>
+    <li><strong>Significant wave height - bouys</strong></li>
+    <li><strong>Solar radiation</strong></li>
+    <li><strong>Wave height</strong></li>
+    <li><strong>Wet bulb Temperature</strong></li>
+  </ul>
 </details>
 
 ## Abstract

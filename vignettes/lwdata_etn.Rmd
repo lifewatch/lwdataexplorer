@@ -59,45 +59,47 @@ Aquatic animal tracking data from the [European Tracking Network](https://lifewa
 * **Endperiod**:  Last time that the animal was present at a station during the current residency period.    
 
 <details>
-  <summary>Click to see all the columns of "Detections" </summary>
-  
-* **Transmitter**: Transmitter full-id (including both protocol and transmitter ID)              
-* **Transmitter_serial**: Serial number of the transmitter.      
-* **Sensor_value**:  Value recorded by the tag sensor.             
-* **Sensor_unit**: Unit of measured sensor value.             
-* **Station_name**: Name of the station where the deployment of the receiver takes place. Related to a specific latitude and longitude.         
-* **Datetime**: Date and time at which the tagged animal was detected at the receiver. Information from detection file.                 
-* **Id_pk**: Technical identifier of the detection record in the database.                    
-* **Qc_flag**: Identifies whether there are quality check issues for the given detection.           
-* **File**: Name of the detection file.                  
-* **Deployment_fk**: Foreign key linked to the deployment information.    
-* **Scientific_name**: Scientific name of the animal that carries the tag.          
-* **Location_name**: Name of detection location.           
-* **Deployment_station_name**: Name of the station where the deployment of the receiver takes place. Related to a specific latitude and longitude.  
-* **Deploy_date_time**: Date and time that the equipment was deployed, in 24-hour UTC. Corresponds to the time of the captured waypoint. Datetime fields should follow the ISO-8601 format (e.g. 2017-01-01T12:07:23Z)      
-* **Deployment_type**: Refers to the context. Which technology type is used.          
-* **Animal_project_name**: Name of the animal project linked to this detection.      
-* **Animal_project_code**: Code of the animal project linked to this detection.      
-* **Animal_moratorium**: Specifies whether data from the animal project is under moratorium.       
-* **Network_project_name**: Name of the network project linked to this detection.     
-* **Network_project_code**: Code of the network project linked to this detection.     
-* **Network_moratorium**: Specifies whether data from the network project is under moratorium.       
-* **Signal_to_noise_ratio**: Signal-to-noise ratio. This is the difference between the background noise level and the signal level. Info comes from detection file.    
-* **Detection_file_id**: ID from the detection file.         
-* **Tag_sensor_type**: What type of sensor (pressure, acceleration)
-* **Tag_intercept**: Intercept needed to calculate the sensor value of the tag from the raw value.
-* **Tag_slope**: Slope needed to calculate the sensor value of the tag from the raw value.
-* **Sensor_value_depth_meters**: Calculated depth of the sensor in meters (based on raw value slope and intercept).
-* **Tag_owner_organization**: Institution that owns the tag.  
-* **Animal_id_pk**: Technical identifier of the animal record in the database.            
-* **Animal_common_name**: Animal species common name (not scientific name).
-* **Animal_sex**: Sex of the animal.
-* **Deployment_lat**: Latitude of the deployment in decimal degrees, WGS84. Note: in the southern hemisphere all latitudes must be negative. Format: ddd.ddddd; as in: 2.59020.
-* **Deployment_long**: Longitude of the deployment in decimal degrees, WGS84. Note: in the western hemisphere all longitudes must be negative. Format: dd.ddddd; as in: 51.36324.         
-* **Sensor_value_acceleration**: Value recorded by the acceleration sensor. 
-* **Sensor_value_temperature**: Value recorded by the temperature sensor. 
-* **Tag_fk**: Foreign key linked to the tag.                  
-* **Animal_id**: Foreign Key linked to the Animal_ID.
+  <summary>Click to see all the columns of "Detections"</summary>
+	<ul>
+		<li><strong>Transmitter</strong>: Transmitter full-id (including both protocol and transmitter ID)  </li> 
+		<li><strong>Transmitter_serial</strong>: Serial number of the transmitter.     </li> 
+		<li><strong>Sensor_value</strong>:  Value recorded by the tag sensor.   </li>          
+		<li><strong>Sensor_unit</strong>: Unit of measured sensor value.       </li>      
+		<li><strong>Station_name</strong>: Name of the station where the deployment of the receiver takes place. Related to a specific latitude and longitude.       </li>  
+		<li><strong>Datetime</strong>: Date and time at which the tagged animal was detected at the receiver. Information from detection file.      </li>           
+		<li><strong>Id_pk</strong>: Technical identifier of the detection record in the database.     </li>               
+		<li><strong>Qc_flag</strong>: Identifies whether there are quality check issues for the given detection.  </li>         
+		<li><strong>File</strong>: Name of the detection file.            </li>      
+		<li><strong>Deployment_fk</strong>: Foreign key linked to the deployment information. </li>   
+		<li><strong>Scientific_name</strong>: Scientific name of the animal that carries the tag. </li>         
+		<li><strong>Location_name</strong>: Name of detection location.</li>           
+		<li><strong>Deployment_station_name</strong>: Name of the station where the deployment of the receiver takes place. Related to a specific latitude and longitude. </li> 
+		<li><strong>Deploy_date_time</strong>: Date and time that the equipment was deployed, in 24-hour UTC. Corresponds to the time of the captured waypoint. Datetime fields should follow the ISO-8601 format (e.g. 2017-01-01T12:07:23Z)</li>      
+		<li><strong>Deployment_type</strong>: Refers to the context. Which technology type is used. </li>         
+		<li><strong>Animal_project_name</strong>: Name of the animal project linked to this detection.</li>      
+		<li><strong>Animal_project_code</strong>: Code of the animal project linked to this detection.  </li>    
+		<li><strong>Animal_moratorium</strong>: Specifies whether data from the animal project is under moratorium.  </li>     
+		<li><strong>Network_project_name</strong>: Name of the network project linked to this detection.     </li>
+		<li><strong>Network_project_code</strong>: Code of the network project linked to this detection.   </li>  
+		<li><strong>Network_moratorium</strong>: Specifies whether data from the network project is under moratorium.</li>       
+		<li><strong>Signal_to_noise_ratio</strong>: Signal-to-noise ratio. This is the difference between the background noise level and the signal level. Info comes from detection file.   </li> 
+		<li><strong>Detection_file_id</strong>: ID from the detection file.  </li>       
+		<li><strong>Tag_sensor_type</strong>: What type of sensor (pressure, acceleration). </li>
+		<li><strong>Tag_intercept</strong>: Intercept needed to calculate the sensor value of the tag from the raw value.</li>
+		<li><strong>Tag_slope</strong>: Slope needed to calculate the sensor value of the tag from the raw value.</li>
+		<li><strong>Sensor_value_depth_meters</strong>: Calculated depth of the sensor in meters (based on raw value slope and intercept).</li>
+		<li><strong>Tag_owner_organization</strong>: Institution that owns the tag. </li> 
+		<li><strong>Animal_id_pk</strong>: Technical identifier of the animal record in the database. </li>           
+		<li><strong>Animal_common_name</strong>: Animal species common name (not scientific name).</li>
+		<li><strong>Animal_sex</strong>: Sex of the animal.</li>
+		<li><strong>Deployment_lat</strong>: Latitude of the deployment in decimal degrees, WGS84. Note: in the southern hemisphere all latitudes must be negative. Format: ddd.ddddd; as in: 2.59020.</li>
+		<li><strong>Deployment_long</strong>: Longitude of the deployment in decimal degrees, WGS84. Note: in the western hemisphere all longitudes must be negative. Format: dd.ddddd; as in: 51.36324. </li>        
+		<li><strong>Sensor_value_acceleration</strong>: Value recorded by the acceleration sensor.</li> 
+		<li><strong>Sensor_value_temperature</strong>: Value recorded by the temperature sensor. </li>
+		<li><strong>Tag_fk</strong>: Foreign key linked to the tag. </li>
+		<li><strong>Animal_id</strong>: Foreign Key linked to the Animal_ID.</li>
+	</ul>
+
 
 </details>
 
