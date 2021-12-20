@@ -1,11 +1,12 @@
 ---
+title: "Exploring bird GPS tracking data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{lwdata_uva}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-<h1>Exploring bird GPS tracking data</h1>
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
