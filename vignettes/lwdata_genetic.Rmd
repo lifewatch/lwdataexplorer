@@ -1,11 +1,11 @@
 ---
+title: "Exploring marine genomic observation data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{lwdata_genetic}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-<h1>Exploring marine genomic observation data</h1>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(

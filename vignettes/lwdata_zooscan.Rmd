@@ -1,11 +1,11 @@
 ---
+title: "Exploring zooplankton data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{lwdata_zooscan}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-<h1>Exploring zooplankton data</h1>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
