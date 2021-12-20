@@ -1,11 +1,16 @@
 ---
-pagetitle: "Exploring fish telemetry data"
+title: "Exploring fish telemetry data"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{lwdata_etb}
+  %\VignetteIndexEntry{Exploring fish telemetry data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+```{css, echo=FALSE}
+.title { display: none; }
+```
+
 <h1>Exploring fish telemetry data</h1>
 
 ```{r, include = FALSE}
