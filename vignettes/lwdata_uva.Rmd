@@ -37,16 +37,16 @@ Data from the Lifewatch bird tracking project collected by stations in Ostend, Z
 * **Timeframe**: Starting and stopping date for the query.
  
 ### Available columns
-* **Code **: Code of device on / in individual.
-* **Time **: Time in UTC, beginning of sample timeperiod.
-* **Species **: HG = Herring Gull , LBB = Lesser Black Backed Gull, MH = Marshal Harrier.
-* **Longitude **: Center longitude in decimal degrees, WGS84.
-* **Latitude **: Center latitude in decimal degrees, WGS84.
-* **Tracklength **: Length of the track in meters.
-* **Maxdist **: Maximum distance from nest.
-* **Tracktime **: Length of the track in hours.
-* **Counts **: Total GPS fixes or detections.
-* **Logcounts **:  Natural logarithm of the counts.
+* **Code**: Code of device on / in individual.
+* **Time**: Time in UTC, beginning of sample timeperiod.
+* **Species**: HG = Herring Gull , LBB = Lesser Black Backed Gull, MH = Marshal Harrier.
+* **Longitude**: Center longitude in decimal degrees, WGS84.
+* **Latitude**: Center latitude in decimal degrees, WGS84.
+* **Tracklength**: Length of the track in meters.
+* **Maxdist**: Maximum distance from nest.
+* **Tracktime**: Length of the track in hours.
+* **Counts**: Total GPS fixes or detections.
+* **Logcounts**:  Natural logarithm of the counts.
 
 ## Abstract
 
