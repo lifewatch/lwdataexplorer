@@ -120,6 +120,7 @@ These data are also available in the R language with the [lwdataxplorer package]
 </br>
 <small><sup>1</sup> The formula linked in the [datapaper](https://bdj.pensoft.net/article/57236/) that describes these data is not used anymore. The corrected formula used during the aggregations is:</small></br>
 
-$$Density = \frac{ConcentrationSample * SampleVolume(L)}{VolumeFiltered(L)}$$
-$$Density = \frac{Count * SampleVolume(L)}{FluidVolumeImaged(L)*VolumeFiltered(L)*SampleDilutionFactor}$$
+<i>Density = ConcentrationSample x SampleVolume(L) / VolumeFiltered(L)</i>
+
+<i>Density = Count x SampleVolume(L) / FluidVolumeImaged(L) x VolumeFiltered(L) x SampleDilutionFactor</i>
 
