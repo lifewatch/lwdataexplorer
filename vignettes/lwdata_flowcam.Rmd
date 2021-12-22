@@ -16,10 +16,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!-- Insert image -->
 <img src="plate_3.png" class="rightimg"  />
 
-<!-- Describe datatype in one or two sentences. -->
 Biodiversity data on microplankton in the Belgian part of the North Sea
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36)

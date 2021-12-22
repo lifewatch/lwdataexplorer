@@ -16,10 +16,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!--- Insert image -->
 <img src='lwdata_cpod.png' class='rightimg'/>
 
-<!--- Describe datatype in one or two sentences. -->
 Permanent Cetacean passive acoustic sensor network in the Belgian part of the North Sea
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36), [Royal Belgian Institute of Natural Sciences (RBINS)](https://www.vliz.be/en/imis?module=institute&insid=1883)

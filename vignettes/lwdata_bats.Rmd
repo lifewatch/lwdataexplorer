@@ -15,10 +15,9 @@ knitr::opts_chunk$set(
   message = FALSE
 )
 ```
-<!-- Insert image  -->
+
 <img src='lwde_zoo.png' class='rightimg'/>
 
-<!-- Describe datatype in one or two sentences. -->
 Occurrence bats data from a passive acoustic monitoring network in the Belgian coast.
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36) and [Research Institute for Nature and Forest (INBO)](https://www.vliz.be/en/imis?module=institute&insid=5443)

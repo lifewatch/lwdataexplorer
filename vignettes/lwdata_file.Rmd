@@ -14,11 +14,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!--- Insert image
-<img src='' class='rightimg'/>
--->
-
-<!--- Describe datatype in one or two sentences. -->
 Combine data from all data types of the [LifeWatch Data Explorer](https://lifewatch.be/en/lifewatch-data-explorer)
 
 In other modules, select the data of interest and download on to your download folder. Two files can then be uploaded and will merged based on the time field.

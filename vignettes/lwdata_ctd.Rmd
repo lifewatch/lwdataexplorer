@@ -17,10 +17,8 @@ knitr::opts_chunk$set(
 
 ```
 
-<!--- Insert image  -->
 <img src='41597_2019_32_Fig1_HTML.png' class='rightimg'/>
 
-<!--- Describe datatype in one or two sentences. -->
 Data on CTD-profile data from LifeWatch sampling campaigns in the Belgian part of the North Sea.
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36)

@@ -16,10 +16,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!-- Insert image -->
 <img src='41597_2019_32_Fig1_HTML.png' class='rightimg'/>
 
-<!--- Describe datatype in one or two sentences. -->
 Data on nutrients, pigments, suspended matter and secchi measurements from fixed stations on the Belgian Part of the North Sea.
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36),[Laboratory of Protistology and Aquatic Ecology (PAE)](https://www.vliz.be/en/imis?module=institute&insid=732) and [Flemish Environment Agency (VMM)](https://www.vliz.be/en/imis?module=institute&insid=2204). Former partners: Directorate Natural Environment (OD Natuur), [Royal Netherlands Institute for Sea Research (NIOZ)](https://www.vliz.be/en/imis?module=institute&insid=397), [National Oceanography Centre Southampton (NOCS)](https://www.vliz.be/en/imis?module=institute&insid=2045), [Marine Biology Research Group (MARBIOL)](https://www.vliz.be/en/imis?module=institute&insid=13)

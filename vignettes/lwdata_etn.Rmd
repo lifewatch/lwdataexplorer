@@ -15,10 +15,9 @@ knitr::opts_chunk$set(
   message = FALSE
 )
 ```
-<!--- Insert image -->
+
 <img src='lwde_fish.png' class='rightimg'/>
 
-<!--- Describe datatype in one or two sentences. -->
 Aquatic animal tracking data from the [European Tracking Network](https://lifewatch.be/etn/).
 
 - Partners: ETN members

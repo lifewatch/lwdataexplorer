@@ -16,10 +16,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!-- Insert image -->
 <img src="lwde_mvb.png" class="rightimg"  />
 
-<!-- Describe datatype in one or two sentences. -->
 Hydrometeo data collected at stations along the Belgian coast and off-shore along the Flemish Banks.
 
 - Partners: [Vlaamse Hydrografie (MOW)](http://www.vliz.be/en/imis?module=institute&insid=7831), [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36)
@@ -107,32 +105,7 @@ cat(out)
 You can find more information at: https://www.vliz.be/en/imis?module=dataset&dasid=59
 
 ## How to cite these data 
-<!-- 
-```{r get citation and license, results = 'asis', echo = FALSE}
-library(jsonlite)
 
-# Set base url 5251 4688
-url <- "https://www.vliz.be/en/imis?module=dataset&dasid=59"
-dasid <- fromJSON(paste0(url, "&show=json"))
-
-# Build citation. Get active DOI.
-citation <- dasid[["datasetrec"]][["Citation"]]
-citation <- paste0("> ", citation, " ", url, 
-                   ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package."
-                   )
-
-# Get license
-license <- dasid[["datasetrec"]][["AccessConstraint"]]
-```
-
-```{r display citation, results = 'asis', echo = FALSE}
-cat(citation)
-```
-
-```{r display license, results = 'asis', echo = FALSE}
-cat(paste0("<b>Availability: </b>", license))
-```
--->
 Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by MOW and VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
 
 These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/).
