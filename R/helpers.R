@@ -8,7 +8,7 @@ basicPostJson = function(input=NULL,
   # Get BASE path from environment
   BASE_PATH = Sys.getenv("BASE_PATH")
   if (BASE_PATH==""){
-    BASE_PATH="https://opencpu.lifewatch.be"
+    BASE_PATH="https://opencpu.lifewatch.be/library/lwdataserver/R/"
   }
   ocpu.url = file.path(file.path(BASE_PATH, "getLWdata/"), "json")
 
