@@ -1,5 +1,5 @@
 pandoc: 2.7.3
-pkgdown: 2.0.1
+pkgdown: 2.0.5
 pkgdown_sha: ~
 articles:
   lwdata_bats: lwdata_bats.html
@@ -16,5 +16,5 @@ articles:
   lwdata_underway: lwdata_underway.html
   lwdata_uva: lwdata_uva.html
   lwdata_zooscan: lwdata_zooscan.html
-last_built: 2021-12-22T12:09Z
+last_built: 2022-07-06T14:53Z
 

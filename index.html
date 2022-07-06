@@ -43,7 +43,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -116,17 +116,15 @@
 <div class="section level1">
 <div class="page-header"><h1 id="lwdataexplorer">lwdataexplorer<a class="anchor" aria-label="anchor" href="#lwdataexplorer"></a>
 </h1></div>
-<!-- badges: start -->
-<!-- badges: end -->
-<p>Access to <a href="lifewatch.be/">LifeWatch Belgium</a> data hosted by the <a href="https://www.vliz.be/" class="external-link">Flanders Marine Institute (VLIZ)</a> in <a href="https://www.r-project.org/" class="external-link">R</a>.</p>
+<!-- badges: start --><!-- badges: end --><p>Access to <a href="lifewatch.be/">LifeWatch Belgium</a> data hosted by the <a href="https://www.vliz.be/" class="external-link">Flanders Marine Institute (VLIZ)</a> in <a href="https://www.r-project.org/" class="external-link">R</a>.</p>
 <p>See the package website: <a href="https://lifewatch.github.io/lwdataexplorer/" class="external-link uri">https://lifewatch.github.io/lwdataexplorer/</a></p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>You can install the development version of deleteme from <a href="https://github.com/lifewatch/lwdataexplorer" class="external-link">GitHub</a> using <a href="https://github.com/r-lib/devtools" class="external-link">devtools</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"lifewatch/lwdataexplorer"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"lifewatch/lwdataexplorer"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
@@ -135,52 +133,52 @@
 <p>You can find more information about these projects and the LifeWatch Data Explorer in this link: - <a href="https://www.lifewatch.be/en/lifewatch-data-explorer" class="external-link uri">https://www.lifewatch.be/en/lifewatch-data-explorer</a></p>
 <p>There is a function for each specific data type. For instance, to retrieve data from the moonitoring buoy on the Belgian Part of the North Sea:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://lifewatch.github.io/lwdataexplorer/" class="external-link">lwdataexplorer</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/" class="external-link">tibble</a></span><span class="op">)</span> <span class="co"># only for visualizing</span>
-
-<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/getBuoyData.html">getBuoyData</a></span><span class="op">(</span><span class="st">"2021-03-19"</span>, <span class="st">"2021-04-21"</span>, <span class="st">"All"</span><span class="op">)</span>
-<span class="co">#&gt; - Query mode: Post request to OpenCPU server</span>
-<span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span>
-<span class="co">#&gt; - Query parameters:</span>
-<span class="co">#&gt;    - daterange: c("2021-03-19", "2021-04-21")</span>
-<span class="co">#&gt;    - stationlist: All</span>
-<span class="co">#&gt;    - type: Buoy data</span>
-
-<span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">as_tibble</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 2,384 x 20</span>
-<span class="co">#&gt;    Station      Time       Latitude Longitude `Air temperature~ `AtmPress(mBar)`</span>
-<span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt;            &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Buoy in Spu~ 2021-03-1~     51.2      2.95              6.35            1022.</span>
-<span class="co">#&gt;  2 Ostend Rese~ 2021-03-1~     51.2      2.92              6.10            1019.</span>
-<span class="co">#&gt;  3 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA </span>
-<span class="co">#&gt;  4 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA </span>
-<span class="co">#&gt;  5 Buoy in Spu~ 2021-03-1~     51.2      2.95              5.66            1023.</span>
-<span class="co">#&gt;  6 Ostend Rese~ 2021-03-1~     51.2      2.92              5.56            1019.</span>
-<span class="co">#&gt;  7 Buoy in Spu~ 2021-03-1~     51.2      2.95              5.40            1024.</span>
-<span class="co">#&gt;  8 Ostend Rese~ 2021-03-1~     51.2      2.92              5.25            1019.</span>
-<span class="co">#&gt;  9 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA </span>
-<span class="co">#&gt; 10 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA </span>
-<span class="co">#&gt; # ... with 2,374 more rows, and 14 more variables:</span>
-<span class="co">#&gt; #   Avg Wind direction (deg) &lt;dbl&gt;, Avg Wind speed (m/s) &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   RelHumidity (%) &lt;dbl&gt;, SolarEnergy (W/m²) &lt;dbl&gt;, Voltage (V) &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   Level Harbour (mTAW) &lt;dbl&gt;, Level Spuikom (mTAW) &lt;dbl&gt;, Rain15 (mm) &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   NO3 (ppb) &lt;dbl&gt;, SiO2 (ppb) &lt;dbl&gt;, Rain (mm) &lt;dbl&gt;, DO (mg/l) &lt;int&gt;,</span>
-<span class="co">#&gt; #   Salinity (PSU) &lt;int&gt;, Water temperature (°C) &lt;int&gt;</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://lifewatch.github.io/lwdataexplorer/" class="external-link">lwdataexplorer</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/" class="external-link">tibble</a></span><span class="op">)</span> <span class="co"># only for visualizing</span></span>
+<span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/getBuoyData.html">getBuoyData</a></span><span class="op">(</span><span class="st">"2021-03-19"</span>, <span class="st">"2021-04-21"</span>, <span class="st">"All"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; - Query mode: Post request to OpenCPU server</span></span>
+<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
+<span><span class="co">#&gt; - Query parameters:</span></span>
+<span><span class="co">#&gt;    - daterange: c("2021-03-19", "2021-04-21")</span></span>
+<span><span class="co">#&gt;    - stationlist: All</span></span>
+<span><span class="co">#&gt;    - type: Buoy data</span></span>
+<span></span>
+<span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">as_tibble</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 2,384 x 20</span></span>
+<span><span class="co">#&gt;    Station      Time       Latitude Longitude `Air temperature~ `AtmPress(mBar)`</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt;            &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Buoy in Spu~ 2021-03-1~     51.2      2.95              6.35            1022.</span></span>
+<span><span class="co">#&gt;  2 Ostend Rese~ 2021-03-1~     51.2      2.92              6.10            1019.</span></span>
+<span><span class="co">#&gt;  3 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA </span></span>
+<span><span class="co">#&gt;  4 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA </span></span>
+<span><span class="co">#&gt;  5 Buoy in Spu~ 2021-03-1~     51.2      2.95              5.66            1023.</span></span>
+<span><span class="co">#&gt;  6 Ostend Rese~ 2021-03-1~     51.2      2.92              5.56            1019.</span></span>
+<span><span class="co">#&gt;  7 Buoy in Spu~ 2021-03-1~     51.2      2.95              5.40            1024.</span></span>
+<span><span class="co">#&gt;  8 Ostend Rese~ 2021-03-1~     51.2      2.92              5.25            1019.</span></span>
+<span><span class="co">#&gt;  9 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA </span></span>
+<span><span class="co">#&gt; 10 Spuikom Slu~ 2021-03-1~     51.2      2.94             NA                 NA </span></span>
+<span><span class="co">#&gt; # ... with 2,374 more rows, and 14 more variables:</span></span>
+<span><span class="co">#&gt; #   Avg Wind direction (deg) &lt;dbl&gt;, Avg Wind speed (m/s) &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   RelHumidity (%) &lt;dbl&gt;, SolarEnergy (W/m²) &lt;dbl&gt;, Voltage (V) &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   Level Harbour (mTAW) &lt;dbl&gt;, Level Spuikom (mTAW) &lt;dbl&gt;, Rain15 (mm) &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   NO3 (ppb) &lt;dbl&gt;, SiO2 (ppb) &lt;dbl&gt;, Rain (mm) &lt;dbl&gt;, DO (mg/l) &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   Salinity (PSU) &lt;int&gt;, Water temperature (°C) &lt;int&gt;</span></span></code></pre></div>
 <p>Note that the functions naming includes always the <code>get</code> word, followed by the data type.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Functions available in the package</span>
-<span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="st">"package:lwdataexplorer"</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "getBatsData"     "getBuoyData"     "getCpodData"     "getEtnData"     </span>
-<span class="co">#&gt;  [5] "getFlowcamData"  "getMvbData"      "getStationData"  "getUnderwayData"</span>
-<span class="co">#&gt;  [9] "getUvaBirdData"  "getZooscanData"  "listEtnProjects" "listMvbStations"</span>
-<span class="co">#&gt; [13] "listUvaTags"     "lwdata"          "lwdata2"</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Functions available in the package</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="st">"package:lwdataexplorer"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "getBatsData"     "getBuoyData"     "getCpodData"     "getEtnData"     </span></span>
+<span><span class="co">#&gt;  [5] "getFlowcamData"  "getMvbData"      "getStationData"  "getUnderwayData"</span></span>
+<span><span class="co">#&gt;  [9] "getUvaBirdData"  "getZooscanData"  "listEtnProjects" "listMvbStations"</span></span>
+<span><span class="co">#&gt; [13] "listUvaTags"     "lwdata"          "lwdata2"</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="query-parameters">Query parameters<a class="anchor" aria-label="anchor" href="#query-parameters"></a>
 </h3>
 <p>To find more information about the query parameters you can check the help page of each function which include some basic examples. For example, to see the help page of the function that retrieves data from the European Tracking Network (ETN):</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Open the help page and go over the examples</span>
-<span class="op">?</span><span class="fu"><a href="reference/getEtnData.html">getEtnData</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Open the help page and go over the examples</span></span>
+<span><span class="op">?</span><span class="fu"><a href="reference/getEtnData.html">getEtnData</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="data-under-moratorium">Data under moratorium<a class="anchor" aria-label="anchor" href="#data-under-moratorium"></a>
@@ -188,63 +186,63 @@
 <p>Some data types are temporarily under embargo due to the project requirements. To help you to know if the query you are applying was restricted, the query parameters are always printed in the console. If the query parameters you requested were <strong>restricted on the server side</strong>, a warning will be raised and both your query parameters and those applied in the server will be printed in the console.</p>
 <p>The example below tries to request some data from the Meetnet Vlaams Banken (MVB). However, without an account some restrictions are applied: (1) parameter is ‘Tide TAW’, (2) Time grouping is day or hour and (3) dates are only between the last 30 days.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># This will raise a warning</span>
-<span class="va">mvb</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/getMvbData.html">getMvbData</a></span><span class="op">(</span><span class="st">"2020-01-01"</span>, <span class="st">"2020-12-31"</span>, parameters <span class="op">=</span> <span class="st">'All'</span>, 
-                  stations <span class="op">=</span> <span class="st">"All"</span>, by <span class="op">=</span> <span class="st">"10min"</span>, calc <span class="op">=</span> <span class="st">"none"</span>, 
-                  params <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt; - Query mode: Post request to OpenCPU server</span>
-<span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span>
-<span class="co">#&gt; Warning in lw_warning_empty(): No data returned</span>
-<span class="co">#&gt; - Your query:</span>
-<span class="co">#&gt;    - daterange: c("2020-01-01", "2020-12-31")</span>
-<span class="co">#&gt;    - type: MVB data</span>
-<span class="co">#&gt;    - stations: All</span>
-<span class="co">#&gt;    - calc: none</span>
-<span class="co">#&gt;    - binSize: 10min</span>
-<span class="co">#&gt;    - parameters: All</span>
-<span class="co">#&gt; - Server query:</span>
-<span class="co">#&gt;    - daterange: c("2021-11-03", "2020-12-31")</span>
-<span class="co">#&gt;    - type: MVB data</span>
-<span class="co">#&gt;    - stations: All</span>
-<span class="co">#&gt;    - calc: none</span>
-<span class="co">#&gt;    - binSize: day</span>
-<span class="co">#&gt;    - parameters: Tide TAW</span>
-<span class="co">#&gt; Warning in lw_compare_parameters(input, par): The query applied on the server differ from the parameters you used.</span>
-<span class="co">#&gt; Hint: You may need an account to fully access the data under moratorium.</span>
-<span class="co">#&gt; Hint: Request access at: https://rshiny.lifewatch.be/account?p=register</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># This will raise a warning</span></span>
+<span><span class="va">mvb</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/getMvbData.html">getMvbData</a></span><span class="op">(</span><span class="st">"2020-01-01"</span>, <span class="st">"2020-12-31"</span>, parameters <span class="op">=</span> <span class="st">'All'</span>, </span>
+<span>                  stations <span class="op">=</span> <span class="st">"All"</span>, by <span class="op">=</span> <span class="st">"10min"</span>, calc <span class="op">=</span> <span class="st">"none"</span>, </span>
+<span>                  params <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; - Query mode: Post request to OpenCPU server</span></span>
+<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
+<span><span class="co">#&gt; Warning in lw_warning_empty(): No data returned</span></span>
+<span><span class="co">#&gt; - Your query:</span></span>
+<span><span class="co">#&gt;    - daterange: c("2020-01-01", "2020-12-31")</span></span>
+<span><span class="co">#&gt;    - type: MVB data</span></span>
+<span><span class="co">#&gt;    - stations: All</span></span>
+<span><span class="co">#&gt;    - calc: none</span></span>
+<span><span class="co">#&gt;    - binSize: 10min</span></span>
+<span><span class="co">#&gt;    - parameters: All</span></span>
+<span><span class="co">#&gt; - Server query:</span></span>
+<span><span class="co">#&gt;    - daterange: c("2021-11-03", "2020-12-31")</span></span>
+<span><span class="co">#&gt;    - type: MVB data</span></span>
+<span><span class="co">#&gt;    - stations: All</span></span>
+<span><span class="co">#&gt;    - calc: none</span></span>
+<span><span class="co">#&gt;    - binSize: day</span></span>
+<span><span class="co">#&gt;    - parameters: Tide TAW</span></span>
+<span><span class="co">#&gt; Warning in lw_compare_parameters(input, par): The query applied on the server differ from the parameters you used.</span></span>
+<span><span class="co">#&gt; Hint: You may need an account to fully access the data under moratorium.</span></span>
+<span><span class="co">#&gt; Hint: Request access at: https://rshiny.lifewatch.be/account?p=register</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="get-data-and-query-parameters-in-a-list">Get data and query parameters in a list<a class="anchor" aria-label="anchor" href="#get-data-and-query-parameters-in-a-list"></a>
 </h3>
 <p>You can request to get the parameters applied in the server by setting the argument <code>params = TRUE</code>. The get functions will return a list with both the data and another list with the query parameters applied in the server</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Request data but with parameters this time</span>
-<span class="va">data_with_params</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/getBuoyData.html">getBuoyData</a></span><span class="op">(</span><span class="st">"2021-03-19"</span>, <span class="st">"2021-04-21"</span>, <span class="st">"All"</span>, params <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt; - Query mode: Post request to OpenCPU server</span>
-<span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span>
-<span class="co">#&gt; - Query parameters:</span>
-<span class="co">#&gt;    - daterange: c("2021-03-19", "2021-04-21")</span>
-<span class="co">#&gt;    - stationlist: All</span>
-<span class="co">#&gt;    - type: Buoy data</span>
-
-<span class="co"># Check object type</span>
-<span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">data_with_params</span><span class="op">)</span>
-<span class="co">#&gt; [1] "list"</span>
-
-<span class="co"># What are the elements of the list?</span>
-<span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data_with_params</span><span class="op">)</span>
-<span class="co">#&gt; [1] "mdf" "par"</span>
-
-<span class="co"># Get query parameters as a list</span>
-<span class="va">data_with_params</span><span class="op">$</span><span class="va">par</span>
-<span class="co">#&gt; $daterange</span>
-<span class="co">#&gt; [1] "2021-03-19" "2021-04-21"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $stationlist</span>
-<span class="co">#&gt; [1] "All"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $type</span>
-<span class="co">#&gt; [1] "Buoy data"</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Request data but with parameters this time</span></span>
+<span><span class="va">data_with_params</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/getBuoyData.html">getBuoyData</a></span><span class="op">(</span><span class="st">"2021-03-19"</span>, <span class="st">"2021-04-21"</span>, <span class="st">"All"</span>, params <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; - Query mode: Post request to OpenCPU server</span></span>
+<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
+<span><span class="co">#&gt; - Query parameters:</span></span>
+<span><span class="co">#&gt;    - daterange: c("2021-03-19", "2021-04-21")</span></span>
+<span><span class="co">#&gt;    - stationlist: All</span></span>
+<span><span class="co">#&gt;    - type: Buoy data</span></span>
+<span></span>
+<span><span class="co"># Check object type</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">data_with_params</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "list"</span></span>
+<span></span>
+<span><span class="co"># What are the elements of the list?</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data_with_params</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "mdf" "par"</span></span>
+<span></span>
+<span><span class="co"># Get query parameters as a list</span></span>
+<span><span class="va">data_with_params</span><span class="op">$</span><span class="va">par</span></span>
+<span><span class="co">#&gt; $daterange</span></span>
+<span><span class="co">#&gt; [1] "2021-03-19" "2021-04-21"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $stationlist</span></span>
+<span><span class="co">#&gt; [1] "All"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $type</span></span>
+<span><span class="co">#&gt; [1] "Buoy data"</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wrapper-functions">Wrapper functions<a class="anchor" aria-label="anchor" href="#wrapper-functions"></a>
@@ -252,25 +250,25 @@
 <p>Besides the functions that start with <code>get</code>, you can use the <code>lwdata</code> function. This is a wrapper for all the other <code>get</code> functions. You have to provide the data type as an argument and all the other query parameters for the specific data type. Find more info with <code>?lwdata()</code></p>
 <p>For instance, You can request the list of ETN projects with its specific function <code>listETNprojects()</code> or using <code><a href="reference/lwdata.html">lwdata()</a></code>:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">etn</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lwdata.html">lwdata</a></span><span class="op">(</span><span class="st">'listETNprojects'</span><span class="op">)</span>
-<span class="co">#&gt; - Query mode: Post request to OpenCPU server</span>
-<span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span>
-
-<span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">as_tibble</a></span><span class="op">(</span><span class="va">etn</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 192 x 2</span>
-<span class="co">#&gt;    name                     type   </span>
-<span class="co">#&gt;    &lt;chr&gt;                    &lt;chr&gt;  </span>
-<span class="co">#&gt;  1 2004_Gudena              network</span>
-<span class="co">#&gt;  2 2011_Loire               network</span>
-<span class="co">#&gt;  3 2011_Warnow              network</span>
-<span class="co">#&gt;  4 2013_Foyle               network</span>
-<span class="co">#&gt;  5 2013_Maas                network</span>
-<span class="co">#&gt;  6 2014_Nene                network</span>
-<span class="co">#&gt;  7 2015_PhD_Gutmann_Roberts network</span>
-<span class="co">#&gt;  8 2016_Diaccia_Botrona     network</span>
-<span class="co">#&gt;  9 2017_Fremur              network</span>
-<span class="co">#&gt; 10 2019_Grotenete           network</span>
-<span class="co">#&gt; # ... with 182 more rows</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">etn</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lwdata.html">lwdata</a></span><span class="op">(</span><span class="st">'listETNprojects'</span><span class="op">)</span></span>
+<span><span class="co">#&gt; - Query mode: Post request to OpenCPU server</span></span>
+<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
+<span></span>
+<span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">as_tibble</a></span><span class="op">(</span><span class="va">etn</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 192 x 2</span></span>
+<span><span class="co">#&gt;    name                     type   </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                    &lt;chr&gt;  </span></span>
+<span><span class="co">#&gt;  1 2004_Gudena              network</span></span>
+<span><span class="co">#&gt;  2 2011_Loire               network</span></span>
+<span><span class="co">#&gt;  3 2011_Warnow              network</span></span>
+<span><span class="co">#&gt;  4 2013_Foyle               network</span></span>
+<span><span class="co">#&gt;  5 2013_Maas                network</span></span>
+<span><span class="co">#&gt;  6 2014_Nene                network</span></span>
+<span><span class="co">#&gt;  7 2015_PhD_Gutmann_Roberts network</span></span>
+<span><span class="co">#&gt;  8 2016_Diaccia_Botrona     network</span></span>
+<span><span class="co">#&gt;  9 2017_Fremur              network</span></span>
+<span><span class="co">#&gt; 10 2019_Grotenete           network</span></span>
+<span><span class="co">#&gt; # ... with 182 more rows</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="boost-performance">Boost performance<a class="anchor" aria-label="anchor" href="#boost-performance"></a>
@@ -286,16 +284,14 @@
 </h3>
 <p>If you find any problems please <a href="https://github.com/lifewatch/lwdataexplorer/issues" class="external-link">raise a new issue</a> or contact the package maintainer:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Run once the package is installed</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/maintainer.html" class="external-link">maintainer</a></span><span class="op">(</span><span class="st">"lwdataexplorer"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Run once the package is installed</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/maintainer.html" class="external-link">maintainer</a></span><span class="op">(</span><span class="st">"lwdataexplorer"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h3>
 <p>Please cite this software as:</p>
-<blockquote>
-<p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://lifewatch.github.io/lwdataexplorer/" class="external-link uri">https://lifewatch.github.io/lwdataexplorer/</a></p>
-</blockquote>
+<blockquote><p>Francisco Hernandez, Nick Dillen and Salvador Fernández-Bejarano (2021). lwdataexplorer: Access to data from the LifeWatch Data Explorer. R package version 0.0.0.9000. <a href="https://lifewatch.github.io/lwdataexplorer/" class="external-link uri">https://lifewatch.github.io/lwdataexplorer/</a></p></blockquote>
 <p>You must also cite the datasets retrieved by the lwdataexplorer. You can find more information and their individual citations in the vignettes. The vignettes are available online at: <a href="https://lifewatch.github.io/lwdataexplorer/articles/" class="external-link uri">https://lifewatch.github.io/lwdataexplorer/articles/</a></p>
 </div>
 <div class="section level3">
@@ -303,8 +299,8 @@
 </h3>
 <p>See the license file.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageDescription</a></span><span class="op">(</span><span class="st">"lwdataexplorer"</span>, fields<span class="op">=</span><span class="st">"License"</span><span class="op">)</span>
-<span class="co">#&gt; [1] "MIT + file LICENSE"</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageDescription</a></span><span class="op">(</span><span class="st">"lwdataexplorer"</span>, fields<span class="op">=</span><span class="st">"License"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "MIT + file LICENSE"</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -357,7 +353,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer>

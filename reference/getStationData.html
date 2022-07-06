@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -99,39 +99,52 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getStationData</span><span class="op">(</span>
-  <span class="va">startdate</span>,
-  <span class="va">stopdate</span>,
-  stations <span class="op">=</span> <span class="st">"all"</span>,
-  categories <span class="op">=</span> <span class="st">"all"</span>,
-  params <span class="op">=</span> <span class="cn">FALSE</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getStationData</span><span class="op">(</span></span>
+<span>  <span class="va">startdate</span>,</span>
+<span>  <span class="va">stopdate</span>,</span>
+<span>  stations <span class="op">=</span> <span class="st">"all"</span>,</span>
+<span>  categories <span class="op">=</span> <span class="st">"all"</span>,</span>
+<span>  params <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>startdate</dt>
 <dd><p>Starting date for the query</p></dd>
+
+
 <dt>stopdate</dt>
 <dd><p>Stopping date for the query</p></dd>
+
+
 <dt>stations</dt>
 <dd><p>list of stations to be included in the query. Use <code>stations="all"</code> to get all stations.</p></dd>
+
+
 <dt>categories</dt>
 <dd><p>List of categories to return in query, one of  ("SPM", "CTD", "Nutrients", "Secchi", "Pigments"). Use <code>categories="All"</code> to get all categories</p></dd>
+
+
 <dt>params</dt>
 <dd><p>If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Params to be passed to lw_check_lwdataserver().</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Dataframe with the Station-data.</p>
+    
+
+<p>Dataframe with the Station-data.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">getStationData</span><span class="op">(</span><span class="st">"2019-07-22"</span>, <span class="st">"2019-07-23"</span>, stations <span class="op">=</span> <span class="st">"all"</span>, categories <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">getStationData</span><span class="op">(</span><span class="st">"2019-07-22"</span>, <span class="st">"2019-07-23"</span>, stations <span class="op">=</span> <span class="st">"all"</span>, categories <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query mode: Post request to OpenCPU server</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query parameters: </span>
@@ -139,13 +152,13 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - type: Station data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - stationlist: all</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - categories: all</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Station                Time Latitude Longitude Conductivity(µS/cm)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     120 2019-07-22 08:00:00  51.1850    2.7012            46848.00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     120 2019-07-22 08:10:00  51.1850    2.7012                  NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     215 2019-07-22 09:30:00  51.2767    2.6133            46386.44</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     230 2019-07-22 13:30:00  51.3083    2.8500            45144.67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     230 2019-07-22 13:40:00  51.3083    2.8500                  NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    ZG02 2019-07-22 10:30:00  51.3333    2.5000            46404.67</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Station Latitude Longitude                Time Conductivity(µS/cm)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     120  51.1850    2.7012 2019-07-22 08:00:00            46848.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     120  51.1850    2.7012 2019-07-22 08:10:00                  NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     215  51.2767    2.6133 2019-07-22 09:30:00            46386.44</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     230  51.3083    2.8500 2019-07-22 13:30:00            45144.67</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     230  51.3083    2.8500 2019-07-22 13:40:00                  NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    ZG02  51.3333    2.5000 2019-07-22 10:30:00            46404.67</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Density(kg/m3) Fluorescence(mg/m³) OBS(NTU)      PAR Pressure(db)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1       1024.351              4.0080   1.7831  44.6977       3.5850</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2             NA                  NA       NA       NA           NA</span>
@@ -181,8 +194,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.65                         10.29       8.7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                          NA                            NA        NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.07                          0.22       3.6</span>
-<span class="r-in"><span class="fu">getStationData</span><span class="op">(</span><span class="st">"2019-07-22"</span>, <span class="st">"2019-07-23"</span>, stations <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">120</span>, <span class="fl">215</span><span class="op">)</span>,</span>
-<span class="r-in">categories <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Nutrients"</span>, <span class="st">"Secchi"</span><span class="op">)</span>, params <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">getStationData</span><span class="op">(</span><span class="st">"2019-07-22"</span>, <span class="st">"2019-07-23"</span>, stations <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">120</span>, <span class="fl">215</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>categories <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Nutrients"</span>, <span class="st">"Secchi"</span><span class="op">)</span>, params <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query mode: Post request to OpenCPU server</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query parameters: </span>
@@ -191,10 +204,10 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - stationlist: c(120, 215)</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - categories: c("Nutrients", "Secchi")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $mdf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Station                Time Latitude Longitude Secchi_Depth(cm)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     120 2019-07-22 08:00:00  51.1850    2.7012              200</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     120 2019-07-22 08:10:00  51.1850    2.7012               NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     215 2019-07-22 09:30:00  51.2767    2.6133               NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Station Latitude Longitude                Time Secchi_Depth(cm)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     120  51.1850    2.7012 2019-07-22 08:00:00              200</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     120  51.1850    2.7012 2019-07-22 08:10:00               NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     215  51.2767    2.6133 2019-07-22 09:30:00               NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Ammonium_NH4(µmol N_NH4/L) Nitrate_Nitrite(µmol N_NO3-NO2/L)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                         NA                                NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                       0.88                              1.41</span>
@@ -236,7 +249,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

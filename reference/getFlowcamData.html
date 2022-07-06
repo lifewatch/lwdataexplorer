@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -99,28 +99,37 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getFlowcamData</span><span class="op">(</span><span class="va">startdate</span>, <span class="va">stopdate</span>, params <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getFlowcamData</span><span class="op">(</span><span class="va">startdate</span>, <span class="va">stopdate</span>, params <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>startdate</dt>
 <dd><p>Starting date for the query</p></dd>
+
+
 <dt>stopdate</dt>
 <dd><p>Stopping date for the query</p></dd>
+
+
 <dt>params</dt>
 <dd><p>If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Params to be passed to lw_check_lwdataserver().</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Dataframe with the aggregated flowcam-data within the specified daterange.</p>
+    
+
+<p>Dataframe with the aggregated flowcam-data within the specified daterange.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">getFlowcamData</span><span class="op">(</span><span class="st">"2020-04-19"</span>, <span class="st">"2020-04-21"</span><span class="op">)</span> <span class="co"># Only data</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">getFlowcamData</span><span class="op">(</span><span class="st">"2020-04-19"</span>, <span class="st">"2020-04-21"</span><span class="op">)</span> <span class="co"># Only data</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query mode: Post request to OpenCPU server</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>No data returned</span>
@@ -128,7 +137,7 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - daterange: c("2020-04-19", "2020-04-21")</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - type: FlowCam data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
-<span class="r-in"><span class="fu">getFlowcamData</span><span class="op">(</span><span class="st">"2020-04-19"</span>, <span class="st">"2020-04-21"</span>, <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># Data + query parameters</span></span>
+<span class="r-in"><span><span class="fu">getFlowcamData</span><span class="op">(</span><span class="st">"2020-04-19"</span>, <span class="st">"2020-04-21"</span>, <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># Data + query parameters</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query mode: Post request to OpenCPU server</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>No data returned</span>
@@ -150,7 +159,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>
