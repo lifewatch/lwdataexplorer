@@ -1,0 +1,100 @@
+---
+title: "Exploring Acoustic data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lwdata_bats}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<!--- Insert image  -->
+<!-- <img src='' class='rightimg'/> -->
+
+<!--- Describe datatype in one or two sentences. -->
+
+Frequency values of bands coming from a sampling in the Belgian part of the north sea blablabla
+
+- Partners: VLIZ... ?
+- Period:
+- Geographical coverage:
+- Taxonomical coverage
+- Moratorium: None?
+- Data quality: research-grade, calibrated/validated or proof-of-concept
+
+## How to interpret this dataset
+
+### Query options
+* **frequency**: 
+* **Timeframe**: Starting and stopping date for the query.
+
+### Available columns
+* **frequency**: 
+* **upper_frequency**:
+* **lower_frequency**:
+* **value**:
+* **datetime**:  ISO 8601 Date and Time in UTC, beginning of sample time bin
+* **Latitude**: Center latitude in decimal degrees, WGS84.
+* **Longitude**: Center longitude in decimal degrees, WGS84.
+* **station_name**: name or code of sampling station or receiver code.
+* **hydrophone_depth**:
+* **etnID**:
+* ...
+
+## Abstract
+<!-- This information is pulled from the IMIS record of the data type -->
+
+<!-- ```{r abstract, results = 'asis', echo = FALSE} -->
+<!-- # Get the abstract and/or description from IMIS and print here -->
+<!-- library(jsonlite) -->
+
+<!-- dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=<DASID>&show=json") -->
+
+<!-- abstract <- dasid[["datasetrec"]][["EngAbstract"]] -->
+<!-- description <- dasid[["datasetrec"]][["EngDescr"]] -->
+
+<!-- if (is.null(abstract) & is.null(description)){ -->
+
+<!-- } else if(is.null(abstract) & !is.null(description)){ -->
+<!--   out <- description -->
+<!-- } else if(!is.null(abstract) & is.null(description)){ -->
+<!--   out <- abstract -->
+<!-- } else if(!is.null(abstract) & !is.null(description)){ -->
+<!--   out <- paste0(abstract, "</br>", description) -->
+<!-- } -->
+
+<!-- cat(out) -->
+<!-- ``` -->
+
+<!-- ## How to cite these data -->
+
+<!-- ```{r get citation and license, results = 'asis', echo = FALSE} -->
+<!-- library(jsonlite) -->
+<!-- # Set base url -->
+<!-- url <- "https://www.vliz.be/en/imis?module=dataset&dasid=<DASID>" -->
+<!-- dasid <- fromJSON(paste0(url, "&show=json")) -->
+<!-- # Build citation. Get active DOI. -->
+<!-- citation <- dasid[["datasetrec"]][["Citation"]] -->
+<!-- citation <- paste0("> ", citation, " ", url,  -->
+<!--                    ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package.") -->
+<!-- # Get license -->
+<!-- license <- dasid[["datasetrec"]][["AccConstrDisplay"]] -->
+<!-- ``` -->
+
+<!-- ```{r display citation, results = 'asis', echo = FALSE} -->
+<!-- cat(citation) -->
+<!-- ``` -->
+
+<!-- ```{r display license, results = 'asis', echo = FALSE} -->
+<!-- cat(paste0("<b>Availability:</b>", license)) -->
+<!-- ``` -->
+
+Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
+
+These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/).
