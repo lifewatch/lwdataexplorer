@@ -98,9 +98,9 @@ lwdata2 = function(type,
   # Use when input and USER vector
   input$type = type
   if(lw_check_lwdataserver(...)){
-    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
+    utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = FALSE))
   }else{
-    out = basicPostJson(input = input)
+    out = basicPostJson(input = input, USER = USER)
   }
   return(out)
 }
@@ -116,17 +116,18 @@ lwdata2 = function(type,
 #' To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
+#'@param ... params to be passer to lw_check_lwdataserver
 #'@return Dataframe with name and type of networks.
 #'@examples
 #'listEtnProjects()
 #'@export
 listEtnProjects <- function(usr = NULL,
-                            pwd = NULL){
+                            pwd = NULL, ...){
   USER=c()
   USER$username = usr
   USER$password = pwd
   return(lwdata2('listETNprojects'
-                 , USER=USER
+                 , USER=USER, ...
   ))
 }
 
@@ -135,13 +136,14 @@ listEtnProjects <- function(usr = NULL,
 #' To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
+#'@param ... params to be passer to lw_check_lwdataserver
 #'@export
 listMvbStations <- function(usr = NULL,
-                            pwd = NULL){
+                            pwd = NULL, ...){
   USER=c()
   USER$username = usr
   USER$password = pwd
-  return(lwdata2('listMVBstations', USER=USER))
+  return(lwdata2('listMVBstations', USER=USER, ...))
 }
 
 #'List available  UVA bird tags
