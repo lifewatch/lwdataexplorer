@@ -12,7 +12,7 @@
 #' @examples
 #'getAcousticData("2021-03-26T10:35:00.00Z", "2021-03-26T10:45:00.00Z", minband = 9, maxband = 11, by = "1 min")
 #'@export
-getAcousticData <- function(startdate, stopdate, minband, maxband, binSize,
+getAcousticData <- function(startdate, stopdate, minband, maxband, by,
                         params = FALSE, ...){
 
   # Start placeholder
@@ -35,8 +35,8 @@ getAcousticData <- function(startdate, stopdate, minband, maxband, binSize,
   has_not_T_and_Z <- !all(c(isTRUE(startdate_as_char[11] == "T"), isTRUE(startdate_as_char[length(startdate_as_char)] == "Z")))
   if(has_not_T_and_Z){ stop("`startdate` must be a character date of the format 'YYYY-MM-DDTHH:MM:SS.00Z' \n Did you forget to include the 'T' or the 'Z'?") }
 
-  input$daterange[1] = stardate
-  stardate <- lubridate::ymd_hms(stardate)
+  input$daterange[1] = startdate
+  stardate <- lubridate::ymd_hms(startdate)
 
 
   # Assert stopdate
@@ -57,7 +57,7 @@ getAcousticData <- function(startdate, stopdate, minband, maxband, binSize,
 
   # Assert bands
   checkmate::assert_integerish(minband, len = 1, lower = 1, upper = 999999999, coerce = TRUE)
-  checkmate::assert_integerish(minband, len = 1, lower = 1, upper = 999999999, coerce = TRUE)
+  checkmate::assert_integerish(maxband, len = 1, lower = 1, upper = 999999999, coerce = TRUE)
   if(minband > maxband) stop(glue::glue("`maxband` cannot be lower than `minband` \n - minband: {minband} \n - maxband: {maxband}"))
 
   input$bands = c(minband, maxband)
