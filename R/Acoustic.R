@@ -65,7 +65,7 @@ getAcousticData <- function(startdate, stopdate, minband, maxband, by,
 
   # Perform
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
