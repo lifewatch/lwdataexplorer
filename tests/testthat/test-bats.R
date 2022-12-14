@@ -1,5 +1,5 @@
 ## Bats
-bats_by <- "1 min"
+bats_by <- "1 day"
 
 # Get data bats
 bats_list <- getBatsData('2019-08-01', '2019-09-01', bats_by, params = TRUE)

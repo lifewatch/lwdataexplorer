@@ -1,7 +1,7 @@
 ## FlowCam
 # Get data FlowCam
-flowcam_list <- getFlowcamData("2019-10-22", "2020-04-24", params = TRUE)
-flowcam_df <- getFlowcamData("2019-10-22", "2020-04-24", params = FALSE)
+flowcam_list <- getFlowcamData("2018-01-01", "2018-12-31", params = TRUE)
+flowcam_df <- getFlowcamData("2018-01-01", "2018-12-31", params = FALSE)
 
 # Test FlowCam
 test_that("FlowCam", {

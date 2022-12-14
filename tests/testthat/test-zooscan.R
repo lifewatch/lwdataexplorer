@@ -1,8 +1,8 @@
 ## ZooScan
 
 # Get data ZooScan
-zoo_list <- getZooscanData("2013-03-25", "2013-03-27", params = TRUE)
-zoo_df <- getZooscanData("2013-03-25", "2013-03-27", params = FALSE)
+zoo_list <- getZooscanData("2018-01-01", "2018-12-31", params = TRUE)
+zoo_df <- getZooscanData("2018-01-01", "2018-12-31", params = FALSE)
 
 # Test ZooScan
 test_that("ZooScan", {
