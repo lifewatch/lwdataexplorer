@@ -4,14 +4,8 @@
 \alias{getStationData}
 \title{Retrieve Station-data from the LifeWatch project}
 \usage{
-getStationData(
-  startdate,
-  stopdate,
-  stations = "all",
-  categories = "all",
-  params = FALSE,
-  ...
-)
+getStationData(startdate, stopdate, stations = "all",
+  categories = "all", params = FALSE, ...)
 }
 \arguments{
 \item{startdate}{Starting date for the query}
