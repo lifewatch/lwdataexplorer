@@ -19,33 +19,36 @@ knitr::opts_chunk$set(
 
 <!--- Describe datatype in one or two sentences. -->
 
-Frequency values of bands coming from a sampling in the Belgian part of the north sea blablabla
+Millidecade bands computed from the acoustic data collected in the LifeWatch Broadband Acoustic Network.
+Frequency range from 0 to 24 kHz. Millidecade bands computed according to Miksis-Olds, J. L., Dugan, P. J.,
+Martin, S. B., Klinck, H., Mellinger, D. K., Mann, D. A., Ponirakis, D. W., and Boebel, O. (2021).
+Ocean Sound Analysis Software for Making Ambient Noise Trends Accessible (MANTA). Frontiers in Marine Science, 8:703650.
+(doi: https://doi.org/10.3389/fmars.2021.703650)
 
-- Partners: VLIZ... ?
-- Period:
-- Geographical coverage:
-- Taxonomical coverage
-- Moratorium: None?
-- Data quality: research-grade, calibrated/validated or proof-of-concept
+- Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36), [Ghent University](https://www.vliz.be/en/imis?module=institute&insid=12685)
+- Period: March 2021 - Ongoing
+- Geographical coverage: [ANE, Belgium, Belgian Coast](http://marineregions.org/mrgid/2550), [ANE, Belgium, Belgian Continental Shelf (BCS)](http://marineregions.org/mrgid/3293)
+- Taxonomical coverage: Animalia [WoRMS, 2023](https://www.marinespecies.org/aphia.php?p=taxdetails&id=2)
+- Moratorium: None
+- Data quality: calibrated
 
 ## How to interpret this dataset
 
 ### Query options
-* **frequency**: 
+* **frequency**: Millidecade band (centre frequency)
 * **Timeframe**: Starting and stopping date for the query.
 
 ### Available columns
-* **frequency**: 
-* **upper_frequency**:
-* **lower_frequency**:
-* **value**:
-* **datetime**:  ISO 8601 Date and Time in UTC, beginning of sample time bin
+* **frequency**: centre frequency of the millidecade band, in Hz
+* **upper_frequency**: upper frequency limit of the millidecade band, in Hz
+* **lower_frequency**: lower frequency limit of the millidecade band, in Hz
+* **value**: sound pressure density of the millidecade band
+* **datetime**: ISO 8601 Date and Time in UTC, beginning of sample time bin
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Longitude**: Center longitude in decimal degrees, WGS84.
-* **station_name**: name or code of sampling station or receiver code.
-* **hydrophone_depth**:
-* **etnID**:
-* ...
+* **station_name**: name or code of sampling station.
+* **hydrophone_depth**: depth in the water column, in (positive) meters
+* **etnID**: unique identifier for each deployment, linked to the metadata specified in the European Tracking Network (https://www.lifewatch.be/etn/)
 
 ## Abstract
 <!-- This information is pulled from the IMIS record of the data type -->
