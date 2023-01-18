@@ -32,7 +32,10 @@ Imports:
     jsonlite,
     httr,
     utils,
-    tibble
+    tibble,
+    checkmate,
+    glue,
+    lubridate
 Suggests: 
     testthat (>= 2.1.0),
     knitr,

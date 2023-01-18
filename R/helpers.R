@@ -126,7 +126,7 @@ lw_mdf_is_string <- function(mdf, input = NULL, par = NULL){
   # Check if there is an error message
   if(grepl("error", mdf, ignore.case = TRUE)){
     message(mdf)
-    warning("Something unexpected happened. Check the server logs.")
+    warning("Something unexpected happened. Check the server logs.", call. = FALSE)
     return(NULL)
 
     # Check if the server returns a no data string
@@ -136,11 +136,11 @@ lw_mdf_is_string <- function(mdf, input = NULL, par = NULL){
   ){
     lw_warning_empty()
     lw_compare_parameters(input, par)
-    return(NULL)
+    return(invisible(NULL))
 
     # Any other case, raise an error
   }else{
-    stop(mdf)
+    stop(mdf, call. = FALSE)
   }
 
 }
@@ -148,8 +148,8 @@ lw_mdf_is_string <- function(mdf, input = NULL, par = NULL){
 
 # What to do in case of an empty response
 lw_warning_empty <- function(){
-  warning("No data returned")
-  return(NULL)
+  warning("No data returned", call. = FALSE)
+  invisible(NULL)
 }
 
 
@@ -164,9 +164,7 @@ lw_compare_parameters <- function(par_user, par_server){
     lw_print_parameters(par_user, "- Your query:")
     lw_print_parameters(par_server, "- Server query:")
 
-    warning("The query applied on the server differ from the parameters you used.
-Hint: You may need an account to fully access the data under moratorium.
-Hint: Request access at: https://rshiny.lifewatch.be/account?p=register")
+    warning("The query applied on the server differ from the parameters you used. \n Hint: You may need an account to fully access the data under moratorium. \n Hint: Request access at: https://rshiny.lifewatch.be/account?p=register", call. = TRUE)
 
     # Print parameters if there're no issues
   }else{
@@ -224,6 +222,8 @@ lw_check_config <- function(datatype = NA, test = FALSE, test_config = NA){
     # Mongo config
     if(datatype %in% c("Bats data", "FlowCam data", "Genetic data", "ZooScan data")){
       config <- c("MONGODB_CONN", "MONGODBSANT1_CONN")
+    }else if(datatype %in% c("acoustic data")){
+      config <- c("MONGODB_CONN")
       # SQL config
     }else if(datatype %in% c("Buoy data", "CTD data", "MVB data", "Sample library", "Station data",
                              "TripActions data", "Underway data", "listMVBstations")){
@@ -254,10 +254,8 @@ lw_check_config <- function(datatype = NA, test = FALSE, test_config = NA){
   if(anyNA(checks)){
     config_missing <- subset(names(checks), is.na(checks))
     warning(paste0(
-      "Configuration details are missing: ",
-      paste0(config_missing, collapse = ", "),
-      ". Query redirected to OpenCPU."
-    ))
+      "Connection details are missing: ", paste0(config_missing, collapse = ", "), ". \n Query redirected to OpenCPU. \n Hint: Add the connection details to .renviron with `usethis::edit_r_environ()`."
+    ), call. = FALSE)
     return(FALSE)
   }else{
     # Success!

@@ -1,5 +1,5 @@
 ## MVB
-mvb_parameters <- c("Tide TAW")
+mvb_parameters <- c("Tide (cmTAW)")
 mvb_stations <- NULL
 mvb_by <- "day"
 mvb_calc <- "avg"

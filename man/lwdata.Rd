@@ -4,28 +4,15 @@
 \alias{lwdata}
 \title{Function to retrieve data from the LifeWatch project}
 \usage{
-lwdata(
-  datatype = "Buoy data",
-  from = as.character(Sys.Date() - 90),
-  to = as.character(Sys.Date()),
-  stations = c("Buoy at C-Power"),
-  binSize = "60 min",
-  calc = "Time bins",
-  UrlPar = NULL,
-  code = NULL,
-  posres = 2,
-  logged = FALSE,
-  projectlist = NULL,
-  tagprojectlist = NULL,
-  loggedInUserPostgresUsername = NULL,
-  loggedInUserPostgresPwd = NULL,
-  phylasp = "#2#51#",
-  taxranks = c(Species = 220),
-  qualities = c("Hi"),
-  processing = "Validated",
-  params = FALSE,
-  force_opencpu = FALSE
-)
+lwdata(datatype = "Buoy data", from = as.character(Sys.Date() - 90),
+  to = as.character(Sys.Date()), stations = c("Buoy at C-Power"),
+  binSize = "60 min", calc = "Time bins", UrlPar = NULL,
+  code = NULL, posres = 2, logged = FALSE, projectlist = NULL,
+  tagprojectlist = NULL, loggedInUserPostgresUsername = NULL,
+  loggedInUserPostgresPwd = NULL, phylasp = "#2#51#",
+  taxranks = c(Species = 220), qualities = c("Hi"),
+  processing = "Validated", minband = 10, maxband = 10,
+  params = FALSE, force_opencpu = FALSE)
 }
 \arguments{
 \item{datatype}{Type of data to request}
@@ -64,6 +51,10 @@ lwdata(
 
 \item{processing}{(CPOD) One of ('Validated','Raw')}
 
+\item{minband}{lower frequency band from which the sound value will be retrieved}
+
+\item{maxband}{upper frequency band from which the sound value will be retrieved}
+
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
 
 \item{force_opencpu}{boolean. If true, the query will be forced to run through the OpenCPU server.}
@@ -75,12 +66,13 @@ The sum of \code{x} and \code{y}
 Large wrapper function that retrieves the LifeWatch data. Use datatype specific functions for clearer use.
 }
 \examples{
+\dontrun{
 lwdata()
-lwdata('listETNprojects')
-lwdata('zooscan-data')
-lwdata('flowcam-data')
+lwdata('zooscan data')
+lwdata('flowcam data')
 lwdata('MVB')
-lwdata('station-data')
-lwdata('cpod-data')
-lwdata('etn-data')
+lwdata('station data')
+lwdata('cpod data')
+lwdata('etn data')
+}
 }

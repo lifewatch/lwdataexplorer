@@ -5,7 +5,7 @@
 # Ease of use function to use w/o shiny app
 #' Function to retrieve data from the LifeWatch project
 #'
-#'Large wrapper function that retrieves the LifeWatch data. Use datatype specific functions for clearer use.
+#' Large wrapper function that retrieves the LifeWatch data. Use datatype specific functions for clearer use.
 #' @return The sum of \code{x} and \code{y}
 #' @param datatype Type of data to request
 #' @param from Starting date for the query
@@ -27,15 +27,16 @@
 #' @param processing (CPOD) One of ('Validated','Raw')
 #' @param force_opencpu boolean. If true, the query will be forced to run through the OpenCPU server.
 #' @param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#' @examples
+#' @inheritParams getAcousticData
+#' @examples \dontrun{
 #' lwdata()
-#' lwdata('listETNprojects')
-#' lwdata('zooscan-data')
-#' lwdata('flowcam-data')
+#' lwdata('zooscan data')
+#' lwdata('flowcam data')
 #' lwdata('MVB')
-#' lwdata('station-data')
-#' lwdata('cpod-data')
-#' lwdata('etn-data')
+#' lwdata('station data')
+#' lwdata('cpod data')
+#' lwdata('etn data')
+#' }
 #' @export
 lwdata<- function(
   datatype='Buoy data', from=as.character(Sys.Date()-90), to=as.character(Sys.Date()),
@@ -43,7 +44,9 @@ lwdata<- function(
   code=NULL, posres=2, logged=FALSE, projectlist=NULL, tagprojectlist=NULL,
   loggedInUserPostgresUsername = NULL, loggedInUserPostgresPwd = NULL,
   phylasp='#2#51#', taxranks=c(Species=220), qualities=c("Hi"),
-  processing='Validated', params = FALSE, force_opencpu = FALSE) {
+  processing='Validated', minband=10, maxband=10, params = FALSE, force_opencpu = FALSE) {
+
+  .Deprecated("get<DATATYPE>Data")
 
   input=list()
   USER = list()
@@ -56,6 +59,7 @@ lwdata<- function(
   input$UrlPar=UrlPar
   input$tags=code
   input$posres=posres
+  input$bands=c(minband, maxband)
 
   input$projects=projectlist
   input$tagProjects=tagprojectlist
@@ -70,7 +74,7 @@ lwdata<- function(
   USER$postgresPwd=loggedInUserPostgresPwd
 
   # Function call
-  if(lw_check_lwdataserver(force_opencpu = force_opencpu)){
+  if(lw_check_lwdataserver(force_opencpu = force_opencpu, datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -180,7 +184,7 @@ getZooscanData <- function(startdate, stopdate, params = FALSE, ...){
   input$type = "ZooScan data"
   input$getPar = params
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -209,7 +213,7 @@ getFlowcamData <- function(startdate, stopdate, params = FALSE, ...){
   # print(input)
   input$getPar = params
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -241,7 +245,7 @@ getBatsData <- function(startdate, stopdate, by, params = FALSE, ...){
   input$getPar = params
   # print(input)
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -274,7 +278,7 @@ getBuoyData <- function(startdate, stopdate, stations,
   input$type = "Buoy data"
   input$getPar = params
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -322,7 +326,7 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
   USER$username=usr
   USER$password=pwd
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
   }else{
     out = basicPostJson(input = input, USER = USER)
@@ -367,7 +371,7 @@ getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod"
   USER$username=usr
   USER$password=pwd
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
   }else{
     out = basicPostJson(input = input, USER = USER)
@@ -415,7 +419,7 @@ getMvbData <- function(startdate, stopdate, parameters, stations = NULL, by, cal
   USER$username=usr
   USER$password=pwd
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
   }else{
     out = basicPostJson(input = input, USER = USER)
@@ -456,7 +460,7 @@ getUvaBirdData <- function(startdate, stopdate, tagcodes, # p=2,
   USER$username = usr
   USER$password = pwd
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = USER, client = TRUE))
   }else{
     out = basicPostJson(input = input, USER = USER)
@@ -490,7 +494,7 @@ getStationData <- function(startdate, stopdate, stations = "all", categories = "
   input$categories=categories
   input$getPar = params
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
@@ -520,7 +524,7 @@ getUnderwayData <- function(startdate, stopdate, by, params = FALSE, ...){
   input$binSize = by
   input$getPar = params
 
-  if(lw_check_lwdataserver( ...)){
+  if(lw_check_lwdataserver(..., datatype = input$type)){
     utils::capture.output(out <- lwdataserver::getLWdata(input, USER = NULL, client = TRUE))
   }else{
     out = basicPostJson(input = input)
