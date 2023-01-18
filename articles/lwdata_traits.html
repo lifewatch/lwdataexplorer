@@ -133,7 +133,7 @@
 <p>Traits data from the World Register of Marine Species (<a href="https://marinespecies.org/traits/aphia.php?p=stats_attributes" class="external-link">WoRMS</a>).</p>
 <ul>
 <li>Partners: <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=15115" class="external-link">Marine Species Traits editorial board</a>, <a href="https://www.vliz.be/en/imis?module=institute&amp;insid=36" class="external-link">Flanders Marine Institute (VLIZ)</a>, EMODnet Biology, LifeWatch Species Information Backbone</li>
-<li>Period: since 1758</li>
+<li>Period: Taxonomy since 1758 (Linnaeus) and traits data collection since 2014 (start EMODnet Biology pilot projects)</li>
 <li>Geographical coverage: World</li>
 <li>Taxonomic coverage: Biota</li>
 <li>Moratorium: None</li>
@@ -147,17 +147,19 @@
 </h3>
 <ul>
 <li>
-<strong>Taxon</strong>:</li>
+<strong>Taxon</strong>: Select the taxon you are interested in. You can only select one taxon at a time. If the taxon does not appear in the picklist, then it means we don’t have any traits available for that taxon.</li>
 <li>
-<strong>Restrict to life stage</strong>:</li>
+<strong>Include traits from child taxa</strong>: Check this box if you want to return all children within a certain taxon.</li>
 <li>
-<strong>Restrict to species found in these regions</strong>:</li>
+<strong>Traits</strong>: You can select a single trait or a combination of traits for a specific taxon.</li>
 <li>
-<strong>Traits</strong>:</li>
+<strong>Include</strong>: If you select two (or more) traits (e.g. macrobenthos and mobile), then the explorer will look for the taxa that are either macrobenthos or mobile (“ANY of selected traits”). If you want to look for taxa that have both traits, then check “ALL of selected traits”.</li>
 <li>
-<strong>Include</strong>:</li>
+<strong>Restrict to life stage</strong>: You can restrict your search to a specific life stage (e.g. adult, larvae).</li>
 <li>
-<strong>Output</strong>:</li>
+<strong>Restrict to species found in these regions</strong>: You can combine the selected traits with standardized distributions based on distributions from literature in WoRMS and occurrences in OBIS. This way you can create a list of species which occur in a certain area and which have a certain trait (e.g. all meiobenthos Nematoda species in the North Sea). The explorer is not able to give a list of all species within a certain area. Always use the standardized distributions filter in combination with the traits filter.</li>
+<li>
+<strong>Output</strong>: Every parameter is shown in a separate column in the data table. Select “Add classification” if you want to include the higher taxonomic classification to your results. “Compact traits in one row” is unchecked by default. If you check this box, the sourceID column is dropped and same values in one column are taken together where possible. Checking this box slows down the querying process however.</li>
 </ul>
 </div>
 <div class="section level3">
@@ -371,7 +373,10 @@ Trait <strong>note</strong>: Additional information about the trait added as a n
 <h2 id="abstract">Abstract<a class="anchor" aria-label="anchor" href="#abstract"></a>
 </h2>
 <!-- This information is pulled from the IMIS record of the data type -->
-The importance of describing species patterns and the underlaying processes explaining these patterns is essential to assess the status and future evolution of marine ecosystem. This requires biological information on functional and structural species traits such as feeding ecology, body size, reproduction, life history, etc.The World Register of Marine Species (WoRMS) aims to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy. Next to taxonomic information, WoRMS and Aphia, its underlying SQL platform, can hold non-taxonomic information such as distributions, traits, images, etc.
+The importance of describing species patterns and the underlaying processes explaining these patterns is essential to assess the status and future evolution of marine ecosystem. This requires biological information on functional and structural species traits such as feeding ecology, body size, reproduction, life history, etc.
+<p>
+<br> The World Register of Marine Species (WoRMS) aims to provide an authoritative and comprehensive list of names of marine organisms, including information on synonymy. Next to taxonomic information, WoRMS and Aphia, its underlying SQL platform, can hold non-taxonomic information such as distributions, traits, images, etc.
+</p>
 <p>
 <br> Within WoRMS, basic trait information, such as environment (marine-brackish-freshwater-terrestrial), was being collected before 2014. Since then, collecting trait information has been taken one step further within the <a href="https://www.emodnet-biology.eu/" target="_blank" class="external-link">EMODnet Biology project</a> and as a component of the <a href="https://www.lifewatch.be/en/lifewatch-species-information-backbone" target="_blank" class="external-link">LifeWatch Species Information Backbone</a>.
 </p>
@@ -393,20 +398,23 @@ Human-defined traits (e.g. Red List species)
 <br> The traits data available within WoRMS and Aphia can be explored with the Traits Data Explorer.
 </p>
 <p>
-<br> You can only select one taxon at a time. Check “Include synonyms” if you want to return both the unaccepted and accepted names. If you are only interested in accepted names, then uncheck this box. Check “Include children” if you want to return all children within a certain taxon.
+<br> Select the taxon you are interested in. You can only select one taxon at a time. If the taxon does not appear in the picklist, then it means we don’t have any traits available for that taxon. Check “Include traits from child taxa” if you want to return all children within a certain taxon.
 </p>
 <p>
-<br> You can select a single trait or a combination of traits for a specific taxon. If you select two (or more) traits (e.g. macrobenthos and mobile), then the explorer will look for the taxa that are either macrobenthos or mobile. If you want to look for taxa that have both traits, then check “ALL of selected traits”. You can also restrict your search to a specific life stage.
+<br>You can select a single trait or a combination of traits for a specific taxon. If you select two (or more) traits (e.g. macrobenthos and mobile), then the explorer will look for the taxa that are either macrobenthos or mobile (“ANY of selected traits”). If you want to look for taxa that have both traits, then check “ALL of selected traits”. You can also restrict your search to a specific life stage (e.g. adult, larvae).
 </p>
 <p>
+<b>You can combine the selected traits with standardized distributions based on distributions from literature in WoRMS and occurrences in OBIS. This way you can create a list of species which occur in a certain area and which have a certain trait (e.g. all meiobenthos Nematoda species in the North Sea). The explorer is not able to give a list of all species within a certain area. Always use the standardized distributions filter in combination with the traits filter.
+</b></p>
+<p>
 </p>
-<p><br> Furthermore, you can combine the selected traits with standardized distributions based on distributions from literature in WoRMS and occurrences in OBIS. This way you can create a list of species which occur in a certain area and which have a certain trait (e.g. all meiobenthos Nematoda species in the North Sea). The explorer is not able to give a list of all species within a certain area. Always use the standardized distributions filter in combination with the traits filter.</p>
+<p><br> Every parameter is shown in a separate column in the data table. Select “Add classification” if you want to include the higher taxonomic classification to your results. “Compact traits in one row” is unchecked by default. If you check this box, the sourceID column is dropped and same values in one column are taken together where possible. Checking this box slows down the querying process however.</p>
 </div>
 <div class="section level2">
 <h2 id="how-to-cite-these-data">How to cite these data<a class="anchor" aria-label="anchor" href="#how-to-cite-these-data"></a>
 </h2>
 <blockquote>
-<p>Marine Species Traits editorial board (2022). Marine Species Traits. Accessed at <a href="http://www.marinespecies.org/traits" class="external-link uri">http://www.marinespecies.org/traits</a> on yyyy-mm-dd. <a href="https://doi.org/10.14284/580" class="external-link uri">https://doi.org/10.14284/580</a></p>
+<p>Marine Species Traits editorial board (2023). Marine Species Traits. Accessed at <a href="http://www.marinespecies.org/traits" class="external-link uri">http://www.marinespecies.org/traits</a> on yyyy-mm-dd. <a href="https://doi.org/10.14284/580" class="external-link uri">https://doi.org/10.14284/580</a></p>
 </blockquote>
 <p>Availability: CC-BY</p>
 </div>
@@ -429,7 +437,7 @@ Human-defined traits (e.g. Red List species)
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
