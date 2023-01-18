@@ -51,6 +51,10 @@ lwdata(datatype = "Buoy data", from = as.character(Sys.Date() - 90),
 
 \item{processing}{(CPOD) One of ('Validated','Raw')}
 
+\item{minband}{lower frequency band from which the sound value will be retrieved}
+
+\item{maxband}{upper frequency band from which the sound value will be retrieved}
+
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
 
 \item{force_opencpu}{boolean. If true, the query will be forced to run through the OpenCPU server.}
@@ -62,6 +66,7 @@ The sum of \code{x} and \code{y}
 Large wrapper function that retrieves the LifeWatch data. Use datatype specific functions for clearer use.
 }
 \examples{
+\dontrun{
 lwdata()
 lwdata('zooscan data')
 lwdata('flowcam data')
@@ -69,4 +74,5 @@ lwdata('MVB')
 lwdata('station data')
 lwdata('cpod data')
 lwdata('etn data')
+}
 }

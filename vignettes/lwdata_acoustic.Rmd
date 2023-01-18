@@ -2,7 +2,7 @@
 title: "Exploring Acoustic data"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{lwdata_bats}
+  %\VignetteIndexEntry{lwdata_acoustic}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,17 +20,14 @@ knitr::opts_chunk$set(
 <!--- Describe datatype in one or two sentences. -->
 
 Millidecade bands computed from the acoustic data collected in the LifeWatch Broadband Acoustic Network.
-Frequency range from 0 to 24 kHz. Millidecade bands computed according to Miksis-Olds, J. L., Dugan, P. J.,
-Martin, S. B., Klinck, H., Mellinger, D. K., Mann, D. A., Ponirakis, D. W., and Boebel, O. (2021).
-Ocean Sound Analysis Software for Making Ambient Noise Trends Accessible (MANTA). Frontiers in Marine Science, 8:703650.
-(doi: https://doi.org/10.3389/fmars.2021.703650)
+Frequency range from 0 to 24 kHz. Millidecade bands computed according to Miksis-Olds et al. (2021)<sup>1</sup>
 
 - Partners: [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36), [Ghent University](https://www.vliz.be/en/imis?module=institute&insid=12685)
 - Period: March 2021 - Ongoing
 - Geographical coverage: [ANE, Belgium, Belgian Coast](http://marineregions.org/mrgid/2550), [ANE, Belgium, Belgian Continental Shelf (BCS)](http://marineregions.org/mrgid/3293)
 - Taxonomical coverage: Animalia [WoRMS, 2023](https://www.marinespecies.org/aphia.php?p=taxdetails&id=2)
 - Moratorium: None
-- Data quality: calibrated
+- Data quality: proof-of-concept 
 
 ## How to interpret this dataset
 
@@ -39,65 +36,67 @@ Ocean Sound Analysis Software for Making Ambient Noise Trends Accessible (MANTA)
 * **Timeframe**: Starting and stopping date for the query.
 
 ### Available columns
-* **frequency**: centre frequency of the millidecade band, in Hz
-* **upper_frequency**: upper frequency limit of the millidecade band, in Hz
-* **lower_frequency**: lower frequency limit of the millidecade band, in Hz
-* **value**: sound pressure density of the millidecade band
+* **frequency**: Centre frequency of the millidecade band, in Hz
+* **upper_frequency**: Upper frequency limit of the millidecade band, in Hz
+* **lower_frequency**: Lower frequency limit of the millidecade band, in Hz
+* **value**: Sound pressure density of the millidecade band
 * **datetime**: ISO 8601 Date and Time in UTC, beginning of sample time bin
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Longitude**: Center longitude in decimal degrees, WGS84.
-* **station_name**: name or code of sampling station.
-* **hydrophone_depth**: depth in the water column, in (positive) meters
-* **etnID**: unique identifier for each deployment, linked to the metadata specified in the European Tracking Network (https://www.lifewatch.be/etn/)
+* **station_name**: Name or code of sampling station.
+* **hydrophone_depth**: Depth in the water column, in (positive) meters
+* **etnID**: Unique identifier for each deployment, linked to the metadata specified in the European Tracking Network (https://www.lifewatch.be/etn/)
 
 ## Abstract
 <!-- This information is pulled from the IMIS record of the data type -->
 
-<!-- ```{r abstract, results = 'asis', echo = FALSE} -->
-<!-- # Get the abstract and/or description from IMIS and print here -->
-<!-- library(jsonlite) -->
+```{r abstract, results = 'asis', echo = FALSE}
+# Get the abstract and/or description from IMIS and print here
+library(jsonlite)
 
-<!-- dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=<DASID>&show=json") -->
+dasid <- fromJSON("https://www.vliz.be/en/imis?module=dataset&dasid=8172&show=json")
 
-<!-- abstract <- dasid[["datasetrec"]][["EngAbstract"]] -->
-<!-- description <- dasid[["datasetrec"]][["EngDescr"]] -->
+abstract <- dasid[["datasetrec"]][["EngAbstract"]]
+description <- dasid[["datasetrec"]][["EngDescr"]]
 
-<!-- if (is.null(abstract) & is.null(description)){ -->
+if (is.null(abstract) & is.null(description)){
 
-<!-- } else if(is.null(abstract) & !is.null(description)){ -->
-<!--   out <- description -->
-<!-- } else if(!is.null(abstract) & is.null(description)){ -->
-<!--   out <- abstract -->
-<!-- } else if(!is.null(abstract) & !is.null(description)){ -->
-<!--   out <- paste0(abstract, "</br>", description) -->
-<!-- } -->
+} else if(is.null(abstract) & !is.null(description)){
+  out <- description
+} else if(!is.null(abstract) & is.null(description)){
+  out <- abstract
+} else if(!is.null(abstract) & !is.null(description)){
+  out <- paste0(abstract, "</br>", description)
+}
 
-<!-- cat(out) -->
-<!-- ``` -->
+cat(out)
+```
 
-<!-- ## How to cite these data -->
+## How to cite these data
 
-<!-- ```{r get citation and license, results = 'asis', echo = FALSE} -->
-<!-- library(jsonlite) -->
-<!-- # Set base url -->
-<!-- url <- "https://www.vliz.be/en/imis?module=dataset&dasid=<DASID>" -->
-<!-- dasid <- fromJSON(paste0(url, "&show=json")) -->
-<!-- # Build citation. Get active DOI. -->
-<!-- citation <- dasid[["datasetrec"]][["Citation"]] -->
-<!-- citation <- paste0("> ", citation, " ", url,  -->
-<!--                    ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package.") -->
-<!-- # Get license -->
-<!-- license <- dasid[["datasetrec"]][["AccConstrDisplay"]] -->
-<!-- ``` -->
+```{r get citation and license, results = 'asis', echo = FALSE}
+library(jsonlite)
+# Set base url
+url <- "https://www.vliz.be/en/imis?module=dataset&dasid=8172"
+dasid <- fromJSON(paste0(url, "&show=json"))
+# Build citation. Get active DOI.
+citation <- dasid[["datasetrec"]][["Citation"]]
+citation <- paste0("> ", citation, " ", url,
+                   ". Accessed through the LifeWatch Data Explorer / lwdataexplorer R package.")
+# Get license
+license <- dasid[["datasetrec"]][["AccConstrDisplay"]]
+```
 
-<!-- ```{r display citation, results = 'asis', echo = FALSE} -->
-<!-- cat(citation) -->
-<!-- ``` -->
+```{r display citation, results = 'asis', echo = FALSE}
+cat(citation)
+```
 
-<!-- ```{r display license, results = 'asis', echo = FALSE} -->
-<!-- cat(paste0("<b>Availability:</b>", license)) -->
-<!-- ``` -->
+```{r display license, results = 'asis', echo = FALSE}
+cat(paste0("<b>Availability:</b>", license))
+```
 
 Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by VLIZ) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.
 
 These data are also available in the R language with the [lwdataxplorer package](https://lifewatch.github.io/lwdataexplorer/).
+
+<sup>1</sup><small>Miksis-Olds, J. L., Dugan, P. J., Martin, S. B., Klinck, H., Mellinger, D. K., Mann, D. A., Ponirakis, D. W., and Boebel, O. (2021). Ocean Sound Analysis Software for Making Ambient Noise Trends Accessible (MANTA). Frontiers in Marine Science, 8:703650. https://doi.org/10.3389/fmars.2021.703650 </small>

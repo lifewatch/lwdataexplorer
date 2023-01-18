@@ -10,7 +10,8 @@
 #' @param ... Params to be passed to lw_check_lwdataserver().
 #' @return Dataframe with the buoy-data within the specified daterange and location.
 #' @examples
-#'getAcousticData("2021-03-26T10:35:00.00Z", "2021-03-26T10:45:00.00Z", minband = 9, maxband = 11, by = "1 min")
+#' getAcousticData("2021-03-26T10:35:00.00Z", "2021-03-26T10:45:00.00Z",
+#'                 minband = 9, maxband = 11, by = "1 min")
 #'@export
 getAcousticData <- function(startdate, stopdate, minband, maxband, by,
                         params = FALSE, ...){
