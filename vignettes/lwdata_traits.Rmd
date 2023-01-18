@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 Traits data from the World Register of Marine Species ([WoRMS](https://marinespecies.org/traits/aphia.php?p=stats_attributes)).
 
 - Partners: [Marine Species Traits editorial board](https://www.vliz.be/en/imis?module=institute&insid=15115), [Flanders Marine Institute (VLIZ)](https://www.vliz.be/en/imis?module=institute&insid=36), EMODnet Biology, LifeWatch Species Information Backbone
-- Period: since 1758
+- Period: Taxonomy since 1758 (Linnaeus) and traits data collection since 2014 (start EMODnet Biology pilot projects)
 - Geographical coverage: World
 - Taxonomic coverage: Biota
 - Moratorium: None
@@ -33,12 +33,13 @@ Traits data from the World Register of Marine Species ([WoRMS](https://marinespe
 ## How to interpret this dataset
  
 ### Query options
-* **Taxon**:
-* **Restrict to life stage**:
-* **Restrict to species found in these regions**:
-* **Traits**:
-* **Include**:
-* **Output**:
+* **Taxon**: Select the taxon you are interested in. You can only select one taxon at a time. If the taxon does not appear in the picklist, then it means we don’t have any traits available for that taxon.
+* **Include traits from child taxa**: Check this box if you want to return all children within a certain taxon.
+* **Traits**: You can select a single trait or a combination of traits for a specific taxon.
+* **Include**: If you select two (or more) traits (e.g. macrobenthos and mobile), then the explorer will look for the taxa that are either macrobenthos or mobile (“ANY of selected traits”). If you want to look for taxa that have both traits, then check “ALL of selected traits”.
+* **Restrict to life stage**: You can restrict your search to a specific life stage (e.g. adult, larvae).
+* **Restrict to species found in these regions**: You can combine the selected traits with standardized distributions based on distributions from literature in WoRMS and occurrences in OBIS. This way you can create a list of species which occur in a certain area and which have a certain trait (e.g. all meiobenthos Nematoda species in the North Sea). The explorer is not able to give a list of all species within a certain area. Always use the standardized distributions filter in combination with the traits filter.
+* **Output**: Every parameter is shown in a separate column in the data table. Select “Add classification” if you want to include the higher taxonomic classification to your results. “Compact traits in one row” is unchecked by default. If you check this box, the sourceID column is dropped and same values in one column are taken together where possible. Checking this box slows down the querying process however. 
  
 ### Available columns
 <ul>
@@ -144,7 +145,7 @@ cat(out)
 
  
 ## How to cite these data
-> Marine Species Traits editorial board (2022). Marine Species Traits. Accessed at http://www.marinespecies.org/traits on yyyy-mm-dd. https://doi.org/10.14284/580
+> Marine Species Traits editorial board (2023). Marine Species Traits. Accessed at http://www.marinespecies.org/traits on yyyy-mm-dd. https://doi.org/10.14284/580
 
 Availability: CC-BY
 
