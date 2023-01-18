@@ -33,6 +33,9 @@ To get an account, register via the Lifewatch RShiny registration webpage.'><!--
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/lwdata_acoustic.html">Exploring Acoustic data</a>
+    </li>
+    <li>
       <a href="../articles/lwdata_bats.html">Exploring Batcorder data</a>
     </li>
     <li>
@@ -104,18 +107,8 @@ To get an account, register via the <a href="http://rshiny.lifewatch.be/account?
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getMvbData</span><span class="op">(</span></span>
-<span>  <span class="va">startdate</span>,</span>
-<span>  <span class="va">stopdate</span>,</span>
-<span>  <span class="va">parameters</span>,</span>
-<span>  stations <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  <span class="va">by</span>,</span>
-<span>  <span class="va">calc</span>,</span>
-<span>  usr <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  pwd <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  params <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  <span class="va">...</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getMvbData</span><span class="op">(</span><span class="va">startdate</span>, <span class="va">stopdate</span>, <span class="va">parameters</span>, stations <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">by</span>, <span class="va">calc</span>,</span>
+<span>  usr <span class="op">=</span> <span class="cn">NULL</span>, pwd <span class="op">=</span> <span class="cn">NULL</span>, params <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -187,9 +180,9 @@ To get an account, register via the <a href="http://rshiny.lifewatch.be/account?
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - calc: avg</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - binSize: day</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - parameters: Tide (cmTAW)</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The query applied on the server differ from the parameters you used.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> Hint: You may need an account to fully access the data under moratorium.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> Hint: Request access at: https://rshiny.lifewatch.be/account?p=register</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The query applied on the server differ from the parameters you used. </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>  Hint: You may need an account to fully access the data under moratorium. </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>  Hint: Request access at: https://rshiny.lifewatch.be/account?p=register</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          time    station latitude longitude Tide (cmTAW)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  2022-12-19 Nieuwpoort  51.1506    2.7281     236.1319</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  2022-12-20 Nieuwpoort  51.1506    2.7281     273.7073</span>
@@ -221,7 +214,7 @@ To get an account, register via the <a href="http://rshiny.lifewatch.be/account?
 <span class="r-out co"><span class="r-pr">#&gt;</span> 28 2023-01-15 Nieuwpoort  51.1506    2.7281     294.4271</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 29 2023-01-16 Nieuwpoort  51.1506    2.7281     280.8715</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 30 2023-01-17 Nieuwpoort  51.1506    2.7281     269.6354</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31 2023-01-18 Nieuwpoort  51.1506    2.7281     262.3254</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31 2023-01-18 Nieuwpoort  51.1506    2.7281     259.1524</span>
 <span class="r-in"><span><span class="fu">getMvbData</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="fl">30</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span>, parameters <span class="op">=</span> <span class="st">'Tide TAW'</span>,</span></span>
 <span class="r-in"><span>stations <span class="op">=</span> <span class="st">"Blankenberge"</span>, by <span class="op">=</span> <span class="st">"hour"</span>, calc <span class="op">=</span> <span class="st">"max"</span>, params <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query mode: Post request to OpenCPU server</span>
@@ -240,9 +233,9 @@ To get an account, register via the <a href="http://rshiny.lifewatch.be/account?
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - calc: max</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - binSize: hour</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>    - parameters: Tide (cmTAW)</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The query applied on the server differ from the parameters you used.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> Hint: You may need an account to fully access the data under moratorium.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> Hint: Request access at: https://rshiny.lifewatch.be/account?p=register</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The query applied on the server differ from the parameters you used. </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>  Hint: You may need an account to fully access the data under moratorium. </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>  Hint: Request access at: https://rshiny.lifewatch.be/account?p=register</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $mdf</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    time      station latitude longitude Tide (cmTAW)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   2022-12-19 00:00:00 Blankenberge  51.3106    3.1164          198</span>
@@ -973,6 +966,9 @@ To get an account, register via the <a href="http://rshiny.lifewatch.be/account?
 <span class="r-out co"><span class="r-pr">#&gt;</span> 726 2023-01-18 08:00:00 Blankenberge  51.3106    3.1164          403</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 727 2023-01-18 09:00:00 Blankenberge  51.3106    3.1164          400</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 728 2023-01-18 10:00:00 Blankenberge  51.3106    3.1164          371</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 729 2023-01-18 11:00:00 Blankenberge  51.3106    3.1164          329</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 730 2023-01-18 12:00:00 Blankenberge  51.3106    3.1164          273</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 731 2023-01-18 13:00:00 Blankenberge  51.3106    3.1164          207</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $par</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $par$daterange</span>

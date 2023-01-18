@@ -33,6 +33,9 @@ Need valid authentication to access the entire data. To get an account, register
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/lwdata_acoustic.html">Exploring Acoustic data</a>
+    </li>
+    <li>
       <a href="../articles/lwdata_bats.html">Exploring Batcorder data</a>
     </li>
     <li>
@@ -104,18 +107,8 @@ Need valid authentication to access the entire data. To get an account, register
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getEtnData</span><span class="op">(</span></span>
-<span>  <span class="va">startdate</span>,</span>
-<span>  <span class="va">stopdate</span>,</span>
-<span>  <span class="va">action</span>,</span>
-<span>  <span class="va">by</span>,</span>
-<span>  <span class="va">networks</span>,</span>
-<span>  <span class="va">projects</span>,</span>
-<span>  usr <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  pwd <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  params <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  <span class="va">...</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getEtnData</span><span class="op">(</span><span class="va">startdate</span>, <span class="va">stopdate</span>, <span class="va">action</span>, <span class="va">by</span>, <span class="va">networks</span>, <span class="va">projects</span>,</span>
+<span>  usr <span class="op">=</span> <span class="cn">NULL</span>, pwd <span class="op">=</span> <span class="cn">NULL</span>, params <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -1650,6 +1643,7 @@ Need valid authentication to access the entire data. To get an account, register
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1422     2341</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1423     2316</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1424      672</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1425     1207</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                               project</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                           Lifewatch</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                            NARVAEEL</span>
@@ -3075,6 +3069,7 @@ Need valid authentication to access the entire data. To get an account, register
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1422              Silver Eel downstream migration in the Walloon Meuse - 2021 to 2024</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1423              Silver Eel downstream migration in the Walloon Meuse - 2021 to 2024</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1424                                                                             BPNS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1425              Silver Eel downstream migration in the Walloon Meuse - 2021 to 2024</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                           station</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                    bpns-Grafton</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                             NE3</span>
@@ -4500,6 +4495,7 @@ Need valid authentication to access the entire data. To get an account, register
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1422                                                       LANAYE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1423                                           KEIZERSVEERBRUG_RB</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1424                                                     bpns-OH1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1425                                                     HERMALLE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        receiver                time latitude longitude</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                      POD-3112 2022-11-27 08:53:00  51.4067    2.8190</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                  VR2TX-482057 2018-10-18 09:30:19  59.3705   28.2098</span>
@@ -5925,6 +5921,7 @@ Need valid authentication to access the entire data. To get an account, register
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1422              TBR700-001198 2022-10-12 10:54:04  50.7773    5.6971</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1423              TBR700-001774 2022-10-13 11:59:16  51.7184    4.8910</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1424                VR2W-120873 2022-12-21 00:00:00  51.2400    2.9176</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1425              TBR700-001752 2022-11-28 16:44:44  50.7099    5.6835</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      remaining         expiry_date</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1           NA                &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2           NA                &lt;NA&gt;</span>
@@ -7350,6 +7347,7 @@ Need valid authentication to access the entire data. To get an account, register
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1422        NA                &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1423        NA                &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1424        NA                &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1425        NA                &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $par</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $par$daterange</span>

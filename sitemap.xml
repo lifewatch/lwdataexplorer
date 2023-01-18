@@ -13,6 +13,9 @@
     <loc>/articles/index.html</loc>
   </url>
   <url>
+    <loc>/articles/lwdata_acoustic.html</loc>
+  </url>
+  <url>
     <loc>/articles/lwdata_bats.html</loc>
   </url>
   <url>
@@ -62,6 +65,9 @@
   </url>
   <url>
     <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/getAcousticData.html</loc>
   </url>
   <url>
     <loc>/reference/getBatsData.html</loc>
