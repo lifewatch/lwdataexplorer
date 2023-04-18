@@ -4,17 +4,8 @@
 \alias{getCpodData}
 \title{Retrieve C-POD data from the LifeWatch project}
 \usage{
-getCpodData(
-  startdate,
-  stopdate,
-  processing,
-  quality = c("Hi", "Mod", "Lo"),
-  by,
-  usr = NULL,
-  pwd = NULL,
-  params = FALSE,
-  ...
-)
+getCpodData(startdate, stopdate, processing, quality = c("Hi", "Mod",
+  "Lo"), by, usr = NULL, pwd = NULL, params = FALSE, ...)
 }
 \arguments{
 \item{startdate}{Starting date for the query}

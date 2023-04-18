@@ -7,3 +7,5 @@
 ^\.github$
 ^docs$
 ^\.Renviron\.example$
+^_pkgdown\.yml$
+

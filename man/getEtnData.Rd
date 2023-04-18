@@ -4,18 +4,8 @@
 \alias{getEtnData}
 \title{Retrieve ETN-data from the LifeWatch project}
 \usage{
-getEtnData(
-  startdate,
-  stopdate,
-  action,
-  by,
-  networks,
-  projects,
-  usr = NULL,
-  pwd = NULL,
-  params = FALSE,
-  ...
-)
+getEtnData(startdate, stopdate, action, by, networks, projects,
+  usr = NULL, pwd = NULL, params = FALSE, ...)
 }
 \arguments{
 \item{startdate}{Starting date for the query}

@@ -5,7 +5,7 @@
 # Ease of use function to use w/o shiny app
 #' Function to retrieve data from the LifeWatch project
 #'
-#'Large wrapper function that retrieves the LifeWatch data. Use datatype specific functions for clearer use.
+#' Large wrapper function that retrieves the LifeWatch data. Use datatype specific functions for clearer use.
 #' @return The sum of \code{x} and \code{y}
 #' @param datatype Type of data to request
 #' @param from Starting date for the query
@@ -25,11 +25,10 @@
 #' @param taxranks .
 #' @param qualities .
 #' @param processing (CPOD) One of ('Validated','Raw')
-#' @param minband
-#' @param maxband
 #' @param force_opencpu boolean. If true, the query will be forced to run through the OpenCPU server.
 #' @param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#' @examples
+#' @inheritParams getAcousticData
+#' @examples \dontrun{
 #' lwdata()
 #' lwdata('zooscan data')
 #' lwdata('flowcam data')
@@ -37,6 +36,7 @@
 #' lwdata('station data')
 #' lwdata('cpod data')
 #' lwdata('etn data')
+#' }
 #' @export
 lwdata<- function(
   datatype='Buoy data', from=as.character(Sys.Date()-90), to=as.character(Sys.Date()),
