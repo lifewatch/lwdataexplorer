@@ -4,8 +4,8 @@
 #' @param stopdate Stopping date for the query in UTC. Must be a character date of the form "YYYY-MM-DD".
 #' @param stations  List of stations to be included in the query. Use stations = "All" to get all stations. See stations list in details section.
 #' @param by Aggregation criteria. One of c("Per meter", "Per cast")
-#' @param params
-#' @param ...
+#' @param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
+#' @param ... params to be passed to lw_check_lwdataserver().
 #'
 #' @details
 #'
@@ -13,12 +13,12 @@
 #' c("120", "130", "230", "215", "330", "421", "435", "710", "700",
 #' "780", "ZG02", "W09", "W08", "LW01", "W10", "LW02", "W07bis")
 #'
-#' @return
+#' @return Dataframe with the CTD data within the specified daterange and location.
 #' @export
 #'
 #' @examples
 #' getCTDData("2023-01-15", "2023-02-15", stations = c("120", "W09"), by = "Per meter")
-#' getCTDData("2023-01-15", "2023-02-15, stations = "All", by = "Per cast", params = TRUE)
+#' getCTDData("2023-01-15", "2023-02-15", stations = "All", by = "Per cast", params = TRUE)
 getCTDData <- function(startdate, stopdate, stations = "All", by,
                             params = FALSE, ...){
 
