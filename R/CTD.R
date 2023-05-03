@@ -17,8 +17,8 @@
 #' @export
 #'
 #' @examples
-#' getCTDData("2023-01-15", "2023-02-15", stations = c("120", "W09"), by = "Per meter")
-#' getCTDData("2023-01-15", "2023-02-15", stations = "All", by = "Per cast", params = TRUE)
+#' getCTDData("2023-01-15", "2023-02-15", stations = c("130", "W07bis"), by = "Per meter")
+#' getCTDData("2023-01-15", "2023-02-15", stations = c("130", "W07bis"), by = "Per meter", params = TRUE)
 getCTDData <- function(startdate, stopdate, stations = "All", by,
                             params = FALSE, ...){
 
@@ -27,6 +27,7 @@ getCTDData <- function(startdate, stopdate, stations = "All", by,
   input$type = "ctd"
   input$getPar = params
   input$daterange = c()
+  input$stationlist <- NULL
   input$all <- NULL
 
   # Assertions
@@ -60,6 +61,7 @@ getCTDData <- function(startdate, stopdate, stations = "All", by,
       stop(glue::glue("Assertion on `stations` failed: Must be element of set {paste0(all_stations, collapse = ', ')}, but is {paste0(stations, collapse = ', ')}"))
     }
   }
+  input$stationlist <- stations
 
   # Perform
   if(lw_check_lwdataserver(..., datatype = input$type)){
