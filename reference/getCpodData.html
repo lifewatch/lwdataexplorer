@@ -107,8 +107,17 @@ Need valid authentication to access the entire data.To get an account, register 
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getCpodData</span><span class="op">(</span><span class="va">startdate</span>, <span class="va">stopdate</span>, <span class="va">processing</span>, quality <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Hi"</span>, <span class="st">"Mod"</span>,</span>
-<span>  <span class="st">"Lo"</span><span class="op">)</span>, <span class="va">by</span>, usr <span class="op">=</span> <span class="cn">NULL</span>, pwd <span class="op">=</span> <span class="cn">NULL</span>, params <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getCpodData</span><span class="op">(</span></span>
+<span>  <span class="va">startdate</span>,</span>
+<span>  <span class="va">stopdate</span>,</span>
+<span>  <span class="va">processing</span>,</span>
+<span>  quality <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Hi"</span>, <span class="st">"Mod"</span>, <span class="st">"Lo"</span><span class="op">)</span>,</span>
+<span>  <span class="va">by</span>,</span>
+<span>  usr <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  pwd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  params <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -191,78 +200,102 @@ Need valid authentication to access the entire data.To get an account, register 
 <span class="r-out co"><span class="r-pr">#&gt;</span> 21          9100 2020-04-20    sonar         9000                     95</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 22          9103 2020-04-20 Dolphins            0                      0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 23          9103 2020-04-20     NBHF       340232                  21053</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    number_clicks_total lost_minutes recorded dpm dph dpd dpw quality</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1               134240            0      900   0   0   0   0       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2               134240            0      900  26   9   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3               134240            0      900   2   1   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                 6768            0     1440   7   3   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                 6768            0     1440   2   1   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                42406            0     1440   0   0   0   0       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                42406            0     1440   7   3   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                42406            0     1440   2   1   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9                59464            0     1440   0   0   0   0       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10               59464            0     1440 121  14   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11               59464            0     1440   3   3   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12              173744            0     1380   0   0   0   0       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13              173744            0     1380 140  21   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14               21838            0     1500  10   5   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15               21838            0     1500  22   5   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16               37954            0     1500   0   0   0   0       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17               37954            0     1500  32  10   2   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18               37954            0     1500  24   3   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19               34882            0     1500   0   0   0   0       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20               34882            0     1500  79  18   2   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21               34882            0     1500   3   1   1   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22              340646            0     1320   0   0   0   0       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23              340646            0     1320 293  20   2   1       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    projectname          station latitude longitude   mooring_type receiver</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    Lifewatch bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    Lifewatch bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    Lifewatch bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   Lifewatch   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   Lifewatch   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   Lifewatch bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17   Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18   Lifewatch bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19   Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20   Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21   Lifewatch     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22   Lifewatch   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23   Lifewatch   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       deploy_date_time   recover_date_time valid_data_until_datetime</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    number_clicks_total lost_minutes recorded dpm dph dpd dpw temperature_min</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1               134240            0      900   0   0   0   0             9.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2               134240            0      900  26   9   1   1             9.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3               134240            0      900   2   1   1   1             9.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                 6768            0     1440   7   3   1   1            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                 6768            0     1440   2   1   1   1            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                42406            0     1440   0   0   0   0             9.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                42406            0     1440   7   3   1   1             9.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                42406            0     1440   2   1   1   1             9.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                59464            0     1440   0   0   0   0            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10               59464            0     1440 121  14   1   1            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11               59464            0     1440   3   3   1   1            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12              173744            0     1380   0   0   0   0            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13              173744            0     1380 140  21   1   1            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14               21838            0     1500  10   5   1   1             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15               21838            0     1500  22   5   1   1             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16               37954            0     1500   0   0   0   0             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17               37954            0     1500  32  10   2   1             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18               37954            0     1500  24   3   1   1             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19               34882            0     1500   0   0   0   0            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20               34882            0     1500  79  18   2   1            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21               34882            0     1500   3   1   1   1            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22              340646            0     1320   0   0   0   0             8.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23              340646            0     1320 293  20   2   1             8.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    temperature_max quality projectname          station latitude longitude</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1             12.8       4   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2             12.8       4   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3             12.8       4   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4             11.4       4   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5             11.4       4   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6             10.6       4   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7             10.6       4   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8             10.6       4   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9             11.2       4   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10            11.2       4   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11            11.2       4   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12            10.8       4   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13            10.8       4   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14            12.4       4   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15            12.4       4   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16            10.6       4   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17            10.6       4   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18            10.6       4   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19            11.2       4   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20            11.2       4   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21            11.2       4   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22            10.8       4   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23            10.8       4   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      mooring_type receiver    deploy_date_time   recover_date_time</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    valid_data_until_datetime</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3        2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9        2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14       2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15       2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16       2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17       2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18       2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23       2020-07-13 10:30:00</span>
 <span class="r-in"><span><span class="fu">getCpodData</span><span class="op">(</span><span class="st">"2020-04-19"</span>, <span class="st">"2020-04-21"</span>, processing <span class="op">=</span> <span class="st">"Raw"</span>,</span></span>
 <span class="r-in"><span>quality <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Hi"</span>, <span class="st">"Lo"</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"1 day"</span>, params <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - Query mode: Post request to OpenCPU server</span>
@@ -314,126 +347,166 @@ Need valid authentication to access the entire data.To get an account, register 
 <span class="r-out co"><span class="r-pr">#&gt;</span> 37          6168 2020-04-19     NBHF        52050                   1487</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 38          6168 2020-04-20 Dolphins            0                      0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 39          6168 2020-04-20    sonar            0                      0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    number_clicks_total lost_minutes recorded dpm dph dpd quality projectname</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                17983            0     1440   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                  572            0       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                  572            0       10   2   1   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                  572            0       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                17983            0     1440  24   3   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                21203            0     1440   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                21203            0     1440   9   3   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                21203            0     1440   2   1   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9                17983            0     1440  36   9   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10                 218            0       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11              109383            3     1440   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12              109383            3     1440 261  22   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13              329189           18     1440   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14              329189           18     1440 410  21   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15                 218            0       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16                  56            0       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17               16731            0     1440   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18               29732            0     1440   3   3   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19               29732            0     1440 164  15   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20               29732            0     1440   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21                  56            0       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22                  56            0       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23               16731            0     1440 113  17   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24               16731            0     1440   3   1   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25                  22            0       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26                3384            0     1440   8   3   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27                3384            0     1440   2   1   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28               10858            0     1440  14   5   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29               10858            0     1440  22   5   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30                  22            0       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31             5394317         1175     1440   3   3   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32             1630852          214     1440   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33               40950           10       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34               40950           10       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35               40950           10       10   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36             1630852          214     1440   2   1   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37             1630852          214     1440  38  12   1       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38             5394317         1175     1440   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39             5394317         1175     1440   0   0   0       3   Lifewatch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             station latitude longitude   mooring_type receiver</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  bpns-Nautica Ena  51.3007    2.8809 bottom-mooring POD-2977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   bpns-Faulbaums  51.3345    2.6150 bottom-mooring POD-3219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24     bpns-Grafton  51.4065    2.8190 bottom-mooring POD-3331</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30 bpns-Nautica Ena  51.3007    2.8814 bottom-mooring POD-3401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39 bpns-Buitenratel  51.2403    2.5047 bottom-mooring POD-3416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       deploy_date_time   recover_date_time valid_data_until_datetime</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2020-03-04 15:30:00 2020-07-17 09:00:00       2020-05-10 20:15:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 2020-03-04 13:35:00 2020-07-13 10:30:00       2020-07-13 10:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24 2020-03-04 10:00:00 2020-07-13 13:25:00       2020-07-13 13:25:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25 2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26 2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27 2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28 2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29 2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30 2019-10-24 14:42:00 2020-05-05 10:29:00       2020-05-01 18:24:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31 2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32 2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33 2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34 2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35 2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36 2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37 2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38 2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39 2019-10-24 09:15:00 2020-05-04 14:00:00       2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    number_clicks_total lost_minutes recorded dpm dph dpd temperature_min</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                17983            0     1440   0   0   0             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                  572            0       10   0   0   0            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                  572            0       10   2   1   1            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                  572            0       10   0   0   0            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                17983            0     1440  24   3   1             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                21203            0     1440   0   0   0             9.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                21203            0     1440   9   3   1             9.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                21203            0     1440   2   1   1             9.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                17983            0     1440  36   9   1             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                 218            0       10   0   0   0            10.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11              109383            3     1440   0   0   0            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12              109383            3     1440 261  22   1            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13              329189           18     1440   0   0   0             8.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14              329189           18     1440 410  21   1             8.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                 218            0       10   0   0   0            10.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                  56            0       10   0   0   0            10.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17               16731            0     1440   0   0   0            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18               29732            0     1440   3   3   1            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19               29732            0     1440 164  15   1            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20               29732            0     1440   0   0   0            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                  56            0       10   0   0   0            10.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                  56            0       10   0   0   0            10.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23               16731            0     1440 113  17   1            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24               16731            0     1440   3   1   1            10.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                  22            0       10   0   0   0            11.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26                3384            0     1440   8   3   1            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                3384            0     1440   2   1   1            10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28               10858            0     1440  14   5   1             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29               10858            0     1440  22   5   1             9.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                  22            0       10   0   0   0            11.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31             5394317         1175     1440   3   3   1             8.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32             1630852          214     1440   0   0   0             9.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33               40950           10       10   0   0   0            10.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34               40950           10       10   0   0   0            10.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35               40950           10       10   0   0   0            10.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36             1630852          214     1440   2   1   1             9.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37             1630852          214     1440  38  12   1             9.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38             5394317         1175     1440   0   0   0             8.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39             5394317         1175     1440   0   0   0             8.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    temperature_max quality projectname          station latitude longitude</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1             10.6       3   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2             10.4       3   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3             10.4       3   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4             10.4       3   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5             10.6       3   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6             10.6       3   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7             10.6       3   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8             10.6       3   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9             10.6       3   Lifewatch bpns-Nautica Ena  51.3007    2.8809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10            10.6       3   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11            10.8       3   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12            10.8       3   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13            10.8       3   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14            10.8       3   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15            10.6       3   Lifewatch   bpns-Faulbaums  51.3345    2.6150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16            10.6       3   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17            11.2       3   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18            11.2       3   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19            11.2       3   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20            11.2       3   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21            10.6       3   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22            10.6       3   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23            11.2       3   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24            11.2       3   Lifewatch     bpns-Grafton  51.4065    2.8190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25            12.0       3   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26            11.4       3   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27            11.4       3   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28            12.4       3   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29            12.4       3   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30            12.0       3   Lifewatch bpns-Nautica Ena  51.3007    2.8814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31            12.8       3   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32            12.8       3   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33            12.2       3   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34            12.2       3   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35            12.2       3   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36            12.8       3   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37            12.8       3   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38            12.8       3   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39            12.8       3   Lifewatch bpns-Buitenratel  51.2403    2.5047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      mooring_type receiver    deploy_date_time   recover_date_time</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  bottom-mooring POD-2977 2020-03-04 15:30:00 2020-07-17 09:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 bottom-mooring POD-3219 2020-03-04 13:35:00 2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 bottom-mooring POD-3331 2020-03-04 12:00:00 2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25 bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26 bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27 bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28 bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29 bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30 bottom-mooring POD-3401 2019-10-24 14:42:00 2020-05-05 10:29:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31 bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32 bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33 bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34 bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35 bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36 bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37 bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38 bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39 bottom-mooring POD-3416 2019-10-24 09:15:00 2020-05-04 14:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    valid_data_until_datetime</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9        2020-05-10 20:15:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15       2020-07-13 10:30:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24       2020-07-13 13:25:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25       2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26       2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27       2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28       2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29       2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30       2020-05-01 18:24:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31       2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32       2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33       2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34       2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35       2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36       2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37       2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38       2020-05-04 10:27:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39       2020-05-04 10:27:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $par</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $par$daterange</span>

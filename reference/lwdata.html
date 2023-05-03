@@ -105,15 +105,30 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lwdata</span><span class="op">(</span>datatype <span class="op">=</span> <span class="st">"Buoy data"</span>, from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="fl">90</span><span class="op">)</span>,</span>
-<span>  to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>, stations <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Buoy at C-Power"</span><span class="op">)</span>,</span>
-<span>  binSize <span class="op">=</span> <span class="st">"60 min"</span>, calc <span class="op">=</span> <span class="st">"Time bins"</span>, UrlPar <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  code <span class="op">=</span> <span class="cn">NULL</span>, posres <span class="op">=</span> <span class="fl">2</span>, logged <span class="op">=</span> <span class="cn">FALSE</span>, projectlist <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  tagprojectlist <span class="op">=</span> <span class="cn">NULL</span>, loggedInUserPostgresUsername <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  loggedInUserPostgresPwd <span class="op">=</span> <span class="cn">NULL</span>, phylasp <span class="op">=</span> <span class="st">"#2#51#"</span>,</span>
-<span>  taxranks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>Species <span class="op">=</span> <span class="fl">220</span><span class="op">)</span>, qualities <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Hi"</span><span class="op">)</span>,</span>
-<span>  processing <span class="op">=</span> <span class="st">"Validated"</span>, minband <span class="op">=</span> <span class="fl">10</span>, maxband <span class="op">=</span> <span class="fl">10</span>,</span>
-<span>  params <span class="op">=</span> <span class="cn">FALSE</span>, force_opencpu <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lwdata</span><span class="op">(</span></span>
+<span>  datatype <span class="op">=</span> <span class="st">"Buoy data"</span>,</span>
+<span>  from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="fl">90</span><span class="op">)</span>,</span>
+<span>  to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  stations <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Buoy at C-Power"</span><span class="op">)</span>,</span>
+<span>  binSize <span class="op">=</span> <span class="st">"60 min"</span>,</span>
+<span>  calc <span class="op">=</span> <span class="st">"Time bins"</span>,</span>
+<span>  UrlPar <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  code <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  posres <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  logged <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  projectlist <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  tagprojectlist <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  loggedInUserPostgresUsername <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  loggedInUserPostgresPwd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  phylasp <span class="op">=</span> <span class="st">"#2#51#"</span>,</span>
+<span>  taxranks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>Species <span class="op">=</span> <span class="fl">220</span><span class="op">)</span>,</span>
+<span>  qualities <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Hi"</span><span class="op">)</span>,</span>
+<span>  processing <span class="op">=</span> <span class="st">"Validated"</span>,</span>
+<span>  minband <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  maxband <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  params <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  force_opencpu <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
