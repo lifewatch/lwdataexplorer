@@ -4,8 +4,7 @@
 \alias{getAcousticData}
 \title{Retrieve Acoustic data from the LifeWatch project}
 \usage{
-getAcousticData(startdate, stopdate, minband, maxband, by,
-  params = FALSE, ...)
+getAcousticData(startdate, stopdate, minband, maxband, by, params = FALSE, ...)
 }
 \arguments{
 \item{startdate}{Starting date for the query in UTC. Must be a character date of the form "2020-02-26T10:35:00.00Z"}
@@ -23,10 +22,10 @@ getAcousticData(startdate, stopdate, minband, maxband, by,
 \item{...}{Params to be passed to lw_check_lwdataserver().}
 }
 \value{
-Dataframe with the buoy-data within the specified daterange and location.
+Dataframe with the acoustic data within the specified daterange and location.
 }
 \description{
-Retrieves the aggregated buoy data from the LifeWatch project.
+Retrieve Acoustic data from the LifeWatch project
 }
 \examples{
 getAcousticData("2021-03-26T10:35:00.00Z", "2021-03-26T10:45:00.00Z",

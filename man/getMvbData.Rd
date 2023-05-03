@@ -4,8 +4,18 @@
 \alias{getMvbData}
 \title{Retrieve MVB-data from the LifeWatch project}
 \usage{
-getMvbData(startdate, stopdate, parameters, stations = NULL, by, calc,
-  usr = NULL, pwd = NULL, params = FALSE, ...)
+getMvbData(
+  startdate,
+  stopdate,
+  parameters,
+  stations = NULL,
+  by,
+  calc,
+  usr = NULL,
+  pwd = NULL,
+  params = FALSE,
+  ...
+)
 }
 \arguments{
 \item{startdate}{Starting date for the query. Without a login, this is restricted to the last month}

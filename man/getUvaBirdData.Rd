@@ -4,8 +4,16 @@
 \alias{getUvaBirdData}
 \title{Retrieve UVA-bird-data from the LifeWatch project}
 \usage{
-getUvaBirdData(startdate, stopdate, tagcodes, by, usr = NULL,
-  pwd = NULL, params = FALSE, ...)
+getUvaBirdData(
+  startdate,
+  stopdate,
+  tagcodes,
+  by,
+  usr = NULL,
+  pwd = NULL,
+  params = FALSE,
+  ...
+)
 }
 \arguments{
 \item{startdate}{Starting date for the query}

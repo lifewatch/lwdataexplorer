@@ -1,6 +1,5 @@
 #' Retrieve Acoustic data from the LifeWatch project
 #'
-#' Retrieves the aggregated buoy data from the LifeWatch project.
 #' @param startdate Starting date for the query in UTC. Must be a character date of the form "2020-02-26T10:35:00.00Z"
 #' @param stopdate Stopping date for the query in UTC. Must be a character of the form "2020-02-26T11:35:00.00Z"
 #' @param minband lower frequency band from which the sound value will be retrieved
@@ -8,7 +7,7 @@
 #' @param by Sample period, one of "1 min", "1 hour" or "1 day"
 #' @param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
 #' @param ... Params to be passed to lw_check_lwdataserver().
-#' @return Dataframe with the buoy-data within the specified daterange and location.
+#' @return Dataframe with the acoustic data within the specified daterange and location.
 #' @examples
 #' getAcousticData("2021-03-26T10:35:00.00Z", "2021-03-26T10:45:00.00Z",
 #'                 minband = 9, maxband = 11, by = "1 min")
