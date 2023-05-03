@@ -4,12 +4,14 @@
 \alias{listEtnProjects}
 \title{Retrieve an overview of the ETN data.}
 \usage{
-listEtnProjects(usr = NULL, pwd = NULL)
+listEtnProjects(usr = NULL, pwd = NULL, ...)
 }
 \arguments{
 \item{usr}{Username to connect to ETN database}
 
 \item{pwd}{Password to connect to ETN database}
+
+\item{...}{params to be passer to lw_check_lwdataserver}
 }
 \value{
 Dataframe with name and type of networks.

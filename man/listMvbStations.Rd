@@ -4,12 +4,14 @@
 \alias{listMvbStations}
 \title{List available stations for Meetnet Vlaamse Banken (MVB)}
 \usage{
-listMvbStations(usr = NULL, pwd = NULL)
+listMvbStations(usr = NULL, pwd = NULL, ...)
 }
 \arguments{
 \item{usr}{Username to connect to ETN database}
 
 \item{pwd}{Password to connect to ETN database}
+
+\item{...}{params to be passer to lw_check_lwdataserver}
 }
 \description{
 To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.

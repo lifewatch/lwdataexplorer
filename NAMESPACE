@@ -3,6 +3,7 @@
 export(getAcousticData)
 export(getBatsData)
 export(getBuoyData)
+export(getCTDData)
 export(getCpodData)
 export(getEtnData)
 export(getFlowcamData)
