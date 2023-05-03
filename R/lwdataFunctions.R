@@ -87,7 +87,7 @@ lwdata<- function(
 #'@param type Datatype as defined in LWDE
 #'@param input LWDE input element, as a list. Can be obtained by using shiny::reactiveValuesToList()
 #'@param USER LWDE USER element, as a list. Can be obtained by using shiny::reactiveValuesToList()
-#'@param ... Params to be passed to lw_check_lwdataserver()
+#' @param ... Reserved for internal use.
 #'@return Returns dataframe of the requested datatype
 #'@examples
 #'lwdata2("listETNprojects")
@@ -120,7 +120,7 @@ lwdata2 = function(type,
 #' To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
-#'@param ... params to be passer to lw_check_lwdataserver
+#' @param ... Reserved for internal use.
 #'@return Dataframe with name and type of networks.
 #'@examples
 #'listEtnProjects()
@@ -140,7 +140,7 @@ listEtnProjects <- function(usr = NULL,
 #' To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
-#'@param ... params to be passer to lw_check_lwdataserver
+#' @param ... Reserved for internal use.
 #'@export
 listMvbStations <- function(usr = NULL,
                             pwd = NULL, ...){
@@ -172,7 +172,7 @@ listUvaTags <- function(usr = NULL,
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@return Dataframe with the aggregated zooscan-data within the specified daterange.
 #'@examples
 #'getZooscanData("2011-01-01", "2021-04-14") # Only data
@@ -200,7 +200,7 @@ getZooscanData <- function(startdate, stopdate, params = FALSE, ...){
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@return Dataframe with the aggregated flowcam-data within the specified daterange.
 #'@examples
 #'getFlowcamData("2020-04-19", "2020-04-21") # Only data
@@ -230,7 +230,7 @@ getFlowcamData <- function(startdate, stopdate, params = FALSE, ...){
 #'@param stopdate Stopping date for the query
 #'@param by Sample period, one of "1 min", "60 min" or "1 day"
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@return Dataframe with the aggregated batcorder-data within the specified daterange.
 #'@examples
 #'getBatsData("2014-08-01", "2014-09-01", "1 min")
@@ -262,7 +262,7 @@ getBatsData <- function(startdate, stopdate, by, params = FALSE, ...){
 #'@param stopdate Stopping date for the query
 #'@param stations list of stations to be included in the query, currently list c("Buoy at C-Power","Spuikom Sluice","Buoy in Spuikom", "Ostend Research Tower"). Use \code{stations = "All"} to get all stations .
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@return Dataframe with the buoy-data within the specified daterange and location.
 #'@examples
 #'getBuoyData("2021-03-19", "2021-04-21", "All")
@@ -301,7 +301,7 @@ getBuoyData <- function(startdate, stopdate, stations,
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@return Dataframe with the specified ETN data.
 #'@examples
 #'getEtnData("2020-04-19", "2020-04-21", action = "Time bins", by = "1 day",
@@ -348,7 +348,7 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@return Dataframe with the specified C-POD data.
 #'@examples
 #'getCpodData("2020-04-19", "2020-04-21", processing = "Validated", by = "1 week")
@@ -394,7 +394,7 @@ getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod"
 #'@param usr Username to connect to database
 #'@param pwd Password to connect to database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@return Dataframe with the specified MVB data.
 #'@examples
 #'getMvbData(Sys.Date() - 30, Sys.Date() + 1, parameters = 'Tide TAW',
@@ -440,7 +440,7 @@ getMvbData <- function(startdate, stopdate, parameters, stations = NULL, by, cal
 #'@param usr Username to connect to database
 #'@param pwd Password to connect to database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@return Dataframe with the specified bird tracking data.
 #'@examples
 #'getUvaBirdData("2013-06-10", "2013-06-14", tagcodes = c("719","6013","610"), by = "1 day")
@@ -479,7 +479,7 @@ getUvaBirdData <- function(startdate, stopdate, tagcodes, # p=2,
 #'@param stations list of stations to be included in the query. Use \code{stations="all"} to get all stations.
 #'@param categories List of categories to return in query, one of  ("SPM", "CTD", "Nutrients", "Secchi", "Pigments"). Use \code{categories="All"} to get all categories
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@return Dataframe with the Station-data.
 #'@examples
 #'getStationData("2019-07-22", "2019-07-23", stations = "all", categories = "all")
@@ -512,7 +512,7 @@ getStationData <- function(startdate, stopdate, stations = "all", categories = "
 #'@param by Time grouping for data aggregation, one of ("1 day","60 min","10 min","1 min")
 #'@return Dataframe with the specified data.
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#'@param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'@examples
 #'getUnderwayData("2021-03-15", "2021-04-13", "1 day")
 #'getUnderwayData("2021-03-15", "2021-04-13", "60 min", params = TRUE)

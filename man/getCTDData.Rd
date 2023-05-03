@@ -17,7 +17,7 @@ getCTDData(startdate, stopdate, stations = "All", by, params = FALSE, ...)
 
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
 
-\item{...}{params to be passed to lw_check_lwdataserver().}
+\item{...}{Reserved for internal use.}
 }
 \value{
 Dataframe with the CTD data within the specified daterange and location.

@@ -6,7 +6,7 @@
 #' @param maxband upper frequency band from which the sound value will be retrieved
 #' @param by Sample period, one of "1 min", "1 hour" or "1 day"
 #' @param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#' @param ... Params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #' @return Dataframe with the acoustic data within the specified daterange and location.
 #'
 #' @examples

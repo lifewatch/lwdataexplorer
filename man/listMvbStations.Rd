@@ -11,7 +11,7 @@ listMvbStations(usr = NULL, pwd = NULL, ...)
 
 \item{pwd}{Password to connect to ETN database}
 
-\item{...}{params to be passer to lw_check_lwdataserver}
+\item{...}{Reserved for internal use.}
 }
 \description{
 To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.

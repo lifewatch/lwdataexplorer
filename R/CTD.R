@@ -5,7 +5,7 @@
 #' @param stations  List of stations to be included in the query. Use stations = "All" to get all stations. See stations list in details section.
 #' @param by Aggregation criteria. One of c("Per meter", "Per cast")
 #' @param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#' @param ... params to be passed to lw_check_lwdataserver().
+#' @param ... Reserved for internal use.
 #'
 #' @details
 #'

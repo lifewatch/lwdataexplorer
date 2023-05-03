@@ -13,7 +13,7 @@ lwdata2(type, input = NULL, USER = NULL, ...)
 
 \item{USER}{LWDE USER element, as a list. Can be obtained by using shiny::reactiveValuesToList()}
 
-\item{...}{Params to be passed to lw_check_lwdataserver()}
+\item{...}{Reserved for internal use.}
 }
 \value{
 Returns dataframe of the requested datatype
