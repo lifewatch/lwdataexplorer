@@ -39,7 +39,7 @@ Data from buoys installed in the Belgian Part of the North Sea.
 * **Latitude**: Latitude in decimal degrees, WGS84.               
 * **Longitude**: Longitude in decimal degrees, WGS84 .               
 * **Air temperature (°C)**: Air temperature in °C.   
-* **AtmPress (mBar)**: Atmospheric pressure in mBar.
+* **AtmPress (dBar)**: Atmospheric pressure in dBar.
 * **Avg Wind direction (deg)**: Direction of the wind in deg.
 * **Avg Wind speed (m/s)**: Speed of the wind in m/s.    
 * **Chlorophyll (µg/L)**: Concentration of Chlorophyll expressed in µg/L.  
