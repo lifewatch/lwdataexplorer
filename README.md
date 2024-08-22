@@ -33,7 +33,7 @@ download data from your browser.
 
 You can find more information about these projects and the LifeWatch
 Data Explorer in this link: -
-<https://www.lifewatch.be/en/lifewatch-data-explorer>
+<https://lifewatch.be/local-observation-data>
 
 There is a function for each specific data type. For instance, to
 retrieve data from the moonitoring buoy on the Belgian Part of the North
