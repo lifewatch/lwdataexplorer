@@ -14,7 +14,7 @@ See the package website: <https://lifewatch.github.io/lwdataexplorer/>
 
 ## Installation
 
-You can install the development version of deleteme from
+You can install the development version of lwdataexplorer from
 [GitHub](https://github.com/lifewatch/lwdataexplorer) using
 [devtools](https://github.com/r-lib/devtools):
 
