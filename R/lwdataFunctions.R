@@ -24,7 +24,7 @@
 #' @param phylasp .
 #' @param taxranks .
 #' @param qualities .
-#' @param processing (CPOD) One of ('Validated','Raw')
+#' @param processing (CPOD) 'Raw'
 #' @param force_opencpu boolean. If true, the query will be forced to run through the OpenCPU server.
 #' @param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
 #' @inheritParams getAcousticData
@@ -39,12 +39,12 @@
 #' }
 #' @export
 lwdata<- function(
-  datatype='Buoy data', from=as.character(Sys.Date()-90), to=as.character(Sys.Date()),
-  stations=c("Buoy at C-Power"), binSize="60 min", calc='Time bins', UrlPar=NULL,
-  code=NULL, posres=2, logged=FALSE, projectlist=NULL, tagprojectlist=NULL,
-  loggedInUserPostgresUsername = NULL, loggedInUserPostgresPwd = NULL,
-  phylasp='#2#51#', taxranks=c(Species=220), qualities=c("Hi"),
-  processing='Validated', minband=10, maxband=10, params = FALSE, force_opencpu = FALSE) {
+    datatype='Buoy data', from=as.character(Sys.Date()-90), to=as.character(Sys.Date()),
+    stations=c("Buoy at C-Power"), binSize="60 min", calc='Time bins', UrlPar=NULL,
+    code=NULL, posres=2, logged=FALSE, projectlist=NULL, tagprojectlist=NULL,
+    loggedInUserPostgresUsername = NULL, loggedInUserPostgresPwd = NULL,
+    phylasp='#2#51#', taxranks=c(Species=220), qualities=c("Hi"),
+    processing='Validated', minband=10, maxband=10, params = FALSE, force_opencpu = FALSE) {
 
   .Deprecated("get<DATATYPE>Data")
 
@@ -342,21 +342,22 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 #' Need valid authentication to access the entire data.To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
-#'@param processing One of ('Validated','Raw'). If "Validated", the quality parameter is ignored.
-#'@param quality One or more of ("Hi","Mod", "Lo"). This parameter is ignored if processing = "Validated"
-#'@param by Sample period, one of ("1 day", "1 week", "60 min","10 min", "1 min")
+#'@param processing Data processing, currently only "Raw".
+#'@param quality One or more of ("Hi","Mod", "Lo").
+#'@param by Sample period, currently only "1 min"
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
 #' @param ... Reserved for internal use.
+#'@param projectcode One or more of ("Apelafico_acoustics", "CODEVCO", "Lifewatch_extra", "Lifewatch_test", "PAM-Borssele", "PelFish", "PhD_Parcerisas", "PureWind", "STRAITS_PAM", "cpod-lifewatch", "cpod-od-natuur")
+#'@param species One or more of ("Dolphins","NBHF","sonar").
 #'@return Dataframe with the specified C-POD data.
 #'@examples
-#'getCpodData("2020-04-19", "2020-04-21", processing = "Validated", by = "1 week")
-#'getCpodData("2020-04-19", "2020-04-21", processing = "Raw",
-#'quality = c("Hi", "Lo"), by = "1 day", params = TRUE)
+#'getCpodData("2020-04-20", "2020-04-21", quality = c("Hi", "Lo"), params = TRUE)
+#'getCpodData("2020-04-20", "2020-04-21", quality = c("Hi", "Lo"), params = FALSE, species = c("Dolphins", "NBHF"), projectcode = "cpod-lifewatch")
 #'@export
-getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod", "Lo"), by,
-                        usr = NULL, pwd = NULL, params = FALSE, ...){
+getCpodData <- function(startdate, stopdate, processing = "Raw", quality = c("Hi", "Mod", "Lo"), by = "1 min",
+                        usr = NULL, pwd = NULL, params = FALSE, projectcode = NULL, species = NULL, ...){
   input=list()
   input$daterange = c(as.character(as.Date(startdate)), as.character(as.Date(stopdate)))
   input$type = "CPOD data"
@@ -367,6 +368,9 @@ getCpodData <- function(startdate, stopdate, processing, quality = c("Hi", "Mod"
   input$processing=processing
 
   input$quality=quality
+
+  input$projectcode = projectcode
+  input$species = species
 
   USER$username=usr
   USER$password=pwd

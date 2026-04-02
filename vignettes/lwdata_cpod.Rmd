@@ -30,10 +30,10 @@ Permanent Cetacean passive acoustic sensor network in the Belgian part of the No
 ## How to interpret this dataset
  
 ### Query options
-* **Processing**: Type of data: one of Raw or Validated
+* **Processing**: Type of data: Raw
 * **Timeframe**: Starting and stopping date for the query.
 * **Quality**:  Level of processing: default Hi+Mod.
-* **Sample period**: Counts aggregated. One of 1 week, 1 day or 60 min. Also per minute when choosing Processing = Raw.
+* **Sample period**: Counts aggregated. Currently only per minute with processing = Raw.
  
 ### Available columns
 * **deployment_fk**: Link to the deployment metadata in the European Tracking Network database
@@ -48,8 +48,11 @@ Permanent Cetacean passive acoustic sensor network in the Belgian part of the No
 * **Dph**: Detection positive hours, or a mammal was detected in that hour. A click train of the selected species was recorded in that hour.
 * **Dpd**: Detection positive days, or a mammal was detected that day. A click train of the selected species was recorded in that day.
 * **Dpw**: Detection positive weeks, or a mammal was detected that day. A click train of the selected species was recorded in that week.
+* **Detections_bpm**: Buzz positive minute, 1 or 0.
 * **Quality**: RAW: 3=high; 2= mod; 1=low; Hi+mod=3; Hi+mod+low =3; Validated = hi+mod = 4.
 * **Projectname**: Name of the project.
+* **Projectcode**: Code of the project.
+* **Imis_dataset_id**: IMIS dataset id.
 * **Station**: name or code of sampling station or receiver code.
 * **Latitude**: Center latitude in decimal degrees, WGS84.
 * **Longitude**: Center longitude in decimal degrees, WGS84.

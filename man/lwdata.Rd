@@ -64,7 +64,7 @@ lwdata(
 
 \item{qualities}{.}
 
-\item{processing}{(CPOD) One of ('Validated','Raw')}
+\item{processing}{(CPOD) 'Raw'}
 
 \item{minband}{lower frequency band from which the sound value will be retrieved}
 

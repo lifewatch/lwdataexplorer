@@ -1,11 +1,9 @@
 ## CPOD
-cpod_processing <- 'Validated'
 cpod_quality <- c("Hi", "Mod")
-cpod_by="1 week"
 
 # Get data CPOD
-cpod_list <- getCpodData("2020-04-19", "2020-04-21", cpod_processing, cpod_quality, cpod_by, params = TRUE)
-cpod_df <- getCpodData("2020-04-19", "2020-04-21", cpod_processing, cpod_quality, cpod_by, params = FALSE)
+cpod_list <- getCpodData("2020-04-19", "2020-04-21", quality = cpod_quality, params = TRUE)
+cpod_df   <- getCpodData("2020-04-19", "2020-04-21", quality = cpod_quality, params = FALSE)
 
 # Test CPOD
 test_that("CPOD", {
@@ -15,6 +13,6 @@ test_that("CPOD", {
   expect_equal(class(cpod_list$mdf), 'data.frame')
   expect_equal(class(cpod_df), 'data.frame')
   expect_warning(
-    getCpodData('9999-12-01', '9999-12-31', cpod_processing, cpod_quality, cpod_by)
+    getCpodData('9999-12-01', '9999-12-31', quality = cpod_quality)
   )
 })

@@ -7,12 +7,14 @@
 getCpodData(
   startdate,
   stopdate,
-  processing,
+  processing = "Raw",
   quality = c("Hi", "Mod", "Lo"),
-  by,
+  by = "1 min",
   usr = NULL,
   pwd = NULL,
   params = FALSE,
+  projectcode = NULL,
+  species = NULL,
   ...
 )
 }
@@ -21,17 +23,21 @@ getCpodData(
 
 \item{stopdate}{Stopping date for the query}
 
-\item{processing}{One of ('Validated','Raw'). If "Validated", the quality parameter is ignored.}
+\item{processing}{Data processing, currently only "Raw".}
 
-\item{quality}{One or more of ("Hi","Mod", "Lo"). This parameter is ignored if processing = "Validated"}
+\item{quality}{One or more of ("Hi","Mod", "Lo").}
 
-\item{by}{Sample period, one of ("1 day", "1 week", "60 min","10 min", "1 min")}
+\item{by}{Sample period, currently only "1 min"}
 
 \item{usr}{Username to connect to ETN database}
 
 \item{pwd}{Password to connect to ETN database}
 
 \item{params}{If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.}
+
+\item{projectcode}{One or more of ("Apelafico_acoustics", "CODEVCO", "Lifewatch_extra", "Lifewatch_test", "PAM-Borssele", "PelFish", "PhD_Parcerisas", "PureWind", "STRAITS_PAM", "cpod-lifewatch", "cpod-od-natuur")}
+
+\item{species}{One or more of ("Dolphins","NBHF","sonar").}
 
 \item{...}{Reserved for internal use.}
 }
@@ -43,7 +49,6 @@ Retrieves the C-POD (Cetacean Acoustic Hydrophone Network) data from the LifeWat
 Need valid authentication to access the entire data.To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
 }
 \examples{
-getCpodData("2020-04-19", "2020-04-21", processing = "Validated", by = "1 week")
-getCpodData("2020-04-19", "2020-04-21", processing = "Raw",
-quality = c("Hi", "Lo"), by = "1 day", params = TRUE)
+getCpodData("2020-04-20", "2020-04-21", quality = c("Hi", "Lo"), params = TRUE)
+getCpodData("2020-04-20", "2020-04-21", quality = c("Hi", "Lo"), params = FALSE, species = c("Dolphins", "NBHF"), projectcode = "cpod-lifewatch")
 }
