@@ -149,13 +149,13 @@
 </h3>
 <ul>
 <li>
-<strong>Processing</strong>: Type of data: one of Raw or Validated</li>
+<strong>Processing</strong>: Type of data: Raw</li>
 <li>
 <strong>Timeframe</strong>: Starting and stopping date for the query.</li>
 <li>
 <strong>Quality</strong>: Level of processing: default Hi+Mod.</li>
 <li>
-<strong>Sample period</strong>: Counts aggregated. One of 1 week, 1 day or 60 min. Also per minute when choosing Processing = Raw.</li>
+<strong>Sample period</strong>: Counts aggregated. Currently only per minute with processing = Raw.</li>
 </ul>
 </div>
 <div class="section level3">
@@ -187,9 +187,15 @@
 <li>
 <strong>Dpw</strong>: Detection positive weeks, or a mammal was detected that day. A click train of the selected species was recorded in that week.</li>
 <li>
+<strong>Detections_bpm</strong>: Buzz positive minute, 1 or 0.</li>
+<li>
 <strong>Quality</strong>: RAW: 3=high; 2= mod; 1=low; Hi+mod=3; Hi+mod+low =3; Validated = hi+mod = 4.</li>
 <li>
 <strong>Projectname</strong>: Name of the project.</li>
+<li>
+<strong>Projectcode</strong>: Code of the project.</li>
+<li>
+<strong>Imis_dataset_id</strong>: IMIS dataset id.</li>
 <li>
 <strong>Station</strong>: name or code of sampling station or receiver code.</li>
 <li>
@@ -212,7 +218,7 @@
 <h2 id="how-to-cite-these-data">How to cite these data<a class="anchor" aria-label="anchor" href="#how-to-cite-these-data"></a>
 </h2>
 <blockquote>
-<p>Flanders Marine Institute (VLIZ), Belgium; (2021): LifeWatch observatory data: permanent Cetacean passive acoustic sensor network in the Belgian part of the North Sea. Marine Data Archive. <a href="https://doi.org/10.14284/639" class="external-link uri">https://doi.org/10.14284/639</a>. Accessed through the LifeWatch Data Explorer / lwdataexplorer R package.</p>
+<p>Flanders Marine Institute (VLIZ), Belgium; (2025): LifeWatch observatory data: Permanent Cetacean passive acoustic sensor network in the Belgian Part of the North Sea. Marine Data Archive. <a href="https://doi.org/10.14284/781" class="external-link uri">https://doi.org/10.14284/781</a>. Accessed through the LifeWatch Data Explorer / lwdataexplorer R package.</p>
 </blockquote>
 <p><b>Availability:</b><a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="external-link"><img alt="Creative Commons License" style="border:0px;height:15px;width:80px;vertical-align:middle;" src="https://www.marinespecies.org/aphia/images/cc/by.png"></a> This dataset is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="external-link">Creative Commons Attribution 4.0 International License</a>.</p>
 <p>Please acknowledge as: This work makes use of the LifeWatch observation data and infrastructure (provided by VLIZ and RBINS) funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</p>
@@ -235,7 +241,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
       </footer>
