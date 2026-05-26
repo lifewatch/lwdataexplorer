@@ -149,13 +149,17 @@
 </h3>
 <ul>
 <li>
-<strong>Processing</strong>: Type of data: Raw</li>
+<strong>Processing</strong>: Data processing. Currently only <code>Raw</code>.</li>
 <li>
 <strong>Timeframe</strong>: Starting and stopping date for the query.</li>
 <li>
-<strong>Quality</strong>: Level of processing: default Hi+Mod.</li>
+<strong>Quality</strong>: One or more of <code>Hi</code>, <code>Mod</code>, <code>Lo</code>.</li>
 <li>
-<strong>Sample period</strong>: Counts aggregated. Currently only per minute with processing = Raw.</li>
+<strong>Sample period</strong>: Counts aggregated. Currently only <code>1 min</code>.</li>
+<li>
+<strong>Project code</strong>: One or more project codes to include in the query.</li>
+<li>
+<strong>Species</strong>: One or more of <code>Dolphins</code>, <code>NBHF</code>, or <code>sonar</code>.</li>
 </ul>
 </div>
 <div class="section level3">
@@ -163,49 +167,59 @@
 </h3>
 <ul>
 <li>
-<strong>deployment_fk</strong>: Link to the deployment metadata in the European Tracking Network database</li>
+<strong>deployment_fk</strong>: Deployment ID, link to the deployment metadata in the European Tracking Network (ETN) database</li>
 <li>
-<strong>Time</strong>: Time in UTC, beginning of sample time bin.</li>
+<strong>species_preferences</strong>: Species setting used during classification. Values: No_Dolphins, No_Sonar, No_Dolphins&amp;Sonar, NA.</li>
 <li>
-<strong>Species</strong>: NBHF = Harbour porpoises (Phocoena phocoena); other cet = other cetaceans; Sonar = sonar</li>
+<strong>additional_classifier</strong>: Additional classifier used during processing. Values: Default, Hel1, Genenc, advancedKerno, NA.</li>
 <li>
-<strong>Milliseconds</strong>: Duration of click trains in the specified time bin.</li>
+<strong>time</strong>: Time (hh:mm:ss; 24 h, UTC) at the beginning of sample time bin</li>
 <li>
-<strong>Number_clicks_filtered</strong>: recognized clicks of a species.</li>
+<strong>species</strong>: Species as determined by cpod.exe, can be “NBHF”, “Dolphins”, “sonar”, or “Unclassed”</li>
 <li>
-<strong>Number_clicks_total</strong>: total number of recorded clicks.</li>
+<strong>detections_bpm</strong>: Buzz positive minute (BPM), detection of a high click repetition rate within a sampling minute (1 for detected, 0 for undetected)</li>
 <li>
-<strong>Lost_minutes</strong>: Minutes in which the number of clicks was larger than 4096.</li>
+<strong>milliseconds</strong>: Duration of the logged train(s), in milliseconds</li>
 <li>
-<strong>Recorded</strong>: Minutes recording.</li>
+<strong>number_clicks_filtered</strong>: Number of clicks classified as coming from the stated species at the specified time</li>
 <li>
-<strong>Dpm</strong>: Detection positive minutes, or a mammal was detected in that minute. A click train of the selected species was recorded in that minute.</li>
+<strong>number_clicks_total</strong>: Total number of clicks at the specified time</li>
 <li>
-<strong>Dph</strong>: Detection positive hours, or a mammal was detected in that hour. A click train of the selected species was recorded in that hour.</li>
+<strong>lost_minutes</strong>: Indicates the number of minutes in which the POD reached its threshold and therefore only recorded those minutes partially due to very high acoustic activity or noise</li>
 <li>
-<strong>Dpd</strong>: Detection positive days, or a mammal was detected that day. A click train of the selected species was recorded in that day.</li>
+<strong>recorded</strong>: Indicates whether the POD was actively recording at the specified time or not (1 = true, 0 = false)</li>
 <li>
-<strong>Dpw</strong>: Detection positive weeks, or a mammal was detected that day. A click train of the selected species was recorded in that week.</li>
+<strong>dpm</strong>: Indicates if an individual of the specified species or group of species was detected within a sampling minute (1 for detected, 0 for undetected)</li>
 <li>
-<strong>Detections_bpm</strong>: Buzz positive minute, 1 or 0.</li>
+<strong>angle</strong>: Angle (°) at which the POD was oriented</li>
 <li>
-<strong>Quality</strong>: RAW: 3=high; 2= mod; 1=low; Hi+mod=3; Hi+mod+low =3; Validated = hi+mod = 4.</li>
+<strong>temperature_min</strong>: Minimum temperature recorded by the POD at the specified time</li>
 <li>
-<strong>Projectname</strong>: Name of the project.</li>
+<strong>temperature_max</strong>: Maximum temperature recorded by the POD at the specified time</li>
 <li>
-<strong>Projectcode</strong>: Code of the project.</li>
+<strong>quality</strong>: Indicates the quality of click train classification; 3=High/High and moderate/High, moderate and low; 2= Moderate; 1=Low</li>
 <li>
-<strong>Imis_dataset_id</strong>: IMIS dataset id.</li>
+<strong>projectcode</strong>: Abbreviation of the project related to the deployment</li>
 <li>
-<strong>Station</strong>: name or code of sampling station or receiver code.</li>
+<strong>projectname</strong>: Name of the project related to the deployment</li>
 <li>
-<strong>Latitude</strong>: Center latitude in decimal degrees, WGS84.</li>
+<strong>imis_dataset_id</strong>: Dataset ID as specified in the Integrated Marine Information System (IMIS; <a href="https://marineinfo.org/en/imis" class="external-link uri">https://marineinfo.org/en/imis</a>)</li>
 <li>
-<strong>Longitude</strong>: Center longitude in decimal degrees, WGS84.</li>
+<strong>station</strong>: Refers to a unique location of a specific latitude and longitude</li>
 <li>
-<strong>Mooring_type</strong>: Surface-buoy or bottom-mooring.</li>
+<strong>latitude</strong>: Latitude of the actual deployment location, in decimal degrees</li>
 <li>
-<strong>Receiver</strong>: Receiver: serial number of C-POD.</li>
+<strong>longitude</strong>: Longitude of the actual deployment location, in decimal degrees</li>
+<li>
+<strong>mooring_type</strong>: Type of mooring to which the POD is attached. Predefined options: surface-buoy, bottom-mooring, surface-wind-turbine</li>
+<li>
+<strong>receiver</strong>: Model and serial number of the POD</li>
+<li>
+<strong>deploy_date_time</strong>: Date and time the POD was deployed, in 24-hour UTC (yyyy-mm-dd hh:mm:ss)</li>
+<li>
+<strong>recover_date_time</strong>: Date and time the POD was recovered, in 24-hour UTC (yyyy-mm-dd hh:mm:ss)</li>
+<li>
+<strong>valid_data_until_datetime</strong>: Data and time until which valid data was recorded, in 24-hour UTC (yyyy-mm-dd hh:mm:ss)</li>
 </ul>
 </div>
 </div>
