@@ -30,34 +30,41 @@ Permanent Cetacean passive acoustic sensor network in the Belgian part of the No
 ## How to interpret this dataset
  
 ### Query options
-* **Processing**: Type of data: Raw
+* **Processing**: Data processing. Currently only `Raw`.
 * **Timeframe**: Starting and stopping date for the query.
-* **Quality**:  Level of processing: default Hi+Mod.
-* **Sample period**: Counts aggregated. Currently only per minute with processing = Raw.
+* **Quality**: One or more of `Hi`, `Mod`, `Lo`.
+* **Sample period**: Counts aggregated. Currently only `1 min`.
+* **Project code**: One or more project codes to include in the query.
+* **Species**: One or more of `Dolphins`, `NBHF`, or `sonar`.
  
 ### Available columns
-* **deployment_fk**: Link to the deployment metadata in the European Tracking Network database
-* **Time**: Time in UTC, beginning of sample time bin.
-* **Species**: NBHF = Harbour porpoises (Phocoena phocoena); other cet = other cetaceans; Sonar = sonar 
-* **Milliseconds**: Duration of click trains in the specified time bin.
-* **Number_clicks_filtered**: recognized clicks of a species.
-* **Number_clicks_total**: total number of recorded clicks.
-* **Lost_minutes**: Minutes in which the number of clicks was larger than 4096.
-* **Recorded**: Minutes recording.
-* **Dpm**: Detection positive minutes, or a mammal was detected in that minute. A click train of the selected species was recorded in that minute.
-* **Dph**: Detection positive hours, or a mammal was detected in that hour. A click train of the selected species was recorded in that hour.
-* **Dpd**: Detection positive days, or a mammal was detected that day. A click train of the selected species was recorded in that day.
-* **Dpw**: Detection positive weeks, or a mammal was detected that day. A click train of the selected species was recorded in that week.
-* **Detections_bpm**: Buzz positive minute, 1 or 0.
-* **Quality**: RAW: 3=high; 2= mod; 1=low; Hi+mod=3; Hi+mod+low =3; Validated = hi+mod = 4.
-* **Projectname**: Name of the project.
-* **Projectcode**: Code of the project.
-* **Imis_dataset_id**: IMIS dataset id.
-* **Station**: name or code of sampling station or receiver code.
-* **Latitude**: Center latitude in decimal degrees, WGS84.
-* **Longitude**: Center longitude in decimal degrees, WGS84.
-* **Mooring_type**: Surface-buoy or bottom-mooring.
-* **Receiver**: Receiver: serial number of C-POD.
+* **deployment_fk**: Deployment ID, link to the deployment metadata in the European Tracking Network (ETN) database
+* **species_preferences**: Species setting used during classification. Values: No_Dolphins, No_Sonar, No_Dolphins&Sonar, NA.
+* **additional_classifier**: Additional classifier used during processing. Values: Default, Hel1, Genenc, advancedKerno, NA.
+* **time**: Time (hh:mm:ss; 24 h, UTC) at the beginning of sample time bin
+* **species**: Species as determined by cpod.exe, can be “NBHF”, “Dolphins”, “sonar”, or “Unclassed”
+* **detections_bpm**: Buzz positive minute (BPM), detection of a high click repetition rate within a sampling minute (1 for detected, 0 for undetected)
+* **milliseconds**: Duration of the logged train(s), in milliseconds
+* **number_clicks_filtered**: Number of clicks classified as coming from the stated species at the specified time
+* **number_clicks_total**: Total number of clicks at the specified time
+* **lost_minutes**: Indicates the number of minutes in which the POD reached its threshold and therefore only recorded those minutes partially due to very high acoustic activity or noise
+* **recorded**: Indicates whether the POD was actively recording at the specified time or not (1 = true, 0 = false)
+* **dpm**: Indicates if an individual of the specified species or group of species was detected within a sampling minute (1 for detected, 0 for undetected)
+* **angle**: Angle (°) at which the POD was oriented
+* **temperature_min**: Minimum temperature recorded by the POD at the specified time
+* **temperature_max**: Maximum temperature recorded by the POD at the specified time
+* **quality**: Indicates the quality of click train classification; 3=High/High and moderate/High, moderate and low; 2= Moderate; 1=Low
+* **projectcode**: Abbreviation of the project related to the deployment
+* **projectname**: Name of the project related to the deployment
+* **imis_dataset_id**: Dataset ID as specified in the Integrated Marine Information System (IMIS; https://marineinfo.org/en/imis)
+* **station**: Refers to a unique location of a specific latitude and longitude
+* **latitude**: Latitude of the actual deployment location, in decimal degrees
+* **longitude**: Longitude of the actual deployment location, in decimal degrees
+* **mooring_type**: Type of mooring to which the POD is attached. Predefined options: surface-buoy, bottom-mooring, surface-wind-turbine
+* **receiver**: Model and serial number of the POD
+* **deploy_date_time**: Date and time the POD was deployed, in 24-hour UTC (yyyy-mm-dd hh:mm:ss)
+* **recover_date_time**: Date and time the POD was recovered, in 24-hour UTC (yyyy-mm-dd hh:mm:ss)
+* **valid_data_until_datetime**: Data and time until which valid data was recorded, in 24-hour UTC (yyyy-mm-dd hh:mm:ss)
 
 ## Abstract
 Data are presented from several passive acoustic projects in the Southern North Sea. The click detector (C-POD, Chelonia ctd.) records sequences of echolocation clicks of cetaceans and sonar clicks. Both are included in this database and can be selected as 'Species'. Click trains are classified by the KERNO classifier and harbour porpoises, sonar and other cetaceans (dolphins) can be identified, at the moment Other cetaceans are not yet included in this database. The data is offered as 'raw' or 'validated', the latter includes high and moderate quality click trains and is aggregated per hour. Only hours with a maximum of two minutes with lost data is incorporated. 

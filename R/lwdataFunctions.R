@@ -338,20 +338,49 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 
 #'Retrieve C-POD data from the LifeWatch project
 #'
-#' Retrieves the C-POD (Cetacean Acoustic Hydrophone Network) data from the LifeWatch project.
-#' Need valid authentication to access the entire data.To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage.
+#' Retrieves the C-POD (Cetacean Acoustic Hydrophone Network) data from the LifeWatch project. Need valid authentication to access the entire data. To get an account, register via the \href{http://rshiny.lifewatch.be/account?p=register}{Lifewatch RShiny registration} webpage. It is best to limit the query to a one-month period to avoid server-related errors.
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
 #'@param processing Data processing, currently only "Raw".
-#'@param quality One or more of ("Hi","Mod", "Lo").
+#'@param quality One or more of ("Hi","Mod", "Lo"). These correspond to returned values of 1 (Hi), 2 (Mod), and 3 (Lo).
 #'@param by Sample period, currently only "1 min"
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
 #'@param params If TRUE, returns a list with the dataset and the query parameters applied in the server side. IF FALSE returns only the data.
-#' @param ... Reserved for internal use.
+#'@param ... Reserved for internal use.
 #'@param projectcode One or more of ("Apelafico_acoustics", "CODEVCO", "Lifewatch_extra", "Lifewatch_test", "PAM-Borssele", "PelFish", "PhD_Parcerisas", "PureWind", "STRAITS_PAM", "cpod-lifewatch", "cpod-od-natuur")
 #'@param species One or more of ("Dolphins","NBHF","sonar").
-#'@return Dataframe with the specified C-POD data.
+#'
+#'@return Description of variables from retrieved datasets using getCpodData:
+#'\describe{
+#'  \item{deployment_fk}{Deployment ID, link to the deployment metadata in the European Tracking Network (ETN) database}
+#'  \item{time}{Time (hh:mm:ss; 24 h, UTC) at the beginning of sample time bin}
+#'  \item{species}{Species as determined by cpod.exe, can be “NBHF”, “Dolphins”, “sonar”, or “Unclassed”}
+#'  \item{species_preferences}{Species setting used during classification. Values: No_Dolphins, No_Sonar, No_Dolphins&Sonar, NA.}
+#'  \item{additional_classifier}{Additional classifier used during processing. Values: Default, Hel1, Genenc, advancedKerno, NA.}
+#'  \item{detections_bpm}{Buzz positive minute (BPM), detection of a high click repetition rate within a sampling minute (1 for detected, 0 for undetected)}
+#'  \item{milliseconds}{Duration of the logged train(s), in milliseconds}
+#'  \item{number_clicks_filtered}{Number of clicks classified as coming from the stated species at the specified time}
+#'  \item{number_clicks_total}{Total number of clicks at the specified time}
+#'  \item{lost_minutes}{Indicates the number of minutes in which the POD reached its threshold and therefore only recorded those minutes partially due to very high acoustic activity or noise}
+#'  \item{recorded}{Indicates whether the POD was actively recording at the specified time or not (1 = true, 0 = false)}
+#'  \item{dpm}{Indicates if an individual of the specified species or group of species was detected within a sampling minute (1 for detected, 0 for undetected)}
+#'  \item{angle}{Angle (°) at which the POD was oriented}
+#'  \item{temperature_min}{Minimum temperature recorded by the POD at the specified time}
+#'  \item{temperature_max}{Maximum temperature recorded by the POD at the specified time}
+#'  \item{quality}{Indicates the quality of click train classification; 3=High/High and moderate/High, moderate and low; 2= Moderate; 1=Low}
+#'  \item{projectcode}{Abbreviation of the project related to the deployment}
+#'  \item{projectname}{Name of the project related to the deployment}
+#'  \item{imis_dataset_id}{Dataset ID as specified in the Integrated Marine Information System (IMIS; https://marineinfo.org/en/imis)}
+#'  \item{station}{Refers to a unique location of a specific latitude and longitude}
+#'  \item{latitude}{Latitude of the actual deployment location, in decimal degrees}
+#'  \item{longitude}{Longitude of the actual deployment location, in decimal degrees}
+#'  \item{mooring_type}{Type of mooring to which the POD is attached. Predefined options: surface-buoy, bottom-mooring, surface-wind-turbine}
+#'  \item{receiver}{Model and serial number of the POD}
+#'  \item{deploy_date_time}{Date and time the POD was deployed, in 24-hour UTC (yyyy-mm-dd hh:mm:ss)}
+#'  \item{recover_date_time}{Date and time the POD was recovered, in 24-hour UTC (yyyy-mm-dd hh:mm:ss)}
+#'  \item{valid_data_until_datetime}{Data and time until which valid data was recorded, in 24-hour UTC (yyyy-mm-dd hh:mm:ss)}
+#'}
 #'@examples
 #'getCpodData("2020-04-20", "2020-04-21", quality = c("Hi", "Lo"), params = TRUE)
 #'getCpodData("2020-04-20", "2020-04-21", quality = c("Hi", "Lo"), params = FALSE, species = c("Dolphins", "NBHF"), projectcode = "cpod-lifewatch")

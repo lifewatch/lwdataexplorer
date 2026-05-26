@@ -31,6 +31,6 @@ c("120", "130", "230", "215", "330", "421", "435", "710", "700",
 "780", "ZG02", "W09", "W08", "LW01", "W10", "LW02", "W07bis")
 }
 \examples{
-getCTDData("2023-01-15", "2023-02-15", stations = c("120", "W09"), by = "Per meter")
-getCTDData("2023-01-15", "2023-02-15", stations = "All", by = "Per cast", params = TRUE)
+getCTDData("2023-01-15", "2023-02-15", stations = c("130", "W07bis"), by = "Per meter")
+getCTDData("2023-01-15", "2023-02-15", stations = c("130", "W07bis"), by = "Per meter", params = TRUE)
 }
