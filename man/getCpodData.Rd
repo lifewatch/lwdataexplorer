@@ -25,7 +25,7 @@ getCpodData(
 
 \item{processing}{Data processing, currently only "Raw".}
 
-\item{quality}{One or more of ("Hi","Mod", "Lo"). These correspond to returned values of 1 (Hi), 2 (Mod), and 3 (Lo).}
+\item{quality}{One or more of ("Hi","Mod", "Lo"). These correspond to returned values of 1 (Lo), 2 (Mod), and 3 (Hi).}
 
 \item{by}{Sample period, currently only "1 min"}
 

@@ -342,7 +342,7 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 #'@param startdate Starting date for the query
 #'@param stopdate Stopping date for the query
 #'@param processing Data processing, currently only "Raw".
-#'@param quality One or more of ("Hi","Mod", "Lo"). These correspond to returned values of 1 (Hi), 2 (Mod), and 3 (Lo).
+#'@param quality One or more of ("Hi","Mod", "Lo"). These correspond to returned values of 1 (Lo), 2 (Mod), and 3 (Hi).
 #'@param by Sample period, currently only "1 min"
 #'@param usr Username to connect to ETN database
 #'@param pwd Password to connect to ETN database
