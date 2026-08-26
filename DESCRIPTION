@@ -27,7 +27,6 @@ Description: Function for easy access to the LifeWatch data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.3
 Imports: 
     jsonlite,
     httr,
@@ -45,3 +44,4 @@ Suggests:
 VignetteBuilder: knitr, rmarkdown
 URL: https://lifewatch.github.io/lwdataexplorer/
 BugReports: https://github.com/lifewatch/lwdataexplorer/issues
+Config/roxygen2/version: 8.0.0

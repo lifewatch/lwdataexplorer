@@ -358,7 +358,7 @@ getEtnData <- function(startdate, stopdate, action, by, networks, projects,
 #'  \item{species}{Species as determined by cpod.exe, can be “NBHF”, “Dolphins”, “sonar”, or “Unclassed”}
 #'  \item{species_preferences}{Species setting used during classification. Values: No_Dolphins, No_Sonar, No_Dolphins&Sonar, NA.}
 #'  \item{additional_classifier}{Additional classifier used during processing. Values: Default, Hel1, Genenc, advancedKerno, NA.}
-#'  \item{detections_bpm}{Buzz positive minute (BPM), detection of a high click repetition rate within a sampling minute (1 for detected, 0 for undetected)}
+#'  \item{min_ici}{Minimum inter-click interval (ICI) measured across all click trains detected within a minute. A click train is defined within the C/F-POD software as containing a minimum of 5 consecutive clicks. Inter-click interval is measured in milliseconds (ms)}
 #'  \item{milliseconds}{Duration of the logged train(s), in milliseconds}
 #'  \item{number_clicks_filtered}{Number of clicks classified as coming from the stated species at the specified time}
 #'  \item{number_clicks_total}{Total number of clicks at the specified time}
